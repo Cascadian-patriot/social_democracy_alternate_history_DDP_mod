@@ -1,4 +1,6 @@
-# Social Democracy: An Alternate History
+# Social Liberalism: An Alternate History
+
+A mod for red autumn’s social democracy game to play as the DDP. being worked on right now.
 
 ## Included Libraries
 
