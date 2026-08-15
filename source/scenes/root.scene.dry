@@ -105,8 +105,8 @@ Q.z_relation = 50;
 Q.kpd_relation = 25;
 Q.spd_relation = 60;
 Q.dvp_relation = 60;
-// DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
+// NSDAP is invariably hostile
+Q.DNVP_relation = 30;
 Q.NSDAP_relation = 0;
 
 Q.kpd_leader = "Thälmann";
@@ -230,8 +230,9 @@ Q.new_middle_qol = 100;
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
-// TODO: add 'sapd' later on
+// TODO: add rdp later
 Q.sapd_formed = 0;
+Q.rdp_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -353,9 +354,9 @@ Q.in_grand_coalition = 0;
 Q.in_popular_front = 0;
 // left coalition = SPD + KPD + left-splinters
 Q.in_left_front = 0;
-// emergency government containing the SPD: only president Braun can do this.
+// emergency government containing the DDP.
 Q.in_emergency_government = 0;
-Q.in_spd_majority = 0;
+Q.in_ddp_majority = 0;
 Q.grand_coalition_failed = 0;
 // if the SPD is ruling as part of a minority government
 Q.in_minority_government = 0;
@@ -366,8 +367,8 @@ Q.coalition_dissent = 0;
 // dissent from the KPD, in a popular front or left front government
 Q.kpd_coalition_dissent = 0;
 
-// does the SPD tolerate the government even if it is not a participant?
-Q.spd_toleration = 0;
+// does the DDP tolerate the government even if it is not a participant?
+Q.ddp_toleration = 0;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
@@ -449,10 +450,10 @@ Q.tariffs = 0;
 Q.electoral_threshold = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
-// did the SPD vote against the previous government in a vote of no confidence?
-Q.spd_no_confidence = 0;
-// was the last SPD government taken down in a vote of no confidence by right-wing coalition partners?
-Q.no_confidence_against_spd = 0;
+// did the DDP vote against the previous government in a vote of no confidence?
+Q.ddp_no_confidence = 0;
+// was the last DDP government taken down in a vote of no confidence by right-wing coalition partners?
+Q.no_confidence_against_ddp = 0;
 
 // Advisors/Leaders
 Q.n_advisors = 3;
@@ -533,48 +534,34 @@ Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
+// Sammlung advisors (starting)
+Q.koch_weser_advisor = 1; // Erich Koch-Weser
+Q.gessler_advisor = 1;    // Otto Geßler
 
-// all the initial advisors are centrists.
-Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
-Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+// Linksliberale advisors
+Q.heuss_advisor = 1;      // Theodor Heuss
+Q.baeumer_advisor = 1;    // Gertrud Bäumer
+Q.erkelenz_advisor = 0;   // Anton Erkelenz (recruitable)
+Q.luders_advisor = 0;     // Marie-Elisabeth Lüders (recruitable)
 
-// left advisors
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
+// Wirtschaftsflügel advisors
+Q.dietrich_advisor = 1;   // Hermann Dietrich
+Q.stolper_advisor = 0;    // Gustav Stolper (recruitable)
+Q.reinhold_advisor = 0;   // Peter Reinhold (post-1930)
+Q.richthofen_advisor = 0; // Hermann von Richthofen (post-1930)
 
-// centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+// Pazifisten advisors
+Q.quidde_advisor = 0;     // Ludwig Quidde (recruitable)
 
-// Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+// Republikschützer advisors (locked until faction discovered)
+Q.maier_advisor = 0;      // Reinhold Maier (post-1930/31)
 
-// Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
+// Merger-only advisor (locked behind VNR merger acceptance)
+Q.mahraun_advisor = 0;    // Artur Mahraun
 
-// Revisionist advisors
-Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
-
-Q.leber_advisor = 0; // Julius Leber (post-1930)
-Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
-
-// Nonfactional advisors
-Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
-Q.radbruch_advisor = 0; // Gustav Radbruch
-Q.stampfer_advisor = 0; // Friedrich Stampfer
+// Nonfactional/technocratic advisors
+Q.abegg_advisor = 1;      // Wilhelm Abegg
+Q.kulz_advisor = 0;       // Wilhelm Külz (recruitable, later Koch-Weser successor)
 !}
 set-bg: img/map_2.jpg
 new-page: true
