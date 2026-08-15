@@ -1,0 +1,33 @@
+title: Erich Koch-Weser
+is-pinned-card: true
+tags: advisor, sammlung
+card-image: img/portraits/KochWeserErich.jpg
+view-if: koch_weser_advisor = 1
+new-page: true
+= Erich Koch-Weser
+Koch-Weser is our party chairman, and one of the chief architects of the Weimar Constitution. A pragmatist above all, his priority is keeping our small party relevant by holding coalitions together, even at the cost of ideological consistency.
+- @broker_coalition
+- @withhold_confidence
+- @shuffle_leadership_action
+- @root: Return to main
+@broker_coalition
+title: Brokering the Coalition
+subtitle: Koch-Weser can smooth over tensions with our coalition partners, using his reputation as a constitutional architect and honest broker.
+choose-if: advisor_action_timer <= 0 and (in_weimar_coalition or in_grand_coalition or ddp_in_government)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not ddp_in_government : We are not currently in government. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if ddp_in_government = 1 and coalition_dissent > 0; z_relation += 5; spd_relation += 3; dvp_relation += 5; sammlung_dissent -= 3 if sammlung_dissent > 0
+We have smoothed over tensions within the coalition, reassuring our partners of our commitment to stable government.
+@withhold_confidence
+title: Threaten to Withhold Confidence
+subtitle: Koch-Weser can threaten to pull our support from the government unless our concerns are addressed - a dangerous card to play for a party our size.
+choose-if: advisor_action_timer <= 0 and ddp_in_government
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not ddp_in_government : We are not currently in government. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent += 2; sammlung_strength += 2
+Our threat has been heard. The coalition partners have taken our concerns more seriously, though the confrontation has strained relations.
+@shuffle_leadership_action
+title: Reassert Party Discipline
+subtitle: Koch-Weser can use his authority as chairman to rein in a wing of the party that has grown too independent.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; sammlung_strength += 3; linksliberale_dissent -= 2 if linksliberale_dissent > 0; wirtschaftsflugel_dissent -= 2 if wirtschaftsflugel_dissent > 0; pazifisten_dissent -= 2 if pazifisten_dissent > 0
+Koch-Weser has reminded the party's wings that unity is our only path to survival. Dissent has eased across the party, if only for now.
