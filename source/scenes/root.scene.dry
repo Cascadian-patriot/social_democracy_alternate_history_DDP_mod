@@ -46,27 +46,27 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist'];
+Q.factions = ['sammlung', 'linksliberale', 'pazifisten', 'wirtschaftsflugel', 'republikschutzer'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
-Q.left_dissent = 20;
-Q.center_strength = 30;
-Q.center_dissent = 0;
-Q.labor_strength = 25;
-Q.labor_dissent = 5;
-Q.reformist_strength = 25;
-Q.reformist_dissent = 5;
-Q.neorevisionist_strength = 5;
-Q.neorevisionist_dissent = 10;
+Q.wirtschaftsflugel_strength = 25;
+Q.sammlung_strength = 20;
+Q.linksliberale_strength = 40;
+Q.pazifisten_strength = 15;
+Q.republikschutzer_strength = 0; // gains strength (from linksliberale/pazifisten) when discovered
+Q.wirtschaftsflugel_dissent = 35;
+Q.sammlung_dissent = 20;
+Q.linksliberale_dissent = 15;
+Q.pazifisten_dissent = 30;
+Q.republikschutzer_dissent = 0; // irrelevant pre-discovery
 
 // secret events...
-Q.unions_independent = 0;
-Q.centrists_resign = 0;
-Q.left_split = 0;
-Q.reformists_resigned = 0;
+Q.linksliberale_resign = 0;
+Q.sammlung_resign = 0;
+Q.pazifisten_split = 0;
+Q.wirtschaftsflugel_defect = 0;
 
-// have we discovered neorevisionism?
-Q.neorevisionism = 0;
+// have we discovered militant republicanism?
+Q.republikschutze = 0;
 
 // crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
@@ -103,8 +103,8 @@ Q.moderate_plan_adopted = 0;
 // inter-party relations
 Q.z_relation = 50;
 Q.kpd_relation = 25;
-Q.ddp_relation = 60;
-Q.dvp_relation = 35;
+Q.spd_relation = 60;
+Q.dvp_relation = 60;
 // DNVP and NSDAP are invariably hostile
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
@@ -597,7 +597,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_re
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; wirtschaftsflugel_dissent = 45; sammlung_dissent = 30; linksliberale_dissent = 25; pazifisten_dissent = 40; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
 go-to: 1928_main
 
 @1928_historical
@@ -608,10 +608,10 @@ Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
 Q.rb_strength = 2000;
-Q.reformist_dissent = 25;
-Q.left_dissent = 30;
-Q.labor_dissent = 25;
-Q.center_dissent = 25;
+Q.wirtschaftsflugel_dissent = 45;
+Q.sammlung_dissent = 30;
+Q.linksliberale_dissent = 25;
+Q.pazifisten_dissent = 40;
 Q.z_relation = 41;
 Q.kpd_relation = 16;
 Q.dvp_relation = 31;
@@ -629,6 +629,6 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
 
-Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority.
+Now, the task of Social Liberalism is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, but we stand to lose votes, continuing the previous trend, But perhaps we can use the time we have left to turn that around?
 
 
