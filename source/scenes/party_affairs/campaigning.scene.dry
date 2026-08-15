@@ -59,9 +59,11 @@ unavailable-subtitle: Not enough resources.
 on-arrival: unemployed_ddp += 6*(1-dissent); resources -= 1; unemployed_ddp -= 3 if welfare < 0; unemployed_ddp += 6*(1-dissent); unemployed_ddp += 3*(1-dissent) if welfare >= 2;
 
 We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?]
+
+@catholics
+subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-view-if: peoples_party == 1
 on-arrival: catholics_ddp += 6*(1-dissent); resources -= 1
 
 We have increased our campaigning among Catholics.
