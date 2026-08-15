@@ -34,7 +34,7 @@ Germany is divided into a number of states, each of which have their own governm
 @weimar_timeline
 go-to: menu
 
-= Timeline of the SPD and the Republic (until 1928)
+= Timeline of the Republic (until 1928)
 
 **1875**: The SPD is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the SPD grows to become the largest party in the German Empire.
 
@@ -61,7 +61,7 @@ go-to: menu
 **1926**: A referendum on the expropriation of the princes, supported by the SPD and KPD, fails.
 
 @curr_gov
-go-to: cabinet if spd_in_government; menu if not spd_in_government
+go-to: cabinet if ddp_in_government; menu if not ddp_in_government
 
 = Current Government
 
@@ -89,12 +89,8 @@ NSDAP: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
-
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
-
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+DDP position: [? if ddp_toleration : toleration ?][? if ddp_in_government : in government - ?][? if ddp_toleration == 0 and ddp_in_government == 0 and ddp_caretaker == 0 : opposition ?][? if ddp_caretaker : caretaker government ?]
+[? if ddp_in_government and not in_ddp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -133,7 +129,7 @@ go-to: menu
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the DDP, although substantial numbers support the SPD or KPD.
+**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, particularly us, although substantial numbers support the SPD or KPD.
 
 
 @public_opinion
@@ -204,18 +200,18 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 @parties
 go-to: menu
 
-**SPD** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) - this is us. We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic. The modern SPD was formed from a merger of the "Majority" SPD, which supported the Great War, and the "Independent" SPD or USPD, which opposed the war.
+**SPD** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) -  a socialist and democratic centre-left to left-wing party of the working class. Historically has supported labor and welfare, along with being staunchly anti-war The modern SPD was formed from a merger of the "Majority" SPD, which supported the Great War, and the "Independent" SPD or USPD, which opposed the war.
+
+Current relations: [+ spd_relations : relationships +]
 
 **Z** - *Zentrumspartei* (Center Party) - a centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the **BVP** (Bavarian People's Party), which represents Catholics in Bavaria. [? if year >= 1930 or chancellor = "Brüning" : They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?]
 
 Current relations: [+ z_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**DDP** - *Deutsche Demokratische Partei* (German Democratic Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us. [? if year >= 1930 : They have recently reformed themselves as the German State Party (DStP). ?]
+**DDP** - *Deutsche Demokratische Partei* (German Democratic Party) - this is us. we are a center-left liberal party, popular among the intelligensia and educated middle class. Historically, we have been a staunch supporter of the republic, being one of the original weimar coalition parties. [? if year >= 1930 : we have recently reformed ourselves as the German State Party (DStP). ?]
 
-Current relations: [+ ddp_relation : relationships +]
-
-**DVP** - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. We have occasionally been in coalitions.
+**DVP** - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. They have been one of our biggest liberal allies.
 
 Current relations: [+ dvp_relation : relationships +]
 
@@ -282,54 +278,54 @@ Loyalty: [+ prussian_police_loyalty : loyalty +]
 
 
 @factions
-go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
+go-to: republikschutzer_page if republikschutze > 0; menu if republikschutze <= 0
 
-**Internal factions of the SPD**
+**Internal factions of the DDP**
 
 Overall dissent: [+ dissent_percent : dissent +]
 
-**Left**
+**Linksliberale**
 
-Many leftists are former members of the USPD (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the KPD, and some support extraparliamentary action.
+The Linksliberale carry the party's founding tradition, descended from Friedrich Naumann's fusion of liberalism with social reform. They favor "Wirtschaftsdemokratie" - mutual recognition of duty and profit between labor and capital - and are the party's natural bridge to the SPD.
 
-Strength: [+ left_strength : strength +]
+Strength: [+ linksliberale_strength : strength +]
 
-Dissent: [+ left_dissent : dissent +]
+Dissent: [+ linksliberale_dissent : dissent +]
 
-**Centrists**
+**Sammlung**
 
-Centrists in the SPD are followers of the doctrine of orthodox Marxism as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
+The Sammlung wing prioritizes the party's institutional survival above ideology - holding the coalition together, keeping the party in government, and managing relationships with our partners, whatever the cost to internal unity.
 
-Strength: [+ center_strength : strength +]
+Strength: [+ sammlung_strength : strength +]
 
-Dissent: [+ center_dissent : dissent +]
+Dissent: [+ sammlung_dissent : dissent +]
 
-**Labor**
+**Pazifisten**
 
-Many SPD members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
+A small but vocal wing, committed to pacifism, internationalism, and uncompromising defense of republican principle over pragmatic coalition politics. They are quick to see betrayal in compromise.
 
-Strength: [+ labor_strength : strength +]
+Strength: [+ pazifisten_strength : strength +]
 
-Dissent: [+ labor_dissent : dissent +]
+Dissent: [+ pazifisten_dissent : dissent +]
 
-**Reformists**
+**Wirtschaftsflügel**
 
-Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
+The business and national-liberal wing draws on industry and commerce for support, and favors fiscal orthodoxy and closer ties to the DVP and organized business over ideological purity.
 
-Strength: [+ reformist_strength : strength +]
+Strength: [+ wirtschaftsflugel_strength : strength +]
 
-Dissent: [+ reformist_dissent : dissent +]
+Dissent: [+ wirtschaftsflugel_dissent : dissent +]
 
-@neorevisionists
+@republikschutzer_page
 go-to: menu
 
-**Neorevisionists**
+**Republikschützer**
 
-Neorevisionists focus on defending the republic and expanding democracy, while also expanding the party's base beyond the working class to create a people's party. They support new propaganda methods and extraparliamentary action in defense of the republic.
+As the Nazi threat has grown too great to ignore, a new current has emerged within the party - committed to militant defense of the Republic by whatever means necessary, including open alliance with the SPD and full mobilization of the Reichsbanner.
 
-Strength: [+ neorevisionist_strength : strength +]
+Strength: [+ republikschutzer_strength : strength +]
 
-Dissent: [+ neorevisionist_dissent : dissent +]
+Dissent: [+ republikschutzer_dissent : dissent +]
 
 
 @figures
