@@ -315,5 +315,9 @@ Grand Coalition (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]
 
 Bourgeois Coalition (Z + BVP + DDP + DVP + Others): [+ bourgeois_coalition +]
 
+Centre-Right Coalition (Z + BVP + DDP + DVP)
+
+Liberal Coalition (DDP + DVP)
+
 Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]
 
