@@ -543,12 +543,9 @@ Q.gessler_advisor = 1;    // Otto Geßler
 // Linksliberale advisors
 Q.heuss_advisor = 1;      // Theodor Heuss
 Q.baeumer_advisor = 1;    // Gertrud Bäumer
-Q.erkelenz_advisor = 0;   // Anton Erkelenz (recruitable)
-Q.luders_advisor = 0;     // Marie-Elisabeth Lüders (recruitable)
 
 // Wirtschaftsflügel advisors
 Q.dietrich_advisor = 1;   // Hermann Dietrich
-Q.stolper_advisor = 0;    // Gustav Stolper (recruitable)
 Q.reinhold_advisor = 0;   // Peter Reinhold (post-1930)
 Q.richthofen_advisor = 0; // Hermann von Richthofen (post-1930)
 
