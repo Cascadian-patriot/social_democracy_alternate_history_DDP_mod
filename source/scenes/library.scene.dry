@@ -286,7 +286,7 @@ Overall dissent: [+ dissent_percent : dissent +]
 
 **Linksliberale**
 
-The Linksliberale carry the party's founding tradition, descended from Friedrich Naumann's fusion of liberalism with social reform. They favor "Wirtschaftsdemokratie" - mutual recognition of duty and profit between labor and capital - and are the party's natural bridge to the SPD.
+The Linksliberale carry the party's founding tradition, descended from Friedrich Naumann's fusion of liberalism with social reform. They favor "Wirtschaftsdemokratie", mutual recognition of duty and profit between labor and capital.
 
 Strength: [+ linksliberale_strength : strength +]
 
@@ -294,7 +294,7 @@ Dissent: [+ linksliberale_dissent : dissent +]
 
 **Sammlung**
 
-The Sammlung wing prioritizes the party's institutional survival above ideology - holding the coalition together, keeping the party in government, and managing relationships with our partners, whatever the cost to internal unity.
+The Sammlung wing prioritizes the party's institutional survival above ideology. this menas holding the coalition together, keeping the party in government, and managing relationships with our partners, whatever the cost to internal unity.
 
 Strength: [+ sammlung_strength : strength +]
 
@@ -321,7 +321,7 @@ go-to: menu
 
 **Republikschützer**
 
-As the Nazi threat has grown too great to ignore, a new current has emerged within the party - committed to militant defense of the Republic by whatever means necessary, including open alliance with the SPD and full mobilization of the Reichsbanner.
+As the Nazi threat has grown too great to ignore, a new current has emerged within the party, committed to militant defense of the Republic by whatever means necessary, including open alliance with the SPD and full mobilization of the Reichsbanner.
 
 Strength: [+ republikschutzer_strength : strength +]
 
