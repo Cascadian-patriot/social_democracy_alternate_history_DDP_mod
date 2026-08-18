@@ -48,12 +48,12 @@ Q.dissent_percent = 5;
 // factions
 Q.factions = ['sammlung', 'linksliberale', 'pazifisten', 'wirtschaftsflugel', 'republikschutzer'];
 // should this be normalized to 100%?
-Q.wirtschaftsflugel_strength = 25;
+Q.nationalliberale_strength = 25;
 Q.sammlung_strength = 20;
 Q.linksliberale_strength = 40;
 Q.pazifisten_strength = 15;
 Q.republikschutzer_strength = 0; // gains strength (from linksliberale/pazifisten) when discovered
-Q.wirtschaftsflugel_dissent = 35;
+Q.nationalliberale_dissent = 35;
 Q.sammlung_dissent = 20;
 Q.linksliberale_dissent = 15;
 Q.pazifisten_dissent = 30;
