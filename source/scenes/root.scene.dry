@@ -48,15 +48,15 @@ Q.dissent_percent = 5;
 // factions
 Q.factions = ['sammlung', 'linksliberale', 'pazifisten', 'wirtschaftsflugel', 'republikschutzer'];
 // should this be normalized to 100%?
-Q.nationalliberale_strength = 25;
-Q.sammlung_strength = 20;
+Q.nationalliberale_strength = 20;
+Q.sammlung_strength = 30;
 Q.linksliberale_strength = 40;
-Q.pazifisten_strength = 15;
+Q.pazifisten_strength = 10;
 Q.republikschutzer_strength = 0; // gains strength (from linksliberale/pazifisten) when discovered
-Q.nationalliberale_dissent = 35;
-Q.sammlung_dissent = 20;
-Q.linksliberale_dissent = 15;
-Q.pazifisten_dissent = 30;
+Q.nationalliberale_dissent = 20;
+Q.sammlung_dissent = 10;
+Q.linksliberale_dissent = 10;
+Q.pazifisten_dissent = 20;
 Q.republikschutzer_dissent = 0; // irrelevant pre-discovery
 
 // secret events...
