@@ -58,7 +58,7 @@ go-to: main_rally
 The police and Reichsbanner have successfully protected our rally against the SA! Our meeting can go ahead as usual.
 
 @both_protect_lose
-on-arrival: new_middle_nsdap += 2; old_middle_nsdap += 2; rb_strength -= 50 sa_defeated_police_rb += 1
+on-arrival: new_middle_nsdap += 2; old_middle_nsdap += 2; rb_strength -= 50 sa_defeated_police_rb += 1;
 
 Unfortunately, the police and Reichsbanner were not able to hold back the SA mob. The Nazis have won this show of strength. [? if sa_defeated_police_rb > 1 : this isn't the first time this has happend, we should act against the SA before they grow too strong. ?]
 
