@@ -308,13 +308,13 @@ Strength: [+ pazifisten_strength : strength +]
 
 Dissent: [+ pazifisten_dissent : dissent +]
 
-**Wirtschaftsflügel**
+**Nationalliberale**
 
 The business and national-liberal wing draws on industry and commerce for support, and favors fiscal orthodoxy and closer ties to the DVP and organized business over ideological purity.
 
-Strength: [+ wirtschaftsflugel_strength : strength +]
+Strength: [+ nationalliberale_strength : strength +]
 
-Dissent: [+ wirtschaftsflugel_dissent : dissent +]
+Dissent: [+ nationalliberale_dissent : dissent +]
 
 @republikschutzer_page
 go-to: menu
