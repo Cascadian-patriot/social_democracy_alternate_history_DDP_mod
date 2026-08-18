@@ -85,7 +85,7 @@ on-arrival: new_middle_ddp += 4*(1-dissent); workers_ddp += 2*(1-dissent) if lin
 
 Our message of cooperation between labor and capital appeals to the educated middle class and to moderate workers, though committed partisans on either side remain unmoved. [? if welfare > 0 : Our record on social policy has made this message more effective. ?]
 
-@constitution
+@defending_democracy
 on-arrival: constitutional_reform += 1; pro_republic += 2*(1 - dissent); new_middle_ddp += 4*(1-dissent) if constitutional_reform >= 3; old_middle_ddp += 2*(1-dissent) if constitutional_reform >= 3; pro_republic += 4*(1 - dissent) if constitutional_reform >= 3;
 
 Our speakers defend the Weimar Constitution and the rule of law against monarchists, authoritarians, and revolutionaries alike. 
