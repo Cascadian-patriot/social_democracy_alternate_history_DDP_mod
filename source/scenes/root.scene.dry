@@ -122,6 +122,8 @@ Q.hindenburg_relation = 25;
 // whether or not hindenburg can dismiss the government.
 Q.hindenburg_enabled = 0;
 
+// if SA wins against police and rb this variable gets increased and grants extra flavour.
+Q.sa_won_against_police_rb = 0;
 
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
