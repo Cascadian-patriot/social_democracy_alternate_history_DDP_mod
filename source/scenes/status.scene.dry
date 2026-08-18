@@ -96,6 +96,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if republikschutze > 0 : {!<span class="tooltip-text" title="Militant republicans who believe persuasion has failed and only direct mobilization can defend the Republic now.">Republikschützer</span>!} strength: [+ republikschutzer_strength : strength +], dissent: [+ republikschutzer_dissent : dissent +] ?]
 
+@paramilitaries
+on-arrival: {!
+if (Q.rb_strength) {
+    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+}
 if (Q.rfb_strength) {
     Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
 }
