@@ -63,7 +63,7 @@ Q.republikschutzer_dissent = 0; // irrelevant pre-discovery
 Q.linksliberale_resign = 0;
 Q.sammlung_resign = 0;
 Q.pazifisten_split = 0;
-Q.wirtschaftsflugel_defect = 0;
+Q.nationalliberale_defect = 0;
 
 // have we discovered militant republicanism?
 Q.republikschutze = 0;
