@@ -66,4 +66,5 @@ The party's business-liberal wing, represented by figures like Dietrich, argues 
 
 @changed
 on-arrival: sammlung_dissent += 5; linksliberale_dissent += 5; pazifisten_dissent += 5; wirtschaftsflugel_dissent += 5
+
 We have changed ideologies. Many in the party feel unmoored.
