@@ -4,7 +4,9 @@ tags: advisor, sammlung
 card-image: img/portraits/KochWeserErich.jpg
 view-if: koch_weser_advisor = 1
 new-page: true
+
 = Erich Koch-Weser
+
 Koch-Weser is our party chairman, and one of the chief architects of the Weimar Constitution. A pragmatist above all, his priority is keeping our small party relevant by holding coalitions together, even at the cost of ideological consistency.
 - @coalition
 - @emergency_fundraising
@@ -13,7 +15,7 @@ Koch-Weser is our party chairman, and one of the chief architects of the Weimar 
   
 @coalition
 title: Negotiating with the Coalition
-subtitle: Koch-Weser can smooth over tensions with our coalition partners, using his reputation as a constitutional architect and honest broker.
+subtitle: Koch-Weser can smooth over tensions with our coalition partners.
 choose-if: advisor_action_timer <= 0 and (in_weimar_coalition or in_grand_coalition or ddp_in_government)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not ddp_in_government : We are not currently in government. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if ddp_in_government = 1 and coalition_dissent > 0; z_relation += 5; spd_relation += 3; dvp_relation += 5; sammlung_dissent -= 3 if sammlung_dissent > 0
