@@ -7,6 +7,7 @@ on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 18
 card-image: img/arbeiterbew.jpg
 max-visits: 3
 #subtitle: Setting the party's ideological direction.
+
 = Questions of Ideology
 
 The DDP is torn between many different ideological currents. What should be our primary ideological guidance for now?
