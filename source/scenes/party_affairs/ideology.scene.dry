@@ -7,64 +7,62 @@ on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 18
 card-image: img/arbeiterbew.jpg
 max-visits: 3
 #subtitle: Setting the party's ideological direction.
-
 = Questions of Ideology
 
-The SPD is torn between many different ideological currents. What should be our primary ideological guidance for now?
+The DDP is torn between many different ideological currents. What should be our primary ideological guidance for now?
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @class_struggle: Class struggle and preparing the proletariat for the revolution are our primary goals.
-- @centrist: The Center Marxism of Karl Kautsky remains the best way to resolve our internal contradictions.
-- @labor: We should work with the trade unions to improve the lives of workers.
-- @reform: Following Eduard Bernstein, we should work for ethical socialism, strengthen democracy, and expand the party's electorate.
+- @sammlung_choice: The party's survival depends on holding the coalition together. Ideological consistency must give way to institutional pragmatism.
+- @linksliberale_choice: Following Friedrich Naumann, we should pursue Wirtschaftsdemokratie, social reform through mutual recognition between labor and capital.
+- @pazifisten_choice: We must defend the Republic and its principles, while keeping true to our roots.
+- @wirtschaftsflugel_choice: Fiscal discipline and closer ties to industry and the propertied middle class are the surest path to relevance.
 - @easy_discard
 
-@class_struggle
+@sammlung_choice
 on-arrival: {!
-if (Q.ideology && Q.ideology != "left") {
+if (Q.ideology && Q.ideology != "sammlung") {
     Q.changed = 1;
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; left_dissent -= 5; z_relation -= 3; dvp_relation -= 5; nationalization_support += 1; kpd_relation += 3
+on-departure: ideology = "sammlung"; sammlung_strength += 10; sammlung_dissent -= 10; linksliberale_dissent -= 5; z_relation += 3; dvp_relation += 3; spd_relation += 2
 
-The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
+The Sammlung wing, led by figures like Koch-Weser, argues that a party our size survives only by making itself indispensable to every possible coalition.
 
-@centrist
+@linksliberale_choice
 on-arrival: {!
-if (Q.ideology && Q.ideology != "centrist") {
+if (Q.ideology && Q.ideology != "linksliberale") {
     Q.changed = 1;
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "centrist"; center_strength += 10; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
+on-departure: ideology = "linksliberale"; linksliberale_strength += 10; linksliberale_dissent -= 10; sammlung_dissent -= 5; spd_relation += 5; democratization += 1; public_trust += 2
 
-The Center Marxists, represented by Kautsky and Hilferding, support a middle course of preparing for revolution while building up the consciousness of the working class.
+The party's Naumann-tradition liberals hold that our purpose is social reform through cooperation between labor and capital, not mere survival - and that this is what should draw us closer to the SPD.
 
-@labor
+@pazifisten_choice
 on-arrival: {!
-if (Q.ideology && Q.ideology != "labor") {
+if (Q.ideology && Q.ideology != "pazifisten") {
     Q.changed = 1;
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "labor"; labor_strength += 10; wtb_support += 1; labor_dissent -= 5; kpd_relation -= 3
+on-departure: ideology = "pazifisten"; pazifisten_strength += 10; pazifisten_dissent -= 10; linksliberale_dissent -= 5; dvp_relation -= 5; reichswehr_loyalty -= 0.02; public_trust += 3
 
-The labor wing of the party supports continued particpation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+The party's pacifist and internationalist wing, following Quidde, insists that we must defend the republic but stay unmoored in our principles.
 
-@reform
+@wirtschaftsflugel_choice
 on-arrival: {!
-if (Q.ideology && Q.ideology != "reformist") {
+if (Q.ideology && Q.ideology != "wirtschaftsflugel") {
     Q.changed = 1;
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; democratization += 1; reformist_dissent -= 5; z_relation += 5; dvp_relation += 5; kpd_relation -= 8; moderate_plan_support += 1
+on-departure: ideology = "wirtschaftsflugel"; wirtschaftsflugel_strength += 10; wirtschaftsflugel_dissent -= 10; sammlung_dissent -= 5; dvp_relation += 5; z_relation += 2; resources += 1
 
-The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The party's business-liberal wing, represented by figures like Dietrich, argues that fiscal credibility and closer ties to industry are what will keep the party solvent and relevant, whatever purists in other wings may say.
 
 @changed
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; reformist_dissent += 5
-
+on-arrival: sammlung_dissent += 5; linksliberale_dissent += 5; pazifisten_dissent += 5; wirtschaftsflugel_dissent += 5
 We have changed ideologies. Many in the party feel unmoored.
