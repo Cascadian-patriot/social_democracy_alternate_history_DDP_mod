@@ -4,7 +4,7 @@ is-card: true
 tags: party_affairs
 view-if: ideology_timer = 0
 on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 18
-card-image: img/arbeiterbew.jpg
+card-image: img/DDP_ideology.jpg
 max-visits: 3
 #subtitle: Setting the party's ideological direction.
 
@@ -40,7 +40,7 @@ if (Q.ideology && Q.ideology != "linksliberale") {
 go-to: changed if changed = 1
 on-departure: ideology = "linksliberale"; linksliberale_strength += 10; linksliberale_dissent -= 10; sammlung_dissent -= 5; spd_relation += 5; democratization += 1; public_trust += 2
 
-The party's Naumann-tradition liberals hold that our purpose is social reform through cooperation between labor and capital, not mere survival - and that this is what should draw us closer to the SPD.
+The party's Naumann-tradition liberals hold that our purpose is social reform through cooperation between labor and capital, not mere survival.
 
 @pazifisten_choice
 on-arrival: {!
@@ -60,7 +60,7 @@ if (Q.ideology && Q.ideology != "wirtschaftsflugel") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "wirtschaftsflugel"; wirtschaftsflugel_strength += 10; wirtschaftsflugel_dissent -= 10; sammlung_dissent -= 5; dvp_relation += 5; z_relation += 2; resources += 1
+on-departure: ideology = "nationalliberale"; nationalliberale_strength += 10; nationalliberale_dissent -= 10; sammlung_dissent -= 5; dvp_relation += 5; z_relation += 2; resources += 1
 
 The party's business-liberal wing, represented by figures like Dietrich, argues that fiscal credibility and closer ties to industry are what will keep the party solvent and relevant, whatever purists in other wings may say.
 
