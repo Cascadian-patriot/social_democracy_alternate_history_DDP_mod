@@ -125,6 +125,9 @@ Q.hindenburg_enabled = 0;
 // if SA wins against police and rb this variable gets increased and grants extra flavour.
 Q.sa_won_against_police_rb = 0;
 
+// ddp industrial backing, for cards and fundraising
+Q.ddp_industrial_backing = 1;
+
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
