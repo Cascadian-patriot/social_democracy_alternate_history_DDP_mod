@@ -560,11 +560,11 @@ table {
 }
 .seat.spd {
     fill: #E3000F;
-    stroke: var(--border-color);
-    stroke-width: 1.5px;
 }
 .seat.ddp {
     fill: #DCCA4A;
+    stroke: var(--border-color);
+    stroke-width: 1.5px;
 }
 .seat.z {
     fill: #000;
