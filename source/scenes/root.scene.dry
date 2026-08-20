@@ -540,36 +540,33 @@ Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 // Sammlung advisors
-Q.koch_weser_advisor = 1; // Erich Koch-Weser - party chairman
-Q.gessler_advisor = 1;    // Otto Geßler - Reichswehr minister
-Q.kulz_advisor = 0;       // Wilhelm Külz - recruitable, Koch-Weser's eventual successor
-Q.maier_advisor = 0;      // Reinhold Maier - recruitable, younger regional figure
+Q.koch_weser_advisor = 1; // Erich Koch-Weser 
+Q.gessler_advisor = 0;    // Otto Geßler 
+Q.kulz_advisor = 0;       // Wilhelm Külz 
+Q.maier_advisor = 0;      // Reinhold Maier 
 
 // Linksliberale advisors
 Q.heuss_advisor = 1;      // Theodor Heuss
-Q.baeumer_advisor = 1;    // Gertrud Bäumer
-Q.erkelenz_advisor = 1;   // Anton Erkelenz - senior union chairman by 1928
-Q.luders_advisor = 0;     // Marie-Elisabeth Lüders - recruitable
-Q.bernhard_advisor = 0;   // Georg Bernhard - recruitable
-Q.lemmer_advisor = 0;     // Ernst Lemmer - recruitable, junior in 1928 (faction vice-chair only from 1929)
+Q.baeumer_advisor = 0;    // Gertrud Bäumer
+Q.erkelenz_advisor = 0;   // Anton Erkelenz
+Q.luders_advisor = 0;     // Marie-Elisabeth Lüders 
+Q.bernhard_advisor = 0;   // Georg Bernhard 
+Q.lemmer_advisor = 0;     // Ernst Lemmer 
 
 // Nationalliberale advisors
-Q.dietrich_advisor = 1;   // Hermann Dietrich - already a senior minister by 1928
-Q.meyer_advisor = 0;      // Oscar Meyer - recruitable
-Q.hopker_aschoff_advisor = 0; // Hermann Höpker-Aschoff - recruitable
-Q.stolper_advisor = 0;    // Gustav Stolper - recruitable
+Q.dietrich_advisor = 1;   // Hermann Dietrich 
+Q.meyer_advisor = 0;      // Oscar Meyer 
+Q.hopker_aschoff_advisor = 0; // Hermann Höpker-Aschoff 
+Q.stolper_advisor = 0;    // Gustav Stolper 
 
 // Pazifisten advisors
-Q.quidde_advisor = 0;     // Ludwig Quidde - recruitable, available immediately (small but real faction)
+Q.quidde_advisor = 0;     // Ludwig Quidde 
 
 // Republikschützer advisors (locked until faction discovered)
-Q.luth_advisor = 0;       // Erich Lüth - unlocks only via republikschutze discovery
-
-// Merger-only advisor (locked behind VNR merger acceptance)
-Q.mahraun_advisor = 0;    // Artur Mahraun
+Q.luth_advisor = 0;       // Erich Lüth 
 
 // Nonfactional/technocratic advisors
-Q.abegg_advisor = 1;      // Wilhelm Abegg - Prussian police
+Q.abegg_advisor = 0;      // Wilhelm Abegg
 
 !}
 set-bg: img/map_2.jpg
