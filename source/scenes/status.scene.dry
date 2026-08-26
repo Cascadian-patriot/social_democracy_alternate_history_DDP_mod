@@ -163,7 +163,7 @@ NSDAP: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
-Support for the Republic: [+ pro_republic_disp +]%
+Support for the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span>: [+ pro_republic_disp +]%
 
 Support for <span style="color: #9B0000;">**Socialism**</span>: [+ socialism_disp +]%
 
