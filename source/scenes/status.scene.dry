@@ -122,7 +122,7 @@ if (Q.sa_strength) {
 
 <span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
-= Official military/paramilitaries
+= Official Organizations
 
 Reichswehr: [+ reichswehr_strength +] thousand troops.
 
