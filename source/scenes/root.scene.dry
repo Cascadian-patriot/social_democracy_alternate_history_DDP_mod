@@ -354,6 +354,7 @@ Q.economic_records = [];
 
 // State of the government (1919) for Scheidemann cabinet
 Q.president = "Ebert";
+Q.president_party = 'SPD';
 Q.chancellor = "Scheidemann";
 Q.chancellor_party = 'SPD';
 Q.spd_in_government = 1;
