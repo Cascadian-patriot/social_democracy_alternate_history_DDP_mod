@@ -734,7 +734,7 @@ table {
     position: absolute;
     z-index: 999999;
     width: 120px;
-    background: #ebe1e1;
+    background: #f3f3e3;
     color: #3b1f0a;
   /*parliament tooltip code based/from road to ithaca*/
     text-align: center;
@@ -742,8 +742,8 @@ table {
     padding: 12px 14px;
     opacity: 0;
     transition: opacity 0.1s ease-in-out;
-    border: 1px solid #CD212A;
-    outline: 1px solid #008C45;
+    border: 2px solid #c00000;
+    outline: 2px solid #D3C24D;
     pointer-events: none;
     font-size: 14px;
     line-height: 1.5em;
@@ -763,10 +763,10 @@ table {
     opacity: 0.3;
 }
 body.dark-mode .parliament-tooltip {
-    background: #151517;
+    background: #171515;
     color: #e0e0e0;
-    border-color: #8093ff;
-    border: 1px solid #2235b2;
+    border: 2px solid #c00000;
+    outline: 2px solid #D3C24D;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -795,10 +795,10 @@ body.dark-mode .parliament-tooltip {
   text-align: center;
   text-decoration: none;
 
-  background-color: #d8ddef;
+  background-color: #f3f3e3;
   color: #3b1f0a;
-  border: 2px solid #CD212A;
-  outline: 2px solid #008C45;
+  border: 2px solid #c00000;
+  outline: 2px solid #D3C24D;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   visibility: hidden;
   opacity: 0;
@@ -818,20 +818,20 @@ body.dark-mode .parliament-tooltip {
 body.dark-mode .wide_tooltip-tip {
   background-color: #151517;
   color: #e0e0e0;
-  border: 2px solid #CD212A;
-  outline: 2px solid #008C45;
+  border: 2px solid #c00000;
+  outline: 2px solid #D3C24D;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 body.dark-mode .wide_tooltip-tip img {
   border-color: #555; 
 }
 body.dark-mode .wide_tooltip-tip::after {
-  border: 2px solid #CD212A transparent transparent transparent;
-  outline: 2px solid #008C45 transparent transparent transparent;
+border: 2px solid #c00000 transparent transparent transperent;
+outline: 2px solid #D3C24D transparent transparent transparent;
 }
 body.dark-mode .wide_tooltip-tip::before {
-  border: 2px solid #CD212A transparent transparent transparent;
-  outline: 2px solid #008C45 transparent transparent transparent;
+border: 2px solid #c00000 transparent transparent transperent;
+outline: 2px solid #D3C24D transparent transparent transparent;
 }
 .wide_tooltip-wrap.drop-down .wide_tooltip-tip {
   bottom: auto;
