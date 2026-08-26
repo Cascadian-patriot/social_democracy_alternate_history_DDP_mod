@@ -17,6 +17,8 @@ go-to: start_menu_2
 
 
 @start
+set-bg: img/background.jpg
+new-page: true
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
@@ -592,8 +594,6 @@ Q.luth_advisor = 0;
 Q.abegg_advisor = 0;
 !}
 
-set-bg: img/background.jpg
-new-page: true
 
 > *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined by the conditions in which they operate."*
 
