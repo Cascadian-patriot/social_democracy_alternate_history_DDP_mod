@@ -264,7 +264,7 @@ blockquote + blockquote.attribution {
   position: fixed;
   z-index: 999999;
   width: 130px;
-  background: #D3C24D;
+  background: #f3f3e3;
   color: #3b1f0a;
   text-align: left;
   border-radius: 8px;
@@ -272,7 +272,7 @@ blockquote + blockquote.attribution {
   opacity: 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
   border: 2px solid #c00000;
-  outline: 2px solid #000000;
+  outline: 2px solid #D3C24D;
   pointer-events: none;
   font-size: 14px !important;
   line-height: 1.5em !important;
@@ -296,10 +296,10 @@ body.dark-mode .mytooltip:hover {
 }
 
 body.dark-mode .mytooltip .mytooltiptext {
-    background: #000000;
+    background: #171515;
     color: #e0e0e0;
-    border: 2px solid #DD0000;
-    outline: 2px solid #FFCE00;
+    border: 2px solid #c00000;
+    outline: 2px solid #D3C24D;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 .tab_button:hover {
