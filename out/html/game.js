@@ -424,6 +424,7 @@
       tabButton.className += ' active';
       window.statusTab = newTab;
       window.updateSidebar();
+      window.updateNewsSidebar();
   };
 
   window.onDisplayContent = function() {
@@ -465,6 +466,7 @@
 
   window.justLoaded = true;
   window.statusTab = "status";
+  window.newsTab = "news";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
