@@ -344,6 +344,8 @@ Q.old_sapd_r = 0;
 
 // for changing the DDP's name to the DStP
 Q.ddp_name = "DDP";
+Q.ddp_full_name = "German Democratic Party";
+Q.ddp_full_name_german = "Deutsche Demokratische Partei";
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
