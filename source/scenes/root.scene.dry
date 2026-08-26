@@ -649,6 +649,7 @@ new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1919
+
 The Republic is barely three months old. Out of revolution, mutiny, and the Kaiser's abdication, we have built something never seen before in german history, a republic. We are currently one of the most democratic nations in Europe, but many are unhappy with this state of affairs.
 
 But the peace with the Allies has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's control.
