@@ -21,8 +21,8 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
-Q.year = 1928;
-Q.month = 1;
+Q.year = 1919;
+Q.month = 2;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -101,13 +101,13 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
-Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.spd_relation = 60;
-Q.dvp_relation = 60;
-// NSDAP is invariably hostile
-Q.DNVP_relation = 30;
-Q.NSDAP_relation = 0;
+Q.z_relation = 60;
+Q.kpd_relation = 5;
+Q.spd_relation = 65;
+Q.dvp_relation = 30;
+Q.uspd_relation = 20;
+Q.dnvp_relation = 15;
+Q.nsdap_relation = 0;
 
 Q.kpd_leader = "Thälmann";
 // alternative is the Conciliators as party leader
@@ -128,6 +128,12 @@ Q.sa_won_against_police_rb = 0;
 // ddp industrial backing, for cards and fundraising
 Q.ddp_industrial_backing = 1;
 
+// Zentrum BVP split variable for 1920
+Q.bvp_split = 0;
+
+// For Wirtschaftspartei founding in 1920
+Q.wp_founded = 0;
+
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
@@ -135,47 +141,46 @@ Q.prussian_government = "SPD";
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
-// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
-Q.rb_strength = 2000;
-Q.rb_militancy = 0.01;
+// Reichsbanner, stahlhelm, Freikorps, SA, rotfrontkämpferbund
+Q.rb_strength = 0;
+Q.rb_militancy = 0;
 Q.women_in_rb = 0;
 Q.rb_banned = 0;
-Q.sh_strength = 500;
-Q.sh_militancy = 0.5;
+Q.sh_strength = 250;
+Q.sh_militancy = 0.4;
 Q.sh_banned = 0;
 Q.sh_banned_prussia = 0;
-Q.sa_strength = 80;
-Q.sa_militancy = 0.5;
+Q.sa_strength = 0;
+Q.sa_militancy = 0;
 Q.sa_banned = 0;
 Q.sa_banned_prussia = 0;
-Q.rfb_strength = 130;
-Q.rfb_militancy = 0.5;
+Q.rfb_strength = 0;
+Q.rfb_militancy = 0;
 Q.rfb_banned = 0;
 Q.rfb_banned_prussia = 0;
+Q.freikorps_strength = 350;
+Q.freikorps_militancy = 0.6;
+Q.freikorps_loyalty = 0.3;
 
-Q.interior_police_strength = 50;
+Q.interior_police_strength = 40;
 Q.interior_police_militancy = 1;
-Q.interior_police_loyalty = 0.45;
+Q.interior_police_loyalty = 0.4;
 
-Q.prussian_police_strength = 90;
+Q.prussian_police_strength = 50;
 Q.prussian_police_militancy = 1;
-Q.prussian_police_loyalty = 0.5;
+Q.prussian_police_loyalty = 0.45;
 
-// strength includes actual military and de facto reserves?
-Q.reichswehr_strength = 100;
-Q.reichswehr_militancy = 5;
-Q.reichswehr_loyalty = 0.2;
+Q.reichswehr_strength = 0;
+Q.reichswehr_militancy = 0;
+Q.reichswehr_loyalty = 0.3;
 
 // The state of the country
 
 // popular opinion
 // national ideology - on a binary scale
-// nationalism vs internationalism or pacifism or non-nationalism
-Q.nationalism = 60;
-// socialism vs capitalism
-Q.socialism = 40;
-// pro-republic vs anti-republic
-Q.pro_republic = 59;
+Q.nationalism = 55;
+Q.socialism = 45;
+Q.pro_republic = 65;
 
 Q.emergency_rule = 0;
 
@@ -197,9 +202,9 @@ Q.nsdap_banned = 0;
 Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
 
-Q.budget = 4;
+Q.budget = 3;
 
-// Proportion of different social groups
+// Proportion of different social groups (Pre-hyperinflation groups for 1919)
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
 Q.workers = 48; // industry and trade
 Q.old_middle = 13; // "old mittelstand"
@@ -207,20 +212,20 @@ Q.old_middle = 13; // "old mittelstand"
 Q.new_middle = 14; // "new mittelstand"
 Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
-Q.unemployed = 8.6;
+Q.unemployed = 4;
 Q.catholics = 30;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
 // income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
-Q.income = 1600;
+Q.income = 2000;
 // what about incomes for different classes? rural workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
-Q.inflation = 2.9;
+Q.inflation = 8;
 
-// economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
-Q.economic_growth = 4.4;
+// economic growth - same source as above, Table 2 (preisbereinigt) - 1919
+Q.economic_growth = -8;
 
 // economic expansion timer
 Q.economic_expansion = 0;
@@ -233,7 +238,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties = ['spd', 'kpd', 'uspd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
 // TODO: add rdp later
 Q.sapd_formed = 0;
@@ -241,59 +246,66 @@ Q.rdp_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 60;
-Q.workers_kpd = 20;
+// Support for party by social group
+Q.workers_spd = 45;
+Q.workers_kpd = 0;
+Q.workers_uspd = 15;
 Q.workers_z = 5;
-Q.workers_ddp = 0;
+Q.workers_ddp = 3;
 Q.workers_dvp = 0;
 Q.workers_dnvp = 5;
 Q.workers_nsdap = 0;
-Q.workers_other = 10;
+Q.workers_other = 5;
 
 Q.old_middle_spd = 5;
 Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
+Q.old_middle_uspd = 2;
+Q.old_middle_z = 8;
+Q.old_middle_ddp = 20;
+Q.old_middle_dvp = 15;
 Q.old_middle_dnvp = 25;
-Q.old_middle_nsdap = 10;
-Q.old_middle_other = 10;
+Q.old_middle_nsdap = 0;
+Q.old_middle_other = 5;
 
 Q.new_middle_spd = 5;
-Q.new_middle_kpd = 1;
-Q.new_middle_z = 10;
-Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
+Q.new_middle_kpd = 0;
+Q.new_middle_uspd = 3;
+Q.new_middle_z = 8;
+Q.new_middle_ddp = 40;
+Q.new_middle_dvp = 15;
 Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 5;
-Q.new_middle_other = 15;
+Q.new_middle_nsdap = 0;
+Q.new_middle_other = 4;
 
-Q.rural_spd = 10;
+Q.rural_spd = 8;
 Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
-Q.rural_nsdap = 5;
-Q.rural_other = 10;
+Q.rural_uspd = 2;
+Q.rural_z = 20;
+Q.rural_ddp = 10;
+Q.rural_dvp = 10;
+Q.rural_dnvp = 40;
+Q.rural_nsdap = 0;
+Q.rural_other = 5;
 
 Q.unemployed_spd = 25;
-Q.unemployed_kpd = 55;
-Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
+Q.unemployed_kpd = 0;
+Q.unemployed_uspd = 25;
+Q.unemployed_z = 2;
+Q.unemployed_ddp = 2;
 Q.unemployed_dvp = 0;
 Q.unemployed_dnvp = 5;
-Q.unemployed_nsdap = 15;
-Q.unemployed_other = 9;
+Q.unemployed_nsdap = 0;
+Q.unemployed_other = 5;
 
-Q.catholics_spd = 15;
-Q.catholics_kpd = 2;
-Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
+Q.catholics_spd = 10;
+Q.catholics_kpd = 0;
+Q.catholics_uspd = 3;
+Q.catholics_z = 65;
+Q.catholics_ddp = 3;
+Q.catholics_dvp = 3;
+Q.catholics_dnvp = 3;
 Q.catholics_nsdap = 0;
-Q.catholics_other = 12;
+Q.catholics_other = 3;
 
 
 // Current Reichstag composition
@@ -302,24 +314,27 @@ Q.catholics_other = 12;
 // note: the Z figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
-Q.spd_r = 26;
-Q.kpd_r = 9;
-Q.z_r = 17;
-Q.ddp_r = 6;
-Q.dvp_r = 10;
-Q.dnvp_r = 20;
-Q.nsdap_r = 3;
-Q.other_r = 9;
+Q.spd_r = 38;
+Q.kpd_r = 0;
+Q.uspd_r = 8;
+Q.z_r = 20;
+Q.ddp_r = 19;
+Q.dvp_r = 4;
+Q.dnvp_r = 10;
+Q.nsdap_r = 0;
+Q.other_r = 1;
+
 
 // diff from prev
-Q.old_spd_r = 26;
-Q.old_kpd_r = 9;
-Q.old_z_r = 17;
-Q.old_ddp_r = 6;
-Q.old_dvp_r = 10;
-Q.old_dnvp_r = 20;
-Q.old_nsdap_r = 3;
-Q.old_other_r = 9;
+Q.old_spd_r = 38;
+Q.old_kpd_r = 0;
+Q.old_uspd_r = 8;
+Q.old_z_r = 20;
+Q.old_ddp_r = 19;
+Q.old_dvp_r = 4;
+Q.old_dnvp_r = 10;
+Q.old_nsdap_r = 0;
+Q.old_other_r = 1;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
@@ -335,17 +350,16 @@ Q.party_support_records = [];
 // inflation and unemployment records
 Q.economic_records = [];
 
-
-// State of the government
-Q.president = "Hindenburg";
-// starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
-Q.chancellor_party = 'Z';
-Q.spd_in_government = 0;
+// State of the government (1919) for Scheidemann cabinet
+Q.president = "Ebert";
+Q.chancellor = "Scheidemann";
+Q.chancellor_party = 'SPD';
+Q.spd_in_government = 1;
 Q.z_in_government = 1;
-Q.ddp_in_government = 0;
-Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
+Q.ddp_in_government = 1;
+Q.dvp_in_government = 0;
+Q.dnvp_in_government = 0;
+Q.uspd_in_government = 0;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
@@ -379,33 +393,41 @@ Q.ddp_toleration = 0;
 Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
-// starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
+// starting with the 1919 cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Streseman';
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'DNVP';
-Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'DNVP';
-Q.labor_minister = 'Brauns';
-Q.labor_minister_party = 'Z';
-Q.reichswehr_minister = 'Groener';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DVP';
-Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'Z';
-Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'DNVP';
+Q.foreign_minister = 'Brockdorff-Rantzau';
+Q.foreign_minister_party = 'DDP';
+Q.interior_minister = 'Preusz';
+Q.interior_minister_party = 'DDP';
+Q.justice_minister = 'Landsberg';
+Q.justice_minister_party = 'SPD';
+Q.labor_minister = 'Bauer';
+Q.labor_minister_party = 'SPD';
+Q.reichswehr_minister = 'Noske';
+Q.reichswehr_minister_party = 'SPD';
+Q.economic_minister = 'Wissell';
+Q.economic_minister_party = 'SPD';
+Q.finance_minister = 'Schiffer';
+Q.finance_minister_party = 'DDP';
+Q.agriculture_minister = 'Preusz';
+Q.agriculture_minister_party = 'SPD';
+
+// had to butcher breusz' name
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
 Q.panzerkreuzer_funded = 0;
 Q.panzerkreuzer_failed = 0;
 Q.unemployment_insurance_seen = 0;
-// unemployment insurance event is seen if the unemployment level is at least 4 more than the threshold...
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
+Q.versailles_vote_seen = 0;
+Q.constitution_ratified = 0;
+Q.kapp_putsch_seen = 0;
+Q.rathenau_assassinated = 0;
+Q.hyperinflation_started = 0;
+Q.socialization_debate_seen = 0;
+Q.eight_hour_day_seen = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
@@ -540,36 +562,34 @@ Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 // Sammlung advisors
-Q.koch_weser_advisor = 1; // Erich Koch-Weser 
-Q.gessler_advisor = 0;    // Otto Geßler 
-Q.kulz_advisor = 0;       // Wilhelm Külz 
-Q.maier_advisor = 0;      // Reinhold Maier 
+Q.koch_weser_advisor = 1; // Erich Koch-Weser
+Q.gessler_advisor = 0;
+Q.kulz_advisor = 0;
+Q.maier_advisor = 0;
 
 // Linksliberale advisors
 Q.heuss_advisor = 1;      // Theodor Heuss
-Q.baeumer_advisor = 0;    // Gertrud Bäumer
-Q.erkelenz_advisor = 0;   // Anton Erkelenz
-Q.luders_advisor = 0;     // Marie-Elisabeth Lüders 
-Q.bernhard_advisor = 0;   // Georg Bernhard 
-Q.lemmer_advisor = 0;     // Ernst Lemmer 
+Q.baeumer_advisor = 0;
+Q.erkelenz_advisor = 0;
+Q.luders_advisor = 0;
+Q.bernhard_advisor = 0;
+Q.lemmer_advisor = 0;
 
 // Nationalliberale advisors
-Q.dietrich_advisor = 1;   // Hermann Dietrich 
-Q.meyer_advisor = 0;      // Oscar Meyer 
-Q.hopker_aschoff_advisor = 0; // Hermann Höpker-Aschoff 
-Q.stolper_advisor = 0;    // Gustav Stolper 
+Q.dietrich_advisor = 0;   // not yet nationally prominent in 1919
+Q.meyer_advisor = 1;      // Oscar Meyer
+Q.hopker_aschoff_advisor = 0;
+Q.stolper_advisor = 0;
 
 // Pazifisten advisors
-Q.quidde_advisor = 0;     // Ludwig Quidde 
+Q.quidde_advisor = 0;
 
 // Republikschützer advisors (locked until faction discovered)
-Q.luth_advisor = 0;       // Erich Lüth 
+Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
-Q.abegg_advisor = 0;      // Wilhelm Abegg
-
-!}
-set-bg: img/map_2.jpg
+Q.abegg_advisor = 0;
+set-bg: img/background.jpg
 new-page: true
 
 > *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined largely by the sentiments of the people as a whole. It would be erroneous, however, to regard the sentiments of the moment as reflecting the natural make-up and character of the people. They are merely the consequence of the special circumstances which have brought about this profound degradation of the entire nation."*
@@ -580,48 +600,46 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1928_easy: Begin (easy difficulty)
-- @1928_main: Begin (normal difficulty)
-- @1928_hard: Begin (hard difficulty)
-- @1928_historical: Begin (historical mode)
+- @1919_easy: Begin (easy difficulty)
+- @1919_main: Begin (normal difficulty)
+- @1919_hard: Begin (hard difficulty)
+- @1919_historical: Begin (historical mode)
 
-@1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; budget = 5;
-go-to: 1928_main
+@1919_easy
+on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_relation = 8; z_relation = 65; spd_relation = 70; budget = 4;
+go-to: 1919_main
 
-@1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; wirtschaftsflugel_dissent = 45; sammlung_dissent = 30; linksliberale_dissent = 25; pazifisten_dissent = 40; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
-go-to: 1928_main
+@1919_hard
+on-arrival: difficulty = 1; resources = 0; dues = 1; freikorps_strength = 500; nationalliberale_dissent = 10; sammlung_dissent = 6; linksliberale_dissent = 8; pazifisten_dissent = 10; z_relation = 50; spd_relation = 55; dvp_relation = 20; budget = 2;
+go-to: 1919_main
 
-@1928_historical
+@1919_historical
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
 on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
-Q.rb_strength = 2000;
-Q.wirtschaftsflugel_dissent = 45;
-Q.sammlung_dissent = 30;
-Q.linksliberale_dissent = 25;
-Q.pazifisten_dissent = 40;
-Q.z_relation = 41;
-Q.kpd_relation = 16;
-Q.dvp_relation = 31;
+Q.freikorps_strength = 400;
+Q.nationalliberale_dissent = 10;
+Q.sammlung_dissent = 6;
+Q.linksliberale_dissent = 8;
+Q.pazifisten_dissent = 10;
+Q.z_relation = 50;
+Q.spd_relation = 55;
+Q.dvp_relation = 20;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
-go-to: 1928_main
+go-to: 1919_main
 
-@1928_main
+@1919_main
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1928
+= 1919
+The Republic is barely three months old. Out of revolution, mutiny, and the Kaiser's abdication, we have built something never seen before in german history, a republic. We are currently one of the three founding parties part of the Weimar Coalition of the SPD, the Centre, and ourselves.
 
-It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
-
-Now, the task of Social Liberalism is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, but we stand to lose votes, continuing the previous trend, But perhaps we can use the time we have left to turn that around?
-
+But the peace with the Allies has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's firm control. Now, the task of social liberalism is to draft a constitution, make peace with the entente and rebuild the economy.
 
