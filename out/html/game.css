@@ -251,6 +251,57 @@ blockquote + blockquote.attribution {
 .tab_button.active {
     background-color: var(--content-bg-color);
 }
+.mytooltip {
+  position: relative;
+  cursor: pointer;
+  /* tooltips from originalname/Dynamic Dev, edited by Communist45*/
+  background-color: transparent;
+  padding: 2px 1px;
+}
+.mytooltip:hover { background-color: rgb(100, 140, 220); }
+
+.mytooltip .mytooltiptext {
+  position: fixed;
+  z-index: 999999;
+  width: 130px;
+  background: #ebe1e1;
+  color: #3b1f0a;
+  text-align: left;
+  border-radius: 8px;
+  padding: 12px 14px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  border: 2px solid #CD212A;
+  outline: 2px solid #008C45;
+  pointer-events: none;
+  font-size: 14px !important;
+  line-height: 1.5em !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: translateY(5px);
+  text-align: center;
+}
+.mytooltip:hover .mytooltiptext { opacity: 1; }
+.mytooltip .mytooltiptext img { display: block; margin: 0 auto 4px auto; max-width: 90%; height: auto; }
+
+.mytooltip .mytooltiptext {
+  bottom: auto;
+  top: calc(var(--mouse-y, 0px) - 20px);
+  left: calc(var(--mouse-x, 0px));
+  transform: translate(-50%, -100%);
+}
+
+body.dark-mode .mytooltip:hover {
+    background-color: rgb(60, 90, 160);
+}
+
+body.dark-mode .mytooltip .mytooltiptext {
+    background: #151517;
+    color: #e0e0e0;
+    border: 2px solid #CD212A;
+    outline: 2px solid #008C45;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
 .tab_button:hover {
     background-color: var(--tab-hover-color);
 }
@@ -591,4 +642,112 @@ table {
 .tooltip-text {
     text-decoration: underline;
     text-decoration-style: dotted;
+}
+
+.parliament-tooltip {
+    position: absolute;
+    z-index: 999999;
+    width: 120px;
+    background: #ebe1e1;
+    color: #3b1f0a;
+  /*parliament tooltip code based/from road to ithaca*/
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px 14px;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    border: 1px solid #CD212A;
+    outline: 1px solid #008C45;
+    pointer-events: none;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.parliament-tooltip.visible {
+    opacity: 1;
+}
+.parliament-tooltip img {
+    display: block;
+    margin: 0 auto 4px auto;
+    max-width: 90%;
+    height: auto;
+}
+.seat.party-nothovered {
+    opacity: 0.3;
+}
+body.dark-mode .parliament-tooltip {
+    background: #151517;
+    color: #e0e0e0;
+    border-color: #8093ff;
+    border: 1px solid #2235b2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.wide_tooltip-text {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.wide_tooltip-wrap {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  cursor: help;
+}
+.wide_tooltip-tip {
+  position: absolute;
+  z-index: 999999;
+  width: 200px;
+  max-width: 220px;
+
+  left: 0;
+  bottom: calc(100% + 10px); 
+  transform: none; 
+
+  padding: 0.6em;
+  font-size: 0.85em;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #d8ddef;
+  color: #3b1f0a;
+  border: 2px solid #CD212A;
+  outline: 2px solid #008C45;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.wide_tooltip-wrap:hover .wide_tooltip-tip,
+.wide_tooltip-wrap:focus .wide_tooltip-tip {
+  visibility: visible;
+  opacity: 1;
+}
+.wide_tooltip-tip img {
+  width: 100%;
+  display: block;
+  margin: 0 auto 6px auto;
+  border: 1px solid #DDD;
+}
+body.dark-mode .wide_tooltip-tip {
+  background-color: #151517;
+  color: #e0e0e0;
+  border: 2px solid #CD212A;
+  outline: 2px solid #008C45;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+body.dark-mode .wide_tooltip-tip img {
+  border-color: #555; 
+}
+body.dark-mode .wide_tooltip-tip::after {
+  border: 2px solid #CD212A transparent transparent transparent;
+  outline: 2px solid #008C45 transparent transparent transparent;
+}
+body.dark-mode .wide_tooltip-tip::before {
+  border: 2px solid #CD212A transparent transparent transparent;
+  outline: 2px solid #008C45 transparent transparent transparent;
+}
+.wide_tooltip-wrap.drop-down .wide_tooltip-tip {
+  bottom: auto;
+  top: calc(100% + 10px);
 }
