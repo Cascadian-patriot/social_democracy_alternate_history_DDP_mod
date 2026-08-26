@@ -169,7 +169,172 @@
       window.dendryUI.dark_mode = true;
       document.body.classList.add('dark-mode');
       window.dendryUI.saveSettings();
-  };
+ }
+   // * TOOLTIP IS MADE BY COMMUNIST 45 AND DYNAMIC DEV; DONT TAKE THIS, THIS IS NOT MINE. * //
+   window.displayText = function (text) {
+        return applyWholesome(text);
+    };
+
+    //To get a value 
+    function getRelationshipText(value) {
+        if (value === undefined || value === null) return '';
+        if (value <= 5) return '<span style="color: #FF0000;">Hostile</span>';
+        if (value <= 14.9) return '<span style="color: #FF4500;">Frigid</span>';
+        if (value <= 29.9) return '<span style="color: #FF8C00;">Cold</span>';
+        if (value <= 39.9) return '<span style="color: #FFA500;">Cool</span>';
+        if (value <= 54.9) return '<span style="color: #FFD700;">Neutral</span>';
+        if (value <= 64.9) return '<span style="color: #9ACD32;">Warm</span>';
+        if (value <= 74.9) return '<span style="color: #32CD32;">Friendly</span>';
+        return '<span style="color: #008000;">Very friendly</span>';
+    }
+
+    function getSizeText(value) {
+        if (value === undefined || value === null) return '';
+        if (value <= 20) return '<span style="color: #6B7280;">Minimal</span>';
+        if (value <= 40) return '<span style="color: #8B6F47;">Weak</span>';
+        if (value <= 60) return '<span style="color: #556B2F;">Moderate</span>';
+        if (value <= 80) return '<span style="color: #7A0000;">Strong</span>';
+        return '<span style="color: #2B0000;">Very Strong</span>';
+    }
+
+    function getMilitancyText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value <= 0.05) return '<span style="color: #008000;">Nonexistent</span>';
+        if (value <= 0.14) return '<span style="color: #32CD32;">Very low</span>';
+        if (value <= 0.24) return '<span style="color: #9ACD32;">Low</span>';
+        if (value <= 0.44) return '<span style="color: #FFD700;">Medium-low</span>';
+        if (value <= 0.69) return '<span style="color: #FFA500;">Medium</span>';
+        if (value <= 1) return '<span style="color: #FF4500;">High</span>';
+        return '<span style="color: #FF0000;">Very high</span>';
+    }
+
+    function getLoyaltyText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value <= 0.06) return '<span style="color: #FF0000;">Completely disloyal</span>';
+        if (value <= 0.19) return '<span style="color: #FF4500;">Very disloyal</span>';
+        if (value <= 0.31) return '<span style="color: #FF8C00;">Generally disloyal</span>';
+        if (value <= 0.41) return '<span style="color: #FFA500;">Mostly disloyal</span>';
+        if (value <= 0.54) return '<span style="color: #FFD700;">Divided</span>';
+        if (value <= 0.71) return '<span style="color: #9ACD32;">Mostly loyal</span>';
+        if (value <= 0.95) return '<span style="color: #32CD32;">Generally loyal</span>';
+        return '<span style="color: #008000;">Completely loyal</span>';
+    }
+
+    function getStrenghtText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value < 10) return '<span style="color: #ADD8E6;">Weak</span>';
+        if (value < 25) return '<span style="color: #6495ED;">Moderate</span>';
+        if (value < 40) return '<span style="color: #4169E1;">Strong</span>';
+        if (value < 60) return '<span style="color: #0000CD;">Very strong</span>';
+        return '<span style="color: #00008B;">Dominant</span>';
+    }
+
+    function getDissentText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value < 4.999) return '<span style="color: #008000;">Very low</span>';
+        if (value < 14.999) return '<span style="color: #9ACD32;">Low</span>';
+        if (value < 30.999) return '<span style="color: #FFD700;">Medium</span>';
+        if (value < 49.999) return '<span style="color: #FF4500;">High</span>';
+        return '<span style="color: #FF0000;">Very high</span>';
+    }
+
+    //To check if extra dynamic or not
+    function getDynamicTooltipContent(searchString, baseTooltip) {
+        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state ? 
+                window.dendryUI.dendryEngine.state.qualities : null;
+
+        if (!Q) return baseTooltip.explanationText;
+
+       if (searchString === 'KPD' && Q.kpd_relation !== undefined) {
+            var relationText = getRelationshipText(Q.kpd_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+      
+       if (searchString === 'SPD' && Q.spd_relation !== undefined) {
+            var relationText = getRelationshipText(Q.spd_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+            
+       if (searchString === 'DDP'){
+            return baseTooltip.explanationText 
+        }
+        
+       if (searchString === 'DVP' && Q.dvp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dvp_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+          
+       if (searchString === 'Z' && Q.z_relation !== undefined) {
+            var relationText = getRelationshipText(Q.z_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+            
+       if (searchString === 'BVP' && Q.z_relation !== undefined) {
+            var relationText = getRelationshipText(Q.z_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+              
+       if (searchString === 'DNVP' && Q.dnvp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dnvp_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+                
+       if (searchString === 'NSDAP' && Q.nsdap_relation !== undefined) {
+            var relationText = getRelationshipText(Q.nsdap_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+                  
+       if (searchString === 'Others'){
+            return baseTooltip.explanationText 
+        }
+      
+    return baseTooltip.explanationText;
+
+    }
+
+    window.getDynamicTooltipContent = getDynamicTooltipContent;
+
+    function applyWholesome(str) {
+        const allWords = new Set([
+            ...tooltipList.map(t => t.searchString),
+            ...colourList.map(c => c.word)
+        ]);
+
+        // Escape special regex characters in the words
+        const escapedWords = [...allWords].map(word => 
+            word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        );
+
+        //fix for longer words not showing up if they contained smaller entry words inside of them
+        escapedWords.sort((a, b) => b.length - a.length);
+
+        const regex = new RegExp(`\\b(${escapedWords.join('|')})\\b`, 'g');
+
+        return str.replace(/(<(?:span|strong)[^>]*>.*?<\/(?:span|strong)>|<[^>]+>|[^<]+)/g, (segment) => {
+            if (segment.startsWith('<')) return segment;
+
+            return segment.replace(regex, (match) => {
+                const tooltip = tooltipList.find(t => t.searchString === match);
+                const colour = colourList.find(c => c.word === match);
+
+                let style = colour ? colour.style : '';
+                let innerText = match;
+
+                if (colour && colour.img) {
+                    innerText = `<img src="${colour.img}" class="p_icon" alt="">${innerText}`;
+                }
+
+                if (tooltip) {
+                    var tooltipContent = getDynamicTooltipContent(match, tooltip);
+                    return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
+                } else if (colour) {
+                    return `<span style='${style}'>${innerText}</span>`;
+                }
+
+                return match;
+            });
+        });
+    }
 
   // populates the checkboxes in the options view
   window.populateOptions = function() {
@@ -202,13 +367,6 @@
     } else {
         $('#light_mode')[0].checked = true;
     }
-  };
-
-  
-  // This function allows you to modify the text before it's displayed.
-  // E.g. wrapping chat-like messages in spans.
-  window.displayText = function(text) {
-      return text;
   };
 
   // This function allows you to do something in response to signals.
