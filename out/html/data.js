@@ -72,7 +72,7 @@ const tooltipList = [{
     },
     {
     searchString: "DNVP",
-    explanationText: "<img src=img/dnvp-Photoroom-removebg-preview (1).png> Deutschnationale Volkspartei </br></br> German National People's Party"
+    explanationText: "<img src=img/dnvp_good_one.png> Deutschnationale Volkspartei </br></br> German National People's Party"
     },
     {
     searchString: "NSDAP",
