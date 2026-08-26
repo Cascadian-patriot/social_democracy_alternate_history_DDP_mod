@@ -47,8 +47,12 @@ const tooltipList = [{
     explanationText: "<img src=img/kpd(2).svg> Kommunistische Partei Deutschlands </br></br> Communist Party Of Germany"
     },
     {
-    searchString: "[+ ddp_name +]",
-    explanationText: "<img src=img/ddp2.svg> [+ ddp_full_name +] </br></br> [+ ddp_full_name_german +]"
+    searchString: "DDP",
+    explanationText: "<img src=img/ddp2.svg> [+ ddp_full_name_german +] </br></br> [+ ddp_full_name +]"
+    },
+    {
+    searchString: "DStP",
+    explanationText: "<img src=img/ddp2.svg> [+ ddp_full_name_german +] </br></br> [+ ddp_full_name +]"
     },
     {
     searchString: "SPD",
