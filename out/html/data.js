@@ -19,6 +19,10 @@ const colourList = [{
         style: "color: #69A2BE; font-weight: bold;"
    },
     {
+        word: "DVP",
+        style: "color: #D5AC27; font-weight: bold;"
+   },
+    {
         word: "DNVP",
         style: "color: #3F7BC1; font-weight: bold;"
    },
@@ -43,12 +47,12 @@ const tooltipList = [{
     explanationText: "<img src=img/kpd(2).svg> Kommunistische Partei Deutschlands </br></br> Communist Party Of Germany"
     },
     {
-    searchString: "PSI",
-    explanationText: "<img src=img/psi-Photoroom-removebg-preview.png> Partito Socialista Italiano </br></br> Italian Socialist Party"
+    searchString: "Q.ddp_name",
+    explanationText: "<img src=img/ddp2.svg> [+ ddp_full_name +] </br></br> [+ ddp_full_name_german +]"
     },
     {
     searchString: "SPD",
-    explanationText: "<img src=img/spd-Photoroom.png> Sozialdemokratische Partei Deutschlands </br> Social Democratic Party Of Germany"
+    explanationText: "<img src=img/spd(2).png> Sozialdemokratische Partei Deutschlands </br></br> Social Democratic Party Of Germany"
     },
     {
     searchString: "Communist",
