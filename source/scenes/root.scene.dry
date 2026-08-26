@@ -612,19 +612,15 @@ For more information on the politics and government of the German Republic, see 
 - @1919_historical: Begin (historical mode)
 
 @1919_easy
-
 on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_relation = 8; z_relation = 65; spd_relation = 70; budget = 4;
 go-to: 1919_main
 
 @1919_hard
-
 on-arrival: difficulty = 1; resources = 0; dues = 1; freikorps_strength = 500; nationalliberale_dissent = 10; sammlung_dissent = 6; linksliberale_dissent = 8; pazifisten_dissent = 10; z_relation = 50; spd_relation = 45; dvp_relation = 20; budget = 1;
 go-to: 1919_main
 
 @1919_historical
-
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
-
 on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
@@ -639,20 +635,14 @@ Q.z_relation = 50;
 Q.spd_relation = 55;
 Q.dvp_relation = 20;
 Q.budget = 2;
-
 this.state.disableSaves = true;
 !}
 
 go-to: 1919_main
 
 @1919_main
-
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DER_GUTE_KAMERAD_Trimmed.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1919
-
-The Republic is barely three months old. Out of revolution, mutiny, and the Kaiser's abdication, we have built something never seen before in german history, a republic. We are currently one of the three founding parties part of the Weimar Coalition of the SPD, the Centre, and ourselves.
-
-But the peace with the Allies has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's firm control. Now, the task of social liberalism is to draft a constitution, make peace with the entente and rebuild the economy.
+= **1919**
