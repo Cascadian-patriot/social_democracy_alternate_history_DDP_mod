@@ -428,6 +428,7 @@ Q.rathenau_assassinated = 0;
 Q.hyperinflation_started = 0;
 Q.socialization_debate_seen = 0;
 Q.eight_hour_day_seen = 0;
+Q.erzberger_assasinated = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
