@@ -231,7 +231,7 @@ blockquote + blockquote.attribution {
   font-weight: normal;
 }
 
-/* news sidebar (right-hand "newspaper" column) */
+/* news sidebar (right-hand "newspaper" column), thanks to Irridalyst for this. */
 #news {
   text-indent: 0;
   line-height: 1.3em;
@@ -525,7 +525,7 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   object-fit: cover;
 }
 
-/* Leader/party-head portrait card, shown above the Decks section */
+/* Leader/party-head portrait card, shown above the Decks section, credit to Irridalyst */
 .leader-card {
   text-align: center;
   padding: 1em 1.2em 1.5em 1.2em;
