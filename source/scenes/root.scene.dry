@@ -197,7 +197,7 @@ Q.constitutional_protection = 0;
 Q.kpd_banned = 0;
 Q.nsdap_banned = 0;
 
-// coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
+// coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffi[...]
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
 Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
@@ -217,11 +217,11 @@ Q.catholics = 30;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
-// income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
+// income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=ui[...]
 Q.income = 2000;
 // what about incomes for different classes? rural workers? middle-class workers?
 
-// inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
+// inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WI[...]
 Q.inflation = 8;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - 1919
@@ -590,16 +590,18 @@ Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
 Q.abegg_advisor = 0;
+!}
+
 set-bg: img/background.jpg
 new-page: true
 
-> *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined largely by the sentiments of the people as a whole. It would be erroneous, however, to regard the sentiments of the moment as reflecting the natural make-up and character of the people. They are merely the consequence of the special circumstances which have brought about this profound degradation of the entire nation."*
+> *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined by the conditions in which they operate."*
 
  - Karl Kautsky, *Hitlerism and Social Democracy*, 1934
 
-This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
+This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve simplifications and speculation.
 
-For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read the overview.
 
 - @1919_easy: Begin (easy difficulty)
 - @1919_main: Begin (normal difficulty)
@@ -613,7 +615,7 @@ go-to: 1919_main
 
 @1919_hard
 
-on-arrival: difficulty = 1; resources = 0; dues = 1; freikorps_strength = 500; nationalliberale_dissent = 10; sammlung_dissent = 6; linksliberale_dissent = 8; pazifisten_dissent = 10; z_relation = 50; spd_relation = 55; dvp_relation = 20; budget = 2;
+on-arrival: difficulty = 1; resources = 0; dues = 1; freikorps_strength = 500; nationalliberale_dissent = 10; sammlung_dissent = 6; linksliberale_dissent = 8; pazifisten_dissent = 10; z_relation = 50; spd_relation = 45; dvp_relation = 20; budget = 1;
 go-to: 1919_main
 
 @1919_historical
@@ -642,12 +644,11 @@ go-to: 1919_main
 
 @1919_main
 
-audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
+audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DER_GUTE_KAMERAD_Trimmed.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1919
-The Republic is barely three months old. Out of revolution, mutiny, and the Kaiser's abdication, we have built something never seen before in german history, a republic. We are currently one of the three founding parties part of the Weimar Coalition of the SPD, the Centre, and ourselves.
+The Republic is barely three months old. Out of revolution, mutiny, and the Kaiser's abdication, we have built something never seen before in german history, a republic. We are currently one of the most democratic nations in Europe, but many are unhappy with this state of affairs.
 
-But the peace with the Allies has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's firm control. Now, the task of social liberalism is to draft a constitution, make peace with the entente and rebuild the economy.
-
+But the peace with the Allies has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's control.
