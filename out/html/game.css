@@ -231,6 +231,50 @@ blockquote + blockquote.attribution {
   font-weight: normal;
 }
 
+/* news sidebar (right-hand "newspaper" column) */
+#news {
+  text-indent: 0;
+  line-height: 1.3em;
+  font-size: 0.95em;
+  text-align: left;
+  background-color: var(--content-bg-color);
+  padding: 1.5em 1.2em;
+}
+#news p {
+  text-indent: 0;
+  text-align: left;
+}
+#news h1 {
+  font-family: "Minion Pro", Georgia, serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.3em;
+  margin: 0 0 0.75em 0;
+  color: var(--text-color);
+}
+#news strong {
+  color: inherit;
+}
+
+.news-masthead {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 0.75em auto;
+  height: auto;
+}
+
+.news-emblem {
+  display: block;
+  width: 40px;
+  max-width: 40px;
+  height: auto;
+  margin: 1em auto 0 auto;
+}
+
 
 /* tabs */
 .tab_container {
@@ -381,42 +425,35 @@ ul.decks, ul.hand, ul.pinned-cards {
   padding-left: 0;
 }
 
-.hand {
-
-}
-
-.pinned-cards {
-
-}
-
-.deck {
-
-}
-
 a.card {
   display: inline-block;
   width: 120px;
   height: 150px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  border: 10px solid var(--card-border-color);
+  border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
   position: relative;
+  transition: transform 1s, filter 1s
 }
+
 a.card:hover {
+   z-index: 999;
+  filter: brightness(105%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  left: -5px;
-  top: -5px;
+  transform: translate(-5px,-5px)
 }
+
 div.blank-card {
   display: inline-block;
   width: 120px;
   height: 150px;
   background-color: var(--card-bg-color);
-  border: 10px solid var(--card-border-color);
+  border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
 }
 
 .card-in-hand, .pinned-card, .deck {
+  padding: 0.3em;
   display: inline-block;
   position: relative;
   max-width: 150px;
@@ -434,22 +471,31 @@ div.blank-card {
 .card-caption {
   text-align: center;
   display: block;
-  font-size: 1em;
+  font-size: 0.95em;
+  -webkit-text-stroke: 0.15px #685a3f;
+  color: #685a3f;
 }
 
+.dark-mode .card-caption {
+  color: #ffffff;
+  -webkit-text-stroke: 0.15px #ffffff;
+}
+/* 
 .card-tooltip {
   position: absolute;
   visibility: hidden;
   width: 150px;
   max-width: 200px;
   font-size: 0.9em;
+  border-radius: 8px;
   z-index: 2;
   padding: 0.2em;
   border: 1px solid var(--border-color);
   background-color: var(--content-bg-color);
   left: 105%;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
-
+*/
 .card-img {
   height: 150px;
   width: 120px;
@@ -457,7 +503,7 @@ div.blank-card {
 }
 
 a.card:focus .card-tooltip, a.card:hover .card-tooltip {
-  visibility: visible;
+  visibility: hidden;
   position: absolute;
 }
 
@@ -477,6 +523,44 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   /*max-width: 150px;*/
   vertical-align: bottom;
   object-fit: cover;
+}
+
+/* Leader/party-head portrait card, shown above the Decks section */
+.leader-card {
+  text-align: center;
+  padding: 1em 1.2em 1.5em 1.2em;
+  margin-bottom: 1em;
+  background-color: var(--content-bg-color);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  clear: both;
+}
+.leader-card .leader-party {
+  font-size: 1.3em;
+  font-weight: normal;
+  margin: 0 0 0.75em 0;
+  padding-bottom: 0.75em;
+  border-bottom: 1px solid var(--border-color);
+}
+.leader-card .leader-abbr {
+  font-weight: bold;
+  color: #D40000;
+}
+.leader-card .leader-portrait {
+  display: block;
+  margin: 0 auto 0.5em auto;
+  width: 170px;
+  height: 210px;
+  object-fit: cover;
+  border: 5px solid var(--card-border-color);
+}
+.leader-card .leader-name {
+  font-weight: bold;
+  margin: 0;
+}
+.leader-card .leader-role {
+  color: var(--unavailable-color);
+  font-style: italic;
+  margin: 0;
 }
 
 /*
