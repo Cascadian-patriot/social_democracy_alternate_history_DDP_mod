@@ -48,58 +48,42 @@ const tooltipList = [{
     },
     {
     searchString: "DDP",
-    explanationText: "<img src=img/ddp2.svg> [+ ddp_full_name_german +] </br></br> [+ ddp_full_name +]"
+    explanationText: "<img src=img/ddp2.svg> Deutsche Demokratische Partei </br></br> German Democratic Party"
     },
     {
     searchString: "DStP",
-    explanationText: "<img src=img/ddp2.svg> [+ ddp_full_name_german +] </br></br> [+ ddp_full_name +]"
+    explanationText: "<img src=img/ddp2.svg> Deutsche Staatspartei </br></br> German State Party"
     },
     {
     searchString: "SPD",
     explanationText: "<img src=img/spd(2).png> Sozialdemokratische Partei Deutschlands </br></br> Social Democratic Party Of Germany"
     },
     {
-    searchString: "Communist",
-    explanationText: "<img src=img/PreparingRevolution.jpg> The Communists are interested in radical, transformative policies and revolutionary action."
+    searchString: "Z",
+    explanationText: "<img src=img/zentrum.png> Zentrum </br></br> German Center Party"
     },
     {
-    searchString: "Maximalist",
-    explanationText: "<img src=img/ShuffleLeadership.jpg> The Maximalists are a faction mostly comprised of Center-Marxists, between reform and revolution."
+    searchString: "BVP",
+    explanationText: "<img src=img/bvp.jpeg> Bayerische Volkspartei </br></br> Bavarian People's Party"
     },
     {
-    searchString: "Labour",
-    explanationText: "<img src=img/TurinFactories.jpg> Labour's goal is economic reform and benefits for organized workers."
+    searchString: "DVP",
+    explanationText: "<img src=img/dvp2.webp> Deutsche Volkspartei </br></br> German People's Party"
     },
     {
-    searchString: "Reformist",
-    explanationText: "<img src=img/DemBg.jpg> Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy."
+    searchString: "DNVP",
+    explanationText: "<img src=img/dnvp.jpeg> Deutschnationale Volkspartei </br></br> German National People's Party"
     },
     {
-    searchString: "Syndicalist",
-    explanationText: "<img src=img/ItalianSyndicalistUnion.jpg> Syndicalist's are a splinter faction of Labour, advocating for radical strikes and workers' councils."
+    searchString: "NSDAP",
+    explanationText: "<img src=img/nsdap.webp> Nationalsozialistische Deutsche Arbeiterpartei </br></br> National Socialist German Worker's Party"
     },
     {
-    searchString: "PCd'I",
-    explanationText: "<img src=img/pcdi.webp> Partito Comunista Italiano </br></br> Italian Communist Party"
-    },
-    {
-    searchString: "pcdi",
-    explanationText: "<img src=img/pcdi.webp> Partito Comunista Italiano </br></br> Italian Communist Party"
-    },
-    {
-    searchString: "PSU",
-    explanationText: "<img src=img/psu.webp> Partito Socialista Unitario </br></br> Unitary Socialist Party"
+    searchString: "SAPD",
+    explanationText: "<img src=img/sapd.png> Sozialistische Arbeiterpartei Deutschlands </br></br> Socialist Workers' Party of Germany"
     },
     {
     searchString: "Others",
-    explanationText: "<img src=img/partismaller-Photoroom.png> Several smaller parties in the Italian political landscape."
-    },
-    {
-    searchString: "PLL",
-    explanationText: "<img src=img/pll_logo_2.png> Partito Liberale dei Lavoratori </br></br> Liberal Worker's Party"
-    },
-    {
-    searchString: "PRI",
-    explanationText: "<img src=img/pribetter.webp>  Partito Republicano Italiano </br></br> Italian Republican Party"
+    explanationText: "Several other parties in German politics."
     },
 ];
