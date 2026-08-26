@@ -1,0 +1,7 @@
+#Front page of the Party newspaper.
+
+    <img class="news-masthead" src="img/berliner_tageblatt-removebg-preview.png">
+
+ [? if year = 1918 and month = 12: Test News ?]
+
+    <img class="news-emblem" src="img/weimar_republic_icon.png">
