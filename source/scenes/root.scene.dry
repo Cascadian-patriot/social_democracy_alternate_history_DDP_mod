@@ -611,10 +611,6 @@ For more information on the politics and government of the German Republic, see 
 - @1919_hard: Begin (hard difficulty)
 - @1919_historical: Begin (historical mode)
 
-@1919_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_relation = 8; z_relation = 65; spd_relation = 70; budget = 4;
-go-to: 1919_main
-
 @1919_hard
 on-arrival: difficulty = 1; resources = 0; dues = 1; freikorps_strength = 500; nationalliberale_dissent = 10; sammlung_dissent = 6; linksliberale_dissent = 8; pazifisten_dissent = 10; z_relation = 50; spd_relation = 45; dvp_relation = 20; budget = 1;
 go-to: 1919_main
@@ -635,9 +631,13 @@ Q.z_relation = 50;
 Q.spd_relation = 55;
 Q.dvp_relation = 20;
 Q.budget = 2;
+
 this.state.disableSaves = true;
 !}
+go-to: 1919_main
 
+@1919_easy
+on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_relation = 8; z_relation = 65; spd_relation = 70; budget = 4;
 go-to: 1919_main
 
 @1919_main
