@@ -2,6 +2,6 @@
 
     <img class="news-masthead" src="img/berliner_tageblatt-removebg-preview.png">
 
- [? if year = 1918 and month = 12: Test News ?]
+ [? if year = 1918 and month = 12: fewafewafewaefwagrhewgagresahwgwghseawhrewaggehgwagewagewagegwa teste teste testestestestesteste ?]
 
     <img class="news-emblem" src="img/weimar_republic_icon.png">
