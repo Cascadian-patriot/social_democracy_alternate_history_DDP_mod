@@ -261,20 +261,18 @@ blockquote + blockquote.attribution {
   color: inherit;
 }
 
-.news-masthead {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto 0.75em auto;
-  height: auto;
+#news_sidebar .news-masthead {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 0.75em auto;
 }
 
-.news-emblem {
-  display: block;
-  width: 40px;
-  max-width: 40px;
-  height: auto;
-  margin: 1em auto 0 auto;
+#news_sidebar .news-emblem {
+    display: block;
+    width: 40px;
+    height: auto;
+    margin: 1em auto 0 auto;
 }
 
 
