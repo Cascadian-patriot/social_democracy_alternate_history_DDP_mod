@@ -39,10 +39,10 @@ on-arrival: spd_relation += 8*(1 - dissent)
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
-@dvp_op
-on-arrival: dvp_relation += 5*(1 - dissent)
+@ddp_op
+on-arrival: spd_relation += 5*(1 - dissent)
 
-They are currently in opposition to our government, but that does not preclude the general building of feelings of good will.
+We hold government without them at present, but the SPD remains a natural partner should the coalition math shift.
 
 
 @center
@@ -61,6 +61,12 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; dvp_relation += 5*(1 - dissent); dvp_left += 1
 
 Many of our members originate from the DVP, and we have contacts within them.
+
+
+@dvp_op
+on-arrival: dvp_relation += 5*(1 - dissent)
+
+They are currently in opposition to our government, but that does not preclude the general building of feelings of good will.
 
 
 @kvp
