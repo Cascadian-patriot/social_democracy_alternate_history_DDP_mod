@@ -7,6 +7,10 @@ const colourList = [{
         style: "color: #E3000F; font-weight: bold;"
   },
     {
+        word: "USPD",
+        style: "color: #D47B9B; font-weight: bold;"
+  },
+    {
         word: "DDP",
         style: "color: #D3C24D; font-weight: bold;"
    },
@@ -61,6 +65,10 @@ const tooltipList = [{
     {
     searchString: "Z",
     explanationText: "<img src=img/zentrum.png> Zentrum </br></br> German Center Party"
+    },
+    {
+    searchString: "USPD",
+    explanationText: "<img src=img/uspd.png> Unabhängige Sozialdemokratische Partei Deutschlands </br></br> Independent Social Democratic Party Of Germany"
     },
     {
     searchString: "BVP",
