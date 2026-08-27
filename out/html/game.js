@@ -254,6 +254,11 @@
             var relationText = getRelationshipText(Q.spd_relation) 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
+    
+       if (searchString === 'USPD' && Q.uspd_relation !== undefined) {
+            var relationText = getRelationshipText(Q.uspd_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
             
        if (searchString === 'DDP'){
             return baseTooltip.explanationText 
