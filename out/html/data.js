@@ -11,6 +11,26 @@ const colourList = [{
         style: "color: #D47B9B; font-weight: bold;"
   },
     {
+        word: "Sammlung",
+        style: "color: #eaebca; font-weight: light;"
+  },
+    {
+        word: "Linksliberale",
+        style: "color: #f7e66d; font-weight: light;"
+  },
+    {
+        word: "Pazifisten",
+        style: "color: #f5c4f0; font-weight: light;"
+  },
+    {
+        word: "Nationalliberale",
+        style: "color: #c4e37d; font-weight: light;"
+  },
+    {
+        word: "Republikschützer",
+        style: "color: #f5d97f; font-weight: light;"
+  },
+    {
         word: "DDP",
         style: "color: #D3C24D; font-weight: bold;"
    },
@@ -85,6 +105,26 @@ const tooltipList = [{
     {
     searchString: "NSDAP",
     explanationText: "<img src=img/nsdap.webp> Nationalsozialistische Deutsche Arbeiterpartei </br></br> National Socialist German Worker's Party"
+    },
+    {
+    searchString: "Sammlung",
+    explanationText: "The Sammlung wing is a faction of pragmatists who put coalition stability before ideology."
+    },
+    {
+    searchString: "Linksliberale",
+    explanationText: "The Linksliberale faction is influenced by Naumann's left-liberal tradition of reform through cooperation between labor and capital."
+    },
+    {
+    searchString: "Pazifisten",
+    explanationText: "The Pazifisten faction is a faction of pacifist internationalists in Quidde's circle influenced by Kant."
+    },
+    {
+    searchString: "Nationalliberale",
+    explanationText: "The Nationalliberale faction are remnants of the old national-liberal tradition, favoring fiscal orthodoxy and closer ties to industry and the DVP."
+    },
+    {
+    searchString: "Republikschützer",
+    explanationText: "Militant republicans who believe persuasion has failed and only direct mobilization can defend the Republic now."
     },
     {
     searchString: "SAPD",
