@@ -275,6 +275,12 @@ blockquote + blockquote.attribution {
     margin: 1em auto 0 auto;
 }
 
+#news_sidebar {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 /* tabs */
 .tab_container {
