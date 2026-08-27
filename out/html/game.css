@@ -192,7 +192,7 @@ blockquote + blockquote.attribution {
   position: absolute;
   width: 100%;
   max-width: 69em;
-  left: 0;
+  left: 0.5;
   right: 0;
   margin: 0 auto;
 }
