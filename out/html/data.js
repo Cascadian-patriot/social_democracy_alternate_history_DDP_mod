@@ -1,6 +1,6 @@
 const colourList = [{
         word: "KPD",
-        style: "color: #8B0000; font-weight: bold;"
+        style: "color: #700000; font-weight: bold;"
    },
     {
         word: "SPD",
@@ -8,7 +8,7 @@ const colourList = [{
   },
     {
         word: "DDP",
-        style: "color: #DCCA4A; font-weight: bold;"
+        style: "color: #D3C24D; font-weight: bold;"
    },
     {
         word: "Z",
@@ -16,7 +16,7 @@ const colourList = [{
    },
     {
         word: "BVP",
-        style: "color: #69A2BE; font-weight: bold;"
+        style: "color: #A2D8E0; font-weight: bold;"
    },
     {
         word: "DVP",
@@ -24,15 +24,15 @@ const colourList = [{
    },
     {
         word: "DNVP",
-        style: "color: #3F7BC1; font-weight: bold;"
+        style: "color: #3E88B3; font-weight: bold;"
    },
     {
         word: "NSDAP",
-        style: "color: #954B00; font-weight: bold;"
+        style: "color: #7A3C00; font-weight: bold;"
    },
     {
         word: "SAPD",
-        style: "color: #C40000; font-weight: bold;"
+        style: "color: #9B0000; font-weight: bold;"
    },
     {
         word: "Others",
