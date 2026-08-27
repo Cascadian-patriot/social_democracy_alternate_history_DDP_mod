@@ -81,15 +81,15 @@ NSDAP: [+ nsdap_relation : relationships +]
 
 = Internal Factions of the DDP
 
-{!<span class="tooltip-text" title="The Sammlung wing is a faction of pragmatists who put coalition stability before ideology.">Sammlung</span>!} strength: [+ sammlung_strength : strength +], dissent: [+ sammlung_dissent : dissent +]
+Sammlung strength: [+ sammlung_strength : strength +], dissent: [+ sammlung_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The linksliberale faction is influenced by Naumann's left-liberal tradition of reform through cooperation between labor and capital. ">Linksliberale</span>!} strength: [+ linksliberale_strength : strength +], dissent: [+ linksliberale_dissent : dissent +]
+Linksliberale strength: [+ linksliberale_strength : strength +], dissent: [+ linksliberale_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The pazifisten faction is a faction of pacifist internationalists in Quidde's circle influenced by Kant.">pazifisten</span>!} strength: [+ pazifisten_strength : strength +], dissent: [+ pazifisten_dissent : dissent +]
+Pazifisten strength: [+ pazifisten_strength : strength +], dissent: [+ pazifisten_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Nationalliberale faction are remnants of the old national-liberal tradition, favoring fiscal orthodoxy and closer ties to industry and the DVP.">Nationalliberale</span>!} strength: [+ nationalliberale_strength : strength +], dissent: [+ nationalliberale_dissent : dissent +]
+Nationalliberale strength: [+ nationalliberale_strength : strength +], dissent: [+ nationalliberale_dissent : dissent +]
 
-[? if republikschutze > 0 : {!<span class="tooltip-text" title="Militant republicans who believe persuasion has failed and only direct mobilization can defend the Republic now.">Republikschützer</span>!} strength: [+ republikschutzer_strength : strength +], dissent: [+ republikschutzer_dissent : dissent +] ?]
+[? if republikschutze > 0 : Republikschützer strength: [+ republikschutzer_strength : strength +], dissent: [+ republikschutzer_dissent : dissent +] ?]
 
 @paramilitaries
 on-arrival: {!
