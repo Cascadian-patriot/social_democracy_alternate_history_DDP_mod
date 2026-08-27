@@ -67,6 +67,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 SPD: [+ spd_relation : relationships +]
 
+USPD: [+ uspd_relation : relationships +]
+
 Z: [+ z_relation : relationships +]
 
 DVP: [+ dvp_relation : relationships +]
