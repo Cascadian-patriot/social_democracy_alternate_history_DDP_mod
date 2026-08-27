@@ -263,7 +263,23 @@
        if (searchString === 'DDP'){
             return baseTooltip.explanationText 
         }
-        
+          
+       if (searchString === 'Sammlung'){
+            return baseTooltip.explanationText 
+        }
+
+        if (searchString === 'Linksliberale'){
+            return baseTooltip.explanationText 
+        }
+      
+        if (searchString === 'Pazifisten'){
+            return baseTooltip.explanationText 
+        }
+      
+        if (searchString === 'Nationalliberale'){
+            return baseTooltip.explanationText 
+        }
+      
        if (searchString === 'DVP' && Q.dvp_relation !== undefined) {
             var relationText = getRelationshipText(Q.dvp_relation) 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
