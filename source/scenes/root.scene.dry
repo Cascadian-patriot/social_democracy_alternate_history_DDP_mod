@@ -344,6 +344,8 @@ Q.old_sapd_r = 0;
 
 // for changing the DDP's name to the DStP
 Q.ddp_name = "DDP";
+Q.ddp_full_name = "German Democratic Party";
+Q.ddp_full_name_german = "Deutsche Demokratische Partei";
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
@@ -354,6 +356,7 @@ Q.economic_records = [];
 
 // State of the government (1919) for Scheidemann cabinet
 Q.president = "Ebert";
+Q.president_party = 'SPD';
 Q.chancellor = "Scheidemann";
 Q.chancellor_party = 'SPD';
 Q.spd_in_government = 1;
@@ -535,9 +538,9 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
-Q.next_election_month = 5;
-Q.next_election_time = 5;
+Q.next_election_year = 1920;
+Q.next_election_month = 6;
+Q.next_election_time = 18;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
@@ -608,20 +611,12 @@ For more information on the politics and government of the German Republic, see 
 - @1919_hard: Begin (hard difficulty)
 - @1919_historical: Begin (historical mode)
 
-@1919_easy
-
-on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_relation = 8; z_relation = 65; spd_relation = 70; budget = 4;
-go-to: 1919_main
-
 @1919_hard
-
 on-arrival: difficulty = 1; resources = 0; dues = 1; freikorps_strength = 500; nationalliberale_dissent = 10; sammlung_dissent = 6; linksliberale_dissent = 8; pazifisten_dissent = 10; z_relation = 50; spd_relation = 45; dvp_relation = 20; budget = 1;
 go-to: 1919_main
 
 @1919_historical
-
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
-
 on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
@@ -639,17 +634,15 @@ Q.budget = 2;
 
 this.state.disableSaves = true;
 !}
+go-to: 1919_main
 
+@1919_easy
+on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_relation = 8; z_relation = 65; spd_relation = 70; budget = 4;
 go-to: 1919_main
 
 @1919_main
-
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DER_GUTE_KAMERAD_Trimmed.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1919
-
-The Republic is barely three months old. Out of revolution, mutiny, and the Kaiser's abdication, we have built something never seen before in german history, a republic. We are currently one of the three founding parties part of the Weimar Coalition of the SPD, the Centre, and ourselves.
-
-But the peace with the Allies has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's firm control. Now, the task of social liberalism is to draft a constitution, make peace with the entente and rebuild the economy.
+= **1919**

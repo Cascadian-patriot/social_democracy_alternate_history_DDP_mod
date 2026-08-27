@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta prefix="ifiction: http://babel.ifarchive.org/protocol/iFiction/"
         property="ifiction:ifid" content="7FCDF039-2B77-4179-B795-CBAFA65253AA">
-    <title>Social Democracy: An Alternate History - Autumn Chen</title>
+    <title>Social-Liberalism - An Alternate History</title>
     <link rel="stylesheet" type="text/css" href="game.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/ddp2.svg">
     <script src="jquery-1.11.1.min.js"></script>
     <script src="d3.v7.min.js"></script>
     <script src="d3-parliament.js"></script>
     <script src="d3-linegraph.js"></script>
+    <script src="data.js"></script>
     <script src="core.js"></script>
     <script src="game.js"></script>
   </head>
@@ -21,29 +23,8 @@
     <div class="background" id="bg1">
     </div>
 
-    <div id="options" class="overlay options" style="display: none;">
-
+    <div id="options" class="overlay" style="display: none;">
         <div class="overlay_top">
-        <div class="music_player">
-            <h3>Music</h3>
-            <p>Currently playing: <span id="currently_playing"></span></p>
-            <p><label for="volume">Volume:</label><input style="vertical-align:-0.25em;" type="range" min="0" max="100" value="100" id="volume" name="volume" oninput="window.setVolume(this.value);"></p>
-
-            <!-- icon sources: https://icons.getbootstrap.com/ -->
-            <p style="text-align: center;">
-            <button id="pause-button" class="icon-button" onclick="window.togglePausePlay();">
-                <span id="pause-button-image" class="button-image"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
-  <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/> </svg></span>
-                <span id="play-button-image" class="button-image" style='display: none;'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg></span>
-                <span id="pause-button-text">Pause</span></button>
-            <button class="icon-button" onclick="window.shuffle();"><span class="button-image"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
-  <path d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5"/>
-        </svg></span>
-        <span>Next song</span></button>
-            </p>
-        </div>
-            <h3>Settings</h3>
             <table>
                 <tr>
                     <td>
@@ -143,27 +124,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td> <hr> </td>
-                </tr>
-                <tr>
-                    <td>
-                        Font size:
-                    </td>
-
-                    <td colspan=2>
-                        <button onclick="window.decreaseFontSize();"><b>-</b> Decrease font size</button>
-                    </td>
-                    <td colspan=2>
-                        <button onclick="window.increaseFontSize();"><b>+</b> Increase font size</button>
-                    </td>
-                    <td>
-                        <span id="font_size_value"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td> <hr> </td>
-                </tr>
-                <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>
                     </td>
@@ -180,7 +140,7 @@
         </div>
     </div>
 
-    <div id="save" class="overlay saves" style="display: none;">
+    <div id="save" class="overlay" style="display: none;">
         <table id="saves_table" class="overlay_top">
             <tr>
                 <td>Auto-0</td>
@@ -338,8 +298,8 @@
     <div id='page'>
         <div id="mid_panel">
             <header>
-                <h1 id="game-title">Social Democracy: An Alternate History</h1>
-                <h2 id="game-author">Autumn Chen</h2>
+                <h1 id="game-title">Social Liberalism: An Alternate History</h1>
+                <h2 id="game-author">Cascadian Patriot</h2>
 
                 <div id="header-links">
                     <a id="stats-link" onclick="window.showStats();" href="#">Library</a>
@@ -356,6 +316,30 @@
                         <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Polls</button>
                     </div>
                     <div id="qualities">
+                    </div>
+                    <div id="boombox">
+                        <div class="boombox-speaker"></div>
+                        <div class="boombox-display">
+                            <div class="boombox-cassette">
+                                <div class="boombox-reel"></div>
+                                <div class="boombox-reel"></div>
+                            </div>
+                            <div class="boombox-track" id="boombox-track-name">Loading...</div>
+                        </div>
+                        <div class="boombox-controls">
+                            <button id="boombox-prev" onclick="window._musicPrev();" title="Previous">⏮</button>
+                            <button id="boombox-play" onclick="window._musicPlay();" title="Play/Pause">▶</button>
+                            <button id="boombox-next" onclick="window._musicNext();" title="Next">⏭</button>
+                            <div class="boombox-volume">
+                            <input type="range" id="boombox-volume-slider" min="0" max="100" value="70" orient="vertical" oninput="window._musicSetVolume(this.value);">
+                        </div>
+                        </div>
+                        <div class="boombox-speaker"></div>
+                    </div>
+                </div>
+
+                <div id='news_sidebar' class='tools right'>
+                    <div id="news">
                     </div>
                 </div>
             </div>

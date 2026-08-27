@@ -28,28 +28,21 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [+ president +]
+President: [? if president_party == "SPD": <span style="color: #c00000;">[+ president +]</span>?][? if president_party == "USPD": <span style="color: #D47B9B;">[+ president +]</span>?][? if president_party == "SAPD": <span style="color: #09B0000;">[+ president +]</span>?][? if president_party == "Z": <span style="color: #000000;">[+ president +]</span>?][? if president_party == "NSDAP": <span style="color: #7A3C00;">[+ president +]</span>?][? if president_party == "DSU": <span style="color: #6A1E1E;">[+ president +]</span>?][? if president_party == "KPD": <span style="color: #700000;">[+ president +]</span>?][? if president_party == "DNVP": <span style="color: #3E88B3;">[+ president +]</span>?][? if (president == "Schleicher" and not dnef_formed) or president == "Papen": <span style="color: #808080;">[+ president +]</span>?][? if (president == "Schleicher" or president == "Goerdeler" or president == "Bredow") and dnef_formed: <span style="color: #BFC8CC;">[+ president +]</span>?][? if president == "Goerdeler": <span style="color: #808080;">[+ president +]</span>?] ([? if president_party == "Z":<span style="color: #000000;">**[+ z_party_name +]**</span>?][? if president_party == "SPD":<span style="color: #c00000;">**SPD**</span>?][? if president_party == "KPD":<span style="color: #700000;">**KPD**</span>?][? if president_party == "SAPD":<span style="color: #9B0000;">**SAPD**</span>?][? if president_party == "DNVP": <span style="color: #3E88B3;">**DNVP**</span>?][? if president_party == "DSU":<span style="color: #6A1E1E;">**DSU**</span>?][? if president_party == "NSDAP":<span style="color: #7A3C00;">**NSDAP**</span>?][? if president_party == "I":<span style="color: #808080;">I</span>?][? if president_party == "DNEF":<span style="color: #BFC8CC;">**DNEF**</span>?][? if president_party == "USPD": <span style="color: #D47B9B;">**USPD**</span>?])
 
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
+Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "USPD": <span style="color: #D47B9B;">[+ chancellor +]</span>?][? if chancellor_party == "SAPD": <span style="color: #09B0000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">[+ chancellor +]</span>?][? if chancellor_party == "DSU": <span style="color: #6A1E1E;">[+ chancellor +]</span>?][? if chancellor_party == "KPD": <span style="color: #700000;">[+ chancellor +]</span>?][? if chancellor_party == "DNVP": <span style="color: #3E88B3;">[+ chancellor +]</span>?][? if (chancellor == "Schleicher" and not dnef_formed) or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?][? if (chancellor == "Schleicher" or chancellor == "Goerdeler" or chancellor == "Bredow") and dnef_formed: <span style="color: #BFC8CC;">[+ chancellor +]</span>?][? if chancellor == "Goerdeler": <span style="color: #808080;">[+ chancellor +]</span>?] ([? if chancellor_party == "Z":<span style="color: #000000;">**[+ z_party_name +]**</span>?][? if chancellor_party == "SPD":<span style="color: #c00000;">**SPD**</span>?][? if chancellor_party == "KPD":<span style="color: #700000;">**KPD**</span>?][? if chancellor_party == "SAPD":<span style="color: #9B0000;">**SAPD**</span>?][? if chancellor_party == "DNVP": <span style="color: #3E88B3;">**DNVP**</span>?][? if chancellor_party == "DSU":<span style="color: #6A1E1E;">**DSU**</span>?][? if chancellor_party == "NSDAP":<span style="color: #7A3C00;">**NSDAP**</span>?][? if chancellor_party == "I":<span style="color: #808080;">**I**</span>?][? if chancellor_party == "USPD": <span style="color: #D47B9B;">**USPD**</span>?][? if chancellor_party == "DNEF":<span style="color: #BFC8CC;">**DNEF**</span>?])
 
 Reichstag composition:
 
-# 1928: 5, 1930: 4 (as DstP)
-{!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_r +]%
-# 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="Social Democratic Party of Germany">SPD</span>!}: [+ spd_r +]%
+[+ ddp_name +]: [+ ddp_r +]%
+SPD: [+ spd_r +]%
+USPD: [+ uspd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
-# 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="Center Party + Bavarian People's Party">Z + BVP</span>!}: [+ z_r +]%
-# 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_r +]%
-# 1928: 9, 1930: 5
-{!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_r +]%
-# 1928: 14, 1930: 7
-{!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_r +]%
-# 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_r +]%
-# 1928: 9, 1930: 10
+Z + BVP: [+ z_r +]%
+KPD: [+ kpd_r +]%
+DVP: [+ dvp_r +]%
+DNVP: [+ dnvp_r +]%
+NSDAP: [+ nsdap_r +]%
 Others: [+ other_r +]%
 
 [? if ddp_in_government = 1 : Budget: [+ budget +] ?]
@@ -72,29 +65,31 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
-{!<span class="tooltip-text" title="Social Democratic Party">SPD</span>!}: [+ spd_relation : relationships +]
+SPD: [+ spd_relation : relationships +]
 
-{!<span class="tooltip-text" title="Center Party">Z</span>!}: [+ z_relation : relationships +]
+USPD: [+ uspd_relation : relationships +]
 
-{!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_relation : relationships +]
+Z: [+ z_relation : relationships +]
 
-{!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_relation : relationships +]
+DVP: [+ dvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_relation : relationships +]
+KPD: [+ kpd_relation : relationships +]
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_relation : relationships +]
+DNVP: [+ dnvp_relation : relationships +]
+
+NSDAP: [+ nsdap_relation : relationships +]
 
 = Internal Factions of the DDP
 
-{!<span class="tooltip-text" title="The Sammlung wing is a faction of pragmatists who put coalition stability before ideology.">Sammlung</span>!} strength: [+ sammlung_strength : strength +], dissent: [+ sammlung_dissent : dissent +]
+Sammlung strength: [+ sammlung_strength : strength +], dissent: [+ sammlung_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The linksliberale faction is influenced by Naumann's left-liberal tradition of reform through cooperation between labor and capital. ">Linksliberale</span>!} strength: [+ linksliberale_strength : strength +], dissent: [+ linksliberale_dissent : dissent +]
+Linksliberale strength: [+ linksliberale_strength : strength +], dissent: [+ linksliberale_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The pazifisten faction is a faction of pacifist internationalists in Quidde's circle influenced by Kant.">pazifisten</span>!} strength: [+ pazifisten_strength : strength +], dissent: [+ pazifisten_dissent : dissent +]
+Pazifisten strength: [+ pazifisten_strength : strength +], dissent: [+ pazifisten_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Nationalliberale faction are remnants of the old national-liberal tradition, favoring fiscal orthodoxy and closer ties to industry and the DVP.">Nationalliberale</span>!} strength: [+ nationalliberale_strength : strength +], dissent: [+ nationalliberale_dissent : dissent +]
+Nationalliberale strength: [+ nationalliberale_strength : strength +], dissent: [+ nationalliberale_dissent : dissent +]
 
-[? if republikschutze > 0 : {!<span class="tooltip-text" title="Militant republicans who believe persuasion has failed and only direct mobilization can defend the Republic now.">Republikschützer</span>!} strength: [+ republikschutzer_strength : strength +], dissent: [+ republikschutzer_dissent : dissent +] ?]
+[? if republikschutze > 0 : Republikschützer strength: [+ republikschutzer_strength : strength +], dissent: [+ republikschutzer_dissent : dissent +] ?]
 
 @paramilitaries
 on-arrival: {!
@@ -114,23 +109,23 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD.">Reichsbanner</span>!} Strength: [+ rb_strength_2 +] thousand
+<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
 
-Reichsbanner Militarization: [+ rb_militancy : militancy +]
+<span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD.">RFB</span>!} Strength: [+ rfb_strength_2 +] thousand
+<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand
 
-RFB Militarization: [+ rfb_militancy : militancy +]
+<span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP.">Stahlhelm</span>!} Strength: [+ sh_strength_2 +] thousand
+<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color:#3E88B3;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
-Stahlhelm Militarization: [+ sh_militancy : militancy +]
+<span style="color: #3E88B3;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary.">SA</span>!} Strength: [+ sa_strength_2 +] thousand
+<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #7A3C00;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
 
-SA Militarization: [+ sa_militancy : militancy +]
+<span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
-= Official military/paramilitaries
+= Official Organizations
 
 Reichswehr: [+ reichswehr_strength +] thousand troops.
 
@@ -157,6 +152,8 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 SPD: [+ spd_votes +]%
 
+USPD: [+ uspd_votes +]%
+
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
 Z + BVP: [+ z_votes +]%
@@ -171,18 +168,22 @@ NSDAP: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
+Support for the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span>: [+ pro_republic_disp +]%
+
+Support for <span style="color: #9B0000;">**Socialism**</span>: [+ socialism_disp +]%
+
+Support for <span style="color: #3E88B3;">**Nationalism**</span>: [+ nationalism_disp +]%
+
 **Detailed results for each demographic**
 
-Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, DVP: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, USPD: [+ workers_uspd_display +]%, KPD: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, DVP: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, USPD: [+ new_middle_uspd_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, USPD: [+ old_middle_uspd_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, USPD: [+ rural_uspd_display +]%, KPD: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, USPD: [+ unemployed_uspd_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
-
-Support for the Republic: [+ pro_republic_disp +]%
+Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, USPD: [+ catholics_uspd_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]

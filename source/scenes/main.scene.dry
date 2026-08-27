@@ -12,9 +12,12 @@ if (Q.advisor_action_timer <= 0) {
 !}
 max-cards: 3
 
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
-
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+<div class="leader-card">
+<h2 class="leader-party">[+ ddp_full_name_german +] ([+ ddp_name +])</h2>
+<img class="leader-portrait" src="img/naumann.jpeg">
+<div class="leader-name">Friedrich Naumann</div>
+<div class="leader-role">Party Chair</div>
+</div>
 
 - @party
 - @govt
@@ -35,9 +38,12 @@ if (Q.advisor_action_timer <= 0) {
 !}
 max-cards: 4
 
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
-
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+<div class="leader-card">
+<h2 class="leader-party">[+ ddp_full_name_german +] ([+ ddp_name +])</h2>
+<img class="leader-portrait" src="img/naumann.jpeg">
+<div class="leader-name">Friedrich Naumann</div>
+<div class="leader-role">Party Chair</div>
+</div>
 
 - @party
 - @govt
@@ -47,7 +53,7 @@ max-cards: 4
 
 @party
 title: Party Affairs
-card-image: img/party_affairs.jpg
+card-image: img/ddp_poster_party_affairs.jpeg
 is-deck: true
 
 - #party_affairs

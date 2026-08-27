@@ -1,0 +1,9 @@
+#Front page of the Party newspaper.
+
+    <img class="news-masthead" src="img/berliner_tageblatt-removebg-preview.png">
+
+ [? if year = 1919 and month = 2: The <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span> is barely three months old. Out of revolution, mutiny, and the Kaiser's abdication, we have built something never seen before in <span style="color: #000000;">**Ge**</span><span style="color: #C00000;">**rm**</span><span style="color: #D3C24D;">**an**</span> history, a <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span>. We are currently one of the three founding parties part of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the SPD, the Z, and ourselves. ?]
+
+ [? if year = 1919 and month = 2: But the peace with the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span> has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's firm control. Now, the task of <span style="color: #D3C24D;">Social Liberalism</span> is to draft a constitution, make peace with the <span style="color: #002654;">Ent</span><span style="color: #D7141A;">ente</span> and rebuild the economy.  ?]
+
+    <img class="news-emblem" src="img/weimar_republic_icon.png">
