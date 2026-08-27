@@ -12,23 +12,23 @@ const colourList = [{
   },
     {
         word: "Sammlung",
-        style: "color: #eaebca; font-weight: light;"
+        style: "color: #d4d68b; font-weight: light;"
   },
     {
         word: "Linksliberale",
-        style: "color: #f7e66d; font-weight: light;"
+        style: "color: #edd94c; font-weight: light;"
   },
     {
         word: "Pazifisten",
-        style: "color: #f5c4f0; font-weight: light;"
+        style: "color: #a685a2; font-weight: light;"
   },
     {
         word: "Nationalliberale",
-        style: "color: #c4e37d; font-weight: light;"
+        style: "color: #c5f062; font-weight: light;"
   },
     {
         word: "Republikschützer",
-        style: "color: #f5d97f; font-weight: light;"
+        style: "color: #e3c35b; font-weight: light;"
   },
     {
         word: "DDP",
