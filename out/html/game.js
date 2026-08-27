@@ -423,7 +423,6 @@
       }
       tabButton.className += ' active';
       window.statusTab = newTab;
-      window.NewsTab = newTab;
       window.updateSidebar();
       window.updateNewsSidebar();
   };
