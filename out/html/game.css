@@ -191,9 +191,9 @@ blockquote + blockquote.attribution {
 #tools_wrapper {
   position: absolute;
   width: 100%;
-  max-width: 70em;
+  max-width: 75em;
   left: 0;
-  right: 0;
+  right: 1;
   margin: 0 auto;
 }
 .tools {
