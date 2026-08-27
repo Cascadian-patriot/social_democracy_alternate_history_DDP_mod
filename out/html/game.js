@@ -279,6 +279,10 @@
         if (searchString === 'Nationalliberale'){
             return baseTooltip.explanationText 
         }
+            
+        if (searchString === 'Republikschützer'){
+            return baseTooltip.explanationText 
+        }
       
        if (searchString === 'DVP' && Q.dvp_relation !== undefined) {
             var relationText = getRelationshipText(Q.dvp_relation) 
