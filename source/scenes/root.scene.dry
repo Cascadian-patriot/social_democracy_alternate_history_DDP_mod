@@ -574,7 +574,8 @@ Q.kulz_advisor = 0;
 Q.maier_advisor = 0;
 
 // Linksliberale advisors
-Q.heuss_advisor = 1;      // Theodor Heuss
+Q.naumann_advisor = 1; // Friedrich Neumann
+Q.heuss_advisor = 0;      // Theodor Heuss
 Q.baeumer_advisor = 0;
 Q.erkelenz_advisor = 0;
 Q.luders_advisor = 0;
