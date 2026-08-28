@@ -7,6 +7,26 @@ const colourList = [{
         style: "color: #c00000; font-weight: bold;"
   },
     {
+        word: "Reichsbanner",
+        style: "color: #c00000; font-weight: bold;"
+  },
+    {
+         word: "Stalhelm",
+        style: "color: #3E88B3; font-weight: bold;"
+  },
+    {
+        word: "SA",
+        style: "color: #7A3C00; font-weight: bold;"
+  },
+    {
+        word: "RFB",
+        style: "color: #8B0000; font-weight: bold;"
+  },
+    {
+        word: "Freikorps",
+        style: "color: #5c5b5b; font-weight: bold;"
+  },
+    {
         word: "USPD",
         style: "color: #D47B9B; font-weight: bold;"
   },
@@ -53,6 +73,10 @@ const colourList = [{
     {
         word: "NSDAP",
         style: "color: #7A3C00; font-weight: bold;"
+   },
+    {
+        word: "DAP",
+        style: "color: #524732; font-weight: bold;"
    },
     {
         word: "SAPD",
@@ -107,6 +131,10 @@ const tooltipList = [{
     explanationText: "<img src=img/nsdap.webp> Nationalsozialistische Deutsche Arbeiterpartei </br></br> National Socialist German Worker's Party"
     },
     {
+    searchString: "DAP",
+    explanationText: "<img src=img/dap.svg> Deutsche Arbeiterpartei </br></br> German Worker's Party"
+    },
+    {
     searchString: "Sammlung",
     explanationText: "The Sammlung wing is a faction of pragmatists who put coalition stability before ideology."
     },
@@ -129,6 +157,26 @@ const tooltipList = [{
     {
     searchString: "SAPD",
     explanationText: "<img src=img/sapd.png> Sozialistische Arbeiterpartei Deutschlands </br></br> Socialist Workers' Party of Germany"
+    },
+    {
+    searchString: "Reichsbanner",
+    explanationText: "<img src=img/reichsbanner-Photoroom.png> Reichsbanner Schwarz-Rot-Gold!"
+    },
+    {
+    searchString: "RFB",
+    explanationText: "<img src=img/rfb.svg> Rotfrontkämpferbund </br></br> Alliance of Red Front-Fighters"
+    },
+    {
+    searchString: "Stalhelm",
+    explanationText: "<img src=img/stalhelm.svg> Der Stalhelm </br></br> The DNVP's paramilitary."
+    },
+    {
+    searchString: "SA",
+    explanationText: "<img src=img/sa.webp> Sturmabteilung </br></br> Storm Detachment"
+    },
+    {
+    searchString: "Freikorps",
+    explanationText: "<img src=img/freikorps-Photoroom.png> Freikorps </br></br> A conservative paramilitary."
     },
     {
     searchString: "Others",
