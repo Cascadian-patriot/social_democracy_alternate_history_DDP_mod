@@ -36,7 +36,7 @@ choose-if: nazi_urgency += 1
 
 [? if nazi_urgency == 0 : The NSDAP is a tiny party right now.]
 
-[? if nazi_urgency > 0 and nsdap_r >= 10 : The Nazis are the most urgent problem for us to deal with. ?]
+[? if nazi_urgency > 0 : The Nazis are the most urgent problem for us to deal with. ?]
 
 @kpd
 on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformist_dissent -= 5; kpd_relation -= 15; dvp_relation += 5; z_relation += 5; workers_kpd -= 4;
@@ -45,5 +45,10 @@ Attacking the KPD is supported by all but the most left-wing socialists, and win
 
 @socialist
 on-arrival: enemies = "Socialists"; nationalliberale_strength += 5; linksliberale_strength -=5; spd_relations -= 5; dnvp_relations += 5; kpd_relations -= 5
+choose-if: nationalliberale_strenght >= 10
 
-Atacking the socialists is supported by the right, especialy the far-right, but alienates us from the SPD who are otherwise one of the most democratic parties. 
+[? if linksliberal_strength <= 10 : The left in our party would never allow this. ]
+
+[? if linksliberale_strength >= 10 : Atacking the socialists is supported by the right, especialy the far-right, but alienates us from the SPD who are otherwise one of the most democratic parties.]
+
+
