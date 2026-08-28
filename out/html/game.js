@@ -259,29 +259,74 @@
             var relationText = getRelationshipText(Q.uspd_relation) 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
-            
+      
+       if (searchString === 'DAP' && Q.dap_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dap_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+      
+        if (searchString === 'Reichsbanner' && Q.rb_strength !== undefined) {
+            var strength = getSizeText(Q.rb_strength);
+            var militancy = getMilitancyText(Q.rb_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }  
+      
+        if (searchString === 'Stalhelm' && Q.sh_strength !== undefined) {
+            var strength = getSizeText(Q.sh_strength);
+            var militancy = getMilitancyText(Q.sh_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }  
+      
+        if (searchString === 'RFB' && Q.rfb_strength !== undefined) {
+            var strength = getSizeText(Q.rfb_strength);
+            var militancy = getMilitancyText(Q.rfb_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+                
+        if (searchString === 'SA' && Q.sa_strength !== undefined) {
+            var strength = getSizeText(Q.sa_strength);
+            var militancy = getMilitancyText(Q.sa_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+                           
+        if (searchString === 'Freikorps' && Q.freikorps_strength !== undefined) {
+            var strength = getSizeText(Q.freikorps_strength);
+            var militancy = getMilitancyText(Q.freikorps_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+                    
        if (searchString === 'DDP'){
             return baseTooltip.explanationText 
         }
           
        if (searchString === 'Sammlung'){
-            return baseTooltip.explanationText 
+            var strenghtText = getStrenghtText(Q.sammlung_strength);
+            var dissentText = getDissentText(Q.sammlung_dissent);
+            return baseTooltip.explanationText + '<br>Strength: ' + strenghtText + '<br>Dissent: ' + dissentText;
         }
 
         if (searchString === 'Linksliberale'){
-            return baseTooltip.explanationText 
+            var strenghtText = getStrenghtText(Q.linksliberale_strength);
+            var dissentText = getDissentText(Q.linksliberale_dissent);
+            return baseTooltip.explanationText + '<br>Strength: ' + strenghtText + '<br>Dissent: ' + dissentText;
         }
       
         if (searchString === 'Pazifisten'){
-            return baseTooltip.explanationText 
+            var strenghtText = getStrenghtText(Q.pazifisten_strength);
+            var dissentText = getDissentText(Q.pazifisten_dissent);
+            return baseTooltip.explanationText + '<br>Strength: ' + strenghtText + '<br>Dissent: ' + dissentText;
         }
       
         if (searchString === 'Nationalliberale'){
-            return baseTooltip.explanationText 
+            var strenghtText = getStrenghtText(Q.nationalliberale_strength);
+            var dissentText = getDissentText(Q.nationalliberale_dissent);
+            return baseTooltip.explanationText + '<br>Strength: ' + strenghtText + '<br>Dissent: ' + dissentText;
         }
             
         if (searchString === 'Republikschützer'){
-            return baseTooltip.explanationText 
+            var strenghtText = getStrenghtText(Q.republikschutzer_strength);
+            var dissentText = getDissentText(Q.republikschutzer_dissent);
+            return baseTooltip.explanationText + '<br>Strength: ' + strenghtText + '<br>Dissent: ' + dissentText;
         }
       
        if (searchString === 'DVP' && Q.dvp_relation !== undefined) {
