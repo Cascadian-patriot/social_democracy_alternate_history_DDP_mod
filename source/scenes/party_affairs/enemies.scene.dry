@@ -32,7 +32,6 @@ Attacking the far right is popular among the entire party, although the left con
 
 @nsdap
 on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4;
-choose-if: nazi_urgency += 1
 
 [? if nazi_urgency == 0 : The NSDAP is a tiny party right now.]
 
