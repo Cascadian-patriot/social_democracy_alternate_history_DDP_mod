@@ -633,7 +633,6 @@ Q.z_relation = 50;
 Q.spd_relation = 55;
 Q.dvp_relation = 20;
 Q.budget = 2;
-
 this.state.disableSaves = true;
 !}
 go-to: 1919_main
