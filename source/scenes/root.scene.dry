@@ -642,7 +642,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_rel
 go-to: 1919_main
 
 @1919_main
-audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DER_GUTE_KAMERAD_Trimmed.mp3
+audio: shuffle music/deustchlandlied.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
