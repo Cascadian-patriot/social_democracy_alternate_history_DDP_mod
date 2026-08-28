@@ -14,8 +14,8 @@ max-cards: 3
 
 <div class="leader-card">
 <h2 class="leader-party">[+ ddp_full_name_german +] ([+ ddp_name +])</h2>
-<img class="leader-portrait" src="img/naumann.jpeg">
-<div class="leader-name">Friedrich Naumann</div>
+<img class="leader-portrait" src="[+ img_leader +]">
+<div class="leader-name">[+ name_leader +]</div>
 <div class="leader-role">Party Chair</div>
 </div>
 
@@ -40,8 +40,8 @@ max-cards: 4
 
 <div class="leader-card">
 <h2 class="leader-party">[+ ddp_full_name_german +] ([+ ddp_name +])</h2>
-<img class="leader-portrait" src="img/naumann.jpeg">
-<div class="leader-name">Friedrich Naumann</div>
+<img class="leader-portrait" src="[+ img_leader +]">
+<div class="leader-name">[+ name_leader +]</div>
 <div class="leader-role">Party Chair</div>
 </div>
 
