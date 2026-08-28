@@ -139,6 +139,9 @@ Q.wp_founded = 0;
 // Variable to use for austrian unification with germany
 Q.austria_unification_opinion = 0;
 
+// Support amongst the german public for membership in the league of nations
+Q.league_membership_support = 0;
+
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
