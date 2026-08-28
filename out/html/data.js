@@ -4,7 +4,7 @@ const colourList = [{
    },
     {
         word: "SPD",
-        style: "color: #E3000F; font-weight: bold;"
+        style: "color: #c00000; font-weight: bold;"
   },
     {
         word: "USPD",
@@ -36,7 +36,7 @@ const colourList = [{
    },
     {
         word: "Z",
-        style: "color: #000; font-weight: bold;"
+        style: "color: #000000; font-weight: bold;"
    },
     {
         word: "BVP",
