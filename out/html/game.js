@@ -559,7 +559,82 @@
         document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
         window.dendryUI.saveSettings();
   }
+    var q = window.dendryUI && window.dendryUI.dendryEngine
+        ? window.dendryUI.dendryEngine.state.qualities
+        : null;
+    if (!q) return;
 
+    var factionClass = {
+        1: 'empowered-authcon',
+        2: 'empowered-christsoc',
+        3: 'empowered-volkskons',
+        4: 'empowered-volkisch'
+    }[q.empowered_faction] || 'empowered-authcon';
+    if (!document.body.classList.contains(factionClass)) {
+        document.body.className = document.body.className
+            .replace(/\bempowered-\w+\b/g, '')
+            .trim();
+        document.body.classList.add(factionClass);
+    }
+
+    var advisorMap = {
+    'westarp':           ['authcon',    'leader'],
+    'hugenberg':         ['authcon',    'leader'],
+    'thyssen':           ['authcon',    'deputy', 'right'],
+    'schmidt_hannover':  ['authcon',    'deputy', 'left'],
+    'hugenberg_volkisch': ['volkisch',   'deputy'],
+    'quaatz':            ['authcon',    'deputy', 'right'],
+    'lambach':           ['christsoc',  'leader'],
+    'treviranus':        ['volkskons',  'leader'],
+    'lejeune_jung':      ['volkskons',  'leader'],
+    'lejeune_jung_deputy': ['volkskons', 'deputy', 'right'],
+    'gayl':              ['volkskons',  'leader'],
+    'hartwig':           ['christsoc',  'deputy', 'right'],
+    'hartwig_leader':    ['christsoc',  'leader'],
+    'annegrete':         ['volkisch',   'leader'],
+    'hugenberg_authcon': ['authcon', 'deputy', 'right'],
+    'hergt':             ['authcon',    'leader'],
+    'seldte':            ['authcon',    'leader'],
+    'behm':              ['christsoc',  'leader'],
+    'ullmann':           ['volkskons',  'leader'],
+    'class':             ['volkisch',   'leader'],
+    'bang':              ['volkisch',   'leader'],
+
+    };
+
+    document.querySelectorAll('a.card[card-id]').forEach(function(card) {
+    var id = card.getAttribute('card-id');
+    var entry = advisorMap[id];
+    if (entry) {
+        if (card.getAttribute('data-faction') !== entry[0]) {
+            card.setAttribute('data-faction', entry[0]);
+        }
+        if (card.getAttribute('data-role') !== entry[1]) {
+            card.setAttribute('data-role', entry[1]);
+        }
+        if (entry[2] && card.getAttribute('data-deputy-side') !== entry[2]) {
+            card.setAttribute('data-deputy-side', entry[2]);
+        }
+        if (card.parentElement && card.parentElement.tagName === 'LI') {
+            if (card.parentElement.getAttribute('data-faction') !== entry[0]) {
+                card.parentElement.setAttribute('data-faction', entry[0]);
+            }
+            if (card.parentElement.getAttribute('data-role') !== entry[1]) {
+                card.parentElement.setAttribute('data-role', entry[1]);
+            }
+            if (entry[2] && card.parentElement.getAttribute('data-deputy-side') !== entry[2]) {
+                card.parentElement.setAttribute('data-deputy-side', entry[2]);
+            }
+        }
+    }
+
+    var switcher = document.querySelector('ul.pinned-cards li.pinned-card:has(a.card[card-id="advisor_switcher"])');
+var decksUl = document.querySelector('ul.decks');
+if (switcher && decksUl && switcher.parentElement !== decksUl) {
+    switcher.className = 'deck';
+    decksUl.appendChild(switcher);
+}
+  
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
@@ -573,7 +648,331 @@
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    }
+  window.justLoaded = true;
+  window.statusTab = "status";
+  window.dendryModifyUI = main;
+  console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
+window._decorateChoices = function() {
+    (function() {
+        var state = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state;
+        var sid = state && state.sceneId;
+        if (sid && sid !== window._lastSeenSceneId) {
+            window._lastSeenSceneId = sid;
+            document.body.classList.remove('news-open');
+            document.body.classList.remove('advisors-open');
+        }
+          document.querySelectorAll('ul.pinned-cards a.card[data-role="deputy"]').forEach(function(a) {
+        if (!a.hasAttribute('data-click-disabled')) {
+            a.setAttribute('data-click-disabled', '1');
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        }
+    });
+    ;
+
+    document.querySelectorAll('ul.pinned-cards').forEach(function(ul) {
+        var empFactionMatch = document.body.className.match(/empowered-(\w+)/);
+        if (!empFactionMatch) return;
+        var empFaction = empFactionMatch[1];
+
+        var deputyLi = ul.querySelector('li.pinned-card[data-faction="' + empFaction + '"][data-role="deputy"]');
+        var leaderLi = ul.querySelector('li.pinned-card[data-faction="' + empFaction + '"][data-role="leader"]');
+        var anchorLi = deputyLi || leaderLi;
+        if (!anchorLi) return;
+
+        var nextEl = anchorLi.nextElementSibling;
+        if (nextEl && nextEl.classList && nextEl.classList.contains('advisor-row-break')) {
+            ul.querySelectorAll('li.advisor-row-break').forEach(function(br) {
+                if (br !== nextEl) br.remove();
+            });
+            return;
+        }
+
+        ul.querySelectorAll('li.advisor-row-break').forEach(function(br) {
+            br.remove();
+        });
+
+        var br = document.createElement('li');
+        br.className = 'advisor-row-break';
+        anchorLi.parentNode.insertBefore(br, anchorLi.nextSibling);
+    });
+    var deputyTooltips = {
+        'thyssen': {
+            body: 'A baron of the steel and iron industry in Germany and a board member of the Reichsbank, Thyssen provides financial support to the <b style="color:var(--dnvp-color);">DNVP</b> and discreetly contributes to the Reichswehr\'s rearmament.<br><br><i>+1 party resource annually</i><br><i>War industry passively increases</i>'
+        },
+        'lejeune_jung_deputy': {
+            body: `Paul Lejeune-Jung is a <span style="color:#000000;">Catholic</span> member of the <b style="color:var(--dnvp-color);">DNVP</b> and economics expert from Silesia, who shares the <span style="color:#90D5FF;">People's Conservatives'</span> support of constructive participation in the Republic.<br><br><i>Actions targeting Catholic <b style="color:var(--dnvp-color);">DNVP</b> support are strengthened.</i><br><i>The Lautenbach Plan is easier to adopt.</i><br><i>Passive boost to <b style="color:var(--z-color);">Zentrum</b> relations.</i>`
+        },
+            'schmidt_hannover': {
+    body: `Otto Schmidt-Hannover is Hugenberg's closest ally and most trusted advisor. As a member of the <b><span style="color:#3E88B3;">Stahlhelm</span></b>, he has deep ties to the <i>Reichswehr</i> and anti-<span style="color:var(--kpd-color);">Communist</span> groups, and ultimately seeks to advance the goal of an authoritarian German government.<br><br><i>Permanent increase in <b><span style="color:#3E88B3;">Stahlhelm</span></b> strength.</i><br><i>Actions targeting <span style="color:var(--kpd-color);">Communist</span> support and militias will be more effective.</i><br><i>The Corporatist Plan will be more effective.</i>`
+},
+'hartwig': {
+    body: `Emil Hartwig is a longtime member of the <b><span style="color:var(--dnvp-color);">DNVP</span></b> and a trade unionist who has been involved in various <span style="color:#DAB1DA;">Christian unions</span> and blue-collar associations throughout his career.<br><br><i>Actions undertaken by the Labor Ministry will be more effective.</i><br><i>Grassroots donations have been permanently increased!</i><br><i>Campaigning among workers is now free.</i><br><i>The labor bloc loses support at a third of the normal rate.</i>`
+},
+    'quaatz': {
+    body: `Reinhold Quaatz was a director of military transport during the Great War and now represents one of Hugenberg's closest associates. As an industrialist and financier, he also brings financial backing to the movement, and supports cooperation with the <b><span style="color:#954B00;">NSDAP</span></b>.<br><br><i>Permanent increase in <b><span style="color:#954B00;">NSDAP</span></b> relations.</i><br><i>+1 party resource per year.</i><br><i><b><span style="color:#06402B;">VÃ¶lkisch</span></b> dissent ticks down to a low floor.</i>`
+},
+'hugenberg_volkisch': {
+    body: `Alfred Hugenberg, well, is Alfred Hugenberg. Although he is not technically the party chairman, he wields significant power over the <b><span style="color:var(--dnvp-color);">DNVP</span></b></b>'s affairs, and he is able to mobilize his vast media empire in order to serve the party.<br><br><i>+3 resources per year.</i><br><i>Relations with the <b style="color:var(--dvp-color);">DVP</b> and <b style="color:var(--z-color);">Zentrum</b> steadily deteriorate.</i>`
+},
+'hugenberg_authcon': {
+    body: `Alfred Hugenberg, well, is Alfred Hugenberg. Although he is not technically the party chairman, he wields significant power over the <b><span style="color:var(--dnvp-color);">DNVP</span></b></b>'s affairs, and he is able to mobilize his vast media empire in order to serve the party.<br><br><i>+3 resources per year.</i><br><i>Relations with the <b style="color:var(--dvp-color);">DVP</b> and <b style="color:var(--z-color);">Zentrum</b> steadily deteriorate.</i>`
+},
+'advisor_switcher': {
+        body: `We can manually change our advisors once every twenty months, or by <b>event</b>.`
+    }
+    };
+
+    document.querySelectorAll('ul.pinned-cards a.card[card-id]').forEach(function(card) {
+        var id = card.getAttribute('card-id');
+        var tooltipData = deputyTooltips[id];
+        if (!tooltipData) return;
+
+        if (card.querySelector('.card-passive-tip')) return;
+        card.removeAttribute('title');
+
+        var tip = document.createElement('span');
+        tip.className = 'card-passive-tip';
+        tip.innerHTML = tooltipData.body;
+        card.appendChild(tip);
+    });
+    (function() {
+        var swCard = document.querySelector('a.card[card-id="advisor_switcher"]');
+        if (!swCard) return;
+        if (swCard.querySelector('.card-passive-tip')) return;
+        if (!deputyTooltips['advisor_switcher']) return;
+        swCard.removeAttribute('title');
+        var tip = document.createElement('span');
+        tip.className = 'card-passive-tip';
+        tip.innerHTML = deputyTooltips['advisor_switcher'].body;
+        swCard.appendChild(tip);
+    })();
+    (function() {
+        var pinnedHeaders = document.querySelectorAll('p, div, h1, h2');
+        var target = null;
+        pinnedHeaders.forEach(function(el) {
+            if (!target && el.textContent && el.textContent.trim().startsWith('Advisors')) {
+                var next = el.nextElementSibling;
+                if (next && next.classList && next.classList.contains('pinned-cards')) {
+                    target = el;
+                }
+            }
+        });
+        if (!target) return;
+
+        var COOLDOWN_MONTHS = 12;
+        var factions = [
+            { key: 'volkskons', color: '#90D5FF', invert: true,  bg: '#6a6a6a', timer: q.volkskons_action_timer || 0 },
+            { key: 'christsoc', color: '#DAB1DA', invert: true,  bg: '#919191', timer: q.christsoc_action_timer || 0 },
+            { key: 'authcon',   color: '#000435', invert: false, bg: '#b9b9b9', timer: q.authcon_action_timer   || 0 },
+            { key: 'volkisch',  color: '#06402B', invert: false, bg: '#e0e0e0', timer: q.volkisch_action_timer  || 0 }
+        ];
+        if (q.left_split === 1) {
+            factions = factions.filter(function(f) { return f.key !== 'volkskons'; });
+        }
+        if (q.csvd_formed === 1) {
+            factions = factions.filter(function(f) { return f.key !== 'christsoc'; });
+        }
+        var segmentsHtml = '';
+        var labelsHtml = '';
+        factions.forEach(function(f, idx) {
+            var filledPct = Math.round(((COOLDOWN_MONTHS - f.timer) / COOLDOWN_MONTHS) * 100);
+            var filled = f.timer === 0;
+            var useWhite = f.invert ? !filled : filled;
+            var divColor = useWhite ? '#fff' : '#000';
+            var nextF = factions[idx + 1];
+            if (nextF && f.invert && !nextF.invert) divColor = '#000';
+            var segStyle = '--divider-color: ' + divColor + '; --divider-width: 2px; background: ' + f.bg + ';';
+            segmentsHtml += '<div class="advisor-timer-segment' + (f.invert ? ' invert' : '') + '" style="' + segStyle + '">'
+                          +   '<div class="advisor-timer-fill" style="width:' + filledPct + '%; --w:' + Math.max(filledPct, 1) + '; background:' + f.color + ';"></div>'
+                          + '</div>';
+            labelsHtml += '<div class="advisor-timer-label">'
+                        +   (f.timer === 0 ? '<span class="advisor-ready">Available</span>' : '')
+                        + '</div>';
+        });
+
+        var html = '<div class="advisor-header">Advisors</div>'
+                 + '<div class="advisor-timer-conjoined">' + segmentsHtml + '</div>'
+                 + '<div class="advisor-timer-labels">' + labelsHtml + '</div>';
+
+        if (target.innerHTML !== html) {
+            target.innerHTML = html;
+        }
+        target.classList.add('advisor-panel-head');
+
+        var pinnedUl = target.nextElementSibling;
+        if (pinnedUl && pinnedUl.classList && pinnedUl.classList.contains('pinned-cards')
+            && (!target.parentElement || !target.parentElement.classList.contains('advisor-panel-wrap'))) {
+            var wrap = document.createElement('div');
+            wrap.className = 'advisor-panel-wrap';
+            target.parentNode.insertBefore(wrap, target);
+            wrap.appendChild(target);
+            wrap.appendChild(pinnedUl);
+        }
+
+    })();
+
+    (function() {
+        var dotAdv = document.getElementById('advisors-fab-dot');
+        if (!dotAdv) return;
+        var timerList = [
+            { key: 'volkskons', t: q.volkskons_action_timer || 0 },
+            { key: 'christsoc', t: q.christsoc_action_timer || 0 },
+            { key: 'authcon',   t: q.authcon_action_timer   || 0 },
+            { key: 'volkisch',  t: q.volkisch_action_timer  || 0 }
+        ];
+        if (q.left_split === 1) timerList = timerList.filter(function(x) { return x.key !== 'volkskons'; });
+        if (q.csvd_formed === 1) timerList = timerList.filter(function(x) { return x.key !== 'christsoc'; });
+        var anyReady = timerList.some(function(x) { return x.t === 0; });
+        dotAdv.style.display = anyReady ? 'block' : 'none';
+    })();
+
+    var switcher = document.querySelector('ul.pinned-cards li.pinned-card:has(a.card[card-id="advisor_switcher"])');
+    var decksUl = document.querySelector('ul.decks');
+    if (switcher && decksUl && switcher.parentElement !== decksUl) {
+        switcher.className = 'deck';
+        decksUl.appendChild(switcher);
+    }
+    if (window._injectExecutiveCard) window._injectExecutiveCard();
+    var cabDeck = document.querySelector('ul.decks a.card[card-id="main.cabinet"]')
+               || document.querySelector('ul.decks a.card[card-id="cabinet"]');
+    if (cabDeck && !cabDeck._cabDirectBound) {
+        cabDeck._cabDirectBound = true;
+        cabDeck.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            if (window.dendryUI && window.dendryUI.dendryEngine) {
+                window.dendryUI.dendryEngine.goToScene('cabinet_decisions');
+            }
+        }, true);
+    }
+    document.querySelectorAll('ul.pinned-cards, ul.choices, ul.decks').forEach(function(ul) {
+        ul.classList.add('decorated');
+    });
+};
+
+function initDecorator() {
+    var contentEl = document.getElementById('content');
+    console.log('[decorator init] contentEl:', contentEl);
+    if (!contentEl) {
+        setTimeout(initDecorator, 100);
+        return;
+    }
+    var decoObserver = new MutationObserver(function() {
+        decoObserver.disconnect();
+        try {
+            window._decorateChoices();
+        } catch (e) {
+            console.error('[decorator error]', e);
+        }
+        if (window._applyDvpColor) window._applyDvpColor();
+        if (window._applyZColor) window._applyZColor();        if (window._applyDnvpColor) window._applyDnvpColor();        if (window._applyDdpColor) window._applyDdpColor();
+        decoObserver.observe(contentEl, { childList: true, subtree: true });
+    });
+    decoObserver.observe(contentEl, { childList: true, subtree: true });
+    console.log('[decorator init] observer attached');
+    window._decorateChoices();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDecorator);
+} else {
+    initDecorator();
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    var tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+    if (!window.dendryUI || !window.dendryUI.dendryEngine) return;
+    var kb = window._kbSettings || (window._kbLoad && window._kbLoad());
+    if (!kb || !kb.enabled) return;
+    var engine = window.dendryUI.dendryEngine;
+    var sceneId = engine.state && engine.state.sceneId;
+
+    var skipKey = (kb.skip || 'S');
+    var pressedSkip = (e.key && e.key.toUpperCase()) === skipKey;
+    if (pressedSkip) {
+        var choices = document.querySelectorAll('ul.choices > li');
+        var clickable = [];
+        var discardLink = null;
+        choices.forEach(function(li) {
+            if (li.classList.contains('unavailable-card')) return;
+            var a = li.querySelector('a');
+            if (!a) return;
+            clickable.push(a);
+            var t = (a.textContent || '').trim().toLowerCase();
+            if (t.indexOf('return card to hand') !== -1) discardLink = a;
+        });
+        if (clickable.length === 1) {
+            e.preventDefault();
+            clickable[0].click();
+            return;
+        }
+        var onEventsList = sceneId && (sceneId === 'events_choice' || sceneId.indexOf('events_choice') !== -1);
+        if (onEventsList && clickable.length > 0) {
+            e.preventDefault();
+            clickable[0].click();
+            return;
+        }
+        if (discardLink) {
+            e.preventDefault();
+            discardLink.click();
+            return;
+        }
+    }
+
+    var isHand = (sceneId === 'main' || sceneId === 'main.main_easy' || sceneId === 'main.main_hugenberg'
+               || sceneId === 'main_easy' || sceneId === 'main_hugenberg');
+    var isExecute = (sceneId === 'execute');
+    var isLaender = (sceneId === 'laender_menu');
+    if (!isHand && !isExecute && !isLaender) return;
+    var k = e.key && e.key.toUpperCase();
+    var execKey = (kb.executive || 'E');
+    var laenKey = (kb.laender || 'L');
+    if (k === execKey) {
+        if (isHand) {
+            e.preventDefault();
+            engine.goToScene('execute');
+        } else if (isExecute) {
+            e.preventDefault();
+            engine.goToScene('root');
+        }
+    } else if (k === laenKey) {
+        if (isHand) {
+            var q = engine.state && engine.state.qualities;
+            var year = (q && q.year) || 0;
+            var month = (q && q.month) || 0;
+            if (year > 1928 || (year === 1928 && month >= 3)) {
+                e.preventDefault();
+                engine.goToScene('laender_menu');
+            }
+        } else if (isLaender) {
+            e.preventDefault();
+            engine.goToScene('root');
+        }
+    }
+});
+  window.onload = function() {
+    window.dendryUI.loadSettings({show_portraits: false});
+    try { if (localStorage.getItem('dnvp_dark_mode') === '1') window.dendryUI.dark_mode = true; } catch (e) {}
+    if (window.dendryUI.dark_mode) {
+        document.body.classList.add('dark-mode');
+    }
+    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
+
+  document.addEventListener('click', function(e) {
+      if (e.target && e.target.closest && e.target.closest('.advisor-panel-wrap a')) {
+          document.body.classList.remove('advisors-open');
+      }
+  });
+
+    })();
 document.addEventListener('mousemove', e => {
     document.querySelectorAll('.mytooltiptext').forEach(el => {
         el.style.setProperty('--mouse-x', e.clientX + 'px');
