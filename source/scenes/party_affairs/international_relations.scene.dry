@@ -8,13 +8,14 @@ card-image: img/international.jpg
 max-visits: 4
 #subtitle: Building ties with our fraternal socialist parties.
 
-At the Labor and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
+Through contacts abroad, we can build ties with sister liberal parties, internationalist movements, and sympathetic governments.
 
-- @fr_uk: Build relationships with the French SFIO and British Labour Party to move their governments in Germany's favor.
-- @austria: Learn organization and street fighting from the Austrian SDAPÖ.
-- @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
-- @comintern: Forget the second international - embed a spy in the Comintern's conference.
-- @america: Contact the Socialist party of America.
+- @fr_uk: Build relationships with the French Parti Radicale and British Liberal Party to move their governments in Germany's favor.
+- @austria: Push the Austrian public towards German unification through liberal contacts.
+- @paneuropa: Support Coudenhove-Kalergi's Pan-European movement.
+- @dutch_scandi: Learn how to survive as a small liberal party from the Dutch VDB and the scandinavian Liberal parties.
+- @league_of_nations: Support League of Nations membership for Germany.
+- @america: Talk to our contacts in america amongst the Democratic and Republican Party.
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
@@ -23,37 +24,42 @@ At the Labor and Socialist International, we can forge contacts with our fratern
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1
+on-arrival: resources -= 1; west_relation += 1; linksliberale_strength += 3; reparations_negotiation += 1
 
-The socialists of France and Britain can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
+The British Liberals and the French Radical Party are the closest thing we have to sister parties abroad. Their influence, even diminished, can be used to bear in favor of easing our reparations burden and rebuilding trust between our countries.
 
 @austria
 subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - We will also help the Austrians oppose their dictatorship. ?]
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
-on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1; austria_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
+on-arrival: resources -= 1; nationalliberale_strength += 3; nationalism += 1*(1-dissent); east_relation -= 1; austria_unification_opinion += 1
 
-Our Reichsbanner can learn much in paramilitary organization and training from the Austrian Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the Austrian social democrats.
+The Treaty forbids it, but we do not believe the principle of national self-determination should stop at Austria's border. We should therefore gain goodwill amongst the austrian people and goverment and work towards unification.
 
-[? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian Social Democratic Worker's Party build up their resources in preparation for a future struggle, legally and illegally. ?]
-
-
-@scandi
+@dutch_scandi
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
+on-arrival: resources -= 1; sammlung_strength += 5; sammlung_dissent -= 5 if sammlung_dissent > 0; dvp_relation += 3; spd_relation += 3; dnvp_relation += 2; 
 
-The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
+The Dutch Vrijzinnig-Democratische Bond and the Scandinavian liberal parties face the same problem we do: staying relevant as a small party squeezed between larger Socialist and Right-wing blocs. Their model of unification with other liberal forces, rather than staying alone, offers a blueprint we may find ourselves needing to follow.
 
-@comintern
+@paneuropa
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
+on-arrival: resources -= 1; eu_progress += 1; pazifisten_strength += 3; nationalism -= 1*(1-dissent)
 
-The Stalinists of the KPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the KPD, enabling us to potentially improve relations, or counter the KPD if it may come to that.
+Count Coudenhove-Kalergi's vision of a united, peaceful Europe finds real apeal among our internationalist wing. Supporting the Pan-European movement costs us little and may, in time, yield much.
+
+@league_of_nations
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; league_membership_support += 1; pazifisten_strength += 4; pazifisten_dissent -= 3 if pazifisten_dissent > 0; public_trust += 2; reparations_negotiation += 1
+
+We have believed since our founding that Germany's rehabilitation is only possible through the league. We should therefore work towards full membership, not merely toleration from outside. Every step we take toward that goal is a step toward being treated as equals again, rather than a defeated agressor.
 
 @america
 subtitle: -1 resources
@@ -61,8 +67,21 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1
 
-The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+Our contacts abroad give us an opening to reach out to either of America's major parties. Which is worth our attention?
 
-@reduce
+- @america_democrats: Contact the Democratic Party.
+- @america_republicans: Contact the Republican Party.
+
+@america_democrats
+on-arrival: west_relation += 1; democratization += 1
+
+President Wilson's party shares much of our own political inheritance, but unfortunately his party finds itself out of power and increasingly isolationist since his stroke and the Senate's rejection of the League. We can still gain much from contacting them, though.
+
+@america_republicans
+on-arrival: west_relation += 1; nationalliberale_strength += 2; reparations_negotiation += 1
+
+The Republican Party holds power in Washington, and its administrations control wether or not we must repay our war debts, loan capital, and pay reparations. They have little patience for the League or European entanglements, but their policies apeal to the more fiscally conservative in our party.
+
+@return
 
 We do not need the international contacts at the moment.

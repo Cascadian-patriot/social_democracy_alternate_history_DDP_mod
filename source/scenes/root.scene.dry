@@ -136,6 +136,12 @@ Q.bvp_split = 0;
 // For Wirtschaftspartei founding in 1920
 Q.wp_founded = 0;
 
+// Variable to use for austrian unification with germany
+Q.austria_unification_opinion = 0;
+
+// Support amongst the german public for membership in the league of nations
+Q.league_membership_support = 0;
+
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
@@ -428,6 +434,8 @@ Q.panzerkreuzer_failed = 0;
 Q.unemployment_insurance_seen = 0;
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
+Q.austrian_parliamentary_elections = 0;
+Q.saint_germain_anschluss_ban = 0;
 Q.versailles_vote_seen = 0;
 Q.constitution_ratified = 0;
 Q.kapp_putsch_seen = 0;
