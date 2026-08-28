@@ -702,6 +702,9 @@ table {
 .seat.spd {
     fill: #E3000F;
 }
+.seat.uspd {
+    fill: #D47B9B;
+}
 .seat.ddp {
     fill: #DCCA4A;
     stroke: var(--border-color);
