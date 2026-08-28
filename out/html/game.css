@@ -421,6 +421,188 @@ body.dark-mode .mytooltip .mytooltiptext {
 .delete_button {
 }
 
+ul.pinned-cards:not(.decorated),
+ul.choices:not(.decorated),
+ul.decks:not(.decorated) { visibility: hidden; }
+
+/* ============================================================
+   ADVISOR LAYOUT, centered rows, small deputy, faction-ordered bottom
+   ============================================================ */
+
+ul.pinned-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    row-gap: 1.0em;              /* was 1.5em, tighter rows */
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.pinned-cards .pinned-card {
+    margin-right: 0;
+    display: block;
+    text-align: center;
+    
+}
+
+
+
+/* -------- Faction borders -------- */
+a.card[data-faction="authcon"] {
+    border: 8px solid #000435 !important;   /* was #DAA520, dark navy */
+}
+a.card[data-faction="christsoc"] {
+    border: 8px solid #DAB1DA !important;   /* was #A065A0, pale lavender */
+}
+a.card[data-faction="volkskons"] {
+    border: 8px solid #90D5FF !important;   /* already correct */
+}
+a.card[data-faction="volkisch"] {
+    background-color: #06402B !important;
+    border: 8px solid #06402B !important;   /* already correct */
+}
+
+/* -------- Deputy: smaller, same proportions, tucked against leader -------- */
+a.card[data-faction][data-role="deputy"] {
+    width: 80px !important;
+    height: 100px !important;
+    border-width: 5px !important;
+}
+a.card[data-faction][data-role="deputy"] img.card-img {
+    width: 80px !important;
+    height: 100px !important;
+    object-fit: cover;
+}
+ul.pinned-cards li.pinned-card[data-role="deputy"] {
+    align-self: center;          /* was flex-start */
+    margin-left: -0.5em;
+}
+
+ul.pinned-cards li.pinned-card[data-role="deputy"] .card-caption {
+    font-size: 0.85em;
+    line-height: 1.1;
+}
+
+/* ============================================================
+   PASSIVE EFFECT TOOLTIP (used by deputy cards and similar)
+   ============================================================ */
+
+.passive-wrap {
+    position: relative;
+    display: inline;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    cursor: help;
+}
+
+.passive-tip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    max-width: 320px;
+    padding: 10px 12px;
+    background: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: left;
+    text-decoration: none;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin-bottom: 6px;
+    /* Prevent the tooltip from inheriting the dashed underline */
+    pointer-events: none;
+}
+
+.passive-wrap:hover .passive-tip {
+    display: block;
+}
+
+/* ============================================================
+   CARD HOVER TOOLTIP (for deputy advisors, etc.)
+   ============================================================ */
+
+/* The tooltip itself, attached inside a card element */
+/* ============================================================
+   CARD HOVER TOOLTIP (for deputy advisors, etc.)
+   ============================================================ */
+
+.card-passive-tip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 240px;
+    max-width: 320px;
+    padding: 10px 12px;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    font-family: inherit;           /* uses the game's native serif */
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: left;
+    z-index: 1000;
+    display: none;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    pointer-events: none;
+    white-space: normal;
+}
+
+/* Show on card hover */
+ul.pinned-cards a.card:hover .card-passive-tip,
+ul.pinned-cards a.card:focus .card-passive-tip {
+    display: block;
+}
+/* ============================================================
+   EMPOWERED FACTION HIGHLIGHT, gold border replaces faction border
+   ============================================================ */
+
+body.empowered-authcon   a.card[data-faction="authcon"],
+body.empowered-christsoc a.card[data-faction="christsoc"],
+body.empowered-volkskons a.card[data-faction="volkskons"],
+body.empowered-volkisch  a.card[data-faction="volkisch"] {
+    border-color: #DAA520 !important;
+    box-shadow: 0 0 12px rgba(218, 165, 32, 0.5), 3px 3px 8px rgba(0,0,0,0.3) !important;
+}
+
+/* -------- Ordering: empowered leader + deputy first -------- */
+body.empowered-authcon   ul.pinned-cards li.pinned-card[data-faction="authcon"][data-role="leader"],
+body.empowered-christsoc ul.pinned-cards li.pinned-card[data-faction="christsoc"][data-role="leader"],
+body.empowered-volkskons ul.pinned-cards li.pinned-card[data-faction="volkskons"][data-role="leader"],
+body.empowered-volkisch  ul.pinned-cards li.pinned-card[data-faction="volkisch"][data-role="leader"] {
+    order: 1;
+}
+body.empowered-authcon   ul.pinned-cards li.pinned-card[data-faction="authcon"][data-role="deputy"],
+body.empowered-christsoc ul.pinned-cards li.pinned-card[data-faction="christsoc"][data-role="deputy"],
+body.empowered-volkskons ul.pinned-cards li.pinned-card[data-faction="volkskons"][data-role="deputy"],
+body.empowered-volkisch  ul.pinned-cards li.pinned-card[data-faction="volkisch"][data-role="deputy"] {
+    order: 2;
+}
+
+/* Row-break spacer, real DOM element inserted by game.js */
+ul.pinned-cards li.advisor-row-break {
+    flex-basis: 100%;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    order: 3;     /* between empowered pair (1-2) and bottom row (10+) */
+    list-style: none;
+}
+
+/* -------- Bottom row: Volkskons → ChristSoc → AuthCon → Völkisch -------- */
+ul.pinned-cards li.pinned-card[data-faction="volkskons"][data-role="leader"]  { order: 10; }
+ul.pinned-cards li.pinned-card[data-faction="christsoc"][data-role="leader"]  { order: 11; }
+ul.pinned-cards li.pinned-card[data-faction="authcon"][data-role="leader"]    { order: 12; }
+ul.pinned-cards li.pinned-card[data-faction="volkisch"][data-role="leader"]   { order: 13; }
 /*
  * Card stuff for dendrynexus
  * 
@@ -429,6 +611,44 @@ body.dark-mode .mytooltip .mytooltiptext {
 ul.decks, ul.hand, ul.pinned-cards {
   list-style: none;
   padding-left: 0;
+}
+/* ============================================================
+   FLANKING DEPUTIES (for Hugenberg-era authcon: 2 deputies)
+   ============================================================ */
+
+/* Left deputy: order 1, tucked against leader from the LEFT */
+body.empowered-authcon ul.pinned-cards li.pinned-card[data-faction="authcon"][data-role="deputy"][data-deputy-side="left"] {
+    order: 1;
+    align-self: center;          /* match right deputy's vertical alignment */
+    margin-left: 0;              /* cancel the default deputy -0.5em left margin */
+    margin-right: -0.5em;        /* tuck against leader from the left */
+}
+
+/* Leader stays center */
+body.empowered-authcon ul.pinned-cards li.pinned-card[data-faction="authcon"][data-role="leader"] {
+    order: 2;
+}
+
+/* Right deputy: order 3 */
+body.empowered-authcon ul.pinned-cards li.pinned-card[data-faction="authcon"][data-role="deputy"][data-deputy-side="right"] {
+    order: 3;
+    align-self: center;          /* explicit, belt-and-suspenders */
+    margin-left: -0.5em;         /* tuck against leader from the right */
+    margin-right: 0;
+}
+
+/* Row break */
+body.empowered-authcon ul.pinned-cards li.advisor-row-break {
+    order: 4;
+}
+
+/* Row break still fires after the rightmost element (order 3 now instead of 2) */
+body.empowered-authcon ul.pinned-cards li.advisor-row-break {
+    order: 4;
+}
+
+.hand {
+
 }
 
 /* ============================================================
@@ -587,6 +807,16 @@ ul.decks, ul.hand, ul.pinned-cards {
     font-weight: bold;
     display: inline-block;
     text-align: center;
+}
+
+/*
+ * Card stuff for dendrynexus
+ * 
+ */
+
+ul.decks, ul.hand, ul.pinned-cards {
+  list-style: none;
+  padding-left: 0;
 }
 
 a.card {
@@ -1001,4 +1231,110 @@ outline: 2px solid #D3C24D transparent transparent transparent;
 .wide_tooltip-wrap.drop-down .wide_tooltip-tip {
   bottom: auto;
   top: calc(100% + 10px);
+}
+
+/* ============================================================
+   SHUFFLE LEADERSHIP BUTTON (rendered as a deck via JS reparenting)
+   ============================================================ */
+
+/* The shuffle_leadership card inherits .deck sizing from the existing deck CSS,
+   so minimal overrides needed. Optional tweaks below. */
+
+/* Optional: tint the border or add emphasis if you want it to stand out */
+/* Match shuffle leadership card border width and shadow to Party Affairs deck */
+ul.decks a.card[card-id="advisor_switcher"] {
+    border-width: 10px !important;
+    border-style: solid !important;
+    /* border-color stays whatever your current dark gray is, not overridden */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2) !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+/* ============================================================
+   CARD TOOLTIP FOR advisor_switcher (lives in ul.decks)
+   ============================================================ */
+
+ul.decks a.card {
+    position: relative;
+}
+
+ul.decks a.card .card-passive-tip {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    padding: 12px 14px;
+    width: 280px;
+    font-size: 0.9em;
+    font-style: normal;
+    text-align: left;
+    z-index: 100;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+    pointer-events: none;
+    white-space: normal;
+}
+
+ul.decks a.card:hover .card-passive-tip {
+    display: block;
+}
+
+/* Subtitle portraits in choice rows, lock to left column, text beside not below */
+/* Subtitle portraits: lock to left column, text flows beside (not under) */
+ul.choices li .subtitle:has(> img) {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+ul.choices li .subtitle:has(> img) > img {
+    flex-shrink: 0;
+    display: block;
+    margin: 0 !important;
+    width: 100px !important;
+    height: 125px !important;
+    object-fit: cover;
+    border: 1px solid #999;
+}
+
+ul.choices li .subtitle:has(> img) > span {
+    flex: 1;
+    min-width: 0;
+}
+
+ul.choices li a:has(> img) {
+    display: grid !important;
+    grid-template-columns: 21px 100px 1fr;
+    grid-template-areas:
+        "name    name      name"
+        ".       portrait  text";
+    gap: 9px 14px;
+    align-items: center;
+    padding-left: 0;
+}
+
+ul.choices li a:has(> img) > div:first-child {
+    grid-area: name;
+}
+
+ul.choices li a:has(> img) > img {
+    grid-area: portrait;
+    width: 100px !important;
+    height: 125px !important;
+    object-fit: cover;
+    border: 1px solid #999;
+    display: block;
+    margin: 0 !important;
+}
+
+ul.choices li a:has(> img) > span {
+    grid-area: text;
+    font-style: italic;
+    color: #000;
+    align-self: center;
 }
