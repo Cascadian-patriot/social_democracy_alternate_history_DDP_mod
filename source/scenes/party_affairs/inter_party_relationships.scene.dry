@@ -12,13 +12,12 @@ max-visits: 12
 
 The DDP cannot govern by itself yet. Because we dont have a electoral majority, we need to get the support of the other parties to let us into their coalitions and collaborate, in government or in opposition.
 
-- @dvp: Strengthen our bonds with the <span style="color: #C0A054;">conservative-liberal</span> German People's Party.
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @spd: Strengthen our bonds with the Social Democratic Party.
-- @kvp: Strengthen our bonds with the Conservative People's Party.
-- @dnvp: Strenghten our bonds with the German National People's Party. 
+- @dvp: Strengthen our bonds with the <span style="color: #C0A054;">conservative-liberal</span> DVP.
+- @center: Contact sympathetic members of the Z who wish to continue our <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition.
+- @spd: Strengthen our bonds with the SPD, longtime allies of our party and our predecessors.
+- @dnvp: Contact the DNVP where necessary.
 - @bourgeois: Strengthen our bonds with smaller bourgeois parties.
-- @ddp_alone: The <span style="color: #C0A054;">**DDP**</span> can stand alone for now.
+- @ddp_alone: The DDP can stand alone for now.
 - @easy_discard
 
 
@@ -51,7 +50,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 7*(1 - dissent)
 
-The Zentrum has been one of our closest allies through the course of the Republic.
+The Z has been a natural ally and with the newly founded state, we should be able to continue the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 
 
 @dvp
@@ -59,6 +58,7 @@ subtitle: -1 resources </br> The dream of <span style="color: #C0A054;">lib</spa
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; dvp_relation += 5*(1 - dissent); dvp_left += 1
+go-to: dvp_op if ddp_in_government = 1 and dvp_in_government = 0;
 
 Many of our members originate from the DVP, and we have contacts within them.
 
@@ -68,26 +68,13 @@ on-arrival: dvp_relation += 5*(1 - dissent)
 
 They are currently in opposition to our government, but that does not preclude the general building of feelings of good will.
 
-
-@kvp
-subtitle: -1 resources
-view-if: kvp_formed = 1
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kvp_relation += 5*(1 - dissent)
-
-The KVP is a moderate right wing party.
-
-
 @dnvp
-title: [? if dnvp_ideology = "Moderate" and not dnvp_leader = "Treviranus": Increase communications with the national-conservatives from DNVP. ?][? if dnvp_ideology = "Radical" and dvp_ideology = "Right": Collaborate with the anti-democratic rightists from DNVP. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Right": Reconcile with the parliamentary turncoats from DNVP. ?][? if dnvp_ideology = "Radical" and dvp_ideology = "Left": Meet with the radical anti-republican rightists from DNVP. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Left": Find common ground with the people's conservatives from DNVP. ?]
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; DNVP_relation += 5*(1 - dissent)
+on-arrival: resources -= 1; dnvp_relation += 5*(1 - dissent)
 
-[? if dnvp_ideology = "Radical" and dvp_ideology = "Right": Our mutual disdain for the Weimar Republic’s parliamentary catastrophe has made us natural allies with the radicalized DNVP. ?][? if dnvp_ideology = "Moderate" and not dnvp_leader = "Treviranus" and dvp_ideology = "Right": The DNVP’s reluctance to participate in the Reichstag under the moderates has made them a possible ally, despite our differences. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Right": Ties with the DNVP have grown increasingly strained with our rapidly diverging views on the Republic, but negotiations are still possible with their nationalistic tendencies. ?][? if dnvp_ideology = "Radical" and dvp_ideology = "Left": Having the DNVP barrel towards rabid anti-parliamentarian tendencies has made any attempts of reconciliation increasingly moot. ?][? if dnvp_ideology = "Moderate" and not dnvp_leader = "Treviranus" and dvp_ideology = "Left": With the DNVP embracing a middle ground between the young parliamentarians and the radicals, perhaps we could find some compromise. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Left": Having followed us in our more republican stance, the DNVP could be a great ally, should the SPD either be entirely excluded from government or embrace a radical rightward shift. ?]
-
+The DNVP are a half-time coalition partner with us, and most members of our party are uncomfortable at the thought of establishing even more contact with them, but if that is what it takes to get into government..
 
 @bourgeois
 subtitle: -1 resources
