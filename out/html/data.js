@@ -11,7 +11,7 @@ const colourList = [{
         style: "color: #c00000; font-weight: bold;"
   },
     {
-         word: "Stalhelm",
+         word: "Stahlhelm",
         style: "color: #3E88B3; font-weight: bold;"
   },
     {
@@ -167,8 +167,8 @@ const tooltipList = [{
     explanationText: "<img src=img/rfb.svg> Rotfrontkämpferbund </br></br> Alliance of Red Front-Fighters"
     },
     {
-    searchString: "Stalhelm",
-    explanationText: "<img src=img/stalhelm.svg> Der Stalhelm </br></br> The DNVP's paramilitary."
+    searchString: "Stahlhelm",
+    explanationText: "<img src=img/stalhelm.svg> Der Stahlhelm </br></br> The DNVP's paramilitary."
     },
     {
     searchString: "SA",
