@@ -62,11 +62,16 @@ on-arrival: resources -= 1; league_membership_support += 1; pazifisten_strength 
 We have believed since our founding that Germany's rehabilitation runs through the League, not around it - full membership, not merely toleration from outside. Every step we take toward that goal is a step toward being treated as equals again, rather than a defeated power still serving out its sentence.
 
 @america
+@america
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-go-to: america_democrats if america_contact = 0; america_republicans if america_contact = 1
-on-arrival: resources -= 1; america_contact += 1 if america_contact < 1
+on-arrival: resources -= 1
+
+Our contacts abroad give us an opening to reach out to either of America's major parties. Which is worth our attention?
+
+- @america_democrats: Contact the Democratic Party.
+- @america_republicans: Contact the Republican Party.
 
 @america_democrats
 on-arrival: west_relation += 1; democratization += 1
