@@ -353,7 +353,7 @@ Q.ddp_name = "DDP";
 Q.ddp_full_name = "German Democratic Party";
 Q.ddp_full_name_german = "Deutsche Demokratische Partei";
 Q.img_leader = "img/naumann.jpeg";
-Q.name_leader = "Friedrich Naumann"ñ
+Q.name_leader = "Friedrich Naumann"
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
@@ -606,11 +606,12 @@ Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
 Q.abegg_advisor = 0;
+!}
 
 
-> *"For a fledging democratic system to succeed, we need citizens who understand the procedures, believe in democratic rules and get personally involved."*
+> *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined by the conditions in which they operate."*
 
- - Friedrich Naumann
+ - Karl Kautsky, *Hitlerism and Social Democracy*, 1934
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve simplifications and speculation.
 
@@ -641,6 +642,7 @@ Q.z_relation = 50;
 Q.spd_relation = 55;
 Q.dvp_relation = 20;
 Q.budget = 2;
+
 this.state.disableSaves = true;
 !}
 go-to: 1919_main
@@ -650,7 +652,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_rel
 go-to: 1919_main
 
 @1919_main
-audio: shuffle music/deustchlandlied.mp3
+audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DER_GUTE_KAMERAD_Trimmed.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
