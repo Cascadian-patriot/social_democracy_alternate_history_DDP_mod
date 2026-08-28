@@ -59,9 +59,8 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; league_membership_support += 1; pazifisten_strength += 4; pazifisten_dissent -= 3 if pazifisten_dissent > 0; public_trust += 2; reparations_negotiation += 1
 
-We have believed since our founding that Germany's rehabilitation runs through the League, not around it - full membership, not merely toleration from outside. Every step we take toward that goal is a step toward being treated as equals again, rather than a defeated power still serving out its sentence.
+We have believed since our founding that Germany's rehabilitation is only possible through the league. We should therefore work towards full membership, not merely toleration from outside. Every step we take toward that goal is a step toward being treated as equals again, rather than a defeated agressor.
 
-@america
 @america
 subtitle: -1 resources
 choose-if: resources >= 1
