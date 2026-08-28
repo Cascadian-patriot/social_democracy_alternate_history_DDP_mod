@@ -271,7 +271,7 @@
             return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
         }  
       
-        if (searchString === 'Stalhelm' && Q.sh_strength !== undefined) {
+        if (searchString === 'Stahlhelm' && Q.sh_strength !== undefined) {
             var strength = getSizeText(Q.sh_strength);
             var militancy = getMilitancyText(Q.sh_militancy);
             return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
