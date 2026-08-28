@@ -136,6 +136,9 @@ Q.bvp_split = 0;
 // For Wirtschaftspartei founding in 1920
 Q.wp_founded = 0;
 
+// Variable to use for austrian opinion on unification with germany
+Q.austria_unification_tendency = 0;
+
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
