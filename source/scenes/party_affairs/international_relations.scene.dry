@@ -42,6 +42,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; sammlung_strength += 5; sammlung_dissent -= 5 if sammlung_dissent > 0; dvp_relation += 3; spd_relation += 3; dnvp_relation += 2; 
+
 The Dutch Vrijzinnig-Democratische Bond and the Scandinavian liberal parties face the same problem we do: staying relevant as a small party squeezed between larger Socialist and Right-wing blocs. Their model of unification with other liberal forces, rather than staying alone, offers a blueprint we may find ourselves needing to follow.
 
 @paneuropa
@@ -57,6 +58,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; league_membership_support += 1; pazifisten_strength += 4; pazifisten_dissent -= 3 if pazifisten_dissent > 0; public_trust += 2; reparations_negotiation += 1
+
 We have believed since our founding that Germany's rehabilitation runs through the League, not around it - full membership, not merely toleration from outside. Every step we take toward that goal is a step toward being treated as equals again, rather than a defeated power still serving out its sentence.
 
 @america
