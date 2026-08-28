@@ -589,6 +589,191 @@ ul.decks, ul.hand, ul.pinned-cards {
     text-align: center;
 }
 
+var switcherCard = document.querySelector('a.card[card-id="advisor_switcher"]');
+if (switcherCard && !switcherCard.dataset.clickAttached) {
+    switcherCard.dataset.clickAttached = 'true';
+    switcherCard.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.dendryUI.dendryEngine.goToScene('advisor_switcher');
+    });
+}
+
+
+});
+
+    document.querySelectorAll('ul.pinned-cards a.card[data-role="deputy"]').forEach(function(a) {
+        if (!a.hasAttribute('data-click-disabled')) {
+            a.setAttribute('data-click-disabled', '1');
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        }
+    });
+    ;
+
+    document.querySelectorAll('ul.pinned-cards').forEach(function(ul) {
+        var empFactionMatch = document.body.className.match(/empowered-(\w+)/);
+        if (!empFactionMatch) return;
+        var empFaction = empFactionMatch[1];
+
+        var deputyLi = ul.querySelector('li.pinned-card[data-faction="' + empFaction + '"][data-role="deputy"]');
+        var leaderLi = ul.querySelector('li.pinned-card[data-faction="' + empFaction + '"][data-role="leader"]');
+        var anchorLi = deputyLi || leaderLi;
+        if (!anchorLi) return;
+
+        var nextEl = anchorLi.nextElementSibling;
+        if (nextEl && nextEl.classList && nextEl.classList.contains('advisor-row-break')) {
+            ul.querySelectorAll('li.advisor-row-break').forEach(function(br) {
+                if (br !== nextEl) br.remove();
+            });
+            return;
+        }
+
+        ul.querySelectorAll('li.advisor-row-break').forEach(function(br) {
+            br.remove();
+        });
+
+        var br = document.createElement('li');
+        br.className = 'advisor-row-break';
+        anchorLi.parentNode.insertBefore(br, anchorLi.nextSibling);
+},
+'advisor_switcher': {
+        body: `We can manually change our advisors once every twenty months, or by <b>event</b>.`
+    }
+    };
+
+    document.querySelectorAll('ul.pinned-cards a.card[card-id]').forEach(function(card) {
+        var id = card.getAttribute('card-id');
+        var tooltipData = deputyTooltips[id];
+        if (!tooltipData) return;
+
+        if (card.querySelector('.card-passive-tip')) return;
+        card.removeAttribute('title');
+
+        var tip = document.createElement('span');
+        tip.className = 'card-passive-tip';
+        tip.innerHTML = tooltipData.body;
+        card.appendChild(tip);
+    });
+    (function() {
+        var swCard = document.querySelector('a.card[card-id="advisor_switcher"]');
+        if (!swCard) return;
+        if (swCard.querySelector('.card-passive-tip')) return;
+        if (!deputyTooltips['advisor_switcher']) return;
+        swCard.removeAttribute('title');
+        var tip = document.createElement('span');
+        tip.className = 'card-passive-tip';
+        tip.innerHTML = deputyTooltips['advisor_switcher'].body;
+        swCard.appendChild(tip);
+    })();
+    (function() {
+        var pinnedHeaders = document.querySelectorAll('p, div, h1, h2');
+        var target = null;
+        pinnedHeaders.forEach(function(el) {
+            if (!target && el.textContent && el.textContent.trim().startsWith('Advisors')) {
+                var next = el.nextElementSibling;
+                if (next && next.classList && next.classList.contains('pinned-cards')) {
+                    target = el;
+                }
+            }
+        });
+        if (!target) return;
+
+        var COOLDOWN_MONTHS = 12;
+        var factions = [
+            { key: 'volkskons', color: '#90D5FF', invert: true,  bg: '#6a6a6a', timer: q.volkskons_action_timer || 0 },
+            { key: 'christsoc', color: '#DAB1DA', invert: true,  bg: '#919191', timer: q.christsoc_action_timer || 0 },
+            { key: 'authcon',   color: '#000435', invert: false, bg: '#b9b9b9', timer: q.authcon_action_timer   || 0 },
+            { key: 'volkisch',  color: '#06402B', invert: false, bg: '#e0e0e0', timer: q.volkisch_action_timer  || 0 }
+        ];
+        if (q.left_split === 1) {
+            factions = factions.filter(function(f) { return f.key !== 'volkskons'; });
+        }
+        if (q.csvd_formed === 1) {
+            factions = factions.filter(function(f) { return f.key !== 'christsoc'; });
+        }
+
+        var segmentsHtml = '';
+        var labelsHtml = '';
+        factions.forEach(function(f, idx) {
+            var filledPct = Math.round(((COOLDOWN_MONTHS - f.timer) / COOLDOWN_MONTHS) * 100);
+            var filled = f.timer === 0;
+            var useWhite = f.invert ? !filled : filled;
+            var divColor = useWhite ? '#fff' : '#000';
+            var nextF = factions[idx + 1];
+            if (nextF && f.invert && !nextF.invert) divColor = '#000';
+            var segStyle = '--divider-color: ' + divColor + '; --divider-width: 2px; background: ' + f.bg + ';';
+            segmentsHtml += '<div class="advisor-timer-segment' + (f.invert ? ' invert' : '') + '" style="' + segStyle + '">'
+                          +   '<div class="advisor-timer-fill" style="width:' + filledPct + '%; --w:' + Math.max(filledPct, 1) + '; background:' + f.color + ';"></div>'
+                          + '</div>';
+            labelsHtml += '<div class="advisor-timer-label">'
+                        +   (f.timer === 0 ? '<span class="advisor-ready">Available</span>' : '')
+                        + '</div>';
+        });
+
+        var html = '<div class="advisor-header">Advisors</div>'
+                 + '<div class="advisor-timer-conjoined">' + segmentsHtml + '</div>'
+                 + '<div class="advisor-timer-labels">' + labelsHtml + '</div>';
+
+        if (target.innerHTML !== html) {
+            target.innerHTML = html;
+        }
+        target.classList.add('advisor-panel-head');
+
+        var pinnedUl = target.nextElementSibling;
+        if (pinnedUl && pinnedUl.classList && pinnedUl.classList.contains('pinned-cards')
+            && (!target.parentElement || !target.parentElement.classList.contains('advisor-panel-wrap'))) {
+            var wrap = document.createElement('div');
+            wrap.className = 'advisor-panel-wrap';
+            target.parentNode.insertBefore(wrap, target);
+            wrap.appendChild(target);
+            wrap.appendChild(pinnedUl);
+        }
+
+    })();
+
+    (function() {
+        var dotAdv = document.getElementById('advisors-fab-dot');
+        if (!dotAdv) return;
+        var timerList = [
+            { key: 'volkskons', t: q.volkskons_action_timer || 0 },
+            { key: 'christsoc', t: q.christsoc_action_timer || 0 },
+            { key: 'authcon',   t: q.authcon_action_timer   || 0 },
+            { key: 'volkisch',  t: q.volkisch_action_timer  || 0 }
+        ];
+        if (q.left_split === 1) timerList = timerList.filter(function(x) { return x.key !== 'volkskons'; });
+        if (q.csvd_formed === 1) timerList = timerList.filter(function(x) { return x.key !== 'christsoc'; });
+        var anyReady = timerList.some(function(x) { return x.t === 0; });
+        dotAdv.style.display = anyReady ? 'block' : 'none';
+    })();
+
+    var switcher = document.querySelector('ul.pinned-cards li.pinned-card:has(a.card[card-id="advisor_switcher"])');
+    var decksUl = document.querySelector('ul.decks');
+    if (switcher && decksUl && switcher.parentElement !== decksUl) {
+        switcher.className = 'deck';
+        decksUl.appendChild(switcher);
+    }
+    if (window._injectExecutiveCard) window._injectExecutiveCard();
+    var cabDeck = document.querySelector('ul.decks a.card[card-id="main.cabinet"]')
+               || document.querySelector('ul.decks a.card[card-id="cabinet"]');
+    if (cabDeck && !cabDeck._cabDirectBound) {
+        cabDeck._cabDirectBound = true;
+        cabDeck.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            if (window.dendryUI && window.dendryUI.dendryEngine) {
+                window.dendryUI.dendryEngine.goToScene('cabinet_decisions');
+            }
+        }, true);
+    }
+    document.querySelectorAll('ul.pinned-cards, ul.choices, ul.decks').forEach(function(ul) {
+        ul.classList.add('decorated');
+    });
+};
+
 a.card {
   display: inline-block;
   width: 120px;
