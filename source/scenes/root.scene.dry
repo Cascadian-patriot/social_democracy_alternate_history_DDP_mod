@@ -109,6 +109,7 @@ Q.spd_relation = 65;
 Q.dvp_relation = 30;
 Q.uspd_relation = 20;
 Q.dnvp_relation = 15;
+Q.dap_relation = 0;
 Q.nsdap_relation = 0;
 
 Q.kpd_leader = "Thälmann";
@@ -118,6 +119,7 @@ Q.z_leader = "Brüning";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 Q.z_party_leader = "Marx";
 Q.nsdap_leader = "Hitler";
+Q.nsdap_leader = "Harrer";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
@@ -246,10 +248,12 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'uspd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
-
+Q.parties = ['spd', 'kpd', 'uspd', 'z', 'ddp', 'dvp', 'dnvp', 'dap', 'nsdap', 'other'];
+ 
 // TODO: add rdp later
 Q.sapd_formed = 0;
+Q.dap_formed = 0;
+Q.nsdap_formed = 0;
 Q.rdp_formed = 0;
 
 // Support for party by social group
@@ -262,6 +266,7 @@ Q.workers_z = 5;
 Q.workers_ddp = 3;
 Q.workers_dvp = 0;
 Q.workers_dnvp = 5;
+Q.workers_dap = 0;
 Q.workers_nsdap = 0;
 Q.workers_other = 5;
 
@@ -272,6 +277,7 @@ Q.old_middle_z = 8;
 Q.old_middle_ddp = 20;
 Q.old_middle_dvp = 15;
 Q.old_middle_dnvp = 25;
+Q.old_middle_dap = 0;
 Q.old_middle_nsdap = 0;
 Q.old_middle_other = 5;
 
@@ -282,6 +288,7 @@ Q.new_middle_z = 8;
 Q.new_middle_ddp = 40;
 Q.new_middle_dvp = 15;
 Q.new_middle_dnvp = 10;
+Q.new_middle_dap = 0;
 Q.new_middle_nsdap = 0;
 Q.new_middle_other = 4;
 
@@ -292,6 +299,7 @@ Q.rural_z = 20;
 Q.rural_ddp = 10;
 Q.rural_dvp = 10;
 Q.rural_dnvp = 40;
+Q.rural_dap = 0;
 Q.rural_nsdap = 0;
 Q.rural_other = 5;
 
@@ -302,6 +310,7 @@ Q.unemployed_z = 2;
 Q.unemployed_ddp = 2;
 Q.unemployed_dvp = 0;
 Q.unemployed_dnvp = 5;
+Q.unemployed_dap = 0;
 Q.unemployed_nsdap = 0;
 Q.unemployed_other = 5;
 
@@ -312,6 +321,7 @@ Q.catholics_z = 65;
 Q.catholics_ddp = 3;
 Q.catholics_dvp = 3;
 Q.catholics_dnvp = 3;
+Q.catholics_dap = 0;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 3;
 
@@ -329,6 +339,7 @@ Q.z_r = 20;
 Q.ddp_r = 19;
 Q.dvp_r = 4;
 Q.dnvp_r = 10;
+Q.dap_r = 0;
 Q.nsdap_r = 0;
 Q.other_r = 1;
 
@@ -341,6 +352,7 @@ Q.old_z_r = 20;
 Q.old_ddp_r = 19;
 Q.old_dvp_r = 4;
 Q.old_dnvp_r = 10;
+Q.old_dap_r = 0;
 Q.old_nsdap_r = 0;
 Q.old_other_r = 1;
 
