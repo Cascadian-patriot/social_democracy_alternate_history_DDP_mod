@@ -510,6 +510,25 @@ Q.ddp_no_confidence = 0;
 // was the last DDP government taken down in a vote of no confidence by right-wing coalition partners?
 Q.no_confidence_against_ddp = 0;
 
+// (dynamic) party_colours - mostly major and dynmaic parties, thanks to KurtRosenfeld for making this idea which has made life so much easier for me at times.
+
+Q.spd_colour = '#c00000';
+Q.kpd_colour = '#700000';
+Q.sapd_colour = '#9B0000';
+Q.uspd_colour = '#D47B9B';
+Q.aspd_colour = '#fe9e00';
+Q.ussr_colour = '#750e0e';
+Q.ddp_colour = '#D3C24D';
+Q.lvp_colour = '#FFCC00';
+Q.z_colour = '#000000';
+Q.bvp_colour = '#A2D8E0';
+Q.dvp_colour = '#D5AC27';
+Q.dnvp_colour = '#3E88B3';
+Q.dnf_colour = '#003755';
+Q.dap_colour = '#524732';
+Q.nsdap_colour = '#7A3C00';
+Q.i_colour = '#808080';
+
 // Advisors/Leaders
 Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
