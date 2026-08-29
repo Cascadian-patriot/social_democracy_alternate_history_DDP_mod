@@ -36,7 +36,10 @@ go-to: menu
 
 = Timeline of <span style="color: [+ lvp_colour +];">Liberalism</span> (until 1919)
 
-**1861**: The <span style="color: #FFD700;">DFP</span> is founded as the first party with a official party program, calling for an independent and unbiased judiciary, seperation of church and state, and representative democracy for all, however it also advocated for pan-german goals, as was the rule at the time, coming under the leadership of several liberal figures within our politics and holding opposition agaisnt Otto Von Bismarck.
+**1861**: The <span style="color: #FFD700;">**DFP**</span> is founded as the first party with a official party program, calling for an independent and unbiased judiciary, seperation of church and state, and representative democracy for all, however it also advocated for pan-german goals, as was the rule at the time, coming under the leadership of several liberal figures within our politics and holding opposition agaisnt Otto Von Bismarck.
+
+**1867**: The <span style="color: #FFD700;">**DFP**</span>'s moderate elements spilt to create the <span style="color: #FFD700;">**NLP**</span>, over disagreements in policy such as opposition to Otto Von Bismarck.
+
 
 @curr_gov
 go-to: cabinet if ddp_in_government; menu if not ddp_in_government
