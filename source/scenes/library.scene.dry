@@ -356,6 +356,12 @@ data = data.concat([
         "seats": Q.spd_r*5,
     },
     {
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Q.uspd_r*5,
+    },
+    {
         "id": "ddp",
         "legend": "DDP",
         "name": "DDP",
@@ -390,6 +396,12 @@ data = data.concat([
         "legend": "DNVP",
         "name": "DNVP",
         "seats": Q.dnvp_r*5,
+    },
+    {
+        "id": "dap",
+        "legend": "DAP",
+        "name": "DAP",
+        "seats": Q.dap_r*5,
     },
     {
         "id": "nsdap",
@@ -452,13 +464,15 @@ if (d3 && window) {
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div></td><td>!} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:[+ ddp_colour +]; outline: 2px; outline-style: solid;'> </div></td><td>!} **DDP:** {!</td><td>!} **[+ ddp_r +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:[+ uspd_colour +]'> </div></td><td>!} USPD: {!</td><td>!} [+ uspd_r +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:[+ spd_colour +]'> </div></td><td>!} SPD: {!</td><td>!} [+ spd_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
@@ -466,26 +480,9 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Others: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
 {!</table>!}
-
-= Election history
-
-[? if year = 1928 and month < 5 : No new elections yet. ?]
-
-{!<svg id="election_history" style="width: 500px; height: 400px;"> </svg>!}
-
-= Party support history
-
-[? if historical_mode: Not available in historical mode. ?]
-
-{!<svg id="party_support_history" style="width: 500px; height: 400px;"> </svg>!}
-
-= Economic history
-
-{!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
-# TODO: maybe add textual histories too? some accessibility stuff as well...
