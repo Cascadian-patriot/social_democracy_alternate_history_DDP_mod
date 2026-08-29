@@ -350,16 +350,16 @@ if (Q.sapd_formed && Q.sapd_r) {
 }
 data = data.concat([
     {
-        "id": "spd",
-        "legend": "SPD",
-        "name": "SPD",
-        "seats": Q.spd_r*5,
-    },
-    {
         "id": "uspd",
         "legend": "USPD",
         "name": "USPD",
         "seats": Q.uspd_r*5,
+    },
+    {
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Q.spd_r*5,
     },
     {
         "id": "ddp",
@@ -464,15 +464,15 @@ if (d3 && window) {
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:[+ ddp_colour +]; outline: 2px; outline-style: solid;'> </div></td><td>!} **DDP:** {!</td><td>!} **[+ ddp_r +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D3C24D; outline: 2px; outline-style: solid;'> </div></td><td>!} **DDP:** {!</td><td>!} **[+ ddp_r +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:[+ uspd_colour +]'> </div></td><td>!} USPD: {!</td><td>!} [+ uspd_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D47B9B'> </div></td><td>!} USPD: {!</td><td>!} [+ uspd_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:[+ spd_colour +]'> </div></td><td>!} SPD: {!</td><td>!} [+ spd_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#c00000'> </div></td><td>!} SPD: {!</td><td>!} [+ spd_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
