@@ -45,7 +45,7 @@ Attacking the KPD is supported by all but the most left-wing socialists, and win
 
 @socialist
 on-arrival: enemies = "Socialists"; nationalliberale_strength += 5; linksliberale_strength -= 5; spd_relations -= 5; dnvp_relations += 5; uspd_relations -= 5; kpd_relations -= 5; new_middle_spd -= 4; new_middle_kpd -= 4; new_middle_uspd -= 4
-choose-if: nationalliberale_strenght >= 10
+choose-if: linksliberale_strength >= 10
 
 [? if linksliberal_strength <= 10 : The left in our party would never allow this. ]
 
