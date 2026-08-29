@@ -10,7 +10,7 @@ Herein contains relevant information about the government and politics of the Ge
 @menu
 
 - @government: Germany's system of government
-- @weimar_timeline: Timeline of the Weimar Republic before 1928
+- @weimar_timeline: Timeline of <span style="color: [+ lvp_colour +];">Liberalism</span> before 1919
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -38,8 +38,19 @@ go-to: menu
 
 **1861**: The <span style="color: #FFD700;">**DFP**</span> is founded as the first party with a official party program, calling for an independent and unbiased judiciary, seperation of church and state, and representative democracy for all, however it also advocated for pan-german goals, as was the rule at the time, coming under the leadership of several liberal figures within our politics and holding opposition agaisnt Otto Von Bismarck.
 
-**1867**: The <span style="color: #FFD700;">**DFP**</span>'s moderate elements spilt to create the <span style="color: #FFD700;">**NLP**</span>, over disagreements in policy such as opposition to Otto Von Bismarck.
+**1867**: The <span style="color: #FFD700;">**DFP**</span>'s moderate elements spilt to create the <span style="color: #98C22C;">**NLP**</span>, over disagreements in policy such as opposition to Otto Von Bismarck.
 
+**1868**: Radicals in South Germany spilt to create the <span style="color: #FFAB00;">**DVP**</span> (Not to be confused with the current DVP), being the original party of Quidde, a current member of our party.
+
+**1884**: The <span style="color: #FFD700;">**DFP**</span> and the <span style="color: #EEDC82;">**LV**</span> (a spilt from the <span style="color: #98C22C;">**NLP**</span>) merge together to create the..  <span style="color: #FFD800;">**DFP**</span>, again.
+
+**1893**: The <span style="color: #FFD800;">**DFP**</span> spilts into the <span style="color: #FFD800;">**FVP**</span> and <span style="color: #EEDC82;">**FVG**</span>.
+
+**1910**: The liberals reunify yet again as the <span style="color: #EEDC82;">**FVG**</span> merges back into the <span style="color: #FFD800;">**FVP**</span> and the <span style="color: #FFAB00;">**DVP**</span> joins too, creating the.. <span style="color: #FFD800;">**FVP**</span>, yet again.
+
+**1918**: The <span style="color: #FFD800;">**FVP**</span> reorganises itself into the DDP, with some elements of the former <span style="color: #98C22C;">**NLP**</span> coming over.
+
+**1919**: The Kaiser has abdicated, and a new world is ready to be built.
 
 @curr_gov
 go-to: cabinet if ddp_in_government; menu if not ddp_in_government
