@@ -528,6 +528,11 @@ Q.dnf_colour = '#003755';
 Q.dap_colour = '#524732';
 Q.nsdap_colour = '#7A3C00';
 Q.i_colour = '#808080';
+Q.nl_colour = '#c5f062';
+Q.rs_colour = '#e3c35b';
+Q.pf_colour = '#a685a2';
+Q.ll_colour = '#edd94c';
+Q.sl_colour = '#d4d68b';
 
 // Advisors/Leaders
 Q.n_advisors = 3;
