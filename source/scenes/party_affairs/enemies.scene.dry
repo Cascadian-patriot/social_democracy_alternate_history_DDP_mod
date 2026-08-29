@@ -36,7 +36,7 @@ choose-if: nazi_urgency >= 1
 
 [? if nazi_urgency == 0 : The NSDAP is a tiny party right now.]
 
-[? if nazi_urgency > 0 : The Nazis are a threat to weimar democracy, and must be dealt with. ?]
+[? if nazi_urgency >= 0 : The Nazis are a threat to weimar democracy, and must be dealt with. ?]
 
 @kpd
 on-arrival: enemies = "KPD"; nationalliberale_strength += 5; linksliberale_dissent += 4; republikschutzer_dissent += 5; reformist_dissent -= 5; kpd_relation -= 15; dvp_relation += 5; z_relation += 5; new_middle_kpd -= 4
