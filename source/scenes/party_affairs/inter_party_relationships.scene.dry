@@ -12,13 +12,13 @@ max-visits: 12
 
 The DDP cannot govern by itself yet. Because we dont have a electoral majority, we need to get the support of the other parties to let us into their coalitions and collaborate, in government or in opposition.
 
-- @dvp: Strengthen our bonds with the <span style="color: #C0A054;">conservative-liberal</span> German People's Party.
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @spd: Strengthen our bonds with the Social Democratic Party.
-- @kvp: Strengthen our bonds with the Conservative People's Party.
-- @dnvp: Strenghten our bonds with the German National People's Party. 
+- @dvp: Strengthen our bonds with the <span style="color: #C0A054;">conservative-liberal</span> DVP.
+- @center: Strengthen our bonds with the catholic Z.
+- @spd: Strengthen our bonds with the SPD.
+- @kvp: Strengthen our bonds with the KVP.
+- @dnvp: Strenghten our bonds with the DNVP. 
 - @bourgeois: Strengthen our bonds with smaller bourgeois parties.
-- @ddp_alone: The <span style="color: #C0A054;">**DDP**</span> can stand alone for now.
+- @ddp_alone: The DDP can stand alone for now.
 - @easy_discard
 
 
@@ -55,7 +55,7 @@ The Zentrum has been one of our closest allies through the course of the Republi
 
 
 @dvp
-subtitle: -1 resources </br> The dream of <span style="color: #C0A054;">lib</span><span style="color: #DCCA4A;">eral</span> unity.
+subtitle: -1 resources.
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; dvp_relation += 5*(1 - dissent); dvp_left += 1
