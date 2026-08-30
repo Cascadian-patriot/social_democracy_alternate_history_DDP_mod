@@ -130,7 +130,6 @@ Q.socialism_disp = Math.round(Q.socialism);
 !}
 view-if: (not historical_mode) or game_over
 go-to: election_algorithm
-set-jump: election_projections
 
 Support for the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span>: [+ pro_republic_disp +]%
 
