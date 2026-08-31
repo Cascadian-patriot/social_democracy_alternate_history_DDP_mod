@@ -20,7 +20,7 @@ const colourList = [{
   },
     {
         word: "DHP",
-        style: "color: #7A3C00; font-weight: bold;"
+        style: "color: #63C489; font-weight: bold;"
   },
     {
         word: "WP",
