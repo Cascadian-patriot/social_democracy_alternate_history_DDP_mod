@@ -201,7 +201,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The Reichsbanner is an organization affiliated with all of the democratic parties - the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**[+ z_party_name +]**</span>, and [? if lvp_formed: the former ?]<span style="color: #D3C24D;">**[+ ddp_name +]**</span>, but primarily with the <span style="color: #c00000;">**SPD**</span>. Historically, this has been an unarmed organization.
+**Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The Reichsbanner is an organization affiliated with all of the democratic parties - the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Z**</span>, and [? if lvp_formed: the former ?]<span style="color: #D3C24D;">**[+ ddp_name +]**</span>, but primarily with the <span style="color: #c00000;">**SPD**</span>. Historically, this has been an unarmed organization.
 
 Strength: [+ rb_strength +] thousand
 
