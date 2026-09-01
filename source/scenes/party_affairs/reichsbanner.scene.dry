@@ -51,7 +51,7 @@ on-arrival: resources += 1; rb_founding_progress -= 2; linksliberale_strength -=
 
 We cut invested resources into the reichsbanner. The left-liberal wing of our party feels uncomfortable with this and it hurts our influence in the reichsbanner by a lot.
 
-@invest_ddp_2
+@invest_ddp_1
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
