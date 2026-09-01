@@ -150,6 +150,9 @@ Q.reichsbanner_formed = 0;
 // Reichsbanner formation progress
 Q.reichsbanner_progress = 0;
 
+// reichsbanner influence for DDP
+Q.ddp_reichsbanner_influence = 0;
+
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
