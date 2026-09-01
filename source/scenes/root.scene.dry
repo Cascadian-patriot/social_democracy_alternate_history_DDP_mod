@@ -146,6 +146,17 @@ Q.austria_unification_opinion = 0;
 // Support amongst the german public for membership in the league of nations
 Q.league_membership_support = 0;
 
+// Reichsbanner formed?
+Q.reichsbanner_formed = 0;
+
+// Reichsbanner formation progress
+Q.reichsbanner_progress = 0;
+
+// reichsbanner influence for parties
+Q.rb_ddp_influence = 0;
+Q.rb_spd_influence = 0;
+Q.rb_z_influence = 0;
+
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
