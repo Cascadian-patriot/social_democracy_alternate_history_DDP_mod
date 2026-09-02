@@ -156,6 +156,9 @@ Q.womens_organizing = 0;
 // Young democrats organisation strength 
 Q.young_democrats = 2;
 
+// science investements from ddp
+Q.ddp_funded_science = 0;
+
 // reichsbanner influence for parties
 Q.rb_ddp_influence = 0;
 Q.rb_spd_influence = 0;
