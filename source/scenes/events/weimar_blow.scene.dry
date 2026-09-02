@@ -27,10 +27,12 @@ subtitle: This will be extremely unpopular in the party.
 on-arrival: {!
 Q.chancellor = David;
 Q.chancellor_party = "SPD";
+
 Q.new_middle_ddp -= 3;
 Q.new_middle_dvp += 3;
 Q.old_middle_dnvp += 1;
 Q.old_middle_ddp -= 1;
+
 Q.nationalliberale_dissent += 3;
 !}
 
@@ -61,9 +63,11 @@ Q.finance_minister = Erzberger;
 Q.finance_minister_party = "Z";
 Q.agriculture_minister = Schmidt;
 Q.agriculture_minister_party = "SPD";
+
 Q.new_middle_ddp -= 1;
 Q.new_middle_dvp += 1;
 Q.old_middle_dnvp += 2;
+
 Q.ddp_in_government = 0;
 Q.spd_in_government = 1;
 Q.z_in_government = 1;
