@@ -6,17 +6,17 @@ view-if: party_organizations_timer <= 0
 on-arrival: month_actions += 1; party_organizations_timer = 6;
 card-image: img/ddp_poster_14.jpeg
 max-visits: 6
-#subtitle: Outside of electoral politics, the SPD runs a social world onto itself.
+#subtitle: Building the DDP's internal institutions.
 
 = Party Organizations
 
-In addition to being a political party, the SPD is a social world onto itself, with a vast array of associated organizations which serve the social needs of their members from cradle to grave.
+Unlike the mass parties of the working class, we have never built a social world of our own. Our strength has instead ran through different channels, those being civic education, media and the professional and academic circles that make up our base.
 
 - @newspapers: Fund more newspapers and journalists.
-- @welfare: Fund more mutual aid and welfare programs.
-- @culture: Fund sports leagues, educational, and cultural programs.
-- @rb: Fund the Reichsbanner, our self-defense organization.
-- @youth: We have the reputation of being a party for old men. Support the youth organizations.
+- @civic_education: Fund adult education and the Volkshochschule movement.
+- @womens_orgs: Fund women's civic and professional organizations.
+- @research: Help fund research and scientific discoveries.
+- @jungdemokraten: We have the reputation of being a party for old men. Support the Jungdemokraten.
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
@@ -29,40 +29,41 @@ go-to: media
 
 # TODO: differing outcomes based on whether you've seen media, and what kind of media you've supported.
 
-
-@welfare
+@civic_education
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent);
+on-arrival: resources -= 1; new_middle_ddp += 3*(1-dissent); old_middle_ddp += 3*(1-dissent); workers_ddp += 3*(1-dissent); pro_republic += 3; 
 
-We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+We have increased funding to the Volkshochschule movement and other adult-education institutions. This way we ensure an educated citizenry, an essential measure against demagogues and dictators.
 
-@culture
+// For womens_orgs the popularity boost for all classes is supposed to symbolise popularity boost amongst women.
+
+@womens_orgs
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; cultural_organizations += 1; left_dissent -= 6; center_dissent -= 6; labor_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+on-arrival: resources -= 1; womens_organizing += 1; workers_ddp += 3*(1-dissent); new_middle_ddp += 3*(1-dissent); old_middle_ddp += 3*(1-dissent); rural_ddp += 3*(1-dissent); unemployed_ddp += 3*(1-dissent); linksliberale_strength += 3; linksliberale_dissent -= 3 if linksliberale_dissent > 0 
 
-It is not enough for the SPD to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
+We have increased funding to the women's civic and professional organizations that Bäumer and Lüders have spent years building. This way, we keep true to our roots of being a party in favour of women's sufferage.
 
-[? if sa_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
-
-@rb
+@research
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; rb_strength  += 100; rb_militancy += 0.01; reichsbanner_timer = 0; funded_reichsbanner += 1
+on-arrival: resources -= 1; science += 1; new_middle_ddp += 2*(1-dissent); public_trust += 2
+go-to: einstein_appeal if research_funding = 3 and einstein_appeal_seen = 0
 
-We have increased recruiting to the Reichsbanner.
+We have increased funding to scientific research and university institutes. Our party has always drawn heavily from the academic world, wich is where we got the nickname "the party of jews and professors" from, and while our enemies may use it negatively, there are worse reputations to have.
 
-@youth
+@jungdemokraten
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; young_socialists += 1; left_strength += 5; neorevisionist_strength += 5; radicalization += 1;
+on-arrival: resources -= 1; young_democrats += 1; linksliberale_strength += 4; sammlung_dissent -= 2 if sammlung_dissent > 0
 
-Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the Reichsbanner.
+Our new young members flock chiefly to the Jungdemokraten, the party's own youth organization. This gives our party new blood, and strenghtens the organisation.
+
 
 @nothing
 
