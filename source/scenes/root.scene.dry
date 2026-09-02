@@ -150,6 +150,9 @@ Q.reichsbanner_formed = 0;
 // Reichsbanner formation progress
 Q.reichsbanner_progress = 0;
 
+// Variable for organisation of women 
+Q.womens_organizing = 0;
+
 // reichsbanner influence for parties
 Q.rb_ddp_influence = 0;
 Q.rb_spd_influence = 0;
