@@ -35,7 +35,7 @@ This alienates all classes of our voters to some degree, aswell as being protest
   
 @negotiate
 subtitle: "Reichswehr does not fire upon Reichswehr; German shall not fight German."
-on-arrival: workers_ddp -= 10*(1-dissent); old_middle_ddp += 8*(1-dissent) spd_relation -= 10; kpd_relation -= 10; dvp_relation += 10; DNVP_relation += 10; nationalliberale_strength += 8 nationalliberale_dissent -= 10; linksliberale_dissent += 10; pazifisten_dissent += 10
+on-arrival: workers_ddp -= 10; old_middle_ddp += 8; spd_relation -= 10; kpd_relation -= 10; dvp_relation += 10; dnvp_relation += 10; nationalliberale_strength += 8; nationalliberale_dissent -= 10; linksliberale_dissent += 10; pazifisten_dissent += 10
 
 We have chosen to ignore the SPD's calls to join them in a general strike, and have instead ordered our Ministers to stay in Berlin and initiate talks with Kapp, Lüttwitz and all other putschists.
 
