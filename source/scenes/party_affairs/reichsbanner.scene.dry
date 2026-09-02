@@ -26,7 +26,7 @@ unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; spd_relation += 3; rb_founding_progress += 2; rb_spd_influence += 1; rb_ddp_influence += 1; rb_z_influence -= 2
 
-We press our case with the Social Democratic leadership. They are broadly sympathetic, as the idea is as present in their leadership as ours. [if rb_spd_influence >= 4 : They are, however, still hesitant.]
+We press our case with the Social Democratic leadership. They are broadly sympathetic, as the idea is as present in their leadership as ours. 
 
 @convince_z
 choose-if: resources >= 1
