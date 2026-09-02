@@ -55,7 +55,7 @@ We cut invested resources into the reichsbanner. The left-liberal wing of our pa
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; z_relation += 2; spd_relations += 3; rb_founding_progress += 1; rb_ddp_influence += 2; rb_z_influence -= 1; rb_spd_influence -= 1
+on-arrival: resources -= 1; z_relation += 2; spd_relation += 3; rb_founding_progress += 1; rb_ddp_influence += 2; rb_z_influence -= 1; rb_spd_influence -= 1
 
 We invest some resources into the reichsbanner's formation on our own. This increases our standing amongst the Centre and Social Democratic party, and increases our influence in the organisation.
 
@@ -63,6 +63,6 @@ We invest some resources into the reichsbanner's formation on our own. This incr
 choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
 subtitle: -2 resources
-on-arrival: resources -= 2; z_relation += 4; spd_relations += 5; rb_founding_progress += 3; rb_ddp_influence += 4; rb_z_influence -= 2; rb_spd_influence -= 2
+on-arrival: resources -= 2; z_relation += 4; spd_relation += 5; rb_founding_progress += 3; rb_ddp_influence += 4; rb_z_influence -= 2; rb_spd_influence -= 2
 
 We invest heavy resources into the reichsbanner's formation on our own. This increases our standing amongst the Centre and Social Democratic party by a lot, and massively increases our influence in the organisation.
