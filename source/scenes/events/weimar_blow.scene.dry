@@ -93,12 +93,12 @@ if (toolsWrapper) {
 const header = document.querySelector('header');
 header.style.color = '#ffffff';
 !}
-go-to: set
+go-to: set21442142
 
-@set
+@set21442142
 on-arrival: set-bg: img/death.png; audio: clear music/ijZdQXV48t0.mp3
 
-@set
+@set21442142
 
 Before dawn, on June 22, 1919, <span style="color: #002654;">**French**</span>, <span style="color: #C8102E;">**British**</span>, and <span style="color: #FFCD00;">**Belgian**</span> troops crossed the Rhine river at several points, mainly Cologne, Koblenz, and Mainz. They met no resistance, as they began advancing towards Berlin. The Cabinet and President were woken up in the middle of the night to this terrifying reality: The war had been restarted.
 
