@@ -663,6 +663,7 @@ Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
 Q.abegg_advisor = 0;
+Q.einstein_advisor = 0; // Recruitable
 !}
 
 
