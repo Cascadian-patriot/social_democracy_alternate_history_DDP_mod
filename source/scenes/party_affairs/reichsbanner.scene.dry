@@ -2,7 +2,7 @@ title: Building the Reichsbanner
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: reichsbanner_timer <= 0 and kapp_putsch_seen >= 0 and reichsbanner_formed <= 0
+view-if: reichsbanner_timer <= 0 and kapp_putsch_seen = 1 and reichsbanner_formed <= 0
 card-image: img/reichsbannerddp.jpeg
 on-arrival: month_actions += 1; reichsbanner_timer += 6; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
 #subtitle: Building a pro-republic paramilitary organisation.
