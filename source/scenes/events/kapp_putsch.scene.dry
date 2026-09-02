@@ -1,0 +1,44 @@
+title: The Kapp-Lüwitz putsch
+subtitle: The forces of reaction rear their head again.
+view-if: kapp_putsch_seen = 0 and year = 1920 and month = 3
+max-visits: 1
+on-arrival: kapp_putsch_seen = 1; month_actions += 1
+tags: event
+
+= The Kapp-Lüwitz putsch
+
+A crisis! Several units of the freikorps, marinebrigades Ehrhardt and Loewenfeld, have defied orders from defence minister Noske to disband during the SPD’s steady winding down of the freikorps and other paramilitary forces following the Revolution. General Lüwitz and several other sympathetic forces, including large swathes of the bureaucracy, have joined them.
+
+Already, the disloyal freikorps are in Berlin, and more are going to follow - a Putschist government is expected to be formed, and the reichswehr is going over to their side. If we do not stop them, all we have fought for will be gone and reaction will have fought its final victory.
+
+What should we do?
+
+- @general_strike: Join the Social Democrats in Stuttgart amid their calls for a general strike.
+- @statement: Release a statement supporting the Republic.
+- @negotiate: Stay in Berlin and negotiate with the Putschists.
+
+@general_strike
+subtitle: "Long live the Republic!"
+on-arrival: linksliberale_strength += 10; nationalliberale_dissent += 10; old_middle_ddp -= 6*(1-dissent); workers_ddp += 8*(1-dissent); spd_relation += 12; dvp_relation -= 8; DNVP_relation -= 10; ddp_industrial_backing -= 2
+
+We flee the city from the advancing putschists, and join the SPD in calls for a general strike.
+  
+Many of the liberal unions join in, crippling the bureaucracy. this, alongside the ADGB, and the far left’s strikes, leads to the putschists and the government negotiating an end to this crisis, aided by Gustav Stresserman of the DVP, and representatives of the Prussian state government. Kapp and Lüttwitz resign, the cabinet is reshuffled, and fresh elections are called. Otto Geßler, formerly of our party, resigns to become reichswehr minister. In party affairs, our right splits en-masse against perceived Bolshevik alignment,  in addition what’s left of industrial funding drying up, and our relationship with the right-wing being permanently crippled. This is, however, offset somewhat by the flood of moderate workers to the party and warming of relations between us and the SPD
+
+@statement
+subtitle: "The middle way is the best to do during this crisis."
+on-arrival: workers_ddp -= 2*(1-dissent); old_middle_ddp -= 2*(1-dissent); new_middle_ddp -= 2*(1-dissent); rural_ddp -= 2*(1-dissent); catholics_ddp -= 2*(1-dissent); sammlung_dissent += 3; linksliberale_dissent += 3; nationalliberale_dissent += 3; pazifisten_dissent += 3 
+
+We have chosen the dull compromise of simply releasing a statement in favor of the Republic without mentioning either the Putsch nor the General Strike, and leaving it upon individual members' conscience whether to stay in Berlin and negotiate or join the Republican Government.
+
+This alienates all classes of our voters to some degree, aswell as being protested by all factions of our party for different reasons. Overall, this course of Action Is neither opposed nor accepted in our party, and everyone has been left slightly unhappy while some have started to questioned our legitimacy as Democratic party.
+  
+@negotiate
+subtitle: "Reichswehr does not fire upon Reichswehr; German shall not fight German."
+on-arrival: workers_ddp -= 10; old_middle_ddp += 8; spd_relation -= 10; kpd_relation -= 10; dvp_relation += 10; dnvp_relation += 10; nationalliberale_strength += 8; nationalliberale_dissent -= 10; linksliberale_dissent += 10; pazifisten_dissent += 10
+
+We have chosen to ignore the SPD's calls to join them in a general strike, and have instead ordered our Ministers to stay in Berlin and initiate talks with Kapp, Lüttwitz and all other putschists.
+
+Although initially it seemed to be going nowhere, we soon managed to strike a deal once the General Strike started to paralyzed the country, granting general amnesty and allowing the generals involved to retire with full pension rights.
+
+The Parties to our right, such as the DVP and DNVP approve, as does the right wing of our party, who have gained significant influence. On the other hand, the Labor and Pacifist wings of our party are in total outrage, with them accusing our leadership of undermining the very principles the party was founded on, and many have threatened to resign following this. Whichever Workers previously supported our party have all certainly defected, and the SPD's relations with us after this has become considerably strained.
