@@ -51,8 +51,7 @@ We have increased funding to the women's civic and professional organizations th
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; science += 1; new_middle_ddp += 2*(1-dissent); public_trust += 2
-go-to: einstein_appeal if research_funding = 3 and einstein_appeal_seen = 0
+on-arrival: resources -= 1; science += 1; new_middle_ddp += 2*(1-dissent); public_trust += 2; ddp_funded_science += 1
 
 We have increased funding to scientific research and university institutes. Our party has always drawn heavily from the academic world, wich is where we got the nickname "the party of jews and professors" from, and while our enemies may use it negatively, there are worse reputations to have.
 
