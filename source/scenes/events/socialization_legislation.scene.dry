@@ -1,7 +1,6 @@
 title: SPD Proposes Socialization Legislation
 subtitle: A crisis of coalition discipline
 tags: event
-is-card: true
 view-if: socialization_debate_seen = 0 and year = 1919 and month = 3 and spd_in_government = 1 and economic_minister_party = 'SPD'
 on-arrival: socialization_debate_seen = 1; month_actions += 1
 face-image: img/ruhr_coal.jpg
