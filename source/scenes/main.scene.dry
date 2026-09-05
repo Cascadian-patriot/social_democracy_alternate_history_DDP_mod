@@ -19,9 +19,6 @@ max-cards: 3
 <div class="leader-role">Party Chair</div>
 </div>
 
-import * as React from "react";
-
-const SvgIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
@@ -599,9 +596,6 @@ const SvgIcon = (props) => (
       </g>
     </g>
   </svg>
-);
-
-export default SvgIcon;
 
 - @party
 - @govt
