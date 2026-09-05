@@ -155,6 +155,9 @@ Q.reichsbanner_progress = 0;
 // Variable for organisation of women 
 Q.womens_organizing = 0;
 
+// Socialisation debate 
+Q.socialization_debate_seen = 0
+
 // Young democrats organisation strength 
 Q.young_democrats = 2;
 
@@ -165,6 +168,11 @@ Q.ddp_funded_science = 0;
 Q.rb_ddp_influence = 0;
 Q.rb_spd_influence = 0;
 Q.rb_z_influence = 0;
+
+// Other vars
+Q.constitution_leverage = 0;
+Q.worker_campaign_modifier = 0;
+Q.old_middle_campaign_modifier = 0;
 
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
