@@ -1,0 +1,113 @@
+title: The Treaty Of Versailles.
+subtitle: *It is time to decide our stance on the topic.*
+view-if: year = 1919 and month = 5
+tags: event
+new-page: true
+max-visits: 1
+# thanks to NavaXDa for writing this part.
+
+= The Treaty Of Versailles
+ 
+The <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span> have recently published the peace terms they negotiated amongst themselves without any input from us, and have given us an ultimatum to accept it within 5 days, with them threatening to restart hostilities should it be rejected. The cabinet is extremely divided on the issue, with different members of the same parties disagreeing on signing the treaty. On the Z, Matthias Erzberger is in favor, barring some reservations, while on the SPD, Current Minister-President Scheidemann has been quite vocal on his opposition, calling it "Intolerable", "Unfulfillable", and "Unacceptable".
+
+In our party, our cabinet members have been the most energetic when it comes to opposition to the treaty, with them insisting on first sending a mediation response to the <span style="color: #D7141A;">Allies</span>, including substantial changes to the treaty. In the other parties, many members of the DNVP and SPD agree on the same thing, that the treaty must be denied. Perhaps we should just follow along..
+
+Still, the crux of the matter is that we are threatened by foreign armies entering <span style="color: #000000;">**Ge**</span><span style="color: #C00000;">**rma**</span><span style="color: #D3C24D;">**ny**</span> again, and we are under threat. What should we do?
+
+<div style="text-align: center; margin: 1em 0px; display: block;">
+<img src="img/national_assembly.jpeg" style="width:100%;max-height:200px;object-fit:cover;border:3px solid #000;">
+
+-@social_fascism_but_liberal: Accept the allies' demands and advocate for voting in favour.
+-@compromise_doesnt_work: Push to send the compromise counterproposal treaty to the Entente.
+-@the_entente_kills_us: Fully reject the treaty in its current form.
+
+
+@social_fascism_but_liberal
+subtitle: This will be extremely unpopular in the party.
+on-arrival: {!
+Q.chancellor = David;
+Q.chancellor_party = "SPD";
+
+Q.new_middle_ddp -= 3;
+Q.new_middle_dvp += 3;
+Q.old_middle_dnvp += 1;
+Q.old_middle_ddp -= 1;
+
+Q.nationalliberale_dissent += 3;
+!}
+
+We cave in, and vote in the Cabinet in favour of the treaty, with the SPD and Z following suit despite a few dissenters. However, Scheidemann cannot stomach leading the cabinet that signed such a humilliating treaty, and he has submitted his resignation. President Ebert has appointed Eduard David, a pro-Versailles member of the SPD, to the position of Minister-President, with the respective ministers retaining all their ministries and finally ratifying the treaty.
+
+This decision has caused uproar in our Party, with many middle class voters that chose us in January defecting, mainly towards Gustav Stresemann's DVP. Additionally, the <span style="color: [+ nl_colour +];">right-wing</span> of our Party, composed of former <span style="color: #98C22C;">National Liberals</span>, are in complete outrage, with many prominent figures threatening or even straight up leaving due to this.
+
+However, our decision to prioritize peace has also strengthened the Pazifisten wing.
+
+@compromise_doesnt_work
+subtitle: This is very unlikely to succeed, the Allies are adamant on their demands.
+on-arrival: {!
+Q.chancellor = Bauer;
+Q.chancellor_party = "SPD";
+Q.foreign_minister = Müller;
+Q.foreign_minister_party = "SPD";
+Q.interior_minister = David;
+Q.interior_minister_party = "SPD";
+Q.justice_minister = Vacant;
+Q.justice_minister_party = "Others";
+Q.labor_minister = Schlicke;
+Q.labor_minister_party = "SPD";
+Q.reichswehr_minister = Noske;
+Q.reichswehr_minister_party = "SPD";
+Q.economic_minister = Wissell;
+Q.economic_minister_party = "SPD";
+Q.finance_minister = Erzberger;
+Q.finance_minister_party = "Z";
+Q.agriculture_minister = Schmidt;
+Q.agriculture_minister_party = "SPD";
+
+Q.new_middle_ddp -= 1;
+Q.new_middle_dvp += 1;
+Q.old_middle_dnvp += 2;
+
+Q.ddp_in_government = 0;
+Q.spd_in_government = 1;
+Q.z_in_government = 1;
+!}
+
+We push the cabinet to accept to send a modified treaty to the allies, including far more lenient terms for us, insisting the current draft of the treaty is unnacceptable. The Cabinet almost approves it, until the SPD vetoes it at the last minute in favor of accepting the treaty as it is, thus collapsing talks, as there is no consensus.
+
+Scheidemann has resigned, and both Eduard David and Hermann Müller have rejected forming a new government, with President Ebert choosing Labour Minister Gustav Bauer, who reluctantly agrees to form a Cabinet that will sign the treaty, despite his personal opposition. Our concerns regarding this have led to our party rejecting it's entry into Bauer's Cabinet, leaving us out of government, for now.
+
+Despite us having attempted to seek lesser terms, some voters still see this as a betrayal and have defected, and dissent has risen a bit, though our party remains mostly united.
+
+
+@the_entente_kills_us
+subtitle: Lets call their bluff..
+
+We have fully and firmly rejected the treaty, and with by far the majority of the Cabinet against the treaty, it has been the approved approach, hoping that the allies are bluffing regarding their invasion ultimatum.
+
+- @we_are_so_dead: They were wrong.
+  
+@we_are_so_dead
+subtitle: <span style="color: #002654;">**French**</span> and <span style="color: #FFCD00;">**Belgian**</span> forces cross the border.
+set-bg: img/death.png
+audio: music/ijZdQXV48t0.mp3
+on-arrival: {!
+const contentElement = document.getElementById('content');
+contentElement.style.backgroundColor = '#0A0A08';
+
+const toolsWrapper = document.getElementById('tools_wrapper');
+if (toolsWrapper) {
+  toolsWrapper.style.display = 'none';
+}
+
+const header = document.querySelector('header');
+header.style.color = '#ffffff';
+!}
+
+Before dawn, on June 22, 1919, <span style="color: #002654;">**French**</span>, <span style="color: #C8102E;">**British**</span>, and <span style="color: #FFCD00;">**Belgian**</span> troops crossed the Rhine river at several points, mainly Cologne, Koblenz, and Mainz. They met no resistance, as they began advancing towards Berlin. The Cabinet and President were woken up in the middle of the night to this terrifying reality: The war had been restarted.
+
+The Reichswehr immediately begin mobilizing to face the invasion, despite being completely unprepared to do so, while the Z, DDP, and SPD split on what to do. Some stay in Berlin and choose to fight for the nation, while the more pragmatic and left-wing ones that favored signing the treaty choose to flee behind Allied lines and set up an entente-aligned Government, The Reichswehr and the reactionaries quickly use the chance to overthrow Ebert and instate a military dictatorship, with Ebert fleeing to Allied lines, as Germany descends into civil war, with Bavaria and Hanover declaring independence under the BVP and DHP being extremely disorganised, while the KPD and USPD try to attempt to revive the Spartacist Uprising in the general anarchy. 
+
+<span style="color: #000000;">**Ge**</span><span style="color: #C00000;">**rma**</span><span style="color: #D3C24D;">**ny**</span> and its newborn <span style="color: #000000;">**Rep**</span><span style="color: #C00000;">**ubl**</span><span style="color: #D3C24D;">**lic**</span> are lost.
+
+- @game_over: Game over.

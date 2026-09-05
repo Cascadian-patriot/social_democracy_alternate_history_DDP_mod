@@ -264,6 +264,16 @@
             var relationText = getRelationshipText(Q.dap_relation) 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
+     
+       if (searchString === 'DHP' && Q.dhp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dhp_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+            
+       if (searchString === 'WP' && Q.wp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.wp_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
       
         if (searchString === 'Reichsbanner' && Q.rb_strength !== undefined) {
             var strength = getSizeText(Q.rb_strength);

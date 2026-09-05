@@ -19,6 +19,14 @@ const colourList = [{
         style: "color: #7A3C00; font-weight: bold;"
   },
     {
+        word: "DHP",
+        style: "color: #63C489; font-weight: bold;"
+  },
+    {
+        word: "WP",
+        style: "color: #CCAA7A; font-weight: bold;"
+  },
+    {
         word: "RFB",
         style: "color: #8B0000; font-weight: bold;"
   },
@@ -105,6 +113,14 @@ const tooltipList = [{
     {
     searchString: "SPD",
     explanationText: "<img src=img/spd(2).png> Sozialdemokratische Partei Deutschlands </br></br> Social Democratic Party Of Germany"
+    },
+    {
+    searchString: "DHP",
+    explanationText: "<img src=img/dhp.webp> Deutsch-Hannoversche Partei </br></br> German Hanoverian Party"
+    },
+    {
+    searchString: "WP",
+    explanationText: "<img src=img/wp.png> Wirtschaftspartei </br></br> German Middle Class Party"
     },
     {
     searchString: "Z",

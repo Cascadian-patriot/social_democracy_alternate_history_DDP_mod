@@ -60,7 +60,7 @@ is-deck: true
 
 @govt
 title: Government Affairs
-view-if: time >= 6
+view-if: ddp_in_government
 card-image: img/reichstag_2.jpg
 is-deck: true
 
