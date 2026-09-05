@@ -1,0 +1,37 @@
+title: SPD Proposes Socialization Legislation
+subtitle: A crisis of coalition discipline
+tags: event
+is-card: true
+view-if: socialization_debate_seen = 0 and year = 1919 and month = 3 and spd_in_government = 1 and economic_minister_party = 'SPD'
+on-arrival: socialization_debate_seen = 1; month_actions += 1
+face-image: img/ruhr_coal.jpg
+max-visits: 1
+
+= SPD Proposes Socialization Legislation
+  
+The socialist economy minister from the cabinet, Rudolf Wissel, has introduced a piece of legislation aimed at establising guidlines for nationalization of German industries and further regulation for the Ruhr coal sector to appease the established worker's councils. This has created much tension within the party as our ministers are not notified beforehand, it is an overstep of the program that we and our Weimar coalition partners has agreed upon and we will potentially lose our middle class support if the party is to support this law. 
+
+One of our leftist faction's leading spokesman, Anton Erkelenz has argued to vote for the law and let the DDP to commit to the socialisation of key industries of Germany that is deemed essential for the welfare of the nation as a whole in order to preserve the coalition while opening up the party for the working class voters. 
+
+Whilst on the right, few actually called for voting against the Socialist legislation, fearing the coalition would collapse merely 1 month into its formation and jeopardize the work on the new constitution. However they are however, vehemently opposed to include socialisation policies into the program as Erkelenz proposed.
+  
+- @vote_aye_erkelenz: We shall go all in, vote aye and adopt Ereklenz's proposal!
+- @vote_aye_coalition: We shall vote aye, for the unity of the coalition, while rejecting Erkelenz's proposal
+- @abstain: We shall abstain. Surely Scheidemann will understand our position.
+
+@vote_aye_erkelenz
+on-arrival: constitution_leverage += 4; workers_ddp += 6*(1-dissent); old_middle_ddp -= 5*(1-dissent); new_middle_ddp -= 4*(1-dissent); nationalliberale_dissent += 10; nationalliberale_strength -= 4; linksliberale_dissent -= 6 if linksliberale_dissent > 0; linksliberale_strength += 6; worker_campaign_modifier += 1; old_middle_campaign_modifier -= 1; spd_relation += 8
+
+Our business backers and right-wing members are livid at our decision to not only support this Marxist bill and to deviate even further away from the middle class. We shall hope this experimentation will carry us through the new republic... 
+  
+@vote_aye_coalition
+on-arrival: constitution_leverage += 2; workers_ddp += 2*(1-dissent); old_middle_ddp -= 3*(1-dissent); new_middle_ddp -= 2*(1-dissent); nationalliberale_dissent += 5; spd_relation += 8; coalition_dissent -= 2
+
+The expected course of action, but it leaves no one more happy as we see defections of our middle class voters intensify.
+
+@abstain
+on-arrival: coalition_dissent += 2; constitution_leverage -= 2; workers_ddp -= 3*(1-dissent); old_middle_ddp -= 1*(1-dissent); new_middle_ddp -= 1*(1-dissent); nationalliberale_dissent -= 4 if nationalliberale_dissent > 0; linksliberale_dissent += 6; spd_relation -= 6; z_relation -= 2
+
+Our coalition partners are shocked at our decision! our middle class voters are also still annoyed at only abstaining to the piece of socialist law, perhaps we should have thought twice about this...
+
+- @continue: Continue...
