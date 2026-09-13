@@ -1,6 +1,6 @@
 const colourList = [{
         word: "KPD",
-        style: "color: #700000; font-weight: bold;"
+        style: "color: Q.kpd_colour; font-weight: bold;"
    },
     {
         word: "SPD",
