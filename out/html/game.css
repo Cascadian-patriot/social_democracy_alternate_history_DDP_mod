@@ -111,9 +111,6 @@ header h2:before {
   clear: left;
 }
 
-:root { --uspd-color: #D47B9B; --spd-color: #c00000; --kpd-color: #700000; --z-color: #000000; --dnvp-color: #3E88B3; --ddp-color: #D3C24D; --dvp-color: #D5AC27; }
-}
-
 #content h1:first-child {
   margin-top: 0.5em;
 }
