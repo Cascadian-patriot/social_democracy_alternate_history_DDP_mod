@@ -433,6 +433,18 @@ ul.decks, ul.hand, ul.pinned-cards {
   padding-left: 0;
 }
 
+:root {
+  --kpd-colour: #700000;
+  --spd-colour: #c00000;
+  --reichsbanner-colour: #e08979;
+  --sammlung-colour: #d4d68b;
+  --linksliberale-colour: #edd94c;
+  --pazifisten-colour: #a685a2;
+  --nationalliberale-colour: #c5f062;
+  --republikschutzer-colour: #e3c35b;
+  /* ... and all the other colors */
+}
+
 /* ============================================================
    ADVISOR FACTION TIMER BAR (conjoined, centered header)
    ============================================================ */
