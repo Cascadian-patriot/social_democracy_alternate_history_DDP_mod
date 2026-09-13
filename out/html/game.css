@@ -436,13 +436,27 @@ ul.decks, ul.hand, ul.pinned-cards {
 :root {
   --kpd-colour: #700000;
   --spd-colour: #c00000;
+  --sapd-colour: #9B0000;
+  --uspd-colour: #D47B9B;
+  --aspd-colour: #fe9e00;
+  --ddp-colour: #D3C24D;
+  --lvp-colour: #FFCC00;
+  --z-colour: #000000;
+  --bvp-colour: #A2D8E0;
+  --dvp-colour: #D5AC27;
+  --dnvp-colour: #3E88B3;
+  --dnf-colour: #003755;
+  --dap-colour: #524732;
+  --nsdap-colour: #7A3C00;
+  --i-colour: #808080;
+  --dhp-colour: #63C489;
+  --wp-colour: #CCAA7A;
   --reichsbanner-colour: #e08979;
   --sammlung-colour: #d4d68b;
   --linksliberale-colour: #edd94c;
   --pazifisten-colour: #a685a2;
   --nationalliberale-colour: #c5f062;
   --republikschutzer-colour: #e3c35b;
-  /* ... and all the other colors */
 }
 
 /* ============================================================
