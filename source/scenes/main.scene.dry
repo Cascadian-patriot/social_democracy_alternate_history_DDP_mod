@@ -35,6 +35,7 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
+<div class="advisor-panel-wrap">
 !}
 max-cards: 4
 
@@ -65,5 +66,3 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
-
-<div class="advisor-panel-wrap">
