@@ -53,7 +53,7 @@ max-cards: 4
 
 @party
 title: Party Affairs
-card-image: img/ddp_poster_party_affairs.jpeg
+card-image: img/naumann_poster_24.jpeg
 is-deck: true
 
 - #party_affairs
