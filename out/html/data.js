@@ -1,42 +1,42 @@
 const colourList = [{
         word: "KPD",
-        style: "color: [+ kpd_colour +]; font-weight: bold;"
+        style: "color: var(--kpd-colour); font-weight: bold;"
    },
     {
         word: "SPD",
-        style: "color: #c00000; font-weight: bold;"
+        style: "color: var(--spd-colour); font-weight: bold;"
   },
     {
         word: "Reichsbanner",
-        style: "color: #c00000; font-weight: bold;"
+        style: "color: #e08979; font-weight: bold;"
   },
     {
          word: "Stahlhelm",
-        style: "color: #3E88B3; font-weight: bold;"
+        style: "color: var(--dnvp-colour); font-weight: bold;"
   },
     {
         word: "SA",
-        style: "color: #7A3C00; font-weight: bold;"
+        style: "color: var(--nsdap-colour); font-weight: bold;"
   },
     {
         word: "DHP",
-        style: "color: #63C489; font-weight: bold;"
+        style: "color: var(--dhp-colour); font-weight: bold;"
   },
     {
         word: "WP",
-        style: "color: #CCAA7A; font-weight: bold;"
+        style: "color: var(--wp-colour); font-weight: bold;"
   },
     {
         word: "RFB",
-        style: "color: #8B0000; font-weight: bold;"
+        style: "color: var(--kpd-colour); font-weight: bold;"
   },
     {
         word: "Freikorps",
-        style: "color: #5c5b5b; font-weight: bold;"
+        style: "color: var(--i-colour); font-weight: bold;"
   },
     {
         word: "USPD",
-        style: "color: #D47B9B; font-weight: bold;"
+        style: "color: var(--uspd-colour); font-weight: bold;"
   },
     {
         word: "Sammlung",
@@ -60,39 +60,43 @@ const colourList = [{
   },
     {
         word: "DDP",
-        style: "color: #D3C24D; font-weight: bold;"
+        style: "color: var(--ddp-colour); font-weight: bold;"
+   },
+    {
+        word: "DStP",
+        style: "color: var(--ddp-colour); font-weight: bold;"
    },
     {
         word: "Z",
-        style: "color: #000000; font-weight: bold;"
+        style: "color: var(--z-colour); font-weight: bold;"
    },
     {
         word: "BVP",
-        style: "color: #A2D8E0; font-weight: bold;"
+        style: "color: var(--bvp-colour); font-weight: bold;"
    },
     {
         word: "DVP",
-        style: "color: #D5AC27; font-weight: bold;"
+        style: "color: var(--dvp-colour); font-weight: bold;"
    },
     {
         word: "DNVP",
-        style: "color: #3E88B3; font-weight: bold;"
+        style: "color: var(--dnvp-colour); font-weight: bold;"
    },
     {
         word: "NSDAP",
-        style: "color: #7A3C00; font-weight: bold;"
+        style: "color: var(--nsdap-colour); font-weight: bold;"
    },
     {
         word: "DAP",
-        style: "color: #524732; font-weight: bold;"
+        style: "color: var(--dap-colour); font-weight: bold;"
    },
     {
         word: "SAPD",
-        style: "color: #9B0000; font-weight: bold;"
+        style: "color: var(--sapd-colour); font-weight: bold;"
    },
     {
         word: "Others",
-        style: "color: #909090; font-weight: bold;"
+        style: "color: var(--others-colour); font-weight: bold;"
     },
 ];
 
