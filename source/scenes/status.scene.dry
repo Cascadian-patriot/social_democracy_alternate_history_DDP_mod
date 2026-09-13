@@ -66,6 +66,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
+<hr>
+
 SPD: [+ spd_relation : relationships +]
 
 USPD: [+ uspd_relation : relationships +]
@@ -82,6 +84,8 @@ DNVP: [+ dnvp_relation : relationships +]
 [? if dap_formed: DAP: [+ dap_relation : relationships +] ?]
 
 = Internal Factions of the DDP
+
+<hr>
 
 Sammlung strength: [+ sammlung_strength : strength +], dissent: [+ sammlung_dissent : dissent +]
 
@@ -111,6 +115,8 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
+<hr>
+
 <span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
 
 <span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
@@ -128,6 +134,8 @@ if (Q.sa_strength) {
 <span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
 = Official Organizations
+
+<hr>
 
 Reichswehr: [+ reichswehr_strength +] thousand troops.
 
@@ -147,6 +155,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 !}
 
 = Projected election results
+<hr>
 
 (if the election were to be held now):
 
