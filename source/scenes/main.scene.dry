@@ -12,6 +12,7 @@ if (Q.advisor_action_timer <= 0) {
 !}
 max-cards: 3
 
+<div class="advisor-panel-wrap">
 <div class="leader-card">
 <h2 class="leader-party">[+ ddp_full_name_german +] ([+ ddp_name +])</h2>
 <img class="leader-portrait" src="[+ img_leader +]">
@@ -35,7 +36,7 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-<div class="advisor-panel-wrap">
+
 !}
 max-cards: 4
 
