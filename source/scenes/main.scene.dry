@@ -65,3 +65,5 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
+
+<div class="advisor-panel-wrap">
