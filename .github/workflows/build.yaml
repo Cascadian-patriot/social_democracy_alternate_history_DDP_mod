@@ -33,7 +33,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 16
       - name: Install
         run: npm install
       - name: Build game
@@ -41,11 +41,9 @@ jobs:
       - name: Copy game.json to output
         run: cp out/game.json out/html/
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: 'out/html'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
-
-// always grateful to praire lily guy overcraft 8 //
+        uses: actions/deploy-pages@v4
