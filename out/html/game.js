@@ -48,8 +48,6 @@
             wrap.appendChild(target);
             wrap.appendChild(pinnedUl);
         }
-
-    })();
     // Add your custom code here.
   };
 
