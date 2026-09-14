@@ -525,6 +525,26 @@ window._startStateAction = function(stateKey, actionName) {
     } else {
         var base = Math.max(6, 24 - Math.floor((Q[data.seat_pct_var] || 0) * 0.4));
         Q[data.timer_var] = Math.max(2, Math.min(30, Math.round(base * (action.effort || 1.0))));
+    }
+};
+
+window._lambachImg = function(normalSrc) {
+    var Q = window.dendryUI.dendryEngine.state.qualities;
+    var t = (Q.year || 0) * 12 + (Q.month || 0);
+    if (t < 1928 * 12 + 6) return 'img/youngerlambach.png';
+    if (t > 1930 * 12 + 6) return 'img/oldlambach.png';
+    return normalSrc;
+};
+
+(function(){
+    function _lamSwap(){
+        if (!window._lambachImg) return;
+        var want = window._lambachImg('img/portraits/lambach.jpg');
+        var imgs = document.querySelectorAll('img[src$="portraits/lambach.jpg"]');
+        for (var i = 0; i < imgs.length; i++) { if (imgs[i].getAttribute('src') !== want) imgs[i].src = want; }
+    }
+    function _lamInit(){ try { _lamSwap(); new MutationObserver(_lamSwap).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
+    if (document.body) _lamInit(); else document.addEventListener('DOMContentLoaded', _lamInit);
 })();
 
 window._updateChancellorImage = function() {
@@ -567,6 +587,17 @@ window._updateChancellorImage = function() {
         'RÃ¶hm':       'img/portraits/rohm.jpg',
         'Roehm':      'img/portraits/rohm.jpg',
         'Strasser':   'img/portraits/strasser.jpg'
+    };
+    var c = Q.chancellor || '', csn = String(c).split(' ').pop();
+    Q.chancellor_image = (csn === 'Lambach') ? window._lambachImg('img/portraits/LambachWalther.jpg') : (map[c] || map[csn] || '');
+};
+
+window._tamperHashExclude = {
+    'integrity_check': 1,
+    'current_news': 1,
+    'internal_news': 1,
+    'post_event_count': 1,
+    'last_auto_ym': 1
 };
 
 window._computeStateHash = function() {
@@ -594,7 +625,7 @@ window._computeStateHash = function() {
 };
 
 window._fireTamperAchievement = function() {
-    if (localStorage.getItem('ddp_achieve_gezinkte_karten') === '1') return;
+    if (localStorage.getItem('dnvp_achieve_gezinkte_karten') === '1') return;
     if (window.showAchievementNotification) {
         window.showAchievementNotification(
             'Mit gezinkten Karten',
@@ -660,7 +691,8 @@ window._applyCoalitionEffects = function(allowed) {
         var relMap = {
             'DVP':   'dvp_relation',
             'Z':     'z_relation',
-            'DNVP':   'dnvp_relation',
+            'CVP':   'z_relation',
+            'DDP':   'ddp_relation',
             'BVP':   'bvp_relation',
             'SPD':   'spd_relation',
             'NSDAP': 'nsdap_relation',
@@ -897,7 +929,7 @@ window._maybeFireCoalitionAction = function() {
 
     var ministries = ['foreign', 'interior', 'finance', 'economic', 'labor', 'justice', 'agriculture', 'reichswehr'];
     var partners = window._coalitionPartnerSet();
-    var ddpSelf = 'DDP';
+    var dnvpSelf = (Q.cvp_formed === 1) ? 'CVP' : 'DNVP';
 
     var lastIdx = ministries.indexOf(Q.coalition_action_last_ministry || '');
     for (var i = 1; i <= ministries.length; i++) {
@@ -934,6 +966,7 @@ window._ministerCatalog = {
         Z:    ['BrÃ¼ning'],
         DDP:  ['Koch-Weser'],
         DNVP: ['von Hassell'],
+        CVP:  ['Stegerwald'],
         NSDAP:['von Ribbentrop'],
         I:    ['Neurath']
     },
@@ -1004,6 +1037,7 @@ window._getMinister = function(ministry, party) {
         window.dendryUI.dendryEngine.state.qualities.ddp_leader === 'Curtius') return 'Curtius';
     var slot = cat[party];
     if (slot && slot.length) return slot[0];
+    if (party === 'CVP' && cat['DNVP'] && cat['DNVP'].length) return cat['DNVP'][0];
     var Q = window.dendryUI.dendryEngine.state.qualities;
     var pid = String(party).toLowerCase();
     var lead = Q[pid + '_leader'] || Q[pid + '_leader_last_name'];
@@ -1068,6 +1102,7 @@ window._coalitionActions = [
 
 window._coalitionPartnerSet = function() {
     var Q = window.dendryUI.dendryEngine.state.qualities;
+    var cvp = (Q.cvp_formed === 1);
     var set = {};
     if (Q.in_grand_coalition === 1)        { set.SPD = 1; if (cvp) set.CVP = 1; else { set.Z = 1; set.DDP = 1; set.DVP = 1; } }
     else if (Q.burgerblock_coalition === 1)   { if (cvp) { set.CVP = 1; set.BVP = 1; } else { set.Z = 1; set.BVP = 1; set.DVP = 1; set.DDP = 1; } }
@@ -1084,7 +1119,7 @@ window._refreshNsdapInGov = function() {
     var Q = window.dendryUI.dendryEngine.state.qualities;
     var mins = ['economic', 'agriculture', 'finance', 'foreign', 'interior', 'justice', 'labor', 'reichswehr'];
     for (var c = 0; c < mins.length; c++) {
-        if (Q[mins[c] + '_minister_party'] === 'DDP') Q[mins[c] + '_minister_party'] = 'DDP';
+        if (Q[mins[c] + '_minister_party'] === 'CVP') Q[mins[c] + '_minister_party'] = 'DNVP';
     }
     var inGov = (Q.chancellor_party === 'NSDAP') ? 1 : 0;
     for (var i = 0; i < mins.length; i++) {
@@ -1140,6 +1175,9 @@ window._updatePresidentImage = function() {
         'Lehmann':        'img/portraits/lehmann1.png'
     };
     var p = Q.president || '', psn = String(p).split(' ').pop();
+    var pimg = (psn === 'Lambach') ? window._lambachImg('img/portraits/LambachWalther.jpg') : (map[p] || map[psn] || '');
+    if (!pimg && p && p === Q.dnvp_leader && Q.dnvp_leader_img) pimg = Q.dnvp_leader_img;
+    Q.president_image = pimg;
 };
 
 /* Heads of state the game can assign but for which no portrait file exists yet.
@@ -1826,6 +1864,160 @@ window._fireAchievement = function(name, desc, icon, id) {
     if (localStorage.getItem('dnvp_achieve_' + id) === '1') return;
     if (window.showAchievementNotification) {
         window.showAchievementNotification(name, desc, icon, id);
+    }
+};
+
+window._checkRunningAchievements = function() {
+    var Q = window.dendryUI.dendryEngine.state.qualities;
+
+    var prefix = (Q.cvp_formed === 1) ? 'cvp' : 'dnvp';
+    var blocs = ['workers','old_middle','new_middle','rural','catholics','unemployed'];
+    var allHigh = blocs.every(function(b) { return (Q[b + '_' + prefix] || 0) >= 30; });
+    if (allHigh) {
+        window._fireAchievement('Wahre Volksgemeinschaft',
+            'The DNVP/CVP has at least 30% support with all classes.',
+            'img/ach_volksgemeinschaft.png', 'wahre_volksgemeinschaft');
+    }
+
+    var ruralParties = ['dnvp','cvp','spd','kpd','z','bvp','ddp','dvp','nsdap','wp','other'];
+    var ruralTotal = 0;
+    ruralParties.forEach(function(p) { ruralTotal += (Q['rural_' + p] || 0); });
+    var ruralShare = ruralTotal > 0 ? (Q['rural_' + prefix] || 0) / ruralTotal : 0;
+    if (ruralShare >= 0.75 && (Q.dnvp_r || 0) >= 30) {
+        window._fireAchievement('Bauernstaat',
+            'The DNVP holds at least 75% of the rural vote and 30% of Reichstag seats.',
+            'img/ach_bauernstaat.png', 'bauernstaat');
+    }
+
+    if (Q.embraced_corporatism === 1
+        && Q.empowered_faction === 4
+        && (Q.workers_dnvp || 0) >= 40
+        && Q.welfare_expanded === 1) {
+        window._fireAchievement('Konservativer Sozialismus',
+            'Fully enact the corporatist plan under the VÃ¶lkisch wing, expand welfare and worker protections, and DNVP urban worker support is at least 40%.',
+            'img/ach_konservativer_sozialismus.png', 'konservativer_sozialismus');
+    }
+
+    if (Q.embraced_corporatism === 1
+        && Q.dnvp_leader_last_name === 'Lambach'
+        && (Q.workers_dnvp || 0) >= 40
+        && Q.welfare_expanded === 1) {
+        window._fireAchievement('Christlicher Sozialismus',
+            'Fully enact the corporatist plan under Lambach, expand welfare and worker protections, and DNVP urban worker support is at least 40%.',
+            'img/ach_christlicher_sozialismus.png', 'christlicher_sozialismus');
+    }
+
+    if ((Q.year || 0) >= 1933
+        && Q.empowered_faction === 4
+        && (Q.dnvp_votes || 0) > (Q.nsdap_votes || 0)
+        && (Q.dnvp_r || 0) > (Q.nsdap_r || 0)) {
+        window._fireAchievement('Alternative fÃ¼r Deutschland',
+            'As the VÃ¶lkisch DNVP, win more votes and Reichstag seats than the NSDAP in 1933 or later.',
+            'img/ach_afd.png', 'alternative_fuer_deutschland');
+    }
+
+    if (Q.cvp_formed === 1 && ((Q.cvp_r || 0) + (Q.spd_r || 0)) >= 75) {
+        window._fireAchievement('Tories und Labour',
+            'The SPD and Tory Democratic CVP make up 75% of the Reichstag.',
+            'img/ach_toriesundlabor.png', 'tories_und_labour');
+    }
+
+    if ((Q.reichswehr_preparedness || 0) >= 80) {
+        window._fireAchievement('Gott mit uns',
+            'The Reichswehr reaches an extremely high level of strength.',
+            'img/ach_gott_mit_uns.png', 'gott_mit_uns');
+    }
+
+    if (Q.in_weimar_coalition === 1 && Q.president_party === 'SPD') {
+        window._fireAchievement('Wahre Katastrophe',
+            'As the DNVP, have a Weimar coalition and SPD president.',
+            'img/ach_truecatastrophe.png', 'wahre_katastrophe');
+    }
+
+    if (Q.kaiser_restored === 1
+        && (Q.year || 0) >= 1932
+        && Q.president_party === 'DNVP'
+        && (Q.unemployed || 0) < 4
+        && (Q.inflation || 0) < 5
+        && (Q.budget || 0) > 0) {
+        window._fireAchievement('Deutschnationale Revolution',
+            'Have the Kaiser or Kaiserin restored, win the 1932 presidential election, and achieve the requirements of Wirtschaftswunder.',
+            'img/ach_deutschnationale_revolution.png', 'deutschnationale_revolution');
+    }
+
+    if (Q.cvp_formed === 1) {
+        window._fireAchievement('Ein Ende des Kulturkampfes?',
+            'Form a Christian people\'s party with the Zentrum and BVP.',
+            'img/ach_kulturkampf.png', 'kulturkampf');
+    }
+
+    var weimarShare = ((Q.spd_normalized || 0) + (Q.z_normalized || 0) + (Q.ddp_normalized || 0)) * 100;
+    if (weimarShare > 0 && weimarShare < 25) {
+        window._fireAchievement('Nationalist oder Sozialist',
+            'Have the Weimar parties get less than 25% of the vote.',
+            'img/ach_nationalist.png', 'nationalist_oder_sozialist');
+    }
+
+    if ((Q.spd_r || 0) > 50) {
+        window._fireAchievement('Rote Flut',
+            'The SPD achieves a majority in the Reichstag.',
+            'img/ach_rote_flut.png', 'rote_flut');
+    }
+
+    if (Q.cvp_formed === 1
+        && Q.dnvp_leader_last_name === 'Lambach'
+        && Q.z_leader === 'Stegerwald'
+        && Q.autocratic_monarchy === 1
+        && Q.remilitarize === 1
+        && Q.embraced_corporatism === 1
+        && Q.coop_nsdap === 1
+        && Q.cvp_leader === 1) {
+        window._fireAchievement('Der neue Chef ist wie der alte',
+            'Form the most right-wing CVP possible.',
+            'img/ach_triff_den_neuen_chef.png', 'triff_den_neuen_chef');
+    }
+};
+
+window._checkEndGameAchievements = function() {
+    var Q = window.dendryUI.dendryEngine.state.qualities;
+
+    if ((Q.unemployed || 0) < 4 && (Q.eco_inflation || 0) < 5 && (Q.eco_budget || 0) > 0) {
+        window._fireAchievement('Wirtschaftswunder',
+            'At game end, have unemployment <4%, inflation <5%, and a budget surplus.',
+            'img/ach_wirtschaftswunder.png', 'wirtschaftswunder');
+    }
+
+    var dnvpR = Q.dnvp_r || 0;
+    var others = [Q.spd_r||0, Q.kpd_r||0, Q.z_r||0, Q.bvp_r||0, Q.dvp_r||0,
+                  Q.ddp_r||0, Q.nsdap_r||0, Q.wp_r||0, Q.rlb_r||0];
+    var dnvpLargest = others.every(function(v) { return dnvpR > v; });
+    if ((Q.unemployed || 0) > 20 && (Q.eco_health || 100) < 30 && dnvpLargest && dnvpR > 25) {
+        window._fireAchievement('Verbrannte Erde',
+            'Unemployment above 20%, economic growth below -5%, and the DNVP is largest Reichstag party with >25% at game\'s end.',
+            'img/ach_verbrannte_erde.png', 'verbrannte_erde');
+    }
+
+    if (Q.embraced_corporatism === 1 && (Q.plan_enact_count || 0) >= 3 && Q.empowered_faction === 4 && Q.welfare_expanded === 1 && (Q.workers_dnvp || 0) >= 40) {
+        window._fireAchievement('Konservativer Sozialismus',
+            'Fully enact the corporatist plan under the VÃ¶lkisch wing, expand welfare and worker protections, and DNVP urban worker support is at least 40%.',
+            'img/ach_konservativer_sozialismus.png', 'konservativer_sozialismus');
+    }
+    if (Q.embraced_corporatism === 1 && (Q.plan_enact_count || 0) >= 3 && (Q.empowered_faction === 2 || Q.lambach_won === 1) && Q.welfare_expanded === 1 && (Q.workers_dnvp || 0) >= 40) {
+        window._fireAchievement('Christlicher Sozialismus',
+            'Fully enact the corporatist plan under Lambach, expand welfare and worker protections, and DNVP urban worker support is at least 40%.',
+            'img/ach_christlicher_sozialismus.png', 'christlicher_sozialismus');
+    }
+
+    if (Q.dnvp_no_splits === 1 && Q.kvp_formed !== 1 && Q.ndnp_formed !== 1 && Q.cnbl_formed !== 1 && Q.csvd_formed !== 1) {
+        window._fireAchievement('Gute Freunde kann niemand trennen',
+            'No faction splits from the DNVP for the entire game.',
+            'img/ach_gute_freunde.png', 'gute_freunde');
+    }
+
+    if (Q.dnvp_left_after_entry === 0 && Q.was_in_government_last_month === 1) {
+        window._fireAchievement('Deutschnationale Dominanz',
+            'Never leave government after the first time entering.',
+            'img/ach_dominanz.png', 'deutschnationale_dominanz');
     }
 };
 
