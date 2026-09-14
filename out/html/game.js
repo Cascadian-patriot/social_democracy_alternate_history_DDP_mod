@@ -265,7 +265,7 @@ if (switcher && decksUl && switcher.parentElement !== decksUl) {
           document.body.classList.remove('advisors-open');
       }
     // Add your custom code here.
-  };
+});
 
   var TITLE = "Social Liberalism: An Alternate History" + '_' + "Cascadian Patriot";
 
