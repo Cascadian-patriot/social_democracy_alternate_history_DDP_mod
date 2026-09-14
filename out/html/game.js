@@ -584,7 +584,13 @@
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
     }
-
+  
+document.addEventListener('mousemove', e => {
+    document.querySelectorAll('.mytooltiptext').forEach(el => {
+        el.style.setProperty('--mouse-x', e.clientX + 'px');
+        el.style.setProperty('--mouse-y', e.clientY + 'px');
+    }
+      
         var segmentsHtml = '';
         var labelsHtml = '';
         factions.forEach(function(f, idx) {
@@ -620,14 +626,6 @@
             target.parentNode.insertBefore(wrap, target);
             wrap.appendChild(target);
             wrap.appendChild(pinnedUl);
-        }
-
-})();
-
-document.addEventListener('mousemove', e => {
-    document.querySelectorAll('.mytooltiptext').forEach(el => {
-        el.style.setProperty('--mouse-x', e.clientX + 'px');
-        el.style.setProperty('--mouse-y', e.clientY + 'px');
     });
 });  
 }());
