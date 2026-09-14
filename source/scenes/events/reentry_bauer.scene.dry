@@ -23,6 +23,24 @@ After a few days of negotiations, we have officially re-entered government with 
 
 We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. 
 
+- @labor
+- @interior
+- @finance
+- @economic
+- @justice
+- @foreign
+- @agriculture
+- @reichswehr
+- @no_more
+- @drop_labor
+- @drop_interior
+- @drop_finance
+- @drop_economic
+- @drop_justice
+- @drop_foreign
+- @drop_agriculture
+- @drop_reichswehr
+
 @labor
 title: Labor Ministry
 subtitle: The Labor Ministry handles labor affairs.
