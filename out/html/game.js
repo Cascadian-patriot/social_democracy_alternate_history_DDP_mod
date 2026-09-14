@@ -30,12 +30,10 @@ window._achNotifCount = 0;
 window.showAchievementNotification = function(name, description, icon, id) {
     try {
         var _Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state.qualities;
-        if (_Q && _Q.sandbox_mode) return;
         if (_Q && _Q.deterministic_mode) return;
-        if (_Q && _Q.game_ended && id !== 'hoi4') return;
     } catch (e) {}
-    if (localStorage.getItem('dnvp_achieve_' + id) === '1') return;
-    localStorage.setItem('dnvp_achieve_' + id, '1');
+    if (localStorage.getItem('ddp_achieve_' + id) === '1') return;
+    localStorage.setItem('ddp_achieve_' + id, '1');
     try {
         var achAudio = new Audio('music/achieve.mp3');
         achAudio.volume = 1.0;
@@ -101,7 +99,7 @@ window._toggleHugenbergMode = function() {
             /* force every panel surface purple (beats dark-mode rules + the newsbox's inline white) */
             'html.hugenberg-mode #content,' +
             'html.hugenberg-mode .tools,' +
-            'html.hugenberg-mode #dnvp_dashboard,' +
+            'html.hugenberg-mode #ddp_dashboard,' +
             'html.hugenberg-mode footer,' +
             'html.hugenberg-mode #newsbox-frame { background-color:' + P + ' !important; }' +
             /* the title box stays transparent so the background image shows through */
@@ -115,7 +113,7 @@ window._toggleHugenbergMode = function() {
             /* all text white (the readability compromise) â€” beats inline party-name colours */
             'html.hugenberg-mode #content, html.hugenberg-mode #content *,' +
             'html.hugenberg-mode .tools, html.hugenberg-mode .tools *,' +
-            'html.hugenberg-mode #dnvp_dashboard, html.hugenberg-mode #dnvp_dashboard *,' +
+            'html.hugenberg-mode #ddp_dashboard, html.hugenberg-mode #ddp_dashboard *,' +
             'html.hugenberg-mode header, html.hugenberg-mode header * { color:#ffffff !important; }';
         document.head.appendChild(st);
     }
@@ -147,45 +145,6 @@ window._hugenbergBgOn = function() {
 window._hugenbergBgOff = function() {
     var box = document.getElementById('hugenberg-bg');
     if (box) { if (box._ss && box._ss.timer) clearInterval(box._ss.timer); box.remove(); }
-};
-window._ddpColorValue = function() {
-    var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-    if (Q && Q.dfp_formed === 1) return Q.dfp_color || '#ccba2f';
-    if (Q && Q.dlp_formed === 1) return Q.dlp_color || '#9c8e25';
-    if (Q && Q.dstp_formed === 1) return Q.dstp_color || '#D3C24D';
-    var L = Q && Q.ddp_leader;
-    if (L === 'Erklenz')  return '#f09116';
-    if (L === 'BÃ¤umer')   return '#d4a900';
-    if (L === 'Dietrich') return '#D3C24D';
-    return '#FFCC00';
-};
-window._applyDdpColor = function() {
-    try { document.documentElement.style.setProperty('--ddp-color', window._ddpColorValue()); } catch (e) {}
-};
-window._cvpRightScore = function() {
-    var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-    if (!Q) return 0;
-    var s = 0;
-    if (Q.autocratic_monarchy === 1) s += 2; else if (Q.constitutional_monarchy === 1) s += 1;
-    if (Q.remilitarize === 1) s += 2; else if (Q.remilitarize === 2) s += 1;
-    if (Q.cvp_economic_policy === 4 || Q.cvp_economic_policy === 5) s += 2;
-    else if (Q.cvp_economic_policy === 1 || Q.cvp_economic_policy === 2) s += 1;
-    if (Q.coop_nsdap === 1) s += 2;
-    if (Q.cvp_leader === 1) s += 2;
-    return s;
-};
-window._cvpColorValue = function() {
-    var t = window._cvpRightScore() / 10; if (t < 0) t = 0; if (t > 1) t = 1;
-    var hx = function(n){ var h = Math.round(n).toString(16); return h.length < 2 ? '0' + h : h; };
-    return '#' + hx(62 * t) + hx(136 * t) + hx(179 * t);
-};
-window._applyCvpColor = function() {
-    try {
-        var c = window._cvpColorValue();
-        document.documentElement.style.setProperty('--cvp-color', c);
-        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-        if (Q) { Q.cvp_color = c; Q.cvp_rightwing = window._cvpRightScore(); }
-    } catch (e) {}
 };
 
 window._coalitionStyledName = function(name) {
@@ -271,79 +230,25 @@ window._coalitionStyledName = function(name) {
     }).join(' ');
 };
 
-var contentEl = document.getElementById('content');
-if (contentEl) {
-    var achObserver = new MutationObserver(function() {
-        setTimeout(checkAchievementsState, 10);
-        window._applyDvpColor();
-        window._applyCvpColor();
-    });
-    achObserver.observe(contentEl, { childList: true, subtree: true });
-}
-
 window._setupGameUI = function() {
     var Q = window.dendryUI.dendryEngine.state.qualities;
-    if (window._applyDvpColor) window._applyDvpColor();
-    if (window._applySpdColor) window._applySpdColor();
-    if (window._applyKpdColor) window._applyKpdColor();
-    if (window._applyZColor) window._applyZColor();    if (window._applyDnvpColor) window._applyDnvpColor();    if (window._applyDdpColor) window._applyDdpColor();    if (window._applyCvpColor) window._applyCvpColor();
-    var sel = '.tools' + '.right';
-    var rightTools = document.querySelector(sel);
-    if (rightTools) {
-        rightTools.style.display = 'block';
-        var _arrowSvgRight = '<svg viewBox="0 0 14 8" width="32" height="18" style="image-rendering: pixelated; display: block; pointer-events: none;" shape-rendering="crispEdges"><g fill="#4a4a4a"><rect x="0" y="3" width="10" height="2"/><rect x="10" y="0" width="1" height="8"/><rect x="11" y="1" width="1" height="6"/><rect x="12" y="2" width="1" height="4"/><rect x="13" y="3" width="1" height="2"/></g></svg>';
-        var _arrowSvgLeft = '<svg viewBox="0 0 14 8" width="32" height="18" style="image-rendering: pixelated; display: block; pointer-events: none; transform: scaleX(-1);" shape-rendering="crispEdges"><g fill="#4a4a4a"><rect x="0" y="3" width="10" height="2"/><rect x="10" y="0" width="1" height="8"/><rect x="11" y="1" width="1" height="6"/><rect x="12" y="2" width="1" height="4"/><rect x="13" y="3" width="1" height="2"/></g></svg>';
-        rightTools.innerHTML =
-            '<style>' +
-              '.nb-arrow-btn { background: transparent; border: none; padding: 4px; cursor: pointer; user-select: none; outline: none; position: absolute; }' +
-              '.nb-unread-dot { position: absolute; top: -2px; width: 8px; height: 8px; background: #c00; display: none; image-rendering: pixelated; }' +
-            '</style>' +
-            '<div id="newsbox-frame" style="padding: 1em; font-family: Georgia, serif; font-size: 0.95em; line-height: 1.6; background-color: rgba(255, 255, 255, 0.95); text-align: center; position: relative; min-height: 200px;">' +
-              '<div id="news_page_external"' + (Q.news_page === 'internal' ? ' style="display: none;"' : '') + '>' +
-                '<h3 style="font-family: UnifrakturMaguntia, cursive; letter-spacing: 1px; margin: 0 0 0.5em 0; font-size: 1.7em; color: #4a3728; border-bottom: 1px solid #ffffffff; padding-bottom: 0.3em;">Neue PreuÃŸische Zeitung</h3>' +
-                '<p id="news_content" style="margin: 0 0 1.5em 0; color: #333; font-size: 1em; min-height: 80px; text-align: left;">' + (Q.current_news || '') + '</p>' +
-                '<div style="text-align: center; margin-top: 0.5em;"><img src="img/crossed.png" style="width: 60px; opacity: 0.7;"></div>' +
-                '<button class="nb-arrow-btn" onclick="window._toggleNewsPage(1)" title="Magazin der Wirtschaft" style="bottom: 6px; right: 8px;">' +
-                  '<span id="nb_unread_internal" class="nb-unread-dot" style="right: -2px;"></span>' +
-                  _arrowSvgRight +
-                '</button>' +
-              '</div>' +
-              '<div id="news_page_internal"' + (Q.news_page === 'internal' ? '' : ' style="display: none;"') + '>' +
-                '<h3 style="font-family: UnifrakturMaguntia, cursive; letter-spacing: 1px; margin: 0 0 0.5em 0; font-size: 1.7em; color: #4a3728; border-bottom: 1px solid #ffffffff; padding-bottom: 0.3em;">Magazin der Wirtschaft</h3>' +
-                '<p id="news_content_internal" style="margin: 0 0 1.5em 0; color: #333; font-size: 1em; min-height: 80px; text-align: left;">' + (Q.internal_news || '') + '</p>' +
-                '<div style="text-align: center; margin-top: 0.5em;"><img src="img/crossed.png" style="width: 60px; opacity: 0.7;"></div>' +
-                '<button class="nb-arrow-btn" onclick="window._toggleNewsPage(0)" title="Neue PreuÃŸische Zeitung" style="bottom: 6px; left: 8px;">' +
-                  '<span id="nb_unread_external" class="nb-unread-dot" style="left: -2px;"></span>' +
-                  _arrowSvgLeft +
-                '</button>' +
-              '</div>' +
-            '</div>';
-        if (Q.news_page === 'internal') {
-            Q.internal_news_seen = Q.internal_news || '';
-            Q.internal_news_unread = 0;
-        } else {
-            Q.current_news_seen = Q.current_news || '';
-            Q.current_news_unread = 0;
-        }
-        if (window._refreshNewsBadges) window._refreshNewsBadges();
-    }
-
-    var dashboard = document.getElementById('dnvp_dashboard');
+    var dashboard = document.getElementById('ddp_dashboard');
     if (dashboard) {
         dashboard.style.display = 'block';
         var _q = Q;
-        var total = (_q.authoritarian_conservative_strength || 0) + (_q.christian_social_strength || 0) + (_q.volkisch_strength || 0) + (_q.volkskonservativ_strength || 0);
-        var authPct = total ? Math.round((_q.authoritarian_conservative_strength / total) * 100) : 0;
-        var csPct = total ? Math.round((_q.christian_social_strength / total) * 100) : 0;
-        var volkPct = total ? Math.round((_q.volkisch_strength / total) * 100) : 0;
-        var jkPct = 100 - authPct - csPct - volkPct;
+        var total = (_q.pazifisten_strength || 0) + (_q.linksliberale_strength || 0) + (_q.sammlung_strength || 0) + (_q.nationalliberale_strength || 0);
+        var pfPct = total ? Math.round((_q.pazifisten_strength / total) * 100) : 0;
+        var llPct = total ? Math.round((_q.linksliberale_strength / total) * 100) : 0;
+        var slPct = total ? Math.round((_q.sammlung_strength / total) * 100) : 0;
+        var nlPct = total ? Math.round((_q.nationalliberale_strength / total) * 100) : 0;
+        var jkPct = 100 - pfPct - llPct - slPct - nlPct;
         var svgArc = (function() {
             var cx = 200, cy = 180, r1 = 80, r2 = 140;
             var sections = [
-                { pct: jkPct, color: '#90D5FF' },
-                { pct: csPct, color: '#DAB1DA' },
-                { pct: authPct, color: '#000435' },
-                { pct: volkPct, color: '#06402B' }
+                { pct: pfPct, color: '#90D5FF' },
+                { pct: llPct, color: '#DAB1DA' },
+                { pct: slPct, color: '#000435' },
+                { pct: nlPct, color: '#06402B' }
             ];
             var startAngle = Math.PI;
             var paths = '';
@@ -642,7 +547,7 @@ window._stateActionRegistry = {
                     Q.nationalism  = (Q.nationalism  || 0) + 3;
                     Q.new_middle_dnvp = (Q.new_middle_dnvp || 0) + 2;
                     Q.new_middle_spd  = (Q.new_middle_spd  || 0) - 2;
-                    Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 3;
+                    Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3;
                     Q.new_middle_dvp = (Q.new_middle_dvp || 0) + 1;
                     Q.workers_spd = (Q.workers_spd || 0) - 1;
                 }
@@ -668,12 +573,12 @@ window._stateActionRegistry = {
                     Q.new_middle_dvp  = (Q.new_middle_dvp  || 0) + 1;
                     Q.workers_spd = (Q.workers_spd || 0) - 1;
                     Q.spd_left_strength = (Q.spd_left_strength || 0) + 1;
-                    Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 3;
+                    Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3;
                 }
                 Q.prussia_dnvp_police_count = (Q.prussia_dnvp_police_count || 0) + 1;
                 window._blocBump(1,6); window._blocBump(2,10); window._blocBump(3,-10); window._blocBump(4,10);
             } },
-            'church':         { flag: 'prussia_church_in_prog',         done: 'prussia_church_done', effort: 0.8, bonuses: function(Q) { Q.catholics_dnvp = (Q.catholics_dnvp || 0) - 3; Q.rural_dnvp = (Q.rural_dnvp || 0) + 4; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 3; Q.z_relation = (Q.z_relation || 0) - 8; Q.christian_social_strength = (Q.christian_social_strength || 0) + 5; Q.nationalism = (Q.nationalism || 0) + 2; Q.pro_republic = (Q.pro_republic || 0) - 1; window._blocBump(1,16); window._blocBump(3,-2); window._blocBump(4,10); } },
+            'church':         { flag: 'prussia_church_in_prog',         done: 'prussia_church_done', effort: 0.8, bonuses: function(Q) { Q.catholics_dnvp = (Q.catholics_dnvp || 0) - 3; Q.rural_dnvp = (Q.rural_dnvp || 0) + 4; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 3; Q.z_relation = (Q.z_relation || 0) - 8; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 5; Q.nationalism = (Q.nationalism || 0) + 2; Q.pro_republic = (Q.pro_republic || 0) - 1; window._blocBump(1,16); window._blocBump(3,-2); window._blocBump(4,10); } },
             'flag':           { flag: 'prussia_flag_in_prog',           done: 'prussia_flag_done', effort: 0.2, bonuses: function(Q) { Q.volkisch_strength = (Q.volkisch_strength || 0) + 3; Q.nationalism = (Q.nationalism || 0) + 4; Q.pro_republic = (Q.pro_republic || 0) - 3; Q.spd_relation = (Q.spd_relation || 0) - 4; Q.ddp_relation = (Q.ddp_relation || 0) - 12; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 3; Q.new_middle_dnvp = (Q.new_middle_dnvp || 0) - 1; window._blocBump(1,10); window._blocBump(2,6); window._blocBump(3,-5); window._blocBump(4,6); } }
         },
         extra_clear: ['prussia_police_in_prog', 'prussia_secondary_schooling_in_prog', 'prussia_swr_boycott_in_prog', 'prussia_manor_districts_in_prog', 'prussia_democratization_in_prog', 'prussia_concordat_in_prog', 'prussia_sa_crackdown_in_prog']
@@ -681,10 +586,10 @@ window._stateActionRegistry = {
     bavaria: {
         timer_var: 'bavaria_action_timer', seat_pct_var: 'bav_seat_pct_dnvp',
         actions: {
-            'rfb_crackdown':         { flag: 'bavaria_rfb_crackdown_in_prog',         done: 'bavaria_rfb_crackdown_done',         effort: 0.7, bonuses: function(Q) { Q.workers_kpd = (Q.workers_kpd || 0) - 1; Q.unemployed_kpd = (Q.unemployed_kpd || 0) - 1; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 2; Q.workers_spd = (Q.workers_spd || 0) - 1; window._blocBump(1,6); window._blocBump(2,10); window._blocBump(3,-3); window._blocBump(4,10); } },
+            'rfb_crackdown':         { flag: 'bavaria_rfb_crackdown_in_prog',         done: 'bavaria_rfb_crackdown_done',         effort: 0.7, bonuses: function(Q) { Q.workers_kpd = (Q.workers_kpd || 0) - 1; Q.unemployed_kpd = (Q.unemployed_kpd || 0) - 1; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 2; Q.workers_spd = (Q.workers_spd || 0) - 1; window._blocBump(1,6); window._blocBump(2,10); window._blocBump(3,-3); window._blocBump(4,10); } },
             'stuermer_crackdown':    { flag: 'bavaria_stuermer_crackdown_in_prog',    done: 'bavaria_stuermer_crackdown_done',    effort: 0.7, bonuses: function(Q) { Q.rural_nsdap = (Q.rural_nsdap || 0) - 1; Q.old_middle_nsdap = (Q.old_middle_nsdap || 0) - 1; Q.new_middle_nsdap = (Q.new_middle_nsdap || 0) - 1; window._blocBump(1,-3); window._blocBump(2,4); window._blocBump(4,4); } },
             'bvp_federalism':        { flag: 'bavaria_bvp_federalism_in_prog',        done: 'bavaria_bvp_federalism_done',        effort: 0.5, bonuses: function(Q) { Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 2; Q.z_relation = (Q.z_relation || 0) + 4; Q.volkisch_dissent = (Q.volkisch_dissent || 0) + 2; window._blocBump(1,6); window._blocBump(4,10); } },
-            'stahlhelm_bayernwacht': { flag: 'bavaria_stahlhelm_bayernwacht_in_prog', done: 'bavaria_stahlhelm_bayernwacht_done', effort: 0.9, bonuses: function(Q) { Q.stahlhelm_integration = (Q.stahlhelm_integration || 0) + 7; Q.suspicion = (Q.suspicion || 0) + 1; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 3; Q.z_relation = (Q.z_relation || 0) + 4; window._blocBump(1,10); window._blocBump(2,6); window._blocBump(3,-5); window._blocBump(4,6); } },
+            'stahlhelm_bayernwacht': { flag: 'bavaria_stahlhelm_bayernwacht_in_prog', done: 'bavaria_stahlhelm_bayernwacht_done', effort: 0.9, bonuses: function(Q) { Q.stahlhelm_integration = (Q.stahlhelm_integration || 0) + 7; Q.suspicion = (Q.suspicion || 0) + 1; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3; Q.z_relation = (Q.z_relation || 0) + 4; window._blocBump(1,10); window._blocBump(2,6); window._blocBump(3,-5); window._blocBump(4,6); } },
             'restore_kingdom':       { flag: 'bavaria_restore_kingdom_in_prog',       done: 'bavaria_restore_kingdom_done',       fixed_duration: 4, bonuses: function(Q) { Q.nationalism = (Q.nationalism || 0) + 3; Q.pro_republic = (Q.pro_republic || 0) - 4; Q.suspicion = (Q.suspicion || 0) + 3; Q.workers_dnvp = (Q.workers_dnvp || 0) + 1; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 2; window._blocBump(1,20); window._blocBump(2,10); window._blocBump(3,-10); window._blocBump(4,6); }, on_complete: function(Q) { Q.bavaria_kingdom_restored = 1; } }
         },
         extra_clear: ['bavaria_saargrenzdarlehen_in_prog']
@@ -692,7 +597,7 @@ window._stateActionRegistry = {
     saxony: {
         timer_var: 'saxony_action_timer', seat_pct_var: 'sax_seats_pct_dnvp',
         actions: {
-            'trade_unions': { flag: 'saxony_trade_unions_in_prog', done: 'saxony_trade_unions_done', effort: 1.1, bonuses: function(Q) { Q.workers_dnvp = (Q.workers_dnvp || 0) - 1; Q.workers_spd = (Q.workers_spd || 0) - 3; Q.workers_kpd = (Q.workers_kpd || 0) + 2; Q.industry_support = (Q.industry_support || 0) + 8; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 3; window._blocBump(1,6); window._blocBump(2,20); window._blocBump(3,-10); window._blocBump(4,4); } },
+            'trade_unions': { flag: 'saxony_trade_unions_in_prog', done: 'saxony_trade_unions_done', effort: 1.1, bonuses: function(Q) { Q.workers_dnvp = (Q.workers_dnvp || 0) - 1; Q.workers_spd = (Q.workers_spd || 0) - 3; Q.workers_kpd = (Q.workers_kpd || 0) + 2; Q.industry_support = (Q.industry_support || 0) + 8; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3; window._blocBump(1,6); window._blocBump(2,20); window._blocBump(3,-10); window._blocBump(4,4); } },
             'volkshaus':    { flag: 'saxony_volkshaus_in_prog',    done: 'saxony_volkshaus_done',    effort: 0.5, bonuses: function(Q) { Q.industry_support = (Q.industry_support || 0) + 5; Q.workers_spd = (Q.workers_spd || 0) - 2; Q.unemployed_kpd = (Q.unemployed_kpd || 0) + 1; Q.volkisch_strength = (Q.volkisch_strength || 0) + 2; Q.unemployed_spd = (Q.unemployed_spd || 0) - 2; window._blocBump(2,10); window._blocBump(3,-8); } },
             'reichsbanner': { flag: 'saxony_reichsbanner_in_prog', done: 'saxony_reichsbanner_done', effort: 0.8, bonuses: function(Q) { Q.pro_republic = (Q.pro_republic || 0) - 3; Q.volkisch_strength = (Q.volkisch_strength || 0) + 3; Q.suspicion = (Q.suspicion || 0) + 2; Q.spd_left_strength = (Q.spd_left_strength || 0) + 3; Q.workers_kpd = (Q.workers_kpd || 0) + 1; Q.nationalism = (Q.nationalism || 0) + 2; Q.workers_spd = (Q.workers_spd || 0) - 2; window._blocBump(1,4); window._blocBump(2,6); window._blocBump(3,-5); window._blocBump(4,4); } }
         },
@@ -701,35 +606,35 @@ window._stateActionRegistry = {
     thuringia: {
         timer_var: 'thuringia_action_timer', seat_pct_var: 'thur_seats_pct_dnvp',
         actions: {
-            'kpd_prosecutions': { flag: 'thuringia_kpd_prosecutions_in_prog', done: 'thuringia_kpd_prosecutions_done', effort: 0.8, bonuses: function(Q) { Q.workers_kpd = (Q.workers_kpd || 0) - 2; Q.unemployed_kpd = (Q.unemployed_kpd || 0) - 1; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 3; Q.volkisch_strength = (Q.volkisch_strength || 0) + 2; Q.pro_republic = (Q.pro_republic || 0) - 1; Q.workers_spd = (Q.workers_spd || 0) + 2; window._blocBump(1,6); window._blocBump(2,10); window._blocBump(3,-3); window._blocBump(4,10); } },
-            'nsdap_gau':        { flag: 'thuringia_nsdap_gau_in_prog',        done: 'thuringia_nsdap_gau_done',        effort: 0.6, bonuses: function(Q) { Q.rural_nsdap = (Q.rural_nsdap || 0) - 1; Q.old_middle_nsdap = (Q.old_middle_nsdap || 0) - 1; Q.new_middle_nsdap = (Q.new_middle_nsdap || 0) - 1; Q.volkisch_strength = (Q.volkisch_strength || 0) - 3; Q.christian_social_strength = (Q.christian_social_strength || 0) + 2; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 2; Q.dvp_relation = (Q.dvp_relation || 0) + 2; window._blocBump(1,-2); window._blocBump(2,4); window._blocBump(4,4); } },
+            'kpd_prosecutions': { flag: 'thuringia_kpd_prosecutions_in_prog', done: 'thuringia_kpd_prosecutions_done', effort: 0.8, bonuses: function(Q) { Q.workers_kpd = (Q.workers_kpd || 0) - 2; Q.unemployed_kpd = (Q.unemployed_kpd || 0) - 1; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3; Q.volkisch_strength = (Q.volkisch_strength || 0) + 2; Q.pro_republic = (Q.pro_republic || 0) - 1; Q.workers_spd = (Q.workers_spd || 0) + 2; window._blocBump(1,6); window._blocBump(2,10); window._blocBump(3,-3); window._blocBump(4,10); } },
+            'nsdap_gau':        { flag: 'thuringia_nsdap_gau_in_prog',        done: 'thuringia_nsdap_gau_done',        effort: 0.6, bonuses: function(Q) { Q.rural_nsdap = (Q.rural_nsdap || 0) - 1; Q.old_middle_nsdap = (Q.old_middle_nsdap || 0) - 1; Q.new_middle_nsdap = (Q.new_middle_nsdap || 0) - 1; Q.volkisch_strength = (Q.volkisch_strength || 0) - 3; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 2; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 2; Q.dvp_relation = (Q.dvp_relation || 0) + 2; window._blocBump(1,-2); window._blocBump(2,4); window._blocBump(4,4); } },
             'agriculture':      { flag: 'thuringia_agriculture_in_prog',      done: 'thuringia_agriculture_done',      effort: 0.7, bonuses: function(Q) { Q.rural_dnvp = (Q.rural_dnvp || 0) + 4; Q.rlb_relation = (Q.rlb_relation || 0) + 3; Q.agri_policy_progress = (Q.agri_policy_progress || 0) + 1; window._blocBump(1,20); window._blocBump(4,4); } },
-            'bauhaus':          { flag: 'thuringia_bauhaus_in_prog',          done: 'thuringia_bauhaus_done',          effort: 0.4, bonuses: function(Q) { Q.christian_social_strength = (Q.christian_social_strength || 0) + 3; Q.volkisch_strength = (Q.volkisch_strength || 0) + 3; Q.new_middle_dnvp = (Q.new_middle_dnvp || 0) + 2; Q.ddp_relation = (Q.ddp_relation || 0) - 5; Q.pro_republic = (Q.pro_republic || 0) - 2; window._blocBump(1,4); window._blocBump(3,-3); window._blocBump(4,6); } }
+            'bauhaus':          { flag: 'thuringia_bauhaus_in_prog',          done: 'thuringia_bauhaus_done',          effort: 0.4, bonuses: function(Q) { Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3; Q.volkisch_strength = (Q.volkisch_strength || 0) + 3; Q.new_middle_dnvp = (Q.new_middle_dnvp || 0) + 2; Q.ddp_relation = (Q.ddp_relation || 0) - 5; Q.pro_republic = (Q.pro_republic || 0) - 2; window._blocBump(1,4); window._blocBump(3,-3); window._blocBump(4,6); } }
         }
     },
     wurttemburg: {
         timer_var: 'wurttemburg_action_timer', seat_pct_var: 'wrt_seats_pct_dnvp',
         actions: {
             'winegrowers':     { flag: 'wurttemburg_winegrowers_in_prog',     done: 'wurttemburg_winegrowers_done',     effort: 0.5, bonuses: function(Q) { Q.rural_dnvp = (Q.rural_dnvp || 0) + 3; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 1; Q.agri_policy_progress = (Q.agri_policy_progress || 0) + 1; window._blocBump(1,16); window._blocBump(4,4); } },
-            'concordat':       { flag: 'wurttemburg_concordat_in_prog',       done: 'wurttemburg_concordat_done',       effort: 0.8, bonuses: function(Q) { Q.z_relation = (Q.z_relation || 0) + 6; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 2; Q.bvp_relation = (Q.bvp_relation || 0) + 2; Q.christian_social_strength = (Q.christian_social_strength || 0) + 2; Q.volkisch_dissent = (Q.volkisch_dissent || 0) + 3; window._blocBump(1,6); window._blocBump(4,10); }, on_complete: function(Q) { Q.concordat_done_dnvp = 1; } },
+            'concordat':       { flag: 'wurttemburg_concordat_in_prog',       done: 'wurttemburg_concordat_done',       effort: 0.8, bonuses: function(Q) { Q.z_relation = (Q.z_relation || 0) + 6; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 2; Q.bvp_relation = (Q.bvp_relation || 0) + 2; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 2; Q.volkisch_dissent = (Q.volkisch_dissent || 0) + 3; window._blocBump(1,6); window._blocBump(4,10); }, on_complete: function(Q) { Q.concordat_done_dnvp = 1; } },
             'tagwacht':        { flag: 'wurttemburg_tagwacht_in_prog',        done: 'wurttemburg_tagwacht_done',        effort: 0.4, bonuses: function(Q) { Q.workers_spd = (Q.workers_spd || 0) - 1; Q.pro_republic = (Q.pro_republic || 0) - 3; Q.volkisch_strength = (Q.volkisch_strength || 0) + 2; Q.ddp_relation = (Q.ddp_relation || 0) - 3; Q.workers_ddp = (Q.workers_ddp || 0) - 1; window._blocBump(1,4); window._blocBump(2,6); window._blocBump(3,-5); window._blocBump(4,4); } },
-            'kpd_crackdown':   { flag: 'wurttemburg_kpd_crackdown_in_prog',   done: 'wurttemburg_kpd_crackdown_done',   effort: 0.6, bonuses: function(Q) { Q.workers_kpd = (Q.workers_kpd || 0) - 2; Q.unemployed_kpd = (Q.unemployed_kpd || 0) - 1; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 2; Q.christian_social_strength = (Q.christian_social_strength || 0) + 2; window._blocBump(1,6); window._blocBump(2,10); window._blocBump(3,-3); window._blocBump(4,10); } },
-            'christian_party': { flag: 'wurttemburg_christian_party_in_prog', done: 'wurttemburg_christian_party_done', effort: 1.0, bonuses: function(Q) { Q.z_relation = (Q.z_relation || 0) + 8; Q.christian_social_strength = (Q.christian_social_strength || 0) + 5; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 1; Q.volkisch_dissent = (Q.volkisch_dissent || 0) + 4; Q.bvp_relation = (Q.bvp_relation || 0) + 2; window._blocBump(1,10); window._blocBump(4,16); } }
+            'kpd_crackdown':   { flag: 'wurttemburg_kpd_crackdown_in_prog',   done: 'wurttemburg_kpd_crackdown_done',   effort: 0.6, bonuses: function(Q) { Q.workers_kpd = (Q.workers_kpd || 0) - 2; Q.unemployed_kpd = (Q.unemployed_kpd || 0) - 1; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 2; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 2; window._blocBump(1,6); window._blocBump(2,10); window._blocBump(3,-3); window._blocBump(4,10); } },
+            'christian_party': { flag: 'wurttemburg_christian_party_in_prog', done: 'wurttemburg_christian_party_done', effort: 1.0, bonuses: function(Q) { Q.z_relation = (Q.z_relation || 0) + 8; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 5; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 1; Q.volkisch_dissent = (Q.volkisch_dissent || 0) + 4; Q.bvp_relation = (Q.bvp_relation || 0) + 2; window._blocBump(1,10); window._blocBump(4,16); } }
         }
     },
     baden: {
         timer_var: 'baden_action_timer', seat_pct_var: 'bad_seats_pct_dnvp',
         actions: {
-            'concordat':            { flag: 'baden_concordat_in_prog',            done: 'baden_concordat_done',            effort: 0.8, bonuses: function(Q) { Q.z_relation = (Q.z_relation || 0) + 5; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 3; Q.christian_social_strength = (Q.christian_social_strength || 0) + 3; Q.volkisch_dissent = (Q.volkisch_dissent || 0) + 2; Q.bvp_relation = (Q.bvp_relation || 0) + 1; window._blocBump(1,6); window._blocBump(4,10); }, on_complete: function(Q) { Q.concordat_done_dnvp = 1; } },
-            'civil_servants':       { flag: 'baden_civil_servants_in_prog',       done: 'baden_civil_servants_done',       effort: 1.1, bonuses: function(Q) { Q.pro_republic = (Q.pro_republic || 0) - 3; Q.nationalism = (Q.nationalism || 0) + 3; Q.new_middle_dnvp = (Q.new_middle_dnvp || 0) + 2; Q.new_middle_spd = (Q.new_middle_spd || 0) - 1; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 3; window._blocBump(1,4); window._blocBump(2,6); window._blocBump(3,-5); window._blocBump(4,20); } },
-            'confessional_schools': { flag: 'baden_confessional_schools_in_prog', done: 'baden_confessional_schools_done', effort: 0.9, bonuses: function(Q) { Q.christian_social_strength = (Q.christian_social_strength || 0) + 4; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 3; Q.z_relation = (Q.z_relation || 0) + 3; Q.ddp_relation = (Q.ddp_relation || 0) - 3; Q.workers_z = (Q.workers_z || 0) + 1; window._blocBump(1,6); window._blocBump(4,10); } },
+            'concordat':            { flag: 'baden_concordat_in_prog',            done: 'baden_concordat_done',            effort: 0.8, bonuses: function(Q) { Q.z_relation = (Q.z_relation || 0) + 5; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 3; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3; Q.volkisch_dissent = (Q.volkisch_dissent || 0) + 2; Q.bvp_relation = (Q.bvp_relation || 0) + 1; window._blocBump(1,6); window._blocBump(4,10); }, on_complete: function(Q) { Q.concordat_done_dnvp = 1; } },
+            'civil_servants':       { flag: 'baden_civil_servants_in_prog',       done: 'baden_civil_servants_done',       effort: 1.1, bonuses: function(Q) { Q.pro_republic = (Q.pro_republic || 0) - 3; Q.nationalism = (Q.nationalism || 0) + 3; Q.new_middle_dnvp = (Q.new_middle_dnvp || 0) + 2; Q.new_middle_spd = (Q.new_middle_spd || 0) - 1; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3; window._blocBump(1,4); window._blocBump(2,6); window._blocBump(3,-5); window._blocBump(4,20); } },
+            'confessional_schools': { flag: 'baden_confessional_schools_in_prog', done: 'baden_confessional_schools_done', effort: 0.9, bonuses: function(Q) { Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 4; Q.catholics_dnvp = (Q.catholics_dnvp || 0) + 3; Q.z_relation = (Q.z_relation || 0) + 3; Q.ddp_relation = (Q.ddp_relation || 0) - 3; Q.workers_z = (Q.workers_z || 0) + 1; window._blocBump(1,6); window._blocBump(4,10); } },
             'austerity':            { flag: 'baden_austerity_in_prog',            done: 'baden_austerity_done',            effort: 0.7, bonuses: function(Q) { Q.budget = (Q.budget || 0) + 1; Q.new_middle_dnvp = (Q.new_middle_dnvp || 0) - 3; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) - 2; Q.rural_dnvp = (Q.rural_dnvp || 0) - 1; Q.workers_spd = (Q.workers_spd || 0) + 2; Q.unemployed_kpd = (Q.unemployed_kpd || 0) + 2; Q.industry_support = (Q.industry_support || 0) + 5; window._blocBump(1,-3); window._blocBump(2,16); window._blocBump(3,-5); window._blocBump(4,-10); } }
         }
     },
     meck: {
         timer_var: 'meck_action_timer', seat_pct_var: 'meck_seats_pct_dnvp',
         actions: {
-            'junker_estates':      { flag: 'schwerin_junker_estates_in_prog',      done: 'schwerin_junker_estates_done',      effort: 0.6, bonuses: function(Q) { Q.industry_support = (Q.industry_support || 0) + 5; Q.rural_dnvp = (Q.rural_dnvp || 0) - 2; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 2; Q.authoritarian_conservative_strength = (Q.authoritarian_conservative_strength || 0) + 3; Q.rlb_relation = (Q.rlb_relation || 0) + 3; window._blocBump(1,20); window._blocBump(2,6); window._blocBump(3,-3); window._blocBump(4,4); } },
+            'junker_estates':      { flag: 'schwerin_junker_estates_in_prog',      done: 'schwerin_junker_estates_done',      effort: 0.6, bonuses: function(Q) { Q.industry_support = (Q.industry_support || 0) + 5; Q.rural_dnvp = (Q.rural_dnvp || 0) - 2; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 2; Q.linksliberale_strength = (Q.linksliberale_strength || 0) + 3; Q.rlb_relation = (Q.rlb_relation || 0) + 3; window._blocBump(1,20); window._blocBump(2,6); window._blocBump(3,-3); window._blocBump(4,4); } },
             'rye_subsidies':       { flag: 'schwerin_rye_subsidies_in_prog',       done: 'schwerin_rye_subsidies_done',       effort: 0.5, bonuses: function(Q) { Q.rural_dnvp = (Q.rural_dnvp || 0) + 4; Q.rlb_relation = (Q.rlb_relation || 0) + 2; window._blocBump(1,16); } },
             'centralization':      { flag: 'schwerin_centralization_in_prog',      done: 'schwerin_centralization_done',      effort: 0.4, bonuses: function(Q) { Q.z_relation = (Q.z_relation || 0) + 3; Q.bvp_relation = (Q.bvp_relation || 0) + 2; Q.volkskonservativ_dissent = (Q.volkskonservativ_dissent || 0) - 3; Q.christian_social_dissent = (Q.christian_social_dissent || 0) - 2; Q.authoritarian_conservative_dissent = (Q.authoritarian_conservative_dissent || 0) - 2; Q.industry_support = (Q.industry_support || 0) + 6; Q.fundraising_support = (Q.fundraising_support || 0) + 6; window._blocBump(1,4); window._blocBump(2,16); window._blocBump(4,6); } },
             'agricultural_unions': { flag: 'schwerin_agricultural_unions_in_prog', done: 'schwerin_agricultural_unions_done', effort: 0.6, bonuses: function(Q) { Q.rural_spd = (Q.rural_spd || 0) - 2; Q.rural_dnvp = (Q.rural_dnvp || 0) + 1; Q.old_middle_dnvp = (Q.old_middle_dnvp || 0) + 2; Q.workers_dnvp = (Q.workers_dnvp || 0) - 1; Q.rlb_relation = (Q.rlb_relation || 0) + 3; Q.industry_support = (Q.industry_support || 0) + 2; window._blocBump(1,10); window._blocBump(2,6); window._blocBump(3,-3); } },
