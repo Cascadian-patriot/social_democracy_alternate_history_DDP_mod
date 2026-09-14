@@ -8,6 +8,180 @@ max-visits: 1
 
 = Reentry Into the Bauer Cabinet
 
-<img src="img/portraits/BauerGustav.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:220px; object-fit:cover; object-position:top; border:2px solid #000000ff;"> <br> Ever since the acceptance of the humiliating treaty of Versailles in June, our formal participation in the government has been hindered by the SPD and Z’s bitterness over our desire to “evade responsibility”, and by our fundamental criticism of the plans by the SPD and Economic Minister WIssel's plans for a <span style="color: var(--kpd-colour);">socialization</span> of the economy, with earlier negotiations in July being rejected by both our party and the cabinet. But now, we have been approached again and we must decide whether or not to enter government.
+<img src="img/portraits/BauerGustav.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:220px; object-fit:cover; object-position:top; border:2px solid var(--z-colour)ff;"> Ever since the acceptance of the humiliating treaty of Versailles in June, our formal participation in the government has been hindered by the SPD and Z’s bitterness over our desire to “evade responsibility”, and by our fundamental criticism of the plans by the SPD and Economic Minister Wissell's plans for a <span style="color: var(--kpd-colour);">socialization</span> of the economy, with earlier negotiations in July being rejected by both our party and the cabinet. But now, we have been approached again and we must decide whether or not to enter government.
+
+- @this_is_the_only_option: Approve our renewed participation in government.
+- @no_way_to_pick_this: Refuse to enter government and enter the opposition.
+
+@this_is_the_only_option
+on-arrival: in_weimar_coalition = 1; leverage = ddp_r
+go-to: ministries
+
+After a few days of negotiations, we have officially re-entered government with the <span style="color: var(--z-colour);">We</span><span style="color: var(--spd-colour);">im</span><span style="color: var(--ddp-colour);">ar</span> Coalition, as Bauer welcomes us in.
+
+@ministries
+
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. 
+
+@labor
+title: Labor Ministry
+subtitle: The Labor Ministry handles labor affairs.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 5
+view-if: labor_minister_party != "DDP"
+on-arrival: leverage -= 5; labor_minister_party = "DDP"; labor_minister = "Lemmer"
+go-to: ministries
+
+Ersnt Lemmer of the [+ ddp_name +] has been appointed labor minister.
+
+@interior
+title: Interior Ministry
+subtitle: The Interior Ministry controls domestic security.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 5
+view-if: interior_minister_party != "DDP"
+on-arrival: leverage -= 5; interior_minister_party = "DDP"; interior_minister = "Koch-Weser"
+go-to: ministries
+
+Erich Koch-Weser of the [+ ddp_name +] has been appointed Interior Minister.
+
+@finance
+title: Finance Ministry
+subtitle: The Finance Ministry controls the government budget and taxes.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: finance_minister_party != "DDP"
+on-arrival: leverage -= 10; finance_minister_party = "DDP"; finance_minister = "Dietrich"
+go-to: ministries
+
+Hermann Dietrich of the [+ ddp_name +] has been appointed Finance Minister.
+
+@economic
+title: Economic Ministry
+subtitle: The Economic Ministry controls broader economic policy.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: economic_minister_party != "DDP"
+on-arrival: leverage -= 10; economic_minister_party = "DDP"; economic_minister = "Hamm"
+go-to: ministries
+
+Eduard Hamm of the [+ ddp_name +] has been appointed Economic Minister.
+
+@justice
+title: Justice Ministry
+subtitle: The Justice Ministry controls the courts.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: justice_minister_party != "DDP"
+on-arrival: leverage -= 10
+go-to: choose_justice
+
+@choose_justice
+
+Who should become Justice Minister?
+
+-@schiffer: Eugen Schiffer.
+-@blunck: Andreas Blunck
+
+@schiffer
+on-arrival: justice_minister_party = "DDP"; justice_minister = "Schiffer"
+go-to: ministries
+
+@blunck
+on-arrival: justice_minister_party = "DDP"; justice_minister = "Blunck"
+go-to: ministries
+
+@foreign
+title: Foreign Ministry
+subtitle: This controls foreign affairs and our relationships with our neighbours.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: foreign_minister_party != "DDP"
+on-arrival: leverage -= 10; foreign_minister_party = "DDP"; foreign_minister = "Rathenau"
+go-to: ministries
+
+Walter Rathenau of the [+ ddp_name +] has been appointed Foreign Minister.
 
 
+@agriculture
+title: Agricultural Ministry
+subtitle: This handles agriculture and also other things such as land reform, etc..
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: agriculture_minister_party != "DDP"
+on-arrival: leverage -= 10; agriculture_minister_party = "DDP"; agriculture_minister = "Böhme"
+go-to: ministries
+
+
+Karl Böhme of the [+ ddp_name +] has been appointed Agriculture Minister.
+
+@reichswehr
+title: Reichswehr Ministry
+subtitle: The Ministry responsible for the armed forces.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 15 
+view-if: reichswehr_minister_party != "DDP"
+on-arrival: leverage -= 15; reichswehr_minister_party = "DDP"; reichswehr_minister = "Gessler"
+go-to: ministries
+
+Otto Gessler of the [+ ddp_name +] has been appointed Reichswehr Minister.
+
+
+
+@no_more
+title: No more ministries.
+subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?]
+
+This coalition arrangement is tolerable to all.
+
+@drop_labor
+title: Drop the Labor Ministry.
+view-if: labor_minister_party = "DDP"
+on-arrival: labor_minister_party = "SPD"; labor_minister = "Schlicke"; leverage += 5;
+go-to: ministries
+
+@drop_interior
+title: Drop the Interior Ministry.
+view-if: interior_minister_party = "DDP"
+on-arrival: interior_minister_party = "SPD"; interior_minister = "David"; leverage += 5;
+go-to: ministries
+
+@drop_finance
+title: Drop the Finance Ministry.
+view-if: finance_minister_party = "DDP"
+on-arrival: finance_minister_party = "Z"; finance_minister = "Erzberger"; leverage += 5
+go-to: ministries
+
+@drop_economic
+title: Drop the Economic Ministry.
+view-if: economic_minister_party = "DDP"
+on-arrival: economic_minister_party = "SPD"; economic_minister = "Schmidt"; leverage += 10
+go-to: ministries
+
+@drop_justice
+title: Drop the Justice Ministry.
+view-if: justice_minister_party = "DDP"
+on-arrival: justice_minister_party = "Others"; justice_minister = "Vacant"; leverage += 10;
+go-to: ministries
+
+@drop_foreign
+title: Drop the Foreign Ministry.
+view-if: foreign_minister_party = "DDP"
+on-arrival: foreign_minister_party = "SPD"; foreign_minister = "Müller"
+go-to: ministries
+
+@drop_agriculture
+title: Drop the Agriculture Ministry.
+view-if: agriculture_minister_party = "DDP"
+on-arrival: agriculture_minister_party = "SPD"; agriculture_minister = "Schmidt"; leverage += 10
+go-to: ministries
+
+@drop_reichswehr
+title: Drop the Reichswehr Ministry.
+view-if: reichswehr_minister_party = "DDP"
+on-arrival: reichswehr_minister_party = "SPD"; reichswehr_minister = "Noske"; leverage += 15;
+go-to: ministries
+
+@no_way_to_pick_this
+choose-if: false
+unavailable-subtitle: We cant do this.
