@@ -14,7 +14,7 @@ max-visits: 1
 - @no_way_to_pick_this: Refuse to enter government and enter the opposition.
 
 @this_is_the_only_option
-on-arrival: in_weimar_coalition = 1; leverage = ddp_r
+on-arrival: in_weimar_coalition = 1; leverage = ddp_r + 5
 go-to: ministries
 
 After a few days of negotiations, we have officially re-entered government with the <span style="color: var(--z-colour);">We</span><span style="color: var(--spd-colour);">im</span><span style="color: var(--ddp-colour);">ar</span> Coalition, as Bauer welcomes us in.
