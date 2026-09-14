@@ -583,7 +583,47 @@
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-  };
+    }
+
+        var segmentsHtml = '';
+        var labelsHtml = '';
+        factions.forEach(function(f, idx) {
+            var filledPct = Math.round(((COOLDOWN_MONTHS - f.timer) / COOLDOWN_MONTHS) * 100);
+            var filled = f.timer === 0;
+            var useWhite = f.invert ? !filled : filled;
+            var divColor = useWhite ? '#fff' : '#000';
+            var nextF = factions[idx + 1];
+            if (nextF && f.invert && !nextF.invert) divColor = '#000';
+            var segStyle = '--divider-color: ' + divColor + '; --divider-width: 2px; background: ' + f.bg + ';';
+            segmentsHtml += '<div class="advisor-timer-segment' + (f.invert ? ' invert' : '') + '" style="' + segStyle + '">'
+                          +   '<div class="advisor-timer-fill" style="width:' + filledPct + '%; --w:' + Math.max(filledPct, 1) + '; background:' + f.color + ';"></div>'
+                          + '</div>';
+            labelsHtml += '<div class="advisor-timer-label">'
+                        +   (f.timer === 0 ? '<span class="advisor-ready">Available</span>' : '')
+                        + '</div>';
+        });
+
+        var html = '<div class="advisor-header">Advisors</div>'
+                 + '<div class="advisor-timer-conjoined">' + segmentsHtml + '</div>'
+                 + '<div class="advisor-timer-labels">' + labelsHtml + '</div>';
+
+        if (target.innerHTML !== html) {
+            target.innerHTML = html;
+        }
+        target.classList.add('advisor-panel-head');
+
+        var pinnedUl = target.nextElementSibling;
+        if (pinnedUl && pinnedUl.classList && pinnedUl.classList.contains('pinned-cards')
+            && (!target.parentElement || !target.parentElement.classList.contains('advisor-panel-wrap'))) {
+            var wrap = document.createElement('div');
+            wrap.className = 'advisor-panel-wrap';
+            target.parentNode.insertBefore(wrap, target);
+            wrap.appendChild(target);
+            wrap.appendChild(pinnedUl);
+        }
+
+})();
+
 document.addEventListener('mousemove', e => {
     document.querySelectorAll('.mytooltiptext').forEach(el => {
         el.style.setProperty('--mouse-x', e.clientX + 'px');
