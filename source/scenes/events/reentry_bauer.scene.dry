@@ -1,7 +1,7 @@
 title: Negotiations for our entry into the Bauer Cabinet.
 subtitle: Reconciliation with our coalition partners..
 new-page: true
-view-if: year == 1919 and month == 10
+view-if: year == 1919 and month == 10 and chancellor == "Bauer"
 priority: 1
 tags: event
 max-visits: 1
