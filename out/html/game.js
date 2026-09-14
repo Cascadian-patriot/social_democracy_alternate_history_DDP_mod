@@ -74,60 +74,8 @@ function checkAchievementsState() {
         link.style.pointerEvents = 'none';
         link.style.cursor = 'default';
     }
-}
+};
 
-window._dvpColorValue = function() {
-    var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-    if (!Q || !Q.stresemann_dead) return '#D5AC27';
-    if (Q.dvp_leader === 'Curtius') return '#D5AC27';
-    if (Q.dvp_leader === 'Kardorff') return '#D5AC27';
-    if (Q.dvp_leader === 'Dingeldey') return '#98C22C';
-    return '#8f6e00';
-};
-window._applyDvpColor = function() {
-    try { document.documentElement.style.setProperty('--dvp-color', window._dvpColorValue()); } catch (e) {}
-};
-window._applyDvpColor();
-
-window._spdColorValue = function() {
-    try { var v = getComputedStyle(document.documentElement).getPropertyValue('--spd-color').trim(); return v || '#c00000'; } catch (e) { return '#c00000'; }
-};
-window._kpdColorValue = function() {
-    try { var v = getComputedStyle(document.documentElement).getPropertyValue('--kpd-color').trim(); return v || '#8B0000'; } catch (e) { return '#8B0000'; }
-};
-window._applySpdColor = function() {
-    try {
-        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-        if (Q && Q.spd_pink) document.documentElement.style.setProperty('--spd-color', '#D47B9B');
-    } catch (e) {}
-};
-window._applyKpdColor = function() {
-    try {
-        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-        if (Q && Q.kpd_line === 'Conciliator') document.documentElement.style.setProperty('--kpd-color', '#C33C87');
-    } catch (e) {}
-};
-window._zColorValue = function() {
-    var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-    var L = Q && Q.z_leader;
-    if (L === 'Stegerwald') return '#2b3363';
-    return '#000000';
-};
-window._applyZColor = function() {
-    try { document.documentElement.style.setProperty('--z-color', window._zColorValue()); } catch (e) {}
-};
-window._dnvpColorValue = function() {
-    var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state && window.dendryUI.dendryEngine.state.qualities;
-    var L = Q && (Q.dnvp_leader_last_name || Q.dnvp_leader);
-    if (L === 'Treviranus') return '#36b0f7';
-    if (L === 'Lambach')    return '#005a8f';
-    if (L === 'Lehmann')    return '#095c3f';
-    if (L === 'Hugenberg')  return '#181894';
-    return '#3E88B3';
-};
-window._applyDnvpColor = function() {
-    try { document.documentElement.style.setProperty('--dnvp-color', window._dnvpColorValue()); } catch (e) {}
-};
 window._hugenbergBgImgs = ['img/huggyback1.jpg', 'img/huggyback2.jpg'];
 window._hugenbergPanel = 'rgba(14,26,56,0.95)';
 window._toggleHugenbergMode = function() {
