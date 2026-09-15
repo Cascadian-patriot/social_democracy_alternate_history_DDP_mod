@@ -40,7 +40,7 @@ Our Nationalliberale members are not that enthusiastic and the Linksliberale mem
 @you_are_hitler_if_you_click_this_2
 subtitle: The middle-class might come back to us again, however many workers might leave our party due to this.
 view-if: yea_socialization_death_erkelenz
-on-arrival: new_middle_ddp += 3; workers_ddp -= 2; dvp_relation += 3; pazifisten_dissent  += 2; pazifisten_strength -= 2; nationalliberale_dissent -= 2; nationalliberale_strength +2
+on-arrival: new_middle_ddp += 3; workers_ddp -= 2; dvp_relation += 3; pazifisten_dissent  += 2; pazifisten_strength -= 2; nationalliberale_dissent -= 2; nationalliberale_strength += 2
 
 We have adopted a more middle class friendly posture and promised to oppose any future <span style="color: var(--kpd-colour);">socialization</span>, to the delight of the Nationalliberale wing, whilst the Linksliberale are now more worried about the coalition's stability.
 
@@ -54,7 +54,7 @@ Our Nationalliberale members are not that enthusiastic and the Linksliberale mem
 @you_are_hitler_if_you_click_this_3
 subtitle: Erkelenz isnt going to be happy about this.
 view-if: yea_socialization_erkelenz
-on-arrival: workers_ddp -= 6*(1-dissent); old_middle_ddp += 5*(1-dissent); new_middle_ddp += 4*(1-dissent); pazifisten_dissent += 5; linksliberale_dissent + 3
+on-arrival: workers_ddp -= 6*(1-dissent); old_middle_ddp += 5*(1-dissent); new_middle_ddp += 4*(1-dissent); pazifisten_dissent += 5; linksliberale_dissent += 3
 
 We have started to gradually strip the labour-oriented policies from the program, enraging Erkelenz and the Pazifisten and Linksliberale wing, at least some of the Nationalliberale wing members are more satisfied.
 
