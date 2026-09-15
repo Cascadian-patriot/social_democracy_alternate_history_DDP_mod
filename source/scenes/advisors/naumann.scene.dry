@@ -1,0 +1,43 @@
+title: Friedrich Naumann
+is-pinned-card: true
+tags: advisor, linksliberale
+card-image: img/portraits/naumann.jpeg
+view-if: naumann_advisor = 1
+new-page: true
+
+= Friedrich Naumann
+
+Friedrich Naumann is our current party chairman and one of the co-founders of the DDP. He is one of the most influential German Liberal intelectuals, and a protestant parish pastor. He is also our party's linksliberale wing's ideological father.
+  
+- @coalition_relations
+- @strenghten_left_liberals
+- @party_unity
+- @root: Return to main
+  
+@coalition_relations
+title: Improving relations with our coalition partners.
+subtitle: Naumann can improve our relations with our coalition partners, and smooth over dissent.
+choose-if: advisor_action_timer <= 0 and (in_weimar_coalition or in_grand_coalition or ddp_in_government)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not ddp_in_government : We are not currently in government. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if ddp_in_government = 1 and coalition_dissent > 0; z_relation += 6; spd_relation += 6; dvp_relation += 6; sammlung_dissent -= 3 if sammlung_dissent > 0; linksliberale_dissent -= 3
+
+We have smoothed over tensions within the coalition, reassuring our partners of our commitment to stable government.
+  
+@strenghten_left_liberals
+title: Strenghten the Linksliberale.
+subtitle: Strenghten the left-liberal wing of our party.
+view-if: difficulty < 1
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; linksliberale_strenght += 8; linksliberale_dissent -= 8
+
+Naumann has strenghtened left-liberal ideas in the party.
+  
+@party_unity
+title: Preserving party unity
+subtitle: Use naumann's authority in the party to enforce discipline.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; sammlung_dissent -= 5; linksliberale_dissent -= 10; pazifisten_dissent -= 10; nationalliberale_dissent -= 10; republikschutzer_dissent -= 5
+
+Friedrich Naumann has used his authority in the party to enforce party discipline. This has increased party unity.
