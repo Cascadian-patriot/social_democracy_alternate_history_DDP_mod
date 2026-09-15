@@ -5,7 +5,10 @@ view-if: year == 1919 and month == 4 and finance_minister == "Schiffer"
 priority: 1
 tags: event
 max-visits: 1
-on-arrival: if (yea_socialization_erkelenz == 1) dvp_left += 3; if (yea_socialization_erkelenz == 1) new_middle_dvp += 3
+on-arrival: {!
+if (yea_socialization_erkelenz == 1) Q.dvp_left += 3;
+if (yea_socialization_erkelenz == 1) Q.new_middle_dvp += 3;
+!}
 
 = Schiffer Resigns!
 
