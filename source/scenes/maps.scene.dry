@@ -13,7 +13,7 @@ go-to: map_menu
 
 @provinces_political 
 
-{!<svg id="germany_map_svg" viewBox="1000 -1800 200 2600" width="100%" height="600" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
+{!<svg id="germany_map_svg" viewBox="0 -1800 200 2600" width="100%" height="600" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
   <style>
     .district:hover { opacity: 0.8; cursor: pointer; }
   </style>
@@ -21,6 +21,8 @@ go-to: map_menu
   <text x="9600" y="8900" text-anchor="middle" font-size="40" fill="currentColor">Click on districts to view specific information</text>
 
 <svg
+   width:"100%"
+   height="600"
    xml:space="preserve"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
