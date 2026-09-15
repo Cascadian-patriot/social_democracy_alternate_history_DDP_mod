@@ -20,19 +20,19 @@ Whilst on the right, specifically the Nationalliberale wing and a few business L
 
 @vote_aye_erkelenz
 subtitle: This will raise a few eyebrows across the Linksliberale wing. The Nationalliberale wing is gonna be absolutely livid if we select this.
-on-arrival: constitution_leverage += 4; workers_ddp += 6*(1-dissent); old_middle_ddp -= 5*(1-dissent); new_middle_ddp -= 4*(1-dissent); nationalliberale_dissent += 10; nationalliberale_strength -= 4; linksliberale_dissent += 6 if linksliberale_dissent > 0; linksliberale_strength += 6; worker_campaign_modifier += 1; old_middle_campaign_modifier -= 1; spd_relation += 8
+on-arrival: constitution_leverage += 4; workers_ddp += 6*(1-dissent); yea_socialization_erkelenz = 1; old_middle_ddp -= 5*(1-dissent); new_middle_ddp -= 4*(1-dissent); nationalliberale_dissent += 10; nationalliberale_strength -= 4; linksliberale_dissent += 6 if linksliberale_dissent > 0; linksliberale_strength += 6; worker_campaign_modifier += 1; old_middle_campaign_modifier -= 1; spd_relation += 8
 
 Our business backers and Nationalliberale members are livid at our decision to not only support this <span style="color: var(--spd-colour);">Marxist</span> bill and to deviate even further away from the middle class. We shall hope this experimentation will carry us through the new <span style="color: var(--z-colour);">**Ge**</span><span style="color: var(--spd-colour);">**rma**</span><span style="color: var(--ddp-colour);">**ny**</span>... 
   
 @vote_aye_coalition
 subtitle: A expected course of action.
-on-arrival: constitution_leverage += 2; workers_ddp += 2*(1-dissent); old_middle_ddp -= 3*(1-dissent); new_middle_ddp -= 2*(1-dissent); nationalliberale_dissent += 5; spd_relation += 8; coalition_dissent -= 2
+on-arrival: constitution_leverage += 2; workers_ddp += 2*(1-dissent); yea_socialization_death_erkelenz = 1; old_middle_ddp -= 3*(1-dissent); new_middle_ddp -= 2*(1-dissent); nationalliberale_dissent += 5; spd_relation += 8; coalition_dissent -= 2
 
 The expected course of action, however middle class voters still somewhat leave our party over this.
 
 @abstain
 subtitle: Will he?
-on-arrival: coalition_dissent += 2; constitution_leverage -= 2; workers_ddp -= 3*(1-dissent); old_middle_ddp -= 1*(1-dissent); new_middle_ddp -= 1*(1-dissent); nationalliberale_dissent -= 4 if nationalliberale_dissent > 0; linksliberale_dissent += 6; spd_relation -= 6; z_relation -= 2
+on-arrival: coalition_dissent += 2; constitution_leverage -= 2; abstained_socialization = 1; workers_ddp -= 3*(1-dissent); old_middle_ddp -= 1*(1-dissent); new_middle_ddp -= 1*(1-dissent); nationalliberale_dissent -= 4 if nationalliberale_dissent > 0; linksliberale_dissent += 6; spd_relation -= 6; z_relation -= 2
 
 The SPD is shocked at our intrisigence! Our middle class voters still grumble, but the fallout is less, and we lose much of our popularity among the workers.
 
