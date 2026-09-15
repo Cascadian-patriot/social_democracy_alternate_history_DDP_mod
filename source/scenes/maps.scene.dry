@@ -14,6 +14,7 @@ go-to: map_menu
 @provinces_political 
 
 <div style="margin-top:16px; position:relative; display:inline-block; line-height:0; max-width:100%;">
+<img id="with_austria_work" src="img/with_austria.svg" alt="Karte des Deutschen Reiches" style="display:block; width:100%; max-width:800px; height:auto; border:2px solid black;">
   <style>
     .district:hover { opacity: 0.8; cursor: pointer; }
   </style>
