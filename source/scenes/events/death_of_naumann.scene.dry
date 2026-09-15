@@ -1,0 +1,14 @@
+title: The Death of Friedrich Naumann
+view-if: year == 1919 and month == 8
+frequency: 1000
+max-visits: 1
+on-arrival: naumann_advisor = 0; name_leader = "Carl Wilhelm Petersen"; img_leader = "out/html/img/portraits/PetersenCarlWilhelm.jpg"
+tags: event
+new-page: true
+face-image: out/html/img/naumann.jpeg
+
+= The Death of Friedrich Naumann
+
+Our chairman and Germany's most influential liberal intelectual has passed away on in August 1919 at the age of 59, one month after our first congress. He had just retreated to the Baltic sea to recover from overwork in the National Assembly and war-related malnutrition, when he suffered a stroke in Travemünde. 
+
+It is a tragic event, especially with many of our prominent members once a student or a close associate of Naumann. For the party, we have lost our most unifying leader and created a void in the rank and file that we haven't prepared to solve. Carl Wilhelm Petersen is elected provisional chairman of the party, and an exaordinary party congress is scheduled at December to determine the new chairman and to draft the official party programme of the DDP.
