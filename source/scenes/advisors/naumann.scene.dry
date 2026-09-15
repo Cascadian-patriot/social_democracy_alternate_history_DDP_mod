@@ -1,7 +1,7 @@
 title: Friedrich Naumann
 is-pinned-card: true
 tags: advisor, linksliberale
-card-image: img/portraits/naumann.jpeg
+card-image: out/html/img/naumann.jpeg
 view-if: naumann_advisor = 1
 new-page: true
 
