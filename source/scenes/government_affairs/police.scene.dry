@@ -12,16 +12,17 @@ Our young Democracy is threatened from all sides by it's enemies, aswell as havi
 
 Hugo Preuss, from our party, is the current Interior minister, and with his help we can start addressing these problems, one at a time.
 
-- @police: Create the interior police!
-- @bolster_police: Increase the Sicherheitspolizei's strenght.
-- @republicanise: Republicanize the Bureaucracy.
-- @investigate_corruption: Tackle corruption in the goverment and amongst big businesses.
-- @investigate_far_right: Investigate illegal activity among the far right.
-- @fund_republikanische_soldatenwehr: Inject funds into the republikanische_soldatenwehr
+- @police
+- @bolster_police
+- @republicanise
+- @investigate_corruption
+- @investigate_far_right
+- @fund_republikanische_soldatenwehr
 - @easy_discard
 - @cancel_advisor_action
 
 @police
+title: Create the interior police.
 subtitle: -1 budget
 choose-if: budget > 0 and interior_police_formed == 0
 on-arrival: budget -= 1; interior_police_formed += 1; interior_police_loyalty += 0.02
@@ -30,6 +31,7 @@ unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if interior_p
 We have approved the creation of the Sicherheitspolizei, a police force in charge of protecting the Republic and investigating it's enemies. However, we still must expand it to increase its effectiveness.
 
 @bolster_police
+title: Increase the Sicherheitspolizei's strenght.
 subtitle: -1 budget
 choose-if: budget > 0 and interior_police_formed = 1
 unavailable-subtitle: [? if interior_police_formed = 0 : We must create a police force first. ?][? if budget <= 0 : Requires 1 budget. ?]
@@ -40,6 +42,7 @@ We have increased the Sicherheitspolizei's budget, creating new branches and imp
 Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
 
 @republicanise
+title: republicanize the Bureaucracy.
 choose-if: bureaucratic_reform < 3
 unavailable-subtitle: We have already gone as far as we reasonably can with the current civil service.
 on-arrival: bureaucratic_reform += 1; sammlung_strength += 2; dnvp_relation -= 2; economic_growth += 0.1; interior_police_loyalty += 0.02 if interior_police_formed = 1; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_ddp += 2*(1-dissent) if democratization >= 3; new_middle_ddp += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
@@ -49,6 +52,7 @@ We have purged a number of old imperial officials, civil servants and bureaucrat
 It costs us goodwill with the DNVP, who see this as a partisan purge dressed up as reform. It does however ensures the bureaucracy's loyalty to the Republic and even slightly improving efficiency.
 
 @investigate_corruption
+title: Tackle corruption in the goverment and amongst big businesses.
 go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investigate_corruption_failure if interior_police_loyalty < 0.5
 
 @investigate_corruption_success
@@ -62,6 +66,7 @@ Corruption in big business is rampant, of course. We have uncovered a number of 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
 @investigate_far_right
+title: Investigate illegal activity among the far right.
 view-if: interior_police_formed = 1
 unavailable-subtitle: [? if interior_police_formed = 0 : We must create a police force first. ?]
 go-to: investigate_far_right_failure if interior_police_loyalty < 0.5; interior_police_loyaltyfar_right_1 if far_right_investigation = 0 and kapp_putsch_seen = 0; far_right_2 if far_right_investigation = 0 and kapp_putsch_seen = 1; far_right_2 if far_right_investigation = 1 and kapp_putsch_seen = 1; far_right_3 if far_right_investigation = 2; far_right_4 if far_right_investigation = 3; far_right_5 if far_right_investigation = 4 and beer_hall_putsch_seen = 1; far_right_already if far_right_investigation >= 5 or (far_right_investigation = 4 and beer_hall_putsch_seen = 0)
@@ -102,6 +107,7 @@ Our investigations into far-right subversion continue along the lines already es
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
 @fund_soldatenwehr
+title: Inject goverment funds into the Republikanische Soldatenwehr
 subtitle: -1 budget
 choose-if: budget > 0
 view-if: kapp_putsch_seen = 0
