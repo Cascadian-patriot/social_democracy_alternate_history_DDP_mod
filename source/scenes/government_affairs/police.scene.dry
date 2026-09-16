@@ -12,7 +12,7 @@ Our young Democracy is threatened from all sides by it's enemies, aswell as havi
 
 Hugo Preuss, from our party, is the current Interior minister, and with his help we can start addressing these problems, one at a time.
 
-- @police
+- @police_creation
 - @bolster_police
 - @republicanise
 - @investigate_corruption
@@ -21,7 +21,7 @@ Hugo Preuss, from our party, is the current Interior minister, and with his help
 - @easy_discard
 - @cancel_advisor_action
 
-@police
+@police_creation
 title: Create the interior police.
 subtitle: -1 budget
 choose-if: budget > 0 and interior_police_formed == 0
