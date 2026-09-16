@@ -42,7 +42,7 @@ We have increased the Sicherheitspolizei's budget, creating new branches and imp
 Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
 
 @republicanise
-title: republicanize the Bureaucracy.
+title: Republicanize the Bureaucracy by purging reactionary and imperial officials.
 choose-if: bureaucratic_reform < 3
 unavailable-subtitle: We have already gone as far as we reasonably can with the current civil service.
 on-arrival: bureaucratic_reform += 1; sammlung_strength += 2; dnvp_relation -= 2; economic_growth += 0.1; interior_police_loyalty += 0.02 if interior_police_formed = 1; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_ddp += 2*(1-dissent) if democratization >= 3; new_middle_ddp += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
