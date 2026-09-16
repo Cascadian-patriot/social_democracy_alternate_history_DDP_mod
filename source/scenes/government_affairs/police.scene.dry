@@ -106,7 +106,7 @@ Our investigations into far-right subversion continue along the lines already es
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
-@fund_soldatenwehr
+@fund_republikanische_soldatenwehr
 title: Inject goverment funds into the Republikanische Soldatenwehr
 subtitle: -1 budget
 choose-if: budget > 0
