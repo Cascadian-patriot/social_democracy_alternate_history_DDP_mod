@@ -151,7 +151,7 @@ Q.freikorps_anger = 0;
 Q.freikorps_dealt_with = 0;
 
 // Soldatenwerh strenghtened but before kapp putsch
-Q.soldatenwehr_strenghtened_1 = 0;|
+Q.soldatenwehr_strenghtened_1 = 0;
 
 // Reichsbanner formed?
 Q.reichsbanner_formed = 0;
