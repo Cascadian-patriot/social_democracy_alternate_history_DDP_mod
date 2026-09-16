@@ -28,9 +28,9 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [? if president_party == "SPD": <span style="color: var (--spd-colour);">[+ president +]</span>?][? if president_party == "USPD": <span style="color: var (--uspd-colour);">[+ president +]</span>?][? if president_party == "I":<span style="color: var (--i-colour);">[+ president +]</span>?][? if president_party == "SAPD": <span style="color: var (--sapd-colour);">[+ president +]</span>?][? if president_party == "DAP": <span style="color: var (--dap-colour);">[+ president +]</span>?][? if president_party == "Z": <span style="color: var (--z-colour);">[+ president +]</span>?][? if president_party == "NSDAP": <span style="color: var (--nsdap-colour);">[+ president +]</span>?][? if president_party == "KPD": <span style="color: var (--kpd-colour);">[+ president +]</span>?][? if president_party == "DNVP": <span style="color: var (--dnvp-colour);">[+ president +]</span>?] ([? if president_party == "Z":<span style="color: var (--z-colour);">**[+ z_party_name +]**</span>?][? if president_party == "SPD":<span style="color: var (--spd-colour);">**SPD**</span>?][? if president_party == "KPD":<span style="color: var (--kpd-colour);">**KPD**</span>?][? if president_party == "SAPD":<span style="color: var (--sapd-colour);">**SAPD**</span>?][? if president_party == "DNVP": <span style="color: var (--dnvp-colour);">**DNVP**</span>?][? if president_party == "NSDAP":<span style="color: var (--nsdap-colour);">**NSDAP**</span>?][? if president_party == "I":<span style="color: var (--i-colour);">**I**</span>?][? if president_party == "USPD": <span style="color: var (--uspd-colour);">**USPD**</span>?][? if president_party == "DAP":DAP?][? if chancellor_party == "I":<span style="color: var (--i-colour);">**I**</span>?])
+President: [? if president_party == "SPD": <span style="color: var(--spd-colour);">[+ president +]</span>?][? if president_party == "USPD": <span style="color: var(--uspd-colour);">[+ president +]</span>?][? if president_party == "I":<span style="color: var(--i-colour);">[+ president +]</span>?][? if president_party == "SAPD": <span style="color: var(--sapd-colour);">[+ president +]</span>?][? if president_party == "DAP": <span style="color: var(--dap-colour);">[+ president +]</span>?][? if president_party == "Z": <span style="color: var(--z-colour);">[+ president +]</span>?][? if president_party == "NSDAP": <span style="color: var(--nsdap-colour);">[+ president +]</span>?][? if president_party == "KPD": <span style="color: var(--kpd-colour);">[+ president +]</span>?][? if president_party == "DNVP": <span style="color: var(--dnvp-colour);">[+ president +]</span>?] ([? if president_party == "Z":<span style="color: var(--z-colour);">**[+ z_party_name +]**</span>?][? if president_party == "SPD":<span style="color: var(--spd-colour);">**SPD**</span>?][? if president_party == "KPD":<span style="color: var(--kpd-colour);">**KPD**</span>?][? if president_party == "SAPD":<span style="color: var(--sapd-colour);">**SAPD**</span>?][? if president_party == "DNVP": <span style="color: var(--dnvp-colour);">**DNVP**</span>?][? if president_party == "NSDAP":<span style="color: var(--nsdap-colour);">**NSDAP**</span>?][? if president_party == "I":<span style="color: var(--i-colour);">**I**</span>?][? if president_party == "USPD": <span style="color: var(--uspd-colour);">**USPD**</span>?][? if president_party == "DAP":DAP?][? if chancellor_party == "I":<span style="color: var(--i-colour);">**I**</span>?])
 
-Chancellor: [? if chancellor_party == "SPD": <span style="color: var (--spd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "USPD": <span style="color: var (--uspd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "SAPD": <span style="color: var (--sapd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: var (--z-colour);">[+ chancellor +]</span>?][? if chancellor_party == "DAP": <span style="color: var (--dap-colour);">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: var (--nsdap-colour);">[+ chancellor +]</span>?][? if chancellor_party == "KPD": <span style="color: var (--kpd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "I":<span style="color: var (--i-colour);">[+ chancellor +]</span>?][? if chancellor_party == "DNVP": <span style="color: var (--dnvp-colour);">[+ chancellor +]</span>?] ([? if chancellor_party == "Z":<span style="color: var (--z-colour);">**[+ z_party_name +]**</span>?][? if chancellor_party == "SPD":<span style="color: var (--spd-colour);">**SPD**</span>?][? if chancellor_party == "KPD":<span style="color: var (--kpd-colour);">**KPD**</span>?][? if chancellor_party == "SAPD":<span style="color: var (--sapd-colour);">**SAPD**</span>?][? if chancellor_party == "DNVP": <span style="color: var (--dnvp-colour);">**DNVP**</span>?][? if chancellor_party == "NSDAP":<span style="color: var (--nsdap-colour);">**NSDAP**</span>?][? if chancellor_party == "I":<span style="color: var (--i-colour);">**I**</span>?][? if chancellor_party == "USPD": <span style="color: var (--uspd-colour);">**USPD**</span>?][? if chancellor_party == "DAP":DAP?])
+Chancellor: [? if chancellor_party == "SPD": <span style="color: var(--spd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "USPD": <span style="color: var(--uspd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "SAPD": <span style="color: var(--sapd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: var(--z-colour);">[+ chancellor +]</span>?][? if chancellor_party == "DAP": <span style="color: var(--dap-colour);">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: var(--nsdap-colour);">[+ chancellor +]</span>?][? if chancellor_party == "KPD": <span style="color: var(--kpd-colour);">[+ chancellor +]</span>?][? if chancellor_party == "I":<span style="color: var(--i-colour);">[+ chancellor +]</span>?][? if chancellor_party == "DNVP": <span style="color: var(--dnvp-colour);">[+ chancellor +]</span>?] ([? if chancellor_party == "Z":<span style="color: var(--z-colour);">**[+ z_party_name +]**</span>?][? if chancellor_party == "SPD":<span style="color: var(--spd-colour);">**SPD**</span>?][? if chancellor_party == "KPD":<span style="color: var(--kpd-colour);">**KPD**</span>?][? if chancellor_party == "SAPD":<span style="color: var(--sapd-colour);">**SAPD**</span>?][? if chancellor_party == "DNVP": <span style="color: var(--dnvp-colour);">**DNVP**</span>?][? if chancellor_party == "NSDAP":<span style="color: var(--nsdap-colour);">**NSDAP**</span>?][? if chancellor_party == "I":<span style="color: var(--i-colour);">**I**</span>?][? if chancellor_party == "USPD": <span style="color: var(--uspd-colour);">**USPD**</span>?][? if chancellor_party == "DAP":DAP?])
 
 Reichstag composition:
 
@@ -119,19 +119,19 @@ if (Q.sa_strength) {
 
 Reichsbanner Strength: [+ rb_strength_2 +] thousand
 
-<span style="color: var (--spd-colour);">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
+<span style="color: var(--spd-colour);">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
 RFB Strength: [+ rfb_strength_2 +] thousand
 
-<span style="color: var (--kpd-colour);">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
+<span style="color: var(--kpd-colour);">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
 Stahlhelm Strength: [+ sh_strength_2 +] thousand
 
-<span style="color: var (--dnvp-colour);">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
+<span style="color: var(--dnvp-colour);">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
 SA Strength: [+ sa_strength_2 +] thousand
 
-<span style="color: var (--nsdap-colour);">**SA**</span> Militarization: [+ sa_militancy : militancy +]
+<span style="color: var(--nsdap-colour);">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
 = Official Organizations
 
@@ -180,11 +180,11 @@ DNVP: [+ dnvp_votes +]%
 
 Others: [+ other_votes +]%
 
-Support for the <span style="color: var (--z-colour);">**Re**</span><span style="color: var (--spd-colour);">**pub**</span><span style="color: var (--ddp-colour);">**lic**</span>: [+ pro_republic_disp +]%
+Support for the <span style="color: var(--z-colour);">**Re**</span><span style="color: var(--spd-colour);">**pub**</span><span style="color: var(--ddp-colour);">**lic**</span>: [+ pro_republic_disp +]%
 
 Support for <span style="color: var(--sapd-colour);">**Socialism**</span>: [+ socialism_disp +]%
 
-Support for <span style="color: var (--dnvp-colour);">**Nationalism**</span>: [+ nationalism_disp +]%
+Support for <span style="color: var(--dnvp-colour);">**Nationalism**</span>: [+ nationalism_disp +]%
 
 **Detailed results for each demographic**
 
