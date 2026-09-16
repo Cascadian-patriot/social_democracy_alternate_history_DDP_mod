@@ -208,6 +208,10 @@ Q.rfb_banned_prussia = 0;
 Q.freikorps_strength = 350;
 Q.freikorps_militancy = 0.6;
 Q.freikorps_loyalty = 0.3;
+Q.freikorps_banned = 0;
+Q.soldatenwehr_strenght = 10;
+Q.soldatenwehr_militancy = 0.5;
+Q.soldatenweh_loyalty = 0.6;
 
 Q.interior_police_strength = 40;
 Q.interior_police_militancy = 1;
