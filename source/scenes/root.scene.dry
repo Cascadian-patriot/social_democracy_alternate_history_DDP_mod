@@ -160,7 +160,10 @@ Q.reichsbanner_progress = 0;
 Q.womens_organizing = 0;
 
 // Socialisation debate 
-Q.socialization_debate_seen = 0
+Q.socialization_debate_seen = 0;
+
+// Interior police formed?
+Q.interior_police_formed = 0;
 
 // Young democrats organisation strength 
 Q.young_democrats = 2;
