@@ -1,0 +1,43 @@
+title: Oscar Meyer
+is-pinned-card: true
+tags: advisor, sammlung
+card-image: img/portraits/MeyerOscar.jpg
+view-if: meyer_advisor = 1
+new-page: true
+
+= Oscar Meyer
+
+Oscar meyer is a a jewish economist, lawyer and and a part of the Nationalliberale faction of the DDP alongside Dietrich and Stolper. He advocates for the bourgeouise unification.
+
+- @bourgeousie_relations
+- @strenghten_nationalliberale
+- @industrialist_funds
+- @root: Return to main
+  
+@bourgeousie_relations
+title: Improving relations with other bourgeousie parties.
+subtitle: Oscar Meyer can help improve relations with other bourgeousie parties.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; dvp_relations += 5; dnvp_relations += 4; z_relations += 5
+
+We have improved relations with our fellow bourgeousie parties.
+  
+@strenghten_nationalliberale
+title: Strenghten the Nationalliberale.
+subtitle: Oscar Meyer can strenghten the Nationalliberale wing of the party.
+view-if: difficulty < 1
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; nationalliberale_strenght += 7; nationalliberale_dissent -= 6
+
+We have strenghtened the Nationalliberale faction.
+  
+@industrialist_funds
+title: Contact Industrialist and business allies.
+subtitle: Contact our industrialist and business allies to improve relations and gain funds.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; ddp_industrial_backing += 1; resources += ddp_industrial_backing
+
+[? if ddp_industrial_backing > 1 : We have improved our relations with the industrialists, and they have injected vital funds into the party. ?] [? if ddp_industrial_backing <= 1 : While the industrialists are still skeptical of us due to our previous actions, we have made overtures to improve our relations with them, wich has caused them to inject some funds into our party. ?]
