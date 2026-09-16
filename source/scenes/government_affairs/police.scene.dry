@@ -69,7 +69,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 title: Investigate illegal activity among the far right.
 view-if: interior_police_formed = 1
 unavailable-subtitle: [? if interior_police_formed = 0 : We must create a police force first. ?]
-go-to: investigate_far_right_failure if interior_police_loyalty < 0.5; interior_police_loyaltyfar_right_1 if far_right_investigation = 0 and kapp_putsch_seen = 0; far_right_2 if far_right_investigation = 0 and kapp_putsch_seen = 1; far_right_2 if far_right_investigation = 1 and kapp_putsch_seen = 1; far_right_3 if far_right_investigation = 2; far_right_4 if far_right_investigation = 3; far_right_5 if far_right_investigation = 4 and beer_hall_putsch_seen = 1; far_right_already if far_right_investigation >= 5 or (far_right_investigation = 4 and beer_hall_putsch_seen = 0)
+go-to: investigate_far_right_failure if interior_police_loyalty < 0.5; far_right_1 if far_right_investigation = 0 and kapp_putsch_seen = 0; far_right_2 if far_right_investigation = 0 and kapp_putsch_seen = 1; far_right_2 if far_right_investigation = 1 and kapp_putsch_seen = 1; far_right_3 if far_right_investigation = 2; far_right_4 if far_right_investigation = 3; far_right_5 if far_right_investigation = 4 and beer_hall_putsch_seen = 1; far_right_already if far_right_investigation >= 5 or (far_right_investigation = 4 and beer_hall_putsch_seen = 0)
 
 @far_right_1
 on-arrival: far_right_investigation = 1; freikorps_underground_risk -= 1 if freikorps_underground_risk > 0; nazi_urgency += 1
