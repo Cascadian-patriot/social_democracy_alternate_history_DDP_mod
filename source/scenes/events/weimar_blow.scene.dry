@@ -12,7 +12,7 @@ The <span style="color: #002654;">Western</span> <span style="color: #D7141A;">A
 
 In our party, our cabinet members have been the most energetic when it comes to opposition to the treaty, with them insisting on first sending a mediation response to the <span style="color: #D7141A;">Allies</span>, including substantial changes to the treaty. In the other parties, many members of the DNVP and SPD agree on the same thing, that the treaty must be denied. Perhaps we should just follow along..
 
-Still, the crux of the matter is that we are threatened by foreign armies entering <span style="color: #000000;">**Ge**</span><span style="color: #C00000;">**rma**</span><span style="color: #D3C24D;">**ny**</span> again, and we are under threat. What should we do?
+Still, the crux of the matter is that we are threatened by foreign armies entering <span style="color: var(--z-colour);">**Ge**</span><span style="color: var(--spd-colour);">**rma**</span><span style="color: var(--ddp-colour);">**ny**</span> again, and we are under threat. What should we do?
 
 <div style="text-align: center; margin: 1em 0px; display: block;">
 <img src="img/national_assembly.jpeg" style="width:100%;max-height:200px;object-fit:cover;border:3px solid #000;">
@@ -38,7 +38,7 @@ Q.nationalliberale_dissent += 3;
 
 We cave in, and vote in the Cabinet in favour of the treaty, with the SPD and Z following suit despite a few dissenters. However, Scheidemann cannot stomach leading the cabinet that signed such a humilliating treaty, and he has submitted his resignation. President Ebert has appointed Eduard David, a pro-Versailles member of the SPD, to the position of Minister-President, with the respective ministers retaining all their ministries and finally ratifying the treaty.
 
-This decision has caused uproar in our Party, with many middle class voters that chose us in January defecting, mainly towards Gustav Stresemann's DVP. Additionally, the <span style="color: [+ nl_colour +];">right-wing</span> of our Party, composed of former <span style="color: #98C22C;">National Liberals</span>, are in complete outrage, with many prominent figures threatening or even straight up leaving due to this.
+This decision has caused uproar in our Party, with many middle class voters that chose us in January defecting, mainly towards Gustav Stresemann's DVP. Additionally, the <span style="color: var(--nationalliberale-colour);">right-wing</span> of our Party, composed of former <span style="color: var(--nlp-colour);">National Liberals</span>, are in complete outrage, with many prominent figures threatening or even straight up leaving due to this.
 
 However, our decision to prioritize peace has also strengthened the Pazifisten wing.
 
@@ -108,6 +108,6 @@ Before dawn, on June 22, 1919, <span style="color: #002654;">**French**</span>, 
 
 The Reichswehr immediately begin mobilizing to face the invasion, despite being completely unprepared to do so, while the Z, DDP, and SPD split on what to do. Some stay in Berlin and choose to fight for the nation, while the more pragmatic and left-wing ones that favored signing the treaty choose to flee behind Allied lines and set up an entente-aligned Government, The Reichswehr and the reactionaries quickly use the chance to overthrow Ebert and instate a military dictatorship, with Ebert fleeing to Allied lines, as Germany descends into civil war, with Bavaria and Hanover declaring independence under the BVP and DHP being extremely disorganised, while the KPD and USPD try to attempt to revive the Spartacist Uprising in the general anarchy. 
 
-<span style="color: #000000;">**Ge**</span><span style="color: #C00000;">**rma**</span><span style="color: #D3C24D;">**ny**</span> and its newborn <span style="color: #000000;">**Rep**</span><span style="color: #C00000;">**ubl**</span><span style="color: #D3C24D;">**lic**</span> are lost.
+<span style="color: var(--z-colour);">**Ge**</span><span style="color: var(--spd-colour);">**rma**</span><span style="color: var(--ddp-colour);">**ny**</span> and its newborn <span style="color: var(--z-colour);">**Rep**</span><span style="color: var(--spd-colour);">**ubl**</span><span style="color: var(--ddp-colour);">**lic**</span> are lost.
 
 - @game_over: Game over.
