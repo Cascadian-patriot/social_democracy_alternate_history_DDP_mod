@@ -110,6 +110,7 @@ header h2:before {
   width: 20%;
   clear: left;
 }
+
 #content h1:first-child {
   margin-top: 0.5em;
 }
@@ -283,6 +284,7 @@ blockquote + blockquote.attribution {
 }
 
 /* tabs */
+/* tabs */
 .tab_container {
     background-color: var(--tab-bg-color);
     margin-top: -0.6em;
@@ -429,6 +431,33 @@ body.dark-mode .mytooltip .mytooltiptext {
 ul.decks, ul.hand, ul.pinned-cards {
   list-style: none;
   padding-left: 0;
+}
+
+:root {
+  --kpd-colour: #700000;
+  --spd-colour: #c00000;
+  --sapd-colour: #9B0000;
+  --uspd-colour: #D47B9B;
+  --aspd-colour: #fe9e00;
+  --nlp-colour: #98c22c;
+  --ddp-colour: #D3C24D;
+  --lvp-colour: #FFCC00;
+  --z-colour: #000000;
+  --bvp-colour: #A2D8E0;
+  --dvp-colour: #D5AC27;
+  --dnvp-colour: #3E88B3;
+  --dnf-colour: #003755;
+  --dap-colour: #524732;
+  --nsdap-colour: #7A3C00;
+  --i-colour: #808080;
+  --dhp-colour: #63C489;
+  --wp-colour: #CCAA7A;
+  --reichsbanner-colour: #e08979;
+  --sammlung-colour: #d4d68b;
+  --linksliberale-colour: #edd94c;
+  --pazifisten-colour: #a685a2;
+  --nationalliberale-colour: #c5f062;
+  --republikschutzer-colour: #e3c35b;
 }
 
 /* ============================================================
@@ -604,7 +633,7 @@ a.card:hover {
    z-index: 999;
   filter: brightness(105%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  transform: translate(-5px,-5px)
+  transform: translate(-6px,-6px) rotate(-2deg);
 }
 
 div.blank-card {

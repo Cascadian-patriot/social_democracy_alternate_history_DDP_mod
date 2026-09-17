@@ -137,6 +137,43 @@ Q.ddp_industrial_backing = 1;
 // Zentrum BVP split variable for 1920
 Q.bvp_split = 0;
 
+// Territories
+Q.anhalt = 1;
+Q.anhalt_prussia = 0;
+Q.baden = 1;
+Q.baden_wurttemberg = 0;
+Q.wurttemberg = 1;
+Q.bavaria = 1;
+Q.bavaria_independent = 0;
+Q.bremen = 1;
+Q.bremen_prussia = 0;
+Q.brunswick = 1;
+Q.brunswick_prussia = 0;
+Q.hamburg = 1;
+Q.hamburg_prussia = 0;
+Q.hesse = 1;
+Q.hesse_prussia = 0;
+Q.lippe = 1;
+Q.lippe_prussia = 0;
+Q.lippe_brunswick = 0;
+Q.lubeck = 1;
+Q.lubeck_oldenburg = 0;
+Q.meck_schw = 1;
+Q.meck_stre = 1;
+Q.meck = 0;
+Q.oldenburg = 1;
+Q.oldenburg_lubeck = 0;
+Q.prussia = 1;
+Q.saxony = 1;
+Q.saxony_prussia = 1;
+Q.scha_lippe = 1;
+Q.scha_lippe_prussia = 1;
+Q.thuringia = 1;
+Q.thuringia_prussia = 1;
+Q.abstained_socialization = 0;
+Q.yea_socialization_erkelenz = 0;
+Q.yea_socialization_death_erkelenz = 0;
+
 // For Wirtschaftspartei founding in 1920
 Q.wp_founded = 0;
 
@@ -296,7 +333,7 @@ Q.parties = ['spd', 'kpd', 'uspd', 'z', 'ddp', 'dvp', 'dnvp', 'dap', 'nsdap', 'o
  
 // TODO: add rdp later
 Q.sapd_formed = 0;
-Q.dap_formed = 0;
+Q.dap_formed = 1;
 Q.nsdap_formed = 0;
 Q.rdp_formed = 0;
 
@@ -692,9 +729,9 @@ Q.einstein_advisor = 0; // Recruitable
 !}
 
 
-> *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined by the conditions in which they operate."*
+> *"All peoples of the Earth have for centuries and millennia occupied themselves with how to emerge from hardships and difficulties, and how to solve the hardships that arise from economic life, the injustices that flow from it. The National Assembly is occupied with this; all thinking minds in Germany are doing so, and we have after all, not known that in our own narrow circle we had a man who had solved these questions long ago; this man, the speaker of the Independent Party who spoke before me, and who proclaimed to us the idealism of the council system (Rätesystem). A solution is ready for everything with him; that is a advice that is given here and there, into which people are integrated who previously existed, but whose light appears relatively small. And they solve all that for us, which was not possible for all other people. I believe that when a speaker steps before the National Assembly and proclaims such an idealism, such statements cannot really be taken seriously. For I am of the opinion that this is a kind of children's play, where one does not really know what one is up to: one believes one can scoop out and settle the things, while in reality, one pushes them ahead in a childish manner."*
 
- - Karl Kautsky, *Hitlerism and Social Democracy*, 1934
+ - Anton Erkelenz, *Vol. 326, 23rd Session. Speech to the National Assembly*, 1919
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve simplifications and speculation.
 

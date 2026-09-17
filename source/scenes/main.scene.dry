@@ -35,6 +35,7 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
+
 !}
 max-cards: 4
 
@@ -53,7 +54,7 @@ max-cards: 4
 
 @party
 title: Party Affairs
-card-image: img/ddp_poster_party_affairs.jpeg
+card-image: img/naumann_poster_24.jpeg
 is-deck: true
 
 - #party_affairs

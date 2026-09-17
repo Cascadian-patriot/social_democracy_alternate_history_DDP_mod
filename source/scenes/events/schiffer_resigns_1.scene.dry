@@ -1,0 +1,66 @@
+title: Schiffer resigns.
+subtitle: Cracks are beginning to show..
+new-page: true
+view-if: year == 1919 and month == 4 and finance_minister == "Schiffer"
+priority: 1
+tags: event
+max-visits: 1
+on-arrival: {!
+if (yea_socialization_erkelenz == 1) Q.dvp_left += 3;
+if (yea_socialization_erkelenz == 1) Q.new_middle_dvp += 3;
+!}
+
+= Schiffer Resigns!
+
+<img src="img/SchifferEugen.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:220px; object-fit:cover; object-position:top; border:2px solid #000000ff;">   Finance Minister Eugen Schiffer, as a former <span style="color: var(--nlp-colour);">National Liberal</span> an an outspoken <span style="color: var(--ddp-colour);">Classical Liberal</span>, has resigned following the events of last month, [? if abstained_socialization: despite our abstention. It seems he is still offended by the SPD's decision to table the legislation without our input. ?][? if yea_socialization_death_erkelenz: seemingly infuriated by the economic policies of the Scheidemann government. ?][? if yea_socialization_erkelenz: both from the party and from his position as Finance Minister. It seems both our party and the Scheidemann government  have offended the <span style="color: var(--nlp-colour);">National Liberal</span> elements of our party. ?] He has been replaced by Bernhard Dernburg of our party as Finance Minister,  however this is a clear sign of the dissatisfaction of the party towards its weak position within the <span style="color: var(--z-colour);">We</span><span style="color: var(--spd-colour);">im</span><span style="color: var(--ddp-colour);">ar</span> Coalition. 
+
+Friedrich von Payer, chairman of the <span style="color: var(--z-colour);">We</span><span style="color: var(--spd-colour);">im</span><span style="color: var(--ddp-colour);">ar</span> delegation, has reaffirmed out party's commmitement towards the current coalition in an attempt to dispell the doubts regarding the DDP's loyalty to the current government, while trying to steer the rank and file towards a conciliatory attitude towards the SPD. [? if abstained_socialization:  If abstained: However, during the next meeting of the executive committee, <span style="color: var(--nlp-colour);">right-wing</span> <span style="color: var(--sammlung-colour);">democrats</span> including <span style="color: var(--ddp-colour);">Young Liberal</span> Bruno Marwitz, trying to utilize the backlash of last month's crisis, proposed a resolution to focus more on the middle class and bourgeoisie concentration rather than cooperation with the <span style="color: var(--spd-colour);">socialists</span>. ?][? if yea_socialization_death_erkelenz: However during the next meeting of the executive committee <span style="color: var(--nlp-colour);">right-wing</span> <span style="color: var(--sammlung-colour);">democrats</span> including <span style="color: var(--ddp-colour);">Young Liberal</span> Bruno Marwitz heavily criticized Payer's speech and have now attempted to sway the DDP leadership to adopt a more middle class aligned program. ?][? if yea_socialization_erkelenz: With the increasing defection of the <span style="color: var(--nlp-colour);">National Liberal</span> wing of the party, some members of the executive committee has started to doubt the whether it is worth it or not to continue support Erkelenz's experiment to attract the working class voters to the party. ?]
+
+- @you_are_hitler_if_you_click_this_1: Adopt Marwitz's resolution.
+- @yay_good_choice_1: Lets not rock the boat for now..
+- @you_are_hitler_if_you_click_this_2: Perhaps there is truth in his suggestions.
+- @yay_good_choice_2: We shall continue our current position.
+- @you_are_hitler_if_you_click_this_3: Perhaps it is indeed a step too far.
+- @yay_good_choice_3: Lets hope for the best.
+
+@you_are_hitler_if_you_click_this_1
+subtitle: The Pazifisten and Linksliberale arent going to be happy, to say the least.
+view-if: abstained_socialization
+on-arrival: dvp_relation += 7; new_middle_ddp += 5; workers_ddp -= 4; pazifisten_dissent += 3; nationalliberale_dissent -= 4; sammlung_dissent  += 1; linksliberale_dissent  += 2; nationalliberale_strength += 5; finance_minister = "Dernburg"; finance_minister_party = "DDP"
+
+The Pazifisten and Linksliberale factions have criticized this right-wing turn, but the Nationalliberale wing, middle class electorates and the DVP have reacted with enthusiasm, with talks regarding <span style="color: var(--lvp-colour);">liberal</span> unity increasing.
+
+@yay_good_choice_1
+subtitle: The Nationalliberale wing isnt going to be enthusiastic about this..
+view-if: abstained_socialization
+on-arrival: nationalliberale_dissent += 2; finance_minister = "Dernburg"; finance_minister_party = "DDP"
+
+Our Nationalliberale members are not that enthusiastic and the Linksliberale members of our party are still somewhat weary over last months decision.. We can't have nice things, can we.. oh well.
+
+@you_are_hitler_if_you_click_this_2
+subtitle: The middle-class might come back to us again, however many workers might leave our party due to this.
+view-if: yea_socialization_death_erkelenz
+on-arrival: new_middle_ddp += 3; workers_ddp -= 2; dvp_relation += 3; pazifisten_dissent  += 2; pazifisten_strength -= 2; nationalliberale_dissent -= 2; nationalliberale_strength += 2; finance_minister = "Dernburg"; finance_minister_party = "DDP"
+
+We have adopted a more middle class friendly posture and promised to oppose any future <span style="color: var(--kpd-colour);">socialization</span>, to the delight of the Nationalliberale wing, whilst the Linksliberale are now more worried about the coalition's stability.
+
+@yay_good_choice_2
+subtitle: The Nationalliberale wing isnt going to be exactly enthusiastic about this..
+view-if: yea_socialization_death_erkelenz
+on-arrival: nationalliberale_dissent += 5; finance_minister = "Dernburg"; finance_minister_party = "DDP"
+
+Our Nationalliberale members are not that enthusiastic and the Linksliberale members of our party are still somewhat weary over last months decision.. We can't have nice things, can we.. oh well.
+
+@you_are_hitler_if_you_click_this_3
+subtitle: Erkelenz isnt going to be happy about this.
+view-if: yea_socialization_erkelenz
+on-arrival: workers_ddp -= 6*(1-dissent); old_middle_ddp += 5*(1-dissent); new_middle_ddp += 4*(1-dissent); pazifisten_dissent += 5; linksliberale_dissent += 3; finance_minister = "Dernburg"; finance_minister_party = "DDP"
+
+We have started to gradually strip the labour-oriented policies from the program, enraging Erkelenz and the Pazifisten and Linksliberale wing, at least some of the Nationalliberale wing members are more satisfied.
+
+@yay_good_choice_3
+subtitle: Yes..
+view-if: yea_socialization_erkelenz
+on-arrival: new_middle_ddp -= 2; old_middle_ddp -= 2; dvp_relation -= 10; finance_minister = "Dernburg"; finance_minister_party = "DDP"
+
+Yes.. lets hope for the best.

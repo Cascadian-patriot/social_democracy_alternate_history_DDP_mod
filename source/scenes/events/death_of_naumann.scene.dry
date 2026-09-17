@@ -2,10 +2,10 @@ title: The Death of Friedrich Naumann
 view-if: year == 1919 and month == 8
 frequency: 1000
 max-visits: 1
-on-arrival: naumann_advisor = 0; name_leader = "Carl Wilhelm Petersen"; img_leader = "out/html/img/portraits/PetersenCarlWilhelm.jpg"
+on-arrival: naumann_advisor = 0; name_leader = "Carl Wilhelm Petersen"; img_leader = "img/portraits/PetersenCarlWilhelm.jpg"
 tags: event
 new-page: true
-face-image: out/html/img/naumann.jpeg
+face-image: img/naumann.jpeg
 
 = The Death of Friedrich Naumann
 
