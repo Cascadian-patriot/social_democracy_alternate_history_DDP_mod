@@ -8,7 +8,7 @@ card-image: img/portraits/HugoPreuss.jpg
 
 = Internal Security
 
-Our young Democracy is threatened from all sides by it's enemies, aswell as having a plethora of other internal issues regarding bureaucracy and administration.
+Our young Democracy is threatened from all sides by it's enemies, as well as having a plethora of other internal issues regarding bureaucracy and administration.
 
 Hugo Preuss, from our party, is the current Interior minister, and with his help we can start addressing these problems, one at a time.
 
@@ -31,7 +31,7 @@ unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if interior_p
 We have approved the creation of the Sicherheitspolizei, a police force in charge of protecting the Republic and investigating it's enemies. However, we still must expand it to increase its effectiveness.
 
 @bolster_police
-title: Increase the Sicherheitspolizei's strenght.
+title: Increase the Sicherheitspolizei's strength.
 subtitle: -1 budget
 choose-if: budget > 0 and interior_police_formed = 1
 unavailable-subtitle: [? if interior_police_formed = 0 : We must create a police force first. ?][? if budget <= 0 : Requires 1 budget. ?]
@@ -67,7 +67,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 
 @investigate_far_right
 title: Investigate illegal activity among the far right.
-view-if: interior_police_formed = 1
+choose-if: interior_police_formed = 1
 unavailable-subtitle: [? if interior_police_formed = 0 : We must create a police force first. ?]
 go-to: investigate_far_right_failure if interior_police_loyalty < 0.5; far_right_1 if far_right_investigation = 0 and kapp_putsch_seen = 0; far_right_2 if far_right_investigation = 0 and kapp_putsch_seen = 1; far_right_2 if far_right_investigation = 1 and kapp_putsch_seen = 1; far_right_3 if far_right_investigation = 2; far_right_4 if far_right_investigation = 3; far_right_5 if far_right_investigation = 4 and beer_hall_putsch_seen = 1; far_right_already if far_right_investigation >= 5 or (far_right_investigation = 4 and beer_hall_putsch_seen = 0)
 
