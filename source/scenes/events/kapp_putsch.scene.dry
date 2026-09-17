@@ -4,6 +4,7 @@ view-if: kapp_putsch_seen = 0 and year = 1920 and month = 3
 max-visits: 1
 on-arrival: kapp_putsch_seen = 1; month_actions += 1
 tags: event
+new-page: true
 
 = Kapp-Lüttwitz Pustch!
 
