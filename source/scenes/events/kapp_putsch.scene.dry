@@ -14,6 +14,7 @@ Already, the disloyal Freikorps are in Berlin, and more are going to follow - a 
 
 What should we do?
 
+- @i_luv_wholesome_endings: The Republikanischer Soldatenwehr moves to defend the Reich Government?
 - @general_strike: We must support the <span style="color: var(--z-colour);">**Rep**</span><span style="color: var(--spd-colour);">**ub**</span><span style="color: var(--ddp-colour);">**lic**</span> and general strike to bring down this illegitimate government!
 - @statement: Send out a statement that we support the <span style="color: var(--z-colour);">**Rep**</span><span style="color: var(--spd-colour);">**ub**</span><span style="color: var(--ddp-colour);">**lic**</span> but stay neutral on the general strike.
 - @negotiate: Officially negotiate with the Kapp government?
@@ -37,3 +38,10 @@ We have criticized the <span style="color: var(--dvp-colour);">People's Party</s
 @negotiate
 unavailable-subtitle: We are a <span style="color: var(--ddp-colour);">democratic</span> party and we will never negotiate with these militant <span style="color: var(--nsdap-colour);">extremists</span>!
 choose-if: false
+
+@i_luv_wholesome_endings
+subtitle: What?
+
+<img src="img/republican_soldiers_poster.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:220px; object-fit:cover; object-position:top; border:4px solid #000000ff;"> Surprisingly, the Republikanischer Soldatenwehr, under the command of Fritz Radtke, has moved to retake the capital. Thousands of the Soldatenwehr's members have risen up following the fleeing of the Government, joined by even more striking workers who have broken into the Police Armouries and armed themselves. Almost spontaneously, they have gathered outside the Government Quarter, supported by the railwaymen, and have moved to arrest the Ehrhardt Brigade and the rest of the Putschist Government. This has surprised Erhardt and the Kapp, who expected minimal resistance to their putsch. After half a day of fighting, the Ehrhardt Brigade has been routed, shattered by the Republic's forces and the striking workers. This was a shock to Reichswehr Minister Noske, much Cabinet, President Ebert and much of the Reichswehr's Command who had expected minimal resistence to the putschists. Republcian elements in the Reichswehr, organised behind Walther Reinhardt have been emboldened by the failure of the Putsch leading to Seekt and many of his supporters being sacked or reshuffled by Reinhardt, with Reinhardt finally fully consolidating his position inside the Reichswehr. This has significantly increased support for the Republic, and has strengthened our ties with the Social-Democrats, Communists, and Zentrum. Gustav Noske has also resigned in the wake of the putsch, being replaced by Paul Göhre, a SPD member of the Prussian War Ministry and a staunch republican. He will support Reinhardt in his campaign to republicanize the Reichswehr. 
+
+Meanwhile, the Republikanischer Soldatenwehr has significantly increased in strength and membership as increasingly workers, ex-soldiers and even republican sections of the middle class and catholics join the organisation en mass. To reflect the increasingly civilian nature of the Soldatenwehr, the organisation has voted to rename itself into the Reichsbanner Schwartz-Rot-Gold, and act as a mass republican cross-party defence league, binding together the Republican movement. 
