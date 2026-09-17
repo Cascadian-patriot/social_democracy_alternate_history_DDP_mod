@@ -187,6 +187,9 @@ Q.league_membership_support = 0;
 Q.freikorps_anger = 0;
 Q.freikorps_dealt_with = 0;
 
+// Soldatenwerh strenghtened but before kapp putsch
+Q.soldatenwehr_strenghtened_1 = 0;
+
 // Reichsbanner formed?
 Q.reichsbanner_formed = 0;
 
@@ -197,7 +200,10 @@ Q.reichsbanner_progress = 0;
 Q.womens_organizing = 0;
 
 // Socialisation debate 
-Q.socialization_debate_seen = 0
+Q.socialization_debate_seen = 0;
+
+// Interior police formed?
+Q.interior_police_formed = 0;
 
 // Young democrats organisation strength 
 Q.young_democrats = 2;
@@ -242,6 +248,10 @@ Q.rfb_banned_prussia = 0;
 Q.freikorps_strength = 350;
 Q.freikorps_militancy = 0.6;
 Q.freikorps_loyalty = 0.3;
+Q.freikorps_banned = 0;
+Q.soldatenwehr_strenght = 10;
+Q.soldatenwehr_militancy = 0.5;
+Q.soldatenweh_loyalty = 0.6;
 
 Q.interior_police_strength = 40;
 Q.interior_police_militancy = 1;
