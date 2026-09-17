@@ -1,50 +1,38 @@
-title: The Kapp-Lüwitz putsch
-subtitle: The forces of reaction rear their head again.
+title: A pustch is being launched by Kapp-Lüttwitz!
+subtitle: The forces of reaction rear their heads again.
 view-if: kapp_putsch_seen = 0 and year = 1920 and month = 3
 max-visits: 1
 on-arrival: kapp_putsch_seen = 1; month_actions += 1
 tags: event
 
-= The Kapp-Lüwitz putsch
+= Kapp-Lüttwitz Pustch!
 
-<img src="img/kapp_luttwitz.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:320px; object-fit:cover; object-position:top; border:4px solid #000000ff;"> A crisis! Several units of the freikorps, marinebrigades Ehrhardt and Loewenfeld, have defied orders from defence minister Noske to disband during the SPD’s steady winding down of the freikorps and other paramilitary forces following the Revolution. General Lüwitz and several other sympathetic forces, including large swathes of the bureaucracy, have joined them.
+<img src="img/kapp_luttwitz.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:320px; object-fit:cover; object-position:top; border:4px solid #000000ff;"> The <span style="color: var(--z-colour);">**Rep**</span><span style="color: var(--spd-colour);">**ub**</span><span style="color: var(--ddp-colour);">**lic**</span> is in crisis! Several units of the Freikorps, <span style="color: var(--i-colour);">Marinebrigades Ehrhardt</span> and <span style="color: var(--i-colour);">Loewenfeld</span>, have defied orders from Reichswehr Minister Noske to disband during the SPD’s steady winding down of the Freikorps and other paramilitary forces following the Revolution. General Lüttwitz and several other sympathetic forces, including large swathes of the bureaucracy, have joined them.
 
-Already, the disloyal freikorps are in Berlin, and more are going to follow - a Putschist government is expected to be formed, and the reichswehr is going over to their side. If we do not stop them, all we have fought for will be gone and reaction will have fought its final victory.
+Already, the disloyal Freikorps are in Berlin, and more are going to follow - a <span style="color: var(--i-colour);">Pustchist</span> government is expected to form, and the Reichswehr is starting to defect.... If we do not stop them, all we have fought for will be gone and reaction will have won, forever, destroying our new <span style="color: var(--z-colour);">**Rep**</span><span style="color: var(--spd-colour);">**ub**</span><span style="color: var(--ddp-colour);">**lic**</span>..
 
 What should we do?
 
-- @general_strike: Join the Social Democrats in Stuttgart amid their calls for a general strike.
-- @statement: Release a statement supporting the Republic.
-- @negotiate: Stay in Berlin and negotiate with the Putschists.
+- @general_strike: We must support the <span style="color: var(--z-colour);">**Rep**</span><span style="color: var(--spd-colour);">**ub**</span><span style="color: var(--ddp-colour);">**lic**</span> and general strike to bring down this illegitimate government!
+- @statement: Send out a statement that we support the <span style="color: var(--z-colour);">**Rep**</span><span style="color: var(--spd-colour);">**ub**</span><span style="color: var(--ddp-colour);">**lic**</span> but stay neutral on the general strike.
+- @negotiate: Officially negotiate with the Kapp government?
 
 @general_strike
-subtitle: "Long live the Republic!"
+subtitle: Down with the reactionaries!
 on-arrival: linksliberale_strength += 10; nationalliberale_dissent += 10; old_middle_ddp -= 6*(1-dissent); workers_ddp += 8*(1-dissent); spd_relation += 12; dvp_relation -= 8; DNVP_relation -= 10; ddp_industrial_backing -= 2
 
-We flee the city from the advancing putschists, and join the SPD in calls for a general strike.
-  
-Many of the liberal unions join in, crippling the bureaucracy. this, alongside the ADGB, and the far left’s strikes, leads to the putschists and the government negotiating an end to this crisis, aided by Gustav Stresserman of the DVP, and representatives of the Prussian state government. Kapp and Lüttwitz resign, the cabinet is reshuffled, and fresh elections are called. Otto Geßler, formerly of our party, resigns to become reichswehr minister. In party affairs, our right splits en-masse against perceived Bolshevik alignment,  in addition what’s left of industrial funding drying up, and our relationship with the right-wing being permanently crippled. This is, however, offset somewhat by the flood of moderate workers to the party and warming of relations between us and the SPD
+<img src="img/general_strike.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:320px; object-fit:cover; object-position:top; border:4px solid #000000ff;"> We have officially condemned the Putsch as the party is fully united against undemocratic coup, on the following day of the socialist general strike the party published a full article on the denouncing the putschists as traitors of the German state, and defended the general strike of the free unions as "a concerted protest of the German nation against the frivolous attempt to overthrow the constitution and system of law to which hundreds of thousands of German civil servants has sworn loyalty to". Our own members have fled Berlin with the exception of Eugen Schiffer who have volunterrily remained to negotiate with the Kapp government to stall for time.
 
-New actions to deal with the freikorps and the stability of the republic are now available.
+As for the National Liberal DVP, they have attributed the cause of the coup as the inability of the incubent government to call for new elections after the new constitution and displayed open sympathy to the Putsch. They also denounced the general strike as an invitation to civil war and that it needs to be stopped as the precondition to restore law and order. However as the collapse of the Putsch becomes more apparant, they have switched their tone to support the constitution while calling for snap election to end the National Assembly that is dominated by the Weimar coalition. We have criticized the People's party for their opportunism however our ability to capitalize on the situation is being hampere significantly due to our endorsement of the general strike, as our midle class voters does not take this kindly. Now we have another problem- the socialist general strike haven't ended after the resignation of Kapp and they are keen to make demands using their position...
 
 @statement
-subtitle: "The middle way is the best to do during this crisis."
+subtitle: The SPD and Z might not be that happy.
 on-arrival: workers_ddp -= 2*(1-dissent); old_middle_ddp -= 2*(1-dissent); new_middle_ddp -= 2*(1-dissent); rural_ddp -= 2*(1-dissent); catholics_ddp -= 2*(1-dissent); sammlung_dissent += 3; linksliberale_dissent += 3; nationalliberale_dissent += 3; pazifisten_dissent += 3 
 
-We have chosen the dull compromise of simply releasing a statement in favor of the Republic without mentioning either the Putsch nor the General Strike, and leaving it upon individual members' conscience whether to stay in Berlin and negotiate or join the Republican Government.
+<img src="img/ddp_poster_32.webp" style="float:left; margin-right:1em; margin-bottom:0.5em; width:320px; object-fit:cover; object-position:top; border:4px solid #000000ff;"> We have officially condemned the Putsch as the party is fully united against undemocratic coup, on the following day of the socialist general strike the party published a full article on the denouncing the putschists as traitors of the German state, and however we have purposely avoided to send out a clear stance regarding the socialist general strike to not further alienate our middle class voters, annoying part of our left liberals. As for the National Liberal DVP, they have attributed the cause of the coup as the inability of the incubent government to call for new elections after the new constitution and displayed open sympathy to the Putsch. They also denounced the general strike as an invitation to civil war and that it needs to be stopped as the precondition to restore law and order. However as the collapse of the Putsch becomes more apparant, they have switched their tone to support the constitution while calling for snap election to end the National Assembly that is dominated by the Weimar coalition.
 
-This alienates all classes of our voters to some degree, aswell as being protested by all factions of our party for different reasons. Overall, this course of Action Is neither opposed nor accepted in our party, and everyone has been left slightly unhappy while some have started to questioned our legitimacy as Democratic party.
-
-New actions to deal with the freikorps and the stability of the republic are now available.
+We have criticized the People's party for their opportunism and we are able to capitalize greatly on the situation with the DVP unable to muster up a rebuttal to our criticizm. But now we have another problem- the socialist general strike, that we have to negotiate with. May their demands be reasonable or else it will be another crisis.
 
 @negotiate
-subtitle: "Reichswehr does not fire upon Reichswehr; German shall not fight German."
-on-arrival: workers_ddp -= 10; old_middle_ddp += 8; spd_relation -= 10; kpd_relation -= 10; dvp_relation += 10; dnvp_relation += 10; nationalliberale_strength += 8; nationalliberale_dissent -= 10; linksliberale_dissent += 10; pazifisten_dissent += 10
-
-We have chosen to ignore the SPD's calls to join them in a general strike, and have instead ordered our Ministers to stay in Berlin and initiate talks with Kapp, Lüttwitz and all other putschists.
-
-Although initially it seemed to be going nowhere, we soon managed to strike a deal once the General Strike started to paralyzed the country, granting general amnesty and allowing the generals involved to retire with full pension rights.
-
-The Parties to our right, such as the DVP and DNVP approve, as does the right wing of our party, who have gained significant influence. On the other hand, the Labor and Pacifist wings of our party are in total outrage, with them accusing our leadership of undermining the very principles the party was founded on, and many have threatened to resign following this. Whichever Workers previously supported our party have all certainly defected, and the SPD's relations with us after this has become considerably strained.
-
-New actions to deal with the freikorps and the stability of the republic are now available.
+unavailable-subtitle: We are a <span style="color: var(--ddp-colour);">democratic</span> party and we will never negotiate with these militant <span style="color: var(--nsdap-colour);">extremists</span>!
+choose-if: false
