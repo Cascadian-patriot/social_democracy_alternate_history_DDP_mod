@@ -134,6 +134,10 @@ Q.sa_won_against_police_rb = 0;
 // ddp industrial backing, for cards and fundraising
 Q.ddp_industrial_backing = 1;
 
+// Newspaper integration
+Q.edjd_integrated = 0;
+Q.dh_integrated = 0;
+
 // Zentrum BVP split variable for 1920
 Q.bvp_split = 0;
 
