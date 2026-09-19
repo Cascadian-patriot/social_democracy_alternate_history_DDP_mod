@@ -191,6 +191,9 @@ Q.league_membership_support = 0;
 Q.freikorps_anger = 0;
 Q.freikorps_dealt_with = 0;
 
+// newspaper created
+Q.newspaper_founded = 0;
+
 // Soldatenwerh strenghtened but before kapp putsch
 Q.soldatenwehr_strenghtened_1 = 0;
 
