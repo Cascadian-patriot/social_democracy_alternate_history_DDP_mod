@@ -16,7 +16,7 @@ if (Q.economic_growth) {
 
 = Status
 
-[+ month : month +] [+ year +] <span class="wide_tooltip-wrap drop-down">Nitti government<span class="wide_tooltip-tip"><img src="img/Mann_der_Arbeit.jpg">test</span></span>
+[+ month : month +] [+ year +] 
 
 Resources available: [+ resources +]
 
