@@ -6,6 +6,7 @@ view-if: media_timer <= 0
 on-arrival: month_actions += 1; media_timer += 6;
 card-image: img/ddp_poster_11.jpeg
 #subtitle: Setting the direction for newspapers and radio.
+// todo: add bolstering the media stuff 
 
 = Media
 
@@ -19,9 +20,6 @@ The liberal press are scattered across the nation, most of them are nominally in
 - @return: We should not do anything with media at the moment.
 - @easy_discard
 - @cancel_advisor_action
-
-
-// todo: add bolstering the media stuff 
 
 @berlinertagblad
 title: Fund the Berliner Tageblatt
