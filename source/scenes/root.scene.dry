@@ -226,6 +226,9 @@ Q.rb_z_influence = 0;
 Q.constitution_leverage = 0;
 Q.worker_campaign_modifier = 0;
 Q.old_middle_campaign_modifier = 0;
+Q.new_middle_campaign_modifier = 0;
+Q.nationalism_modifier
+Q.pro_republic_modifier
 
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
