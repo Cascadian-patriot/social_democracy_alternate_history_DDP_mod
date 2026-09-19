@@ -187,6 +187,12 @@ Q.league_membership_support = 0;
 Q.freikorps_anger = 0;
 Q.freikorps_dealt_with = 0;
 
+// newspaper stuff 
+Q.newspaper_founded = 0;
+Q.edjd_integrated = 0;
+Q.dh_integrated = 0;
+Q.newspaper_editor == "Nobody";
+
 // Soldatenwerh strenghtened but before kapp putsch
 Q.soldatenwehr_strenghtened_1 = 0;
 
@@ -220,6 +226,9 @@ Q.rb_z_influence = 0;
 Q.constitution_leverage = 0;
 Q.worker_campaign_modifier = 0;
 Q.old_middle_campaign_modifier = 0;
+Q.new_middle_campaign_modifier = 0;
+Q.anti_nationalism_modifier = 0;
+Q.pro_republic_modifier = 0;
 
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
