@@ -977,8 +977,8 @@ body.dark-mode .parliament-tooltip {
 .wide_tooltip-tip {
   position: absolute;
   z-index: 999999;
-  width: 200px;
-  max-width: 220px;
+  width: 140px;
+  max-width: 140px;
 
   left: 0;
   bottom: calc(100% + 10px); 
