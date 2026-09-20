@@ -884,39 +884,39 @@ table {
 
 /* Styles for parties */
 .seat.kpd {
-    fill: #8B0000;
+    fill: var(--kpd-colour);
 }
 .seat.spd {
-    fill: #E3000F;
+    fill: var(--spd-colour);
 }
 .seat.uspd {
-    fill: #D47B9B;
+    fill: var(--uspd-colour);
 }
 .seat.ddp {
-    fill: #DCCA4A;
+    fill: var(--ddp-colour);
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
 .seat.z {
-    fill: #000;
+    fill: var(--z-colour);
 }
 .seat.bvp {
-    fill: #69A2BE;
+    fill: var(--bvp-colour);
 }
 .seat.dvp {
-    fill: #D5AC27;
+    fill: var(--dvp-colour);
 }
 .seat.other {
-    fill: #909090;
+    fill: var(--i-colour);
 }
 .seat.dnvp {
-    fill: #3F7BC1;
+    fill: var(--dnvp-colour);
 }
 .seat.nsdap {
-    fill: #954B00;
+    fill: var(--nsdap-colour);
 }
 .seat.sapd {
-    fill: #C40000;
+    fill: var(--sapd-colour);
 }
 
 .tooltip-text {
