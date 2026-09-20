@@ -1,5 +1,5 @@
 title: The Death of Friedrich Naumann
-view-if: year == 1919 and week == 34
+view-if: year == 1919 and month == 8 and weeks == 4
 frequency: 1000
 max-visits: 1
 on-arrival: naumann_advisor = 0; name_leader = "Carl Wilhelm Petersen"; img_leader = "img/portraits/PetersenCarlWilhelm.jpg"
