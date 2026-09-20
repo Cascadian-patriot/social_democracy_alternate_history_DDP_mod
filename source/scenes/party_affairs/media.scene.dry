@@ -77,7 +77,7 @@ We have integrated Echo der Junge Demokratie and Die Hilfe into our newspaper ne
 title: We must continue to build up our newspaper network.
 subtitle: [? if newspaper_invested_in > 3 : -1 resource. ?][? if newspaper_invested_in <= 3 : It is now financially self-sufficient and doesn't require further resources to grow. ?]
 view-if: newspaper_founded = 1
-choose-if: newspaper_invested_in <= 3 or resources >= 1
+choose-if: newspaper_invested_in <= 3
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1 if newspaper_invested_in > 3; newspaper_invested_in += 1; old_middle_ddp += 6 if newspaper_editor = "Theodor Heuss"; new_middle_ddp += 6 if newspaper_editor = "Theodor Heuss"; nationalism -= 4 if newspaper_editor = "Ludwig Quidde"; pro_republic += 4 if newspaper_editor = "Ludwig Quidde"; workers_ddp += 6 if newspaper_editor = "Anton Erkelenz"; new_middle_ddp += 6 if newspaper_editor = "Anton Erkelenz"
 
