@@ -35,7 +35,7 @@ We have funded the Berliner Tageblatt, and with its wide circulation, we see a n
 @diehilfe
 title: Fund Die Hilfe.
 view-if: dh_integrated == 0
-choose-if resources >= 1
+choose-if: resources >= 1
 unavailable-subtitle: [? if dh_integrated = 1 : Die Hilfe has been integrated into our party's newspaper already, we would essentially be throwing funds at nothing. ?][? if resources < 1 : Not enough resources. ?]
 subtitle: -1 resource, edited by herr Fredrich Naumann himself.
 on-arrival: resources -= 1; new_middle_ddp += 6; rural_ddp += 4; catholics_ddp += 5; unemployed_ddp += 4; workers_ddp += 6 if yea_socialization_erkelenz = 1 and linksliberale_strength >= 25; linksliberale_strength += 5 if yea_socialization_erkelenz = 1 and linksliberale_strength >= 25; workers_ddp += 5 if yea_socialization_erkelenz = 0 and nationalliberale_strength < 25 and linksliberale_strength < 25; old_middle_ddp += 5 if yea_socialization_erkelenz = 0 and nationalliberale_strength < 25 and linksliberale_strength < 25; old_middle_ddp += 8 if yea_socialization_erkelenz = 0 and nationalliberale_strength >= 25; nationalliberale_strength += 5 if yea_socialization_erkelenz = 0 and nationalliberale_strength >= 25
