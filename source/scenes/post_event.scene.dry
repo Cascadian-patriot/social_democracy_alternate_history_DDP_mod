@@ -102,7 +102,18 @@ if (Q.dissent < 0) {
 if (Q.month_actions >= 1) {
     Q.time += 1;
     Q.month_actions = 0;
-    Q.month += 1;
+
+    if (Q.year == 1919 && Q.month < 5) {
+        Q.weeks += 1;
+    } else {
+        Q.weeks += 2;
+    };
+
+    if (Q.weeks >= 4) {
+        Q.month += 1;
+        Q.weeks = 0;
+    }
+
     if (Q.month >= 13) {
         Q.month = 1;
         Q.year += 1;
@@ -110,6 +121,7 @@ if (Q.month_actions >= 1) {
             Q.resources += 2;
         }
     }
+
     // decrement timers
     for (timer of Q.timers) {
         if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
@@ -486,7 +498,7 @@ if (typeof window !== "undefined" && window.generateBar) {
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
 
-= [+ month : month +] [+ year +]
+= [+ weeks +], [+ month : month +] [+ year +]
 
 @events_choice
 

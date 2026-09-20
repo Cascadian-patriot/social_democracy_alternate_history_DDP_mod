@@ -23,6 +23,7 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
+Q.weeks = 0;
 Q.year = 1919;
 Q.month = 2;
 // how many actions have been taken this month?
@@ -170,9 +171,13 @@ Q.scha_lippe = 1;
 Q.scha_lippe_prussia = 1;
 Q.thuringia = 1;
 Q.thuringia_prussia = 1;
+
+// Erkelenz stuff
 Q.abstained_socialization = 0;
 Q.yea_socialization_erkelenz = 0;
 Q.yea_socialization_death_erkelenz = 0;
+Q.yea_taxation_erkelenz = 0;
+Q.no_taxation_erkelenz = 0;
 
 // For Wirtschaftspartei founding in 1920
 Q.wp_founded = 0;
@@ -191,7 +196,8 @@ Q.freikorps_dealt_with = 0;
 Q.newspaper_founded = 0;
 Q.edjd_integrated = 0;
 Q.dh_integrated = 0;
-Q.newspaper_editor == "Nobody";
+Q.newspaper_editor = "Nobody";
+Q.newspaper_invested_in = 0;
 
 // Soldatenwerh strenghtened but before kapp putsch
 Q.soldatenwehr_strenghtened_1 = 0;

@@ -1,0 +1,32 @@
+title: Erzberger's Tax and Finance Reforms
+new-page: true
+subtitle: The National Assembly votes on erzberger's new proposals.
+view-if: year = 1919 and month = 7 and weeks = 3
+max-visits: 1
+face-image: img/schutzbund.png
+tags: event
+
+= Erzberger's Tax and Finance Reforms
+  
+Ever since the war started, the German State has seen an enormous and catstrophic increase in spenditure, and as a result, debt, with the former rising from 2.4 billion Marks in 1913 to 17.5 billion in 1919, and the latter from 2 billion Marks to 45 Billion, not even counting that the nation's economy has been destroyed by years of conflict, and also whichever amount we will have to pay for reparations in the future.
+
+To tackle these problems, our Finance Ministers Schiffer and Dernburg have prepared new taxes that will be presented by their succesor, Matthias Erzberger. Among these, are heavy taxes aimed to upper class citizens who profited from the war, wealth that increased during it, a new property tax, and a one-time emergency tax on wealth and capital, expecting to raise 14 billion Marks in total.
+
+The business and aristocratic classes are obviously very displeased about it, and will likely exacerbate the current capital flight affecting our economy, and there is an amount of pressure from our business wing to oppose it. In any case, there is enough support from the SPD and Zentrum to pass it, rendering our vote irrelevant, but we should still decide on voting.
+  
+- @erzbergertaxation
+- @notaxationwithouthrepresentation
+
+@erzbergertaxation
+title: Vote in favour of erzberger's taxes.
+subtitle: These measures are desperately needed.
+on-arrival: upper_tax_rates += 1; old_middle_ddp -= 8; new_middle_ddp -= 6; spd_relations += 5; z_relations += 5; constitutional_leverage += 2; nationalliberale_dissent += 6
+
+We vote in favor of Erzberger's new taxes, and they are passed. Businesses and a part of our Middle Class voters are displeased by this, but we hope this will stabilize the Republic's finances.
+
+@notaxationwithouthrepresentation
+title: Vote against erzberger's taxes.
+subtitle: It is likely they will pass anyway.
+on-arrival: upper_tax_rates += 1; new_middle_spd -= 4; old_middle_spd -= 4; new_middle_z -= 2; old_middle_z -= 4; old_middle_ddp += 5; new_middle_ddp += 4; spd_relations -= 5; z_relations -= 4; nationalliberale_dissent -= 6
+
+We vote against Erzberger's new taxes, but the SPD and Zentrum ensure their approval either way. Businesses and the Alte Mittelstand are satisfied by our support, while our relations with the SPD and Zentrum have decreased slightly. 
