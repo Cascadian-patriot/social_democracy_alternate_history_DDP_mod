@@ -16,57 +16,87 @@ The liberal press are scattered across the nation, most of them are nominally in
 - @echoderjungedemokratie
 - @partymedia
 - @integrate1
+- @integrate2
+- @bolsterpartymedia
+- @debate
 - @return: We should not do anything with media at the moment.
 - @easy_discard
 - @cancel_advisor_action
 
-
-// todo: add bolstering the media stuff 
-
 @berlinertagblad
 title: Fund the Berliner Tageblatt
-subtitle: -1 resource, the biggest left liberal publisher in Germany, edited by prominent DDP member, Theodor Wolff.
-on-arrival: resources -= 1; new_middle_ddp += 6; old_middle_ddp += 4; rural_ddp += 3; workers_ddp += 4; unemployed_ddp += 3; catholic_ddp += 4; linksliberale_strenght += 4; pro_republic += 4; nationalism -= 3; socialism -= 3
+subtitle: -1 resource. The biggest left-liberal publisher in Germany, edited by prominent DDP member Theodor Wolff.
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; new_middle_ddp += 6; old_middle_ddp += 4; rural_ddp += 3; workers_ddp += 4; unemployed_ddp += 3; catholics_ddp += 4; linksliberale_strength += 4; pro_republic += 4; nationalism -= 3; socialism -= 3
 
-We have funded Berliner Tageblatt, and with its wide circulation, we see a noticable increase in support for us and democracy.
+We have funded the Berliner Tageblatt, and with its wide circulation, we see a noticeable increase in support for us and for democracy.
 
 @diehilfe
 title: Fund Die Hilfe.
 view-if: dh_integrated == 0
 unavailable-subtitle: Die Hilfe has been integrated into our party's newspaper already, we would essentialy be throwing funds at nothing.
 subtitle: -1 resource, edited by herr Fredrich Naumann himself.
-on-arrival: if yea_socialization_erkelenz == 1 and linksliberale_strenght >= 25 workers_ddp += 6; if yea_socialization_erkelenz == 1 and linksliberale_strenght >= 25 linksliberale_strenght += 5; if yea_socialization_erkelenz == 0 and nationalliberale_strenght < 25 and linksliberale_strenght < 25 workers_ddp += 5; if yea_socialization_erkelenz == 0 and nationalliberale_strenght < 25 and linksliberale_strenght < 25 old_middle_ddp += 5; new_middle_ddp += 6; rural_ddp += 4; catholics_ddp += 5; unemployed_ddp += 4; if yea_socialization_erkelenz == 0 and nationalliberale_strenght >= 25 old_middle_ddp += 8; if yea_socialization_erkelenz == 0 and nationalliberale_strenght >= 25 nationalliberale_strenght+ += 5 
+on-arrival: resources -= 1; new_middle_ddp += 6; rural_ddp += 4; catholics_ddp += 5; unemployed_ddp += 4; workers_ddp += 6 if yea_socialization_erkelenz = 1 and linksliberale_strength >= 25; linksliberale_strength += 5 if yea_socialization_erkelenz = 1 and linksliberale_strength >= 25; workers_ddp += 5 if yea_socialization_erkelenz = 0 and nationalliberale_strength < 25 and linksliberale_strength < 25; old_middle_ddp += 5 if yea_socialization_erkelenz = 0 and nationalliberale_strength < 25 and linksliberale_strength < 25; old_middle_ddp += 8 if yea_socialization_erkelenz = 0 and nationalliberale_strength >= 25; nationalliberale_strength += 5 if yea_socialization_erkelenz = 0 and nationalliberale_strength >= 25
 
-Funding Die Hilfe certainly benefits us, as the editors are our most loyal members. [? if yea_socialization_erkelenz == 1 and linksliberale_strenght >= 25 :  We see more of our grassroot members being attracted to the left-wing of our party, and our empowerment of them in the party has caused them to also take defacto control of the newspaper. ?] [? if yea_socialization_erkelenz == 0 and nationalliberale_strenght >= 25 : We see more of our grassroot members being aligned with the right wing of our party, as the empowerment of the more right-wing elements in the party has lead to Theodore Heuss taking de facto control of the newspaper. ?]
+Funding Die Hilfe certainly benefits us, as the editors are our most loyal members.
+
+[? if yea_socialization_erkelenz == 1 and linksliberale_strenght >= 25 :  We see more of our grassroot members being attracted to the left-wing of our party, and our empowerment of them in the party has caused them to also take defacto control of the newspaper. ?] [? if yea_socialization_erkelenz == 0 and nationalliberale_strenght >= 25 : We see more of our grassroot members being aligned with the right wing of our party, as the empowerment of the more right-wing elements in the party has lead to Theodore Heuss taking de facto control of the newspaper. ?]
 
 @echoderjungedemokratie
 title: Fund the Echo der Junge Demokratie.
 view-if: edjd_integrated == 0
+choose-if: resources >= 1 and edjd_integrated = 0
 unavailable-subtitle: Echo Der Junge Demokratie has been integrated into our party's newspaper already, we would essentialy be throwing funds at nothing.
 subtitle: -1 resource, the newspaper of our Youth wing, herr Ludwig Quidde also publishes his writings here.
-on-arrival: young_democrats += 1; pazifisten_strenght += 4; linksliberale_strenght += 4; new_middle_ddp += 6; old_middle_ddp += 5; pro-republic += 3; nationalism -= 3;
+on-arrival: resources -= 1; young_democrats += 1; pazifisten_strength += 4; linksliberale_strength += 4; new_middle_ddp += 6; old_middle_ddp += 5; pro_republic += 3; nationalism -= 3
 
 We have supported our youth wing's newspaper (wich is essentially suporting them), to which they have responded with enthusiasm. the pacifists have also became stronger because of this due to their link with the association.
 
 @integrate1
 title: Integrate Die Hilfe into our newspaper.
-subtitle: -1 resources. We could integrate Die Hilfe into our existing newspaper network.
-view-if: newspaper_founded == 1; newspaper_editor == "Theodor Heuss"
-on-arrival: new_middle_campaign_modifier += 1; old_middle_campaign_modifier += 1; resources += 2;  
+subtitle: -1 resource. We could integrate Die Hilfe into our existing newspaper network.
+view-if: newspaper_founded = 1 and dh_integrated = 0 and newspaper_editor = "Theodor Heuss"
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; dh_integrated = 1; new_middle_campaign_modifier += 1; old_middle_campaign_modifier += 1; resources += 2
 
 We have integrated Die Hilfe into our newspaper network,growing its influence significantly, and bringing with it funding and popularity.
 
-@integrate3
+@integrate2
 title: We could integrate the Echo der Junge Demokratie and Die Hilfe into our newspaper network.
+view-if: newspaper_founded = 1 and edjd_integrated = 0 and (newspaper_editor = "Anton Erkelenz" or newspaper_editor = "Ludwig Quidde")
+subtitle: [? if young_democrats < 3 : -2 resources ?][? if young_democrats >= 3 : -1 resource, our investment into Echo der Junge Demokratie has reduced the cost ?]
+choose-if: (resources >= 2 and young_democrats < 3) or (resources >= 1 and young_democrats >= 3)
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 2 if young_democrats < 3; resources -= 1 if young_democrats >= 3; dh_integrated = 1; edjd_integrated = 1; new_middle_ddp += 6; workers_ddp += 5; old_middle_ddp += 6; workers_campaign_modifier += 1
 
+We have integrated Echo der Junge Demokratie and Die Hilfe into our newspaper network, growing its influence significantly.
+
+@bolsterpartymedia
+title: We must continue to build up our newspaper network.
+subtitle: [? if newspaper_invested_in > 3 : -1 resource. ?][? if newspaper_invested_in <= 3 : It is now financially self-sufficient and doesn't require further resources to grow. ?]
+view-if: newspaper_founded = 1
+choose-if: newspaper_invested_in <= 3 or resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1 if newspaper_invested_in > 3; newspaper_invested_in += 1; old_middle_ddp += 6 if newspaper_editor = "Theodor Heuss"; new_middle_ddp += 6 if newspaper_editor = "Theodor Heuss"; nationalism -= 4 if newspaper_editor = "Ludwig Quidde"; pro_republic += 4 if newspaper_editor = "Ludwig Quidde"; workers_ddp += 6 if newspaper_editor = "Anton Erkelenz"; new_middle_ddp += 6 if newspaper_editor = "Anton Erkelenz"
+
+Our newspapr network has a mix of popular and political programming, and is proving a success in spreading our meseage.
+
+@debate
+title: Have vibrant ideological debates in the party newspaper.
+view-if: newspaper_founded = 1
+on-arrival: linksliberale_dissent -= 6 if linksliberale_dissent > 0; sammlung_dissent -= 6 if sammlung_dissent > 0; pazifisten_dissent -= 6 if pazifisten_dissent > 0; nationalliberale_dissent -= 6 if nationalliberale_dissent > 0; republikschutzer_dissent -= 6 if republikschutzer_dissent > 0
+
+This is new for our party, since we didn't have a party newspaper before, but it has successfully paved over the many tensions in our party.
 
 @partymedia
 title: Perhaps we should create our official party media?
 subtitle: -2 resources.
-choose-if: resources >= 2
-unavailable-subtitle: Not enough resources.
-view-if: newspaper_founded == 0
-on-arrival: newspaper_founded += 1; resources -= 2; 
+choose-if: resources >= 2 and newspaper_founded = 0
+unavailable-subtitle: [? if newspaper_founded = 1 : We have already founded our party newspaper. ?][? if resources < 2 : Not enough resources. ?]
+view-if: newspaper_founded = 0
+on-arrival: newspaper_founded = 1; resources -= 2; newspaper_invested_in = 0
 
 We have founded our own newspaper, and we must now select its head editor.
 
@@ -76,22 +106,24 @@ We have founded our own newspaper, and we must now select its head editor.
 
 @heuss
 title: Theodor Heuss, a rising star in the Sammlung with a patriotic attitute.
-choose-if: nationalliberale_strenght and sammlung_strenght > pazifisten_strenght and pazifisten_strenght
-unavailable-subtitle: The right and centre lacks the leverage to elevate Heuss to head editor.
-on-arrival: newspaper_editor = "Theodor Heuss"; old_middle_campaign_modifier += 1; new_middle_campaign_modifier += 1; pro-republic += 4; nationalism += 4
+choose-if: nationalliberale_strength + sammlung_strength > pazifisten_strength
+unavailable-subtitle: The right and center lack the leverage to elevate Heuss to head editor.
+on-arrival: newspaper_editor = "Theodor Heuss"; old_middle_campaign_modifier += 1; new_middle_campaign_modifier += 1; pro_republic += 4; nationalism += 4
 
 We have chosen Heuss as the head editor, he is expected to steer the press to a more nationalist tone than our left liberals prefer, however his strong liberal stance quells any protests, at least for now.
 
 @quide
 title: Ludwig Quidde, head of the pacifist wing.
-on-arrival: newspaper_editor = "Ludwig Quide"; anti_nationalism_modifier += 1; pro_republic_modifier += 1; 
+choose-if: pazifisten_strength > nationalliberale_strength and pazifisten_strength > linksliberale_strength
+unavailable-subtitle: The left of our party lacks the leverage to elevate quide to the position of head editor.
+on-arrival: newspaper_editor = "Ludwig Quidde"; pro_republic_modifier += 1; nationalism_modifier += 1
 
 The reknowned pacifist, Ludwig Quidde is chosen as head editor. He will make sure to criticize the ravaging nationalists on the far-right at all times and to promote pacifism amongst the German people.
 
 @erkelenz
 title: Anton Erkelenz, the labour leader.
-choose-if: linksliberale_strength and pazifisten_strength > nationalliberale_strenght
+choose-if: linksliberale_strength + pazifisten_strength > nationalliberale_strength
 unavailable-subtitle: The left lacks the political capital to elect Erkelenz.
-on-arrival: newspaper_editor = "Anton Erkelenz"; workers_campaign_modifier += 1; pro_republic_modifier += 1; 
+on-arrival: newspaper_editor = "Anton Erkelenz"; workers_campaign_modifier += 1; pro_republic += 3
 
 Surprisingly, Anton Erkelenz is elected head editor of our party newspaper. It seems we will be focusing more on the lower classes than the middle class to promote liberal democracy to the common people. 
