@@ -19,13 +19,14 @@ The business and aristocratic classes are obviously very displeased about it, an
 - @erkelenztaxation
 - @notaxationwithouthrepresentation
 
-@erkelenztaxation
-description: These measures are desperately needed.
-on-arrival: yea_taxation_erkelenz = 1; upper_tax_rates += 1; old_middle_ddp -= 8; new_middle_ddp -= 6; spd_relations += 5; z_relations += 5; constitutional_leverage += 2; nationalliberale_dissent += 6
+@erzbergertaxation
+subtitle: These measures are desperately needed.
+on-arrival: upper_tax_rates += 1; old_middle_ddp -= 8; new_middle_ddp -= 6; spd_relations += 5; z_relations += 5; constitutional_leverage += 2; nationalliberale_dissent += 6
 
 We vote in favor of Erzberger's new taxes, and they are passed. Businesses and a part of our Middle Class voters are displeased by this, but we hope this will stabilize the Republic's finances.
 
 @notaxationwithouthrepresentation
-on-arrival: old_middle_ddp += 5; new_middle_ddp += 4; spd_relations -= 5; z_relations -= 4; nationalliberale_dissent -= 6
+subtitle: It is likely they will pass anyway.
+on-arrival: upper_tax_rates += 1; new_middle_spd -= 4; old_middle_spd -= 4; new_middle_z -= 2; old_middle_z -= 4; old_middle_ddp += 5; new_middle_ddp += 4; spd_relations -= 5; z_relations -= 4; nationalliberale_dissent -= 6
 
 We vote against Erzberger's new taxes, but the SPD and Zentrum ensure their approval either way. Businesses and the Alte Mittelstand are satisfied by our support, while our relations with the SPD and Zentrum have decreased slightly. 
