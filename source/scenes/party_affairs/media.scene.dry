@@ -114,15 +114,13 @@ We have chosen Heuss as the head editor, he is expected to steer the press to a 
 
 @quide
 title: Ludwig Quidde, head of the pacifist wing.
-choose-if: pazifisten_strength > nationalliberale_strength and pazifisten_strength > linksliberale_strength
-unavailable-subtitle: The left of our party lacks the leverage to elevate quide to the position of head editor.
 on-arrival: newspaper_editor = "Ludwig Quidde"; pro_republic_modifier += 1; nationalism_modifier += 1
 
 The reknowned pacifist, Ludwig Quidde is chosen as head editor. He will make sure to criticize the ravaging nationalists on the far-right at all times and to promote pacifism amongst the German people.
 
 @erkelenz
 title: Anton Erkelenz, the labour leader.
-choose-if: linksliberale_strength + pazifisten_strength > nationalliberale_strength
+choose-if: linksliberale_strength + pazifisten_strength > nationalliberale_strength + sammlung_strength
 unavailable-subtitle: The left lacks the political capital to elect Erkelenz.
 on-arrival: newspaper_editor = "Anton Erkelenz"; workers_campaign_modifier += 1; pro_republic += 3
 
