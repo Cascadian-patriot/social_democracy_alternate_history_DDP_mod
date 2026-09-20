@@ -171,9 +171,13 @@ Q.scha_lippe = 1;
 Q.scha_lippe_prussia = 1;
 Q.thuringia = 1;
 Q.thuringia_prussia = 1;
+
+// Erkelenz stuff
 Q.abstained_socialization = 0;
 Q.yea_socialization_erkelenz = 0;
 Q.yea_socialization_death_erkelenz = 0;
+Q.yea_taxation_erkelenz = 0;
+Q.no_taxation_erkelenz = 0;
 
 // For Wirtschaftspartei founding in 1920
 Q.wp_founded = 0;
