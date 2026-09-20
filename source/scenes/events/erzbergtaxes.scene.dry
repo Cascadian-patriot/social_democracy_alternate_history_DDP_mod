@@ -7,8 +7,6 @@ face-image: img/schutzbund.png
 tags: event
 
 = Erzberger's Tax and Finance Reforms
-
-<img src="img/portraits/ErkelenzAnton.png" style="float:right; margin-left:1em; margin-bottom:0.5em; width:220px; object-fit:cover; object-position:top; border:5px solid #000
   
 Ever since the war started, the German State has seen an enormous and catstrophic increase in spenditure, and as a result, debt, with the former rising from 2.4 billion Marks in 1913 to 17.5 billion in 1919, and the latter from 2 billion Marks to 45 Billion, not even counting that the nation's economy has been destroyed by years of conflict, and also whichever amount we will have to pay for reparations in the future.
 
@@ -20,12 +18,14 @@ The business and aristocratic classes are obviously very displeased about it, an
 - @notaxationwithouthrepresentation
 
 @erzbergertaxation
+title: Vote in favour of erzberger's taxes.
 subtitle: These measures are desperately needed.
 on-arrival: upper_tax_rates += 1; old_middle_ddp -= 8; new_middle_ddp -= 6; spd_relations += 5; z_relations += 5; constitutional_leverage += 2; nationalliberale_dissent += 6
 
 We vote in favor of Erzberger's new taxes, and they are passed. Businesses and a part of our Middle Class voters are displeased by this, but we hope this will stabilize the Republic's finances.
 
 @notaxationwithouthrepresentation
+title: Vote against erzberger's taxes.
 subtitle: It is likely they will pass anyway.
 on-arrival: upper_tax_rates += 1; new_middle_spd -= 4; old_middle_spd -= 4; new_middle_z -= 2; old_middle_z -= 4; old_middle_ddp += 5; new_middle_ddp += 4; spd_relations -= 5; z_relations -= 4; nationalliberale_dissent -= 6
 
