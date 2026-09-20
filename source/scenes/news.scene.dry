@@ -6,6 +6,6 @@
 
  [? if year = 1919 and month = 2 and weeks = 0: But the peace with the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span> has not yet been made, the country is still recovering from a war that broke its economy, and armed men who never demobilized still roam the streets under nobody's firm control. Now, the task of <span style="color: #D3C24D;">Social Liberalism</span> is to draft a constitution, make peace with the <span style="color: #002654;">Ent</span><span style="color: #D7141A;">ente</span> and rebuild the economy.  ?]
 
- [? if year = 1919 and month = 3 weeks = 2: Eugene V. Debs, socialist and anti-War activist, enters prison at the Atlanta Federal Penitentiary for speaking out against conscription in the <span style="color: #E60000;">**United**</span><span style="color: #F8F8FF"> **States**</span> during World War I. ?]
+ [? if year = 1919 and month = 3 and weeks = 2: Eugene V. Debs, socialist and anti-War activist, enters prison at the Atlanta Federal Penitentiary for speaking out against conscription in the <span style="color: #E60000;">**United**</span><span style="color: #F8F8FF"> **States**</span> during World War I. ?]
     
 <img class="news-emblem" src="img/weimar_republic_icon.png">
