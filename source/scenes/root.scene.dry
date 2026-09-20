@@ -191,7 +191,8 @@ Q.freikorps_dealt_with = 0;
 Q.newspaper_founded = 0;
 Q.edjd_integrated = 0;
 Q.dh_integrated = 0;
-Q.newspaper_editor == "Nobody";
+Q.newspaper_editor = "Nobody";
+Q.newspaper_invested_in = 0;
 
 // Soldatenwerh strenghtened but before kapp putsch
 Q.soldatenwehr_strenghtened_1 = 0;
