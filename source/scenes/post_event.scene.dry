@@ -111,7 +111,7 @@ if (Q.month_actions >= 1) {
 
     if (Q.weeks >= 4) {
         Q.month += 1;
-        Q.weeks = 0;
+        Q.weeks = 1;
     }
 
     if (Q.month >= 13) {
