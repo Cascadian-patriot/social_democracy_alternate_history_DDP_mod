@@ -41,9 +41,8 @@ on-arrival: enemies = "KPD"; nationalliberale_strength += 5; kpd_relation -= 10;
 Attacking the KPD is supported by all but the most left-wing socialists, and wins us approval amongst the right. However, some in our party are skeptic of only focusing on the KPD
 
 @socialist
-on-arrival: enemies = "Socialists"; nationalliberale_strength += 5; linksliberale_strength -= 5; spd_relations -= 5; dnvp_relations += 5; uspd_relations -= 5; kpd_relations -= 5; new_middle_spd -= 4; new_middle_kpd -= 4; new_middle_uspd -= 4
+on-arrival: enemies = "Socialists"; nationalliberale_strength += 5; linksliberale_strength -= 5; spd_relations -= 5; dnvp_relations += 5; uspd_relations -= 5; kpd_relations -= 5; new_middle_spd -= 4; new_middle_kpd -= 4; new_middle_uspd -= 4; dnvp_relations += 5; dvp_relations += 8
 choose-if: linksliberale_strength >= 10
 unavailable-subtitle: The left in our party would never allow this. 
-on-arrival: enemies = "Socialists" spd_relations -= 8; kpd_relations -= 10; uspd_relations -= 8 nationalliberale_strenght += 8; nationalliberale_dissent -= 8; dnvp_relations += 6; dvp_relations += 8; z_relations += 2; linksliberale_dissent += 8; linksliberale_strenght -= 6
 
 Atacking the socialists is supported by the right, especialy the far-right, but alienates us from the SPD who are otherwise one of the most democratic parties. 
