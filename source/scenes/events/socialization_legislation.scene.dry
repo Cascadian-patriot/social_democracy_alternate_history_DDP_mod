@@ -2,7 +2,7 @@ title: The SPD proposes socialization measures.
 subtitle: A crisis for our coalition's stability.
 tags: event
 new-page: true
-view-if: socialization_debate_seen = 0 and year = 1919 and month = 3 and spd_in_government = 1 and economic_minister_party = 'SPD'
+view-if: socialization_debate_seen = 0 and year == 1919 and month == 3 and weeks == 1 and spd_in_government == 1 and economic_minister_party == "SPD"
 on-arrival: socialization_debate_seen = 1; month_actions += 1
 max-visits: 1
 
