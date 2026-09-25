@@ -319,7 +319,7 @@ blockquote + blockquote.attribution {
   background: #f3f3e3;
   color: #3b1f0a;
   text-align: left;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 12px 14px;
   opacity: 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
