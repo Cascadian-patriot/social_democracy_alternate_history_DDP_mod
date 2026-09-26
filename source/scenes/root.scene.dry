@@ -713,32 +713,32 @@ Q.march_on_berlin_timer = 0;
 
 // Sammlung advisors
 Q.koch_weser_advisor = 1; // Erich Koch-Weser
-Q.gessler_advisor = 1;
-Q.kulz_advisor = 1;
+Q.gessler_advisor = 0;
+Q.kulz_advisor = 0;
 
 // Linksliberale advisors
 Q.naumann_advisor = 1; // Friedrich Neumann
-Q.heuss_advisor = 1;      // Theodor Heuss
-Q.baeumer_advisor = 1;
-Q.luders_advisor = 1;
-Q.bernhard_advisor = 1;
-Q.lemmer_advisor = 1;
+Q.heuss_advisor = 0;      // Theodor Heuss
+Q.baeumer_advisor = 0;
+Q.luders_advisor = 0;
+Q.bernhard_advisor = 0;
+Q.lemmer_advisor = 0;
 
 // Nationalliberale advisors
 Q.dietrich_advisor = 0;   // not yet nationally prominent in 1919
 Q.meyer_advisor = 1;      // Oscar Meyer
-Q.hopker_aschoff_advisor = 1;
-Q.stolper_advisor = 1;
+Q.hopker_aschoff_advisor = 0;
+Q.stolper_advisor = 0;
 
 // Pazifisten advisors
-Q.quidde_advisor = 1;
-Q.erkelenz_advisor = 1;
+Q.quidde_advisor = 0;
+Q.erkelenz_advisor = 0;
 
 // Republikschützer advisors (locked until faction discovered)
 Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
-Q.abegg_advisor = 1;
+Q.abegg_advisor = 0;
 Q.einstein_advisor = 0; // Recruitable
 !}
 
