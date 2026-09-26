@@ -167,10 +167,10 @@ Stolper has been removed as an advisor. The Nationalliberale faction disapproves
 # pazifisten
 
 @remove_quidde
-title: Remove Quidde
-view-if: quidde_advisor = 1
+title: Remove Quide
+view-if: quide_advisor = 1
 tags: remove_advisor
-on-arrival: quidde_advisor = 0; pazifisten_dissent += 5; n_advisors -= 1
+on-arrival: quide_advisor = 0; pazifisten_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Quidde has been removed as an advisor. The Pazifisten faction disapproves.
@@ -437,14 +437,14 @@ Gustav Stolper is now an advisor.
 
 # pazifisten
 
-@add_quidde
+@add_quide
 title: Ludwig Quidde
 subtitle: Ludwig Quidde is our Nobel Peace laureate and leader of the pacifist wing.
 is-card: true
-card-image: img/portraits/QuiddeLudwig.jpg
+card-image: img/portraits/QuideLudwig.jpg
 tags: pazifisten_advisor
-view-if: quidde_advisor = 0 and n_advisors < 3
-on-arrival: quidde_advisor = 1; n_advisors += 1; pazifisten_strength += 5
+view-if: quide_advisor = 0 and n_advisors < 3
+on-arrival: quide_advisor = 1; n_advisors += 1; pazifisten_strength += 5
 go-to: advisor_menu
 
 Ludwig Quidde is now an advisor.
