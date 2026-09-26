@@ -49,27 +49,22 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['sammlung', 'linksliberale', 'pazifisten', 'nationalliberale', 'republikschutzer'];
+Q.factions = ['sammlung', 'linksliberale', 'pazifisten', 'nationalliberale'];
 // should this be normalized to 100%?
 Q.nationalliberale_strength = 20;
 Q.sammlung_strength = 30;
 Q.linksliberale_strength = 40;
 Q.pazifisten_strength = 10;
-Q.republikschutzer_strength = 0; // gains strength (from linksliberale/pazifisten) when discovered
 Q.nationalliberale_dissent = 12;
 Q.sammlung_dissent = 5;
 Q.linksliberale_dissent = 10;
 Q.pazifisten_dissent = 12;
-Q.republikschutzer_dissent = 0; // irrelevant pre-discovery
 
 // secret events...
 Q.linksliberale_resign = 0;
 Q.sammlung_resign = 0;
 Q.pazifisten_split = 0;
 Q.nationalliberale_defect = 0;
-
-// have we discovered militant republicanism?
-Q.republikschutze = 0;
 
 // crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
