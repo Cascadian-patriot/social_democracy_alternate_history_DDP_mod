@@ -1,0 +1,52 @@
+title: Anton Erkelenz
+is-pinned-card: false
+tags: advisor, pazifisten
+card-image: img/portraits/ErkelenzAnton.png
+view-if: erkelenz_advisor = 1
+new-page: true
+
+= Anton Erkelenz
+
+Anton Erkelenz is the leader of the Hirsche-Duncker Unions and the liberal organized labour movement, as well as being a founding member of the DDP and one of the most leftist member of the party. He wishes to combine the organized labour movement and liberalism according to Naumann's vision of Linksliberalisme. [? if reichsbanner_formed = 1 : Erkelenz is also one of the most commited executive member of the Republican paramilitary, the Reichsbanner. ?]
+    
+- @labour_ministry
+- @trade_unions
+- @media
+- @reichsbanner
+- @root: Return to main
+  
+@labor_ministry
+title: Labour Policies
+subtitle: As Labor Minister, Erkelenz can help set regulations for working conditions.
+choose-if: advisor_action_timer <= 0 and ddp_in_government and labor_minister_party = "DDP"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if labor_minister_party != "DDP" : The DDP does not control the Labor Ministry. ?]
+on-arrival: advisor_action_timer = 6; labor_rights_timer -= 10; last_advisor_action = 1
+go-to: labor_rights
+
+@trade_unions
+title: 'Modernise' the trade unions
+subtitle: -1 resource, Perhaps we can improve our standing in the new middle class while attract working class voters?
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: resources -= 1;  workers_ddp += 6*(1-dissent); new_middle_ddp += 5*(1-dissent); 
+
+@media
+title: Media
+subtitle: As chief editor, Erkelenz can manage our party's newspaper and media
+choose-if: advisor_action_timer = 0 and newspaper_editor = "Anton Erkelenz"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if newspaper_editor != "Anton Erkelenz" : Anton Erkelenz is not the chief editor of our party's newspaper. ?][? if newspaper_founded == 0 : We have not yet founded our own newspaper ?]
+on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
+go-to: media
+
+@reichsbanner
+title: Organize the Reichsbanner
+subtitle: As a fervent republican, Erkelenz believes that the citizens of Germany should be mobilized in defence of democracy
+choose-if: advisor_action_timer = 0 and reichsbanner_formed == 1
+unavailable-subtitle:  [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if reichsbanner_formed == 0 : The reichsbanner has not yet been formed. ?]
+on-arrival: advisor_action_timer = 6; reichsbanner_timer -= 6; last_advisor_action = 1  
+go-to: reichsbanner
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                                                                                                                                                
