@@ -36,7 +36,7 @@ tags: remove_advisor
 
 @remove_koch
 title: Remove Koch-Wesser
-view-if: koch_wesser_advisor = 1
+view-if: koch_weser_advisor = 1
 on-arrival: koch_wesser_advisor = 0; sammlung_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
