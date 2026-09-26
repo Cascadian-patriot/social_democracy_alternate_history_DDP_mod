@@ -1,0 +1,54 @@
+title: Ludwig Quide
+is-pinned-card: true
+tags: advisor, pazifisten
+card-image: img/portraits/QuideLudwig.jpg
+view-if: quide_advisor = 1
+new-page: true 
+
+= Ludwig Quide
+
+Ludwig Quidde is the leader of our party's pacifist wing, as he is a vocal advocate for pacifism and democratisation. [? if edjd_integrated > 3 : He is one of the main contributors of the Echo Der Junge Demokratie newspaper ?][? if newspaper_founded == 1 : He is one of the main contributors of our party's newspaper ?][? if newspaper_founded == 1 and newspaper_editor == "Ludwig Quide" : He is the Chief editor of our party's newspaper ?], which he uses to spread his ideas of democratization, anti-militarism and pacifism. he also advocates for deeper cooperation with the SPD.
+
+- @edjd_publish
+- @newspaper_publish
+- @rally_for_pacifism
+- @left_relations
+- @root: Return to main
+
+@edjd_publish
+title: Publish articles in our youth movement's magazine
+subtitle: Quide can publish articles in our party's youth organization's magazine "Echo Der Junge Demokratie", strenghtening the pazifisten wing's meseage.
+view-if: edjd_integrated < 3
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+on-arrival: advisor_action_timer = 6; pazifisten_strenght += 7; pazifisten_dissent -= 5; new_middle_ddp += 3; young_democrats += 1; old_middle_ddp += 3; workers_ddp += 3; rural_ddp += 3; catholics_ddp += 3; nationalism -= 4
+
+Quidde has written several articles and published them in the 'Echo of the Young Democrats' Magazine, increasing Pazifisten strength in the party and bringing in new, young voters to the party.
+
+@newspaper_publish
+title: Publish articles in our newspaper.
+subtitle: Quide can publish articles in our party's newspaper, strenghtening the pacifist wing's meseage.
+view-if: newspaper_founded == 1
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; pazifisten_strenght += 7; pazifisten_dissent -= 5; new_middle_ddp += 4; old_middle_ddp += 4; workers_ddp += 4; rural_ddp += 4; catholics_ddp += 4; nationalism -= 4
+
+Quidde has written several articles and published them in the party's new newspaper, increasing Pazifisten strength in the party and bringing in new voters.
+
+@rally_for_pacifism
+title: Rally for Pacifism
+subtitle: Quide can promote pacifists ideals in the party and in the nation.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6;  pacifism += 1; nationalism -= 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; pazifisten_strength += 4; pazifisten_dissent -= 5; dvp_relation -= 2;
+
+Quidde has held a rally to convince as many germans as possible of renouncing nationalism and embracing pacifist values, which has worked to some extent.
+
+@left_relations
+title: Left-wing relations
+subtitle: Quidde can attempt to reach out to the parties on our left.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; spd_relations += 8; uspd_relations += 6; nationalliberale_dissent += 4; linksliberale_dissent -= 4; pazifisten_dissent -= 5
+
+Quidde has reached out to the MSPD and the USPD to create goodwill between our parties and possibly pave the way for future coalitions or other cooperation.
