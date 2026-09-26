@@ -13,15 +13,15 @@ In our media and campaign materials, who should we consider as our main opponent
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @anti_dem: The <span style="color: var(--dap-colour);">anti</span>-<span style="color: var(--ddp-colour);">democratic</span> parties of the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span>, the <span style="color: var(--kpd-colour);">Communists</span>, <span style="color: var(--dnvp-colour);">Nationalists</span> and the [? if dap_formed: <span style="color: var(--dap-colour);">Nazis</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">Nazis</span>?]. 
-- @far_right: The [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span>, the <span style="color: var(--dnvp-colour);">Nationalists</span> and the [? if dap_formed: <span style="color: var(--dap-colour);">Nazis</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">Nazis</span>?].
+- @anti_dem: The <span style="color: var(--dap-colour);">anti</span>-<span style="color: var(--ddp-colour);">democratic</span> parties of the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span>, the KPD, DNVP, and [? if dap_formed: DAP ?][? if nsdap_formed: NSDAP ?].
+- @far_right: The [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span>, the DNVP, and [? if dap_formed: DAP ?][? if nsdap_formed: NSDAP ?].
 - @dnvp: The DNVP alone.
 - @kpd: The KPD.
 - @socialist: The Socialist parties of the SPD, KPD and the USPD.
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_kpd -= 2; new_middle_nsdap -= 2; new_middle_dnvp -= 2; kpd_relation -= 10
+on-arrival: enemies = "anti-democratic parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_kpd -= 2; new_middle_nsdap -= 2; new_middle_dnvp -= 2; kpd_relation -= 10; dnvp_relation -= 10
 
 Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span> is popular among all of our party except some members of the Nstionalliberale, who would prefer we keep our options open with the DNVP.
 
