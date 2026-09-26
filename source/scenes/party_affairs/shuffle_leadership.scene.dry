@@ -34,10 +34,10 @@ tags: remove_advisor
 
 # sammlung
 
-@remove_koch
+@remove_koch_weser
 title: Remove Koch-Wesser
 view-if: koch_weser_advisor = 1
-on-arrival: koch_wesser_advisor = 0; sammlung_dissent += 5; n_advisors -= 1
+on-arrival: koch_weser_advisor = 0; sammlung_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
@@ -263,21 +263,21 @@ view-if: n_advisors < 3
 
 # sammlung
 
-@add_koch_wesser
+@add_koch_weser
 title: Erich Koch-Wesser
-subtitle: Erich Koch-Wesser is our party chairman, and one of the chief architects of the Weimar Constitution.
+subtitle: Erich Koch-Wesser is an influential figure in the sammlung wing of our party, and one of the founders of the DDP.
 is-card: true
 card-image: img/portraits/KochWeserErich.jpg
 tags: sammlung_advisor
-view-if: koch_wesser_advisor = 0 and n_advisors < 3
-on-arrival: koch_wesser_advisor = 1; n_advisors += 1; sammlung_strength += 5
+view-if: koch_weser_advisor = 0 and n_advisors < 3
+on-arrival: koch_weser_advisor = 1; n_advisors += 1; sammlung_strength += 5
 go-to: advisor_menu
 
 Erich Koch-Wesser is now an advisor.
 
 @add_gessler
 title: Otto Gessler
-subtitle: Otto Gessler is our long-serving Reichswehr Minister, trusted by the military establishment.
+subtitle: Otto Gessler is one of the founders of the DDP, and our expert in military matters.
 is-card: true
 card-image: img/portraits/GesslerOtto.jpg
 tags: sammlung_advisor
@@ -289,7 +289,7 @@ Otto Gessler is now an advisor.
 
 @add_kulz
 title: Wilhelm Kulz
-subtitle: Wilhelm Kulz is an experienced state administrator, seen by many as our chairman's natural successor.
+subtitle: Wilhelm Kulz is an experienced state administrator and influential party member.
 is-card: true
 card-image: img/portraits/KulzWilhelm.jpg
 tags: sammlung_advisor
@@ -303,7 +303,7 @@ Wilhelm Kulz is now an advisor.
 
 @add_naumann
 title: Friedrich Naumann
-subtitle: Friedrich Naumann is our party's founding intellectual, and the ideological father of its left-liberal wing.
+subtitle: Friedrich Naumann is our party's founder and the ideological father of the left-liberal wing.
 is-card: true
 card-image: img/portraits/naumann.jpeg
 tags: linksliberale_advisor
@@ -315,7 +315,7 @@ Friedrich Naumann is now an advisor.
 
 @add_heuss
 title: Theodor Heuss
-subtitle: Theodor Heuss is a journalist and one of the party's most gifted communicators.
+subtitle: Theodor Heuss is a journalist and one of the party's most gifted communicators. [? if newspaper_editor = "Theodor Heuss" : He is also our party newspaper's chief editor. ?]
 is-card: true
 card-image: img/portraits/HeussTheodor.jpg
 tags: linksliberale_advisor
@@ -327,7 +327,7 @@ Theodor Heuss is now an advisor.
 
 @add_baeumer
 title: Gertrud Bäumer
-subtitle: Gertrud Bäumer is a leading voice for women's rights and one of the party's most effective organizers.
+subtitle: Gertrud Bäumer is a leading voice for women's rights and a leading organiser amongst women.
 is-card: true
 card-image: img/portraits/BaeumerGertrud.jpg
 tags: linksliberale_advisor
@@ -351,7 +351,7 @@ Marie-Elisabeth Lüders is now an advisor.
 
 @add_erkelenz
 title: Anton Erkelenz
-subtitle: Anton Erkelenz is our own trade unionist, chairman of the Hirsch-Duncker liberal unions.
+subtitle: Anton Erkelenz is the leader of the Hirsche-Duncker Unions and the liberal organized labour movement.
 is-card: true
 card-image: img/portraits/ErkelenzAnton.jpg
 tags: linksliberale_advisor
@@ -375,7 +375,7 @@ Georg Bernhard is now an advisor.
 
 @add_lemmer
 title: Ernst Lemmer
-subtitle: Ernst Lemmer is a rising figure of the party's younger generation, and one of the Reichsbanner's own founders.
+subtitle: Ernst Lemmer is a rising figure of the party's younger generation.
 is-card: true
 card-image: img/portraits/LemmerErnst.jpg
 tags: linksliberale_advisor
@@ -401,7 +401,7 @@ Hermann Dietrich is now an advisor.
 
 @add_meyer
 title: Oscar Meyer
-subtitle: Oscar Meyer is a former Prussian Staatssekretär and an experienced parliamentary hand.
+subtitle: Oscar meyer is a a jewish economist and lawyer who advocates for bourgeousie unification.
 is-card: true
 card-image: img/portraits/MeyerOscar.jpg
 tags: nationalliberale_advisor
@@ -413,7 +413,7 @@ Oscar Meyer is now an advisor.
 
 @add_hopker_aschoff
 title: Hermann Hopker-Aschoff
-subtitle: Hermann Hopker-Aschoff is our Prussian Finance Minister, known for careful, unglamorous competence.
+subtitle: Hermann Hopker-Aschoff is our party's Prussian Finance Minister.
 is-card: true
 card-image: img/portraits/HopkerAschoffHermann.jpg
 tags: nationalliberale_advisor
@@ -439,7 +439,7 @@ Gustav Stolper is now an advisor.
 
 @add_quidde
 title: Ludwig Quidde
-subtitle: Ludwig Quidde is our Nobel Peace laureate and the party's moral conscience.
+subtitle: Ludwig Quidde is our Nobel Peace laureate and leader of the pacifist wing.
 is-card: true
 card-image: img/portraits/QuiddeLudwig.jpg
 tags: pazifisten_advisor
@@ -451,7 +451,7 @@ Ludwig Quidde is now an advisor.
 
 @add_tantzen
 title: Tantzen Jr
-subtitle: Tantzen Jr carries on his family's tradition of pacifist, republican politics in Oldenburg.
+subtitle: Tantzen Jr is a prominent pacifist politician in the State of Oldenburg.
 is-card: true
 card-image: img/portraits/TantzenJr.jpg
 tags: pazifisten_advisor
@@ -463,7 +463,7 @@ Tantzen Jr is now an advisor.
 
 @add_von_schoenaich
 title: Von Schoenaich
-subtitle: Von Schoenaich is a former Imperial general turned outspoken pacifist, chairman of the German Peace Society.
+subtitle: Von Schoenaich is a former Imperial general turned outspoken pacifist and chairman of the German Peace Society.
 is-card: true
 card-image: img/portraits/VonSchoenaich.jpg
 tags: pazifisten_advisor
@@ -475,7 +475,7 @@ Von Schoenaich is now an advisor.
 
 @add_luth
 title: Erich Luth
-subtitle: Erich Luth is a young journalist increasingly convinced that persuasion alone cannot save the Republic.
+subtitle: Erich Ernst Lüth is a young rising star in the Hamburg branch of our party.
 is-card: true
 card-image: img/portraits/LuthErich.jpg
 tags: pazifisten_advisor
@@ -489,7 +489,7 @@ Erich Luth is now an advisor.
 
 @add_abegg
 title: Wilhelm Abegg
-subtitle: Wilhelm Abegg is the Prussian state secretary responsible for the police.
+subtitle: Wilhelm Abegg is our party's police chief and exprienced statesman.
 is-card: true
 card-image: img/portraits/AbeggWilhelm.jpg
 tags: nonfactional_advisor
