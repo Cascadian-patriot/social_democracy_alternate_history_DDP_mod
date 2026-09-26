@@ -1,5 +1,5 @@
 title: Anton Erkelenz
-is-pinned-card: false
+is-pinned-card: true
 tags: advisor, pazifisten
 card-image: img/portraits/ErkelenzAnton.png
 view-if: erkelenz_advisor = 1
