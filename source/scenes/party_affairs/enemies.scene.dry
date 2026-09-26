@@ -26,6 +26,7 @@ on-arrival: enemies = "anti-democratic parties"; sammlung_strength += 5; linksli
 Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span> is popular among all of our party except some members of the Nstionalliberale, who would prefer we keep our options open with the DNVP.
 
 @far_right
+unavailable-subtitle: The Nationalliberale wing pressures us to pursue a more anti-<span style="color: var(--kpd-colour);">extre</span>[? if dap_formed:<span style="color: var(--dap-colour);">mist</span>?][? if nsdap_formed:<span style="color: var(--nsdap-colour);">mist</span>?] attitude, avoiding the issue of the DNVP.
 choose-if: linksliberale_strength and pazifisten_strength > nationalliberale_strength
 on-arrival: enemies = "far-right"; linksliberale_strength += 5; linksliberale_dissent -= 5; new_middle_nsdap -= 3; new_middle_dnvp -= 3
 
