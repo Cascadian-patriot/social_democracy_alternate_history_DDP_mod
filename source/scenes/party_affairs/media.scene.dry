@@ -5,11 +5,11 @@ tags: party_affairs
 view-if: media_timer <= 0
 on-arrival: month_actions += 1; media_timer += 6;
 card-image: img/ddp_poster_11.jpeg
-#subtitle: Setting the direction for newspapers and radio.
+#subtitle: Setting the direction for our newspapers and radio.
 
 = Media
 
-The liberal press are scattered across the nation, most of them are nominally independent, but are de facto controlled by our members. We could use these media for various purposes...
+The SPD runs a veritable media empire, with many newspapers throughout every German city and region. We could use the media for various purposes...
 
 - @berlinertagblad
 - @diehilfe
@@ -100,9 +100,7 @@ on-arrival: newspaper_founded = 1; resources -= 2; newspaper_invested_in = 0
 
 We have founded our own newspaper, and we must now select its head editor.
 
-- @heuss
-- @quide
-- @erkelenz
+Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of socialism along with music and other popular content. Since most proletarians cannot afford family radios right now, we are reaching the middle class, a fact of which our labor comrades are painfully aware.
 
 @heuss
 title: Theodor Heuss, a rising star in the Sammlung with a patriotic attitute.
@@ -110,13 +108,13 @@ choose-if: nationalliberale_strength + sammlung_strength > pazifisten_strength
 unavailable-subtitle: The right and center lack the leverage to elevate Heuss to head editor.
 on-arrival: newspaper_editor = "Theodor Heuss"; old_middle_campaign_modifier += 1; new_middle_campaign_modifier += 1; pro_republic += 4; nationalism += 4
 
-We have chosen Heuss as the head editor, he is expected to steer the press to a more nationalist tone than our left liberals prefer, however his strong liberal stance quells any protests, at least for now.
+Our new radio network has a mix of popular and political programming, and is proving a success.
 
 @quide
 title: Ludwig Quidde, head of the pacifist wing.
 on-arrival: newspaper_editor = "Ludwig Quidde"; pro_republic_modifier += 1; nationalism_modifier += 1
 
-The reknowned pacifist, Ludwig Quidde is chosen as head editor. He will make sure to criticize the ravaging nationalists on the far-right at all times and to promote pacifism amongst the German people.
+Our radio network has become a successful tool for spreading our message.
 
 @erkelenz
 title: Anton Erkelenz, the labour leader.
@@ -124,4 +122,4 @@ choose-if: linksliberale_strength + pazifisten_strength > nationalliberale_stren
 unavailable-subtitle: The left lacks the political capital to elect Erkelenz.
 on-arrival: newspaper_editor = "Anton Erkelenz"; workers_campaign_modifier += 1; pro_republic += 3
 
-Surprisingly, Anton Erkelenz is elected head editor of our party newspaper. It seems we will be focusing more on the lower classes than the middle class to promote liberal democracy to the common people. 
+We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.

@@ -23,7 +23,7 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
-Q.weeks = 0;
+Q.weeks = 1;
 Q.year = 1919;
 Q.month = 2;
 // how many actions have been taken this month?
@@ -781,7 +781,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 150; kpd_rel
 go-to: 1919_main
 
 @1919_main
-audio: shuffle music/deustchlandlied.mp3  music/Die-freie-Republik-_German-folk-song__-English-translation_-_Reupload-Dr.-Ludwig_-_AYxB0wrgulI_.mp3 music/Die-Garde-der-Republik-Reichsbanner-Marsch-_HQ_-_d0R2ZXxp_2E_.mp3 music/Reichsbanner-Marsch-_In-Kümmernis-und-Dunkelheit_-HQ-_BMb_f9hEN08_.mp3 music/Treu-zur-Fahne-Reichsbanner-Marsch-_HQ_-_nQLiylGeN34_.mp3 music/＂Heckerlied＂-German-Revolutionary-Song-_y2pzysdtA7E_.mp3 music/Die-freie-Republik-_German-folk-song__-English-translation_-_Reupload-Dr.-Ludwig_-_AYxB0wrgulI_.mp3
+audio: shuffle music/HochdieFreiheit_Reichsbanner-Marsch.mp3 music/Die-freie-Republik-_German-folk-song__-English-translation_-_Reupload-Dr.-Ludwig_-_AYxB0wrgulI_.mp3 music/Die-Garde-der-Republik-Reichsbanner-Marsch-_HQ_-_d0R2ZXxp_2E_.mp3 music/Reichsbanner-Marsch-_In-Kümmernis-und-Dunkelheit_-HQ-_BMb_f9hEN08_.mp3 music/Treu-zur-Fahne-Reichsbanner-Marsch-_HQ_-_nQLiylGeN34_.mp3 music/＂Heckerlied＂-German-Revolutionary-Song-_y2pzysdtA7E_.mp3 music/Die-freie-Republik-_German-folk-song__-English-translation_-_Reupload-Dr.-Ludwig_-_AYxB0wrgulI_.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 

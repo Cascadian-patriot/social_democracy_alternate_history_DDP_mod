@@ -177,7 +177,7 @@ Current relations: [+ dvp_relation : relationships +]
 
 Current relations: [+ dnvp_relation : relationships +]
 
-**KPD** - *Kommunistische Partei Deutschlands* (G<span style="color: var(--kpd-colour);">German Communist Party</span>) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a <span style="color: [+ ussr_colour +];">Soviet</span>-style revolution.
+**KPD** - *Kommunistische Partei Deutschlands* (<span style="color: var(--kpd-colour);">German Communist Party</span>) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a <span style="color: [+ ussr_colour +];">Soviet</span>-style revolution.
 
 Current relations: [+ kpd_relation : relationships +]
 

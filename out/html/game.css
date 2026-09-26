@@ -319,7 +319,7 @@ blockquote + blockquote.attribution {
   background: #f3f3e3;
   color: #3b1f0a;
   text-align: left;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 12px 14px;
   opacity: 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
@@ -443,7 +443,7 @@ ul.decks, ul.hand, ul.pinned-cards {
   --ddp-colour: #D3C24D;
   --lvp-colour: #FFCC00;
   --z-colour: #000000;
-  --bvp-colour: #A2D8E0;
+  --bvp-colour: #95ccc7;
   --dvp-colour: #D5AC27;
   --dnvp-colour: #3E88B3;
   --dnf-colour: #003755;
@@ -884,39 +884,39 @@ table {
 
 /* Styles for parties */
 .seat.kpd {
-    fill: #8B0000;
+    fill: var(--kpd-colour);
 }
 .seat.spd {
-    fill: #E3000F;
+    fill: var(--spd-colour);
 }
 .seat.uspd {
-    fill: #D47B9B;
+    fill: var(--uspd-colour);
 }
 .seat.ddp {
-    fill: #DCCA4A;
+    fill: var(--ddp-colour);
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
 .seat.z {
-    fill: #000;
+    fill: var(--z-colour);
 }
 .seat.bvp {
-    fill: #69A2BE;
+    fill: var(--bvp-colour);
 }
 .seat.dvp {
-    fill: #D5AC27;
+    fill: var(--dvp-colour);
 }
 .seat.other {
-    fill: #909090;
+    fill: var(--i-colour);
 }
 .seat.dnvp {
-    fill: #3F7BC1;
+    fill: var(--dnvp-colour);
 }
 .seat.nsdap {
-    fill: #954B00;
+    fill: var(--nsdap-colour);
 }
 .seat.sapd {
-    fill: #C40000;
+    fill: var(--sapd-colour);
 }
 
 .tooltip-text {
@@ -977,8 +977,8 @@ body.dark-mode .parliament-tooltip {
 .wide_tooltip-tip {
   position: absolute;
   z-index: 999999;
-  width: 200px;
-  max-width: 220px;
+  width: 140px;
+  max-width: 140px;
 
   left: 0;
   bottom: calc(100% + 10px); 
@@ -991,8 +991,7 @@ body.dark-mode .parliament-tooltip {
 
   background-color: #f3f3e3;
   color: #3b1f0a;
-  border: 2px solid #c00000;
-  outline: 2px solid #D3C24D;
+  border: 1px solid #555;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   visibility: hidden;
   opacity: 0;
@@ -1012,20 +1011,17 @@ body.dark-mode .parliament-tooltip {
 body.dark-mode .wide_tooltip-tip {
   background-color: #151517;
   color: #e0e0e0;
-  border: 2px solid #c00000;
-  outline: 2px solid #D3C24D;
+  border: 1px solid #FFFFFF;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 body.dark-mode .wide_tooltip-tip img {
   border-color: #555; 
 }
 body.dark-mode .wide_tooltip-tip::after {
-border: 2px solid #c00000 transparent transparent transperent;
-outline: 2px solid #D3C24D transparent transparent transparent;
+  border: 1px solid #FFFFFF;
 }
 body.dark-mode .wide_tooltip-tip::before {
-border: 2px solid #c00000 transparent transparent transperent;
-outline: 2px solid #D3C24D transparent transparent transparent;
+  border: 1px solid #FFFFFF;
 }
 .wide_tooltip-wrap.drop-down .wide_tooltip-tip {
   bottom: auto;
