@@ -15,7 +15,7 @@ Anton Erkelenz is the leader of the Hirsche-Duncker Unions and the liberal organ
 - @reichsbanner
 - @root: Return to main
   
-@labor_ministry
+@labour_ministry
 title: Labour Policies
 subtitle: As Labor Minister, Erkelenz can help set regulations for working conditions.
 choose-if: advisor_action_timer <= 0 and ddp_in_government and labor_minister_party = "DDP"
