@@ -37,7 +37,7 @@ on-arrival: resources -= 1; new_middle_ddp += 3*(1-dissent); old_middle_ddp += 3
 
 We have increased funding to the Volkshochschule movement and other adult-education institutions. This way we ensure an educated citizenry, an essential measure against demagogues and dictators.
 
-// For womens_orgs the popularity boost for all classes is supposed to symbolise popularity boost amongst women.
+# For womens_orgs the popularity boost for all classes is supposed to symbolise popularity boost amongst women.
 
 @womens_orgs
 choose-if: resources > 0

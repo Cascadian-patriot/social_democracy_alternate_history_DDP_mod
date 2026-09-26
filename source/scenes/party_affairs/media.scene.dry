@@ -100,21 +100,19 @@ on-arrival: newspaper_founded = 1; resources -= 2; newspaper_invested_in = 0
 
 We have founded our own newspaper, and we must now select its head editor.
 
-Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of socialism along with music and other popular content. Since most proletarians cannot afford family radios right now, we are reaching the middle class, a fact of which our labor comrades are painfully aware.
-
 @heuss
 title: Theodor Heuss, a rising star in the Sammlung with a patriotic attitute.
 choose-if: nationalliberale_strength + sammlung_strength > pazifisten_strength
 unavailable-subtitle: The right and center lack the leverage to elevate Heuss to head editor.
 on-arrival: newspaper_editor = "Theodor Heuss"; old_middle_campaign_modifier += 1; new_middle_campaign_modifier += 1; pro_republic += 4; nationalism += 4
 
-Our new radio network has a mix of popular and political programming, and is proving a success.
+The right has managed to apoint Theodor Heuss to the position of chief editor.
 
 @quide
 title: Ludwig Quidde, head of the pacifist wing.
 on-arrival: newspaper_editor = "Ludwig Quidde"; pro_republic_modifier += 1; nationalism_modifier += 1
 
-Our radio network has become a successful tool for spreading our message.
+Ludiwg quide has been apointed chief editor.
 
 @erkelenz
 title: Anton Erkelenz, the labour leader.
@@ -122,4 +120,4 @@ choose-if: linksliberale_strength + pazifisten_strength > nationalliberale_stren
 unavailable-subtitle: The left lacks the political capital to elect Erkelenz.
 on-arrival: newspaper_editor = "Anton Erkelenz"; workers_campaign_modifier += 1; pro_republic += 3
 
-We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.
+The left has managed to apoint Anton Erkelenz to he position of cheif editor.

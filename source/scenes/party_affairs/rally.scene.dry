@@ -94,7 +94,7 @@ Our speakers defend the Weimar Constitution and the rule of law against monarchi
 [? if constitutional_reform >= 3 : Since we have consistently made constitutional defense a theme of our campaign, our base is strongly energized by it. ?]
 
 @pacifism
-on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent) if pacifism >= 3; educated_ddp += 2*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; pazifisten_strength += 4; pazifisten_dissent -= 5; dvp_relation -= 2;
+on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; pazifisten_strength += 4; pazifisten_dissent -= 5; dvp_relation -= 2;
 
 Our speakers denounce secret rearmament and the glorification of militarism, drawing on Quidde's long record as a critic of the officer class.
 
