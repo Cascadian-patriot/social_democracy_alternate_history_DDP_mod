@@ -720,6 +720,7 @@ Q.kulz_advisor = 0;
 Q.naumann_advisor = 1; // Friedrich Neumann
 Q.heuss_advisor = 0;      // Theodor Heuss
 Q.baeumer_advisor = 0;
+Q.erkelenz_advisor = 0;
 Q.luders_advisor = 0;
 Q.bernhard_advisor = 0;
 Q.lemmer_advisor = 0;
@@ -732,9 +733,8 @@ Q.stolper_advisor = 0;
 
 // Pazifisten advisors
 Q.quidde_advisor = 0;
-Q.erkelenz_advisor = 0;
-
-// Republikschützer advisors (locked until faction discovered)
+Q.tantzen_advisor = 0;
+Q.von_schoenaich_advisor = 0;
 Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
