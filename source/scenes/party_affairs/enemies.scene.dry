@@ -21,10 +21,9 @@ In our media and campaign materials, who should we consider as our main opponent
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "<span style="color: var(--dap-colour);">anti</span>-<span style="color: var(--ddp-colour);">democratic</span> parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_kpd -= 2; new_middle_nsdap -= 2; new_middle_dnvp -= 2; kpd_relation -= 10
+on-arrival: enemies = "anti-democratic parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_kpd -= 2; new_middle_nsdap -= 2; new_middle_dnvp -= 2; kpd_relation -= 10
 
-Attacking the far right and left is popular among all of our party except some members of the nationalliberale, who would prefer we keep our options open with the DNVP. 
-
+Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span> is popular among all of our party except some members of the Nstionalliberale, who would prefer we keep our options open with the DNVP.
 @far_right
 on-arrival: enemies = "Far-Right"; linksliberale_strength += 5; linksliberale_dissent -= 5; new_middle_nsdap -= 3; new_middle_dnvp -= 3
 
