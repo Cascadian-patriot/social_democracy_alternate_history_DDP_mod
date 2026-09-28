@@ -47,10 +47,10 @@ subtitle: The Labor Ministry handles labor affairs.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 5
 view-if: labor_minister_party != "DDP"
-on-arrival: leverage -= 5; labor_minister_party = "DDP"; labor_minister = "Lemmer"
+on-arrival: leverage -= 5; labor_minister_party = "DDP"; labor_minister = "Erkelenz"
 go-to: ministries
 
-Ersnt Lemmer of the [+ ddp_name +] has been appointed labor minister.
+Anton Erkelenz of the [+ ddp_name +] has been appointed labor minister.
 
 @interior
 title: Interior Ministry
