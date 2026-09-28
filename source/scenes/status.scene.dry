@@ -216,6 +216,7 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, USP
 <hr>
 
 </div>
+<div class="leader-card">
 <img class="leader-portrait" src="[+ img_r_president +]">
 <div class="leader-name">**[+ reichstag_president +]** ([+ reichstag_president_party +])</div>
 <div class="leader-role">President Of The Reichstag</div>
