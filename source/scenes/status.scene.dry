@@ -270,6 +270,12 @@ var _newData = [];
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Mandate</td><td>Status</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#890000;'> </div> !} KPD: {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [? if kpd_in_government = 0 and kpd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if kpd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if kpd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--kpd-colour);'> </div> !} KPD: {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [? if kpd_in_government = 0 and kpd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if kpd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if kpd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#C62828; outline: 2px; outline-style: solid;'> </div> !} USPD: {!</td><td>!} [+ uspd_r +]% {!</td><td>!} [? if uspd_in_government = 0 and uspd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if uspd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if uspd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--uspd-colour);'> </div> !} USPD: {!</td><td>!} [+ uspd_r +]% {!</td><td>!} [? if uspd_in_government = 0 and uspd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if uspd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if uspd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:var(--sapd-colour);'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [? if sapd_in_government = 0 and sapd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if sapd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if sapd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:var(--spd-colour);'> </div> !} SPD: {!</td><td>!} [+ spd_r +]% {!</td><td>!} [? if spd_in_government = 0 and spd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if spd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if spd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:var(--ddp-colour);'> </div> !} DDP: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [? if ddp_in_government = 0 and ddp_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if ddp_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if ddp_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
