@@ -470,6 +470,8 @@ Q.president = "Ebert";
 Q.president_party = 'SPD';
 Q.chancellor = "Scheidemann";
 Q.chancellor_party = 'SPD';
+Q.reichstag_president = "Fehrenbach";
+Q.reichstag_president_party = "Z";
 Q.spd_in_government = 1;
 Q.z_in_government = 1;
 Q.ddp_in_government = 1;
@@ -481,7 +483,7 @@ Q.nsdap_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
-Q.in_weimar_coalition = 0;
+Q.in_weimar_coalition = 1;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
 Q.in_grand_coalition = 0;
