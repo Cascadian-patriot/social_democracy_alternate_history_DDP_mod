@@ -294,9 +294,9 @@ var _newData = [];
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-@chancellor
+@cabinet
 
-= Government
+<h1>Cabinet</h1>
 <hr>
 
 </div>
