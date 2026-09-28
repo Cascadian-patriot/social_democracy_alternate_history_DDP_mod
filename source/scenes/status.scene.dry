@@ -211,6 +211,34 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, USP
 <h1><a href="#" onclick="window.dendryUI.dendryEngine.goToScene('maps'); return false;" style="display: inline-block; padding: 4px 10px; border: 1px solid #431; color: #431; font-size: 1em; cursor: pointer; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 0.05em;">Maps</a></h1> 
 
 @government
+on-arrival: {!
+var _newData = [];
+    function _addP(id, legend, seats) {
+        if (seats && seats > 0) _newData.push({ id: id, legend: legend, name: legend, seats: seats });
+    }
+    _addP('kpd', "KPD", Q.kpd_r*5);
+    _addP('uspd', 'USPD', Q.uspd_r*5);
+    _addP('sapd', 'SAPD', Q.sapd_r*5);
+    _addP('spd', 'SPD', Q.spd_r*5);
+    _addP('ddp', 'Q.ddp_name', Q.ddp_r*5);
+    _addP('z', 'Center', (Q.z_r - 3)*5);
+    _addP('bvp',  'BVP', 3*5);
+    _addP('dvp', 'DVP', Q.dvp_r*5);
+    _addP('other', 'Other', Q.other_r*5);
+    _addP('dnvp', 'DNVP', Q.dnvp_r*5);
+    _addP('dap', 'DAP', Q.dap_r*5);
+    _addP('nsdap', 'NSDAP', Q.nsdap_r*5);
+
+    var _newSig = JSON.stringify(_newData.map(function(p){ return p.id + p.seats; }));
+    var _changed = (_newSig !== window._parliSig);
+    window._parliData = _newData;
+    if (_changed) {
+        window._parliSig = _newSig;
+        window._parliAnimate = true;
+    } else {
+        window._parliAnimate = false;
+    }
+!}
 
 = Reichstag
 <hr>
@@ -221,3 +249,21 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, USP
 <div class="leader-name">**[+ reichstag_president +]** ([+ reichstag_president_party +])</div>
 <div class="leader-role">President Of The Reichstag</div>
 </div>
+
+{!<svg id="status_parliament" style="width: 100%; display: block;"></svg>
+<script>
+(function() {
+    if (!d3 || !d3.parliament || !window._parliData || window._parliData.length === 0) return;
+    var el = document.getElementById('status_parliament');
+    if (!el) return;
+    var w = el.parentElement.offsetWidth || 220;
+    el.setAttribute('width', w);
+    el.setAttribute('height', Math.round(w * 0.55));
+    var parl = d3.parliament();
+    parl.width(w).height(Math.round(w * 0.55)).innerRadiusCoef(0.4);
+    var animate = window._parliAnimate;
+    parl.enter.fromCenter(animate).smallToBig(animate);
+    parl.exit.toCenter(animate).bigToSmall(animate);
+    d3.select('#status_parliament').datum(window._parliData).call(parl);
+})();
+</script>!}
