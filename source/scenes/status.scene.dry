@@ -48,8 +48,6 @@ Others: [+ other_r +]%
 
 [? if ddp_in_government = 1 : Budget: [+ budget +] ?]
 
-Next election: [+ next_election_month : month +] [+ next_election_year +]
-
 = Economics
 
 Inflation: [+ inflation_2 +]%
@@ -278,7 +276,7 @@ var _newData = [];
 
 {!<tr><td><div class="box" style='background-color:var(--spd-colour);'> </div> !} SPD: {!</td><td>!} [+ spd_r +]% {!</td><td>!} [? if spd_in_government = 0 and spd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if spd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if spd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:var (--ddp-colour); outline: 2px; outline-style: solid;'> </div> !} DDP: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [? if ddp_in_government = 0 and ddp_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if ddp_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if ddp_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--ddp-colour); outline: 2px; outline-style: solid;'> </div> !} DDP: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [? if ddp_in_government = 0 and ddp_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if ddp_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if ddp_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:var(--z-colour);'> </div> !} Z: {!</td><td>!} [+ z_r +]% {!</td><td>!} [? if z_in_government = 0 and z_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if z_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if z_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
 
@@ -293,3 +291,5 @@ var _newData = [];
 [? if dap_formed: {!<tr><td><div class="box" style='background-color:var(--dap-colour);'> </div> !} DAP: {!</td><td>!} [+ dap_r +]% {!</td><td>!} [? if dap_in_government = 0 and dap_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if dap_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if dap_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!} ?]
 
 [? if nsdap_formed: {!<tr><td><div class="box" style='background-color:var(--nsdap-colour);'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [? if nsdap_in_government = 0 and nsdap_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if nsdap_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if nsdap_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!} ?]
+
+Next election: [+ next_election_month : month +] [+ next_election_year +]
