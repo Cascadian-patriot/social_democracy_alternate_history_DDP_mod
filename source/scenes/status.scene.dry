@@ -247,7 +247,7 @@ var _newData = [];
 <div class="leader-card">
 <img class="leader-portrait" src="[+ img_r_president +]">
 <div class="leader-name">**[+ reichstag_president +]** ([+ reichstag_president_party +])</div>
-<div class="leader-role">President Of The Reichstag</div>
+<div class="leader-role">Reichstagspräsident</div>
 </div>
 
 {!<svg id="status_parliament" style="width: 100%; display: block;"></svg>
@@ -267,3 +267,9 @@ var _newData = [];
     d3.select('#status_parliament').datum(window._parliData).call(parl);
 })();
 </script>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Mandate</td><td>Status</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#890000;'> </div> !} KPD: {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [? if kpd_in_government = 0 and kpd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if kpd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if kpd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#C62828; outline: 2px; outline-style: solid;'> </div> !} USPD: {!</td><td>!} [+ uspd_r +]% {!</td><td>!} [? if uspd_in_government = 0 and uspd_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if uspd_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if uspd_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
