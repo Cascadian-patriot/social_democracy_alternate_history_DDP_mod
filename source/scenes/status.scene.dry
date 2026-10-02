@@ -220,7 +220,7 @@ var _newData = [];
     _addP('spd', 'SPD', Q.spd_r*5);
     _addP('ddp', 'Q.ddp_name', Q.ddp_r*5);
     _addP('z', 'Center', (Q.z_r - 3)*5);
-    if (bvp_spilt == 1) _addP('bvp',  'BVP', 3*5);
+    if (Q.bvp_spilt == 1) _addP('bvp',  'BVP', 3*5);
     _addP('dvp', 'DVP', Q.dvp_r*5);
     _addP('other', 'Other', Q.other_r*5);
     _addP('dnvp', 'DNVP', Q.dnvp_r*5);
