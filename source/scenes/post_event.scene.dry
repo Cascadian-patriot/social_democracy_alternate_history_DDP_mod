@@ -109,7 +109,7 @@ if (Q.month_actions >= 1) {
         Q.weeks += 2;
     };
 
-    if (Q.weeks >= 4) {
+    if (Q.weeks >= 5) {
         Q.month += 1;
         Q.weeks = 1;
     }
