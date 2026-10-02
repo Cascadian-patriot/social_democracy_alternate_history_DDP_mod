@@ -12,3 +12,25 @@ tags: event
 Despite trying to portrait themselves as a "<span style="color: var(--dvp-colour);">People's Party</span>", the DVP are still clearly dominated by professional politicians, senior civil servants and industrial representatives as has been shown in the National Assembly, where there is a notable absence of working-class DVP deputies.
 
 Although Stresemann has shown sympathies towards <span style="color: var(--dnvp-colour);">nationalist</span> and <span style="color: var(--i-colour);">monarchist</span> ideals, as he has sent a congratulatory birthday telegram to the exiled Kaiser with two other members of his party, the DVP as a whole has revolted and has forced him to tentatively support the current order. Over the course of the coming months, his position has further moderated, mostly due to the new constitution satisfying most of the goals that the old <span style="color: var(--nlp-colour);">**NLP**</span> had being trying to achieve and also partly due to the National Assembly Of German-Austria approving the <span class="wide_tooltip-wrap">Anschluss<span class="wide_tooltip-tip"><img src="img/anschluss.jpeg">The "Anschluss" is the idea of a union between Germany and Austria, one that many <span style="color: var(--dnvp-colour);">nationalists</span> seek due to both countries having similar culture.</span></span>.
+
+- @muahahaha: So what exactly did he say?
+
+@muahahaha
+on-arrival: {!
+if (yea_socialization_erkelenz == 1) Q.new_middle_ddp -= 3;
+if (yea_socialization_erkelenz == 1) Q.new_middle_dvp += 3;
+if (yea_socialization_death_erkelenz == 1) Q.new_middle_ddp -= 2;
+if (yea_socialization_death_erkelenz == 1) Q.new_middle_dvp += 2;
+if (abstained_socialization == 1) Q.new_middle_ddp -= 1;
+if (abstained_socialization == 1) Q.new_middle_dvp += 1;
+Q.nationalliberale_dissent += 3;
+!}
+
+In his key note address during the congress, Stresemann has not only reaffirmed his allegiance to the symbols and traditions of the old imperial order but emphatically ruled out the DVP's participation in a <span style="color: var(--i-colour);">monarchist</span> countermovement on the grounds that this could only lead to civil war and make union with Austria impossible. It seems the DVP will be trying to sway our disillutioned middle class voters to defect as he is actively trying to search for a compromise between the <span style="color: var(--z-colour);">rep</span><span style="color: var(--spd-colour);">ubli</span><span style="color: var(--ddp-colour);">can</span> and <span style="color: var(--i-colour);">monarchist</span> causes.
+
+We must toe the line between coalition unity and addressing the interests of our middle class voters, since at least for now, they are still our most numerous supporters and the SPD's agenda isn't appealing to them at all. We must find a way out of this situation, or else we will be facing massive electoral loss after the passing of the constitution.
+
+- @i_hate_fellow_liberals: Opportunists..
+
+@i_hate_fellow_liberals
+go-to: root
