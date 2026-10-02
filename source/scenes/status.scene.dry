@@ -280,7 +280,7 @@ var _newData = [];
 
 {!<tr><td><div class="box" style='background-color:var(--z-colour);'> </div> !} Z: {!</td><td>!} [+ z_r +]% {!</td><td>!} [? if z_in_government = 0 and z_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if z_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if z_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:var(--bvp-colour);'> </div> !} BVP: {!</td><td>!} [+ bvp_r +]% {!</td><td>!} [? if bvp_in_government = 0 and bvp_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if bvp_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if bvp_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
+[? if bvp_spilt: {!<tr><td><div class="box" style='background-color:var(--bvp-colour);'> </div> !} BVP: {!</td><td>!} [+ bvp_r +]% {!</td><td>!} [? if bvp_in_government = 0 and bvp_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if bvp_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if bvp_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:var(--dvp-colour);'> </div> !} DVP: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [? if dvp_in_government = 0 and dvp_toleration = 0 : <span style="color: #D42F2F;">Opp.</span> ?][? if dvp_in_government = 1 : <span style="color: #66BB6A;">Gov.</span> ?][? if dvp_toleration = 1 : <span style="color: #FFB74D;">Tol.</span> ?] {!</td></tr>!}
 
