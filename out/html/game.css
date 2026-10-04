@@ -843,6 +843,26 @@ img {
       margin: 0 auto;
   }
 
+//*code from GTS*//
+.rich-image {
+    max-width: 100%
+}
+
+.rich-image-left {
+    float: left
+}
+
+.rich-image-right {
+    float: right
+}
+
+.rich-image-center {
+    display: block;
+    float: none;
+    margin-right: auto;
+    margin-left: auto
+}
+  
   /* cards are smaller on mobile */
   .card-img {
     height: 125px;
