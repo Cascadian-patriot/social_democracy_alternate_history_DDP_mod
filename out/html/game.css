@@ -699,12 +699,11 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   visibility: hidden;
   position: absolute;
 }
-
 /* Unlike cards, face images can have different sizes. */
 .face-figure {
   /*vertical-align: top;*/
   display: inline-block;
-  border: 5px solid var(--card-border-color);
+  border:5px solid #000000ff
   float: left;
   max-width: 35%;
   /*max-height: 180px;*/
