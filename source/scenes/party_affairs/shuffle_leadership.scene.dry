@@ -35,8 +35,7 @@ tags: remove_advisor
 # sammlung
 
 @remove_koch_weser
-title: Remove Koch-Wesser
-subtitle: <img class="face-image" decoding="async" loading="lazy" fetchpriority="auto" src="img/KochWeserErich.jpg" alt="" style="border: 3px solid rgb(0, 0, 0);">
+title: Remove Koch-Weser
 view-if: koch_weser_advisor = 1
 on-arrival: koch_weser_advisor = 0; sammlung_dissent += 5; n_advisors -= 1
 tags: remove_advisor
@@ -266,7 +265,7 @@ view-if: n_advisors < 3
 
 @add_koch_weser
 title: Erich Koch-Wesser
-subtitle: Erich Koch-Wesser is an influential figure in the sammlung wing of our party, and one of the founders of the DDP.
+subtitle: <img class="face-image" decoding="async" loading="lazy" fetchpriority="auto" src="img/KochWeserErich.jpg" alt="" style="border: 3px solid rgb(0, 0, 0);"> Erich Koch-Wesser is an influential figure in the sammlung wing of our party, and one of the founders of the DDP.
 is-card: true
 card-image: img/portraits/KochWeserErich.jpg
 tags: sammlung_advisor
