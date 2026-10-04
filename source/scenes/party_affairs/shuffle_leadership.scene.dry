@@ -265,7 +265,7 @@ view-if: n_advisors < 3
 
 @add_koch_weser
 title: Erich Koch-Wesser
-subtitle: <img src="img/protests/regina_riot_protest.jpg" class="face-image"><span>The CLL is an alliance of Social Democrats and Communists contesting Municipal Politics.</span>{!<br><br>!}
+subtitle: <img src="img/ruhr_coal.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:100; object-fit:cover; object-position:top; border:5px solid #000000ff;"> <br> Hello!
 card-image: img/portraits/KochWeserErich.jpg
 tags: sammlung_advisor
 view-if: koch_weser_advisor = 0 and n_advisors < 3
