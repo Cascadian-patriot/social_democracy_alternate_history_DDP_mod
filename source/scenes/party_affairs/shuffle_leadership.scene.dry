@@ -265,7 +265,7 @@ view-if: n_advisors < 3
 
 @add_koch_weser
 title: Erich Koch-Wesser
-subtitle: <img class="face-image" decoding="async" loading="lazy" fetchpriority="auto" src="img/KochWeserErich.jpg" alt="" style="border: 3px solid rgb(0, 0, 0);"> Erich Koch-Wesser is an influential figure in the sammlung wing of our party, and one of the founders of the DDP.
+subtitle: <img class="face-image" decoding="async" loading="lazy" fetchpriority="auto" src="img/KochWeserErich.jpg" alt="" style="border: 3px solid rgb(0, 0, 0);" width="100"> <br> Erich Koch-Wesser is an influential figure in the sammlung wing of our party, and one of the founders of the DDP.
 is-card: true
 card-image: img/portraits/KochWeserErich.jpg
 tags: sammlung_advisor
