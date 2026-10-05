@@ -41,7 +41,7 @@ on-arrival: koch_weser_advisor = 0; sammlung_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Koch-Wesser has been removed as an advisor. The Sammlung faction disapproves.
+Koch-Weser has been removed as an advisor. The Sammlung faction disapproves.
 
 @remove_gessler
 title: Remove Gessler
@@ -276,9 +276,9 @@ Erich Koch-Wesser is now an advisor.
 
 @add_gessler
 title: Otto Gessler
-subtitle: Otto Gessler is one of the founders of the DDP, and our expert in military matters.
+subtitle: <img src="img/portraits/GesslerOtto.jpeg" object-fit:cover; border:5px solid #000000ff;"><span>Otto Gessler is one of the founders of the [+ ddp_name +], he is our primary contact with the Reichswehr. Gessler is not a staunch supporter of the <span style="color: var(--z-colour);">Rep</span><span style="color: var(--spd-colour);">ub</span><span style="color: var(--ddp-colour);">lic</span>, and he describes himself as <span style="color: var(--z-colour);">rep</span><span style="color: var(--spd-colour);">ubli</span><span style="color: var(--ddp-colour);">can</span> by reason. [? if year == "1919": He is also Mayor of Nuremberg. ?]</span>{!<br><br>!}
 is-card: true
-card-image: img/portraits/GesslerOtto.jpg
+card-image: img/portraits/GesslerOtto.jpeg
 tags: sammlung_advisor
 view-if: gessler_advisor = 0 and n_advisors < 3
 on-arrival: gessler_advisor = 1; n_advisors += 1; sammlung_strength += 5
@@ -288,9 +288,9 @@ Otto Gessler is now an advisor.
 
 @add_kulz
 title: Wilhelm Kulz
-subtitle: Wilhelm Kulz is an experienced state administrator and influential party member.
+subtitle: <img src="img/portraits/GesslerOtto.jpeg" object-fit:cover; border:5px solid #000000ff;"><span>Wilhelm Kulz hails from a conservative family, he is a experienced statesman, having been  Reichskommissar of the colony German South-West Africa and having worked towards self-government in the colony from 1907 to 1908. He was also President Of The Schaumburg-Lippe Landtag.</span>{!<br><br>!}
 is-card: true
-card-image: img/portraits/KulzWilhelm.jpg
+card-image: img/portraits/KulzWilhelm.webp
 tags: sammlung_advisor
 view-if: kulz_advisor = 0 and n_advisors < 3
 on-arrival: kulz_advisor = 1; n_advisors += 1; sammlung_strength += 5
