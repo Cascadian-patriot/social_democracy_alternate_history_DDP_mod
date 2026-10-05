@@ -197,8 +197,11 @@ Q.dh_integrated = 0;
 Q.newspaper_editor = "Nobody";
 Q.newspaper_invested_in = 0;
 
-// Soldatenwerh strenghtened but before kapp putsch
+// Soldatenwehr
+# if strenghtened during kapp putsch increased
 Q.soldatenwehr_strenghtened_1 = 0;
+Q.soldatenwehr_available = 0;
+
 
 // Reichsbanner formed?
 Q.reichsbanner_formed = 0;
@@ -284,7 +287,7 @@ Q.reichswehr_loyalty = 0.3;
 // national ideology - on a binary scale
 Q.nationalism = 55;
 Q.socialism = 45;
-Q.pro_republic = 65;
+Q.pro_republic = 45;
 
 Q.emergency_rule = 0;
 
