@@ -23,8 +23,32 @@ on-arrival: {!
         if (content) {
             content.style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
             content.style.border = '0px solid #000';
-        }
-    }, 50);
+}
+
+    function insertCollage(){
+      if (document.getElementById('start_collage')) return true; // already inserted
+      var holder = document.getElementById('center_panel_holder');
+      if (!holder) return false;
+
+      var collage = `<div id='start_collage' style="background: url('img/start_background.jpg') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-top:2em;"></div>`;
+      var collage_div = document.createElement('div');
+      collage_div.innerHTML = collage;
+      var first = collage_div.firstElementChild || collage_div.firstChild;
+      if (first) holder.prepend(first);
+      return true;
+    }
+
+    if (!insertCollage()) {
+      var attempts = 0;
+      var retry = setInterval(function(){
+        attempts++;
+        if (insertCollage() || attempts >= 6) clearInterval(retry);
+      }, 100);
+    }
+  } catch (err) {
+    console.error('start_menu_2 on-arrival error:', err);
+  }
+})();
 !}
 on-departure: {!
     setTimeout(function() {
