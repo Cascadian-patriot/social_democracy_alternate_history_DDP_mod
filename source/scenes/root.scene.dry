@@ -28,14 +28,6 @@ if (headerLinks) {
 const topBar = document.getElementById('topbar');
 if (topBar) {
   topBar.style.display = 'none';
-}
-
-    document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
-    document.getElementById('content').style.border = `0px solid #000`;
-    var collage = `<div id='start_collage' style="background: url('img/start_background.jpg') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-top:2em;"></div>`
-    var collage_div = document.createElement('div');
-    collage_div.innerHTML = collage;
-    document.getElementById('center_panel_holder').prepend(collage_div.firstChild);
 !}
 on-departure: {!
     document.getElementById('content').style.background = ''; 
@@ -43,6 +35,17 @@ on-departure: {!
     document.getElementById('start_collage').remove();
 !}
 style: start-scene
+go-to: start_menu_3
+
+@start_menu_3
+on-arrival: {!
+    document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
+    document.getElementById('content').style.border = `0px solid #000`;
+    var collage = `<div id='start_collage' style="background: url('img/start_background.jpg') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-top:2em;"></div>`
+    var collage_div = document.createElement('div');
+    collage_div.innerHTML = collage;
+    document.getElementById('center_panel_holder').prepend(collage_div.firstChild);
+!}
 
 <div style="width: 30.7em;padding:  0 0 0 0;font-family: Georgia, monospace;line-height: 2em;text-shadow: 6px 2px 4px black;">
     = Social Liberalism: An Alternate History
