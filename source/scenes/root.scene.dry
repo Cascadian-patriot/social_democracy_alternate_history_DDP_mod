@@ -10,11 +10,11 @@ go-to: start_menu_2
 @start_menu_2
 on-arrival: {!
     setTimeout(function() {
-        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links', 'content'];
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links'];
         ids.forEach(function(id) {
             const el = document.getElementById(id);
             if (!el) return;
-            if (id === 'topbar' || id === 'tools_wrapper' || id === 'game-title' || id === 'game-author' || id === 'header-links' || id === 'content') {
+            if (id === 'topbar' || id === 'tools_wrapper' || id === 'game-title' || id === 'game-author' || id === 'header-links') {
                 el.style.display = 'none';
             }
         });
