@@ -462,7 +462,7 @@ Q.ddp_name = "DDP";
 Q.ddp_full_name = "German Democratic Party";
 Q.ddp_full_name_german = "Deutsche Demokratische Partei";
 Q.img_leader = "img/naumann.jpeg";
-Q.name_leader = "Friedrich Naumann"
+Q.name_leader = "Friedrich Naumann";
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
