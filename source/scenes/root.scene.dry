@@ -4,10 +4,6 @@ go-to: post_event if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
-go-to: post_event if started = 1; start_menu if started = 0
-
-@start_menu
-new-page: true
 set-bg: img/cities/rokeby_overhead.jpg
 go-to: start_menu_2
 
