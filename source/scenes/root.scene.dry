@@ -20,15 +20,6 @@ on-arrival: {!
         });
     }, 50);
 !}
-on-departure: {!
-// Reverting start menu graphics
-document.getElementById('topbar').style.display = ''; 
-document.getElementById('tools_wrapper').style.display = ''; 
-document.getElementById('game-title').style.display = ''; 
-document.getElementById('game-author').style.display = ''; 
-document.getElementById('header-links').style.display = ''; 
-document.getElementById('content').style.display = ''; 
-!}
 style: start-scene
 
     = *<span style="color: var(--ddp-colour);">**Social Liberalism: An Alternate History**</span>*
@@ -126,6 +117,14 @@ Q.nationalization_adopted = 0;
 // moderate economic plan
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
+
+// Reverting start menu graphics
+document.getElementById('topbar').style.display = ''; 
+document.getElementById('tools_wrapper').style.display = ''; 
+document.getElementById('game-title').style.display = ''; 
+document.getElementById('game-author').style.display = ''; 
+document.getElementById('header-links').style.display = ''; 
+document.getElementById('content').style.display = ''; 
 
 // organizations
 
