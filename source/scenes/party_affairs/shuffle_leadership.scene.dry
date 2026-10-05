@@ -264,8 +264,8 @@ view-if: n_advisors < 3
 # sammlung
 
 @add_koch_weser
-title: Erich Koch-Wesser
-subtitle: <img src="img/Koch_Weser_1919.webp" object-fit:cover; border:5px solid #000000ff;"><span>The UFC(SS) is a farmer's educational organization and one of the founders of our party.</span>{!<br><br>!}
+title: Erich Koch-Weser
+subtitle: <img src="img/Koch_Weser_1919.webp" object-fit:cover; border:5px solid #000000ff;"><span>Erich Koch-Weser is an influential figure and lawyer in the Sammlung wing of our party, having previously been part of the <span style="color: var(--nlp-colour);">**NLP**</span>'s left-wing. He is also one of the founders of the [+ ddp_name +].</span>{!<br><br>!}
 card-image: img/Koch_Weser_1919.webp
 tags: sammlung_advisor
 view-if: koch_weser_advisor = 0 and n_advisors < 3
