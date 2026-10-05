@@ -242,7 +242,7 @@ blockquote + blockquote.attribution {
 }
 
 .start-scene .choices a {
-  color: #ccc;
+  color: var (--text-color);
 }
 
 .start-scene .choices {
