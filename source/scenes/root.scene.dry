@@ -4,17 +4,52 @@ go-to: post_event if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
+go-to: post_event if started = 1; start_menu if started = 0
+
+@start_menu
+new-page: true
+set-bg: img/cities/rokeby_overhead.jpg
 go-to: start_menu_2
 
-= Social Liberalism: An Alternate History
-
 @start_menu_2
+on-arrival: {!
+    document.getElementById('topbar').style.display = 'none'; 
+    document.getElementById('tools_wrapper').style.display = 'none'; 
+    document.getElementById('game-title').style.display = 'none'; 
+    document.getElementById('game-author').style.display = 'none'; 
+    document.getElementById('header-links').style.display = 'none'; 
+    document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
+    document.getElementById('content').style.border = `0px solid #000`;
+    var collage = `<div id='start_collage' style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-bottom: 2em;margin-top:2em;"></div>`
+    var collage_div = document.createElement('div');
+    collage_div.innerHTML = collage;
+    document.getElementById('center_panel_holder').prepend(collage_div.firstChild);
+!}
+on-departure: {!
+    // Reverting start menu graphics
+    document.getElementById('topbar').style.display = ''; 
+    document.getElementById('tools_wrapper').style.display = ''; 
+    document.getElementById('game-title').style.display = ''; 
+    document.getElementById('game-author').style.display = ''; 
+    document.getElementById('header-links').style.display = ''; 
+    document.getElementById('content').style.background = ''; 
+    document.getElementById('content').style.border = ``;
+    document.getElementById('start_collage').remove();
+!}
+style: start-scene
+
+<div style="width: 30.7em;padding:  0 0 0 0;font-family: Georgia, monospace;line-height: 2em;text-shadow: 6px 2px 4px black;">
+    = Social Liberalism: An Alternate History
+</div>
+
+# <div style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width:100%;display: block;height: 20em;border: 3px ridge #4b422b;"></div>
+
+# </div>
 
 - @start: Start game
 - @election_simulation: Election simulation
 - @credits: Credits
-- @game_over.achievements
-
+- @achievements: Achievements
 
 @start
 set-bg: img/background.jpg
