@@ -9,22 +9,40 @@ go-to: start_menu_2
 
 @start_menu_2
 on-arrival: {!
-    document.getElementById('topbar').style.display = 'none'; 
-    document.getElementById('tools_wrapper').style.display = 'none'; 
-    document.getElementById('game-title').style.display = 'none'; 
-    document.getElementById('game-author').style.display = 'none'; 
-    document.getElementById('header-links').style.display = 'none'; 
-    document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
-    document.getElementById('content').style.border = `0px solid #000`;
-    var collage = `<div id='start_collage' style="background: url('img/start_background.jpg') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-top:2em;"></div>`
-    var collage_div = document.createElement('div');
-    collage_div.innerHTML = collage;
-    document.getElementById('center_panel_holder').prepend(collage_div.firstChild);
+    setTimeout(function() {
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links', 'content'];
+        ids.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (id === 'topbar' || id === 'tools_wrapper' || id === 'game-title' || id === 'game-author' || id === 'header-links') {
+                el.style.display = 'none';
+            }
+        });
+
+        const content = document.getElementById('content');
+        if (content) {
+            content.style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
+            content.style.border = '0px solid #000';
+        }
+    }, 50);
 !}
 on-departure: {!
-    document.getElementById('content').style.background = ''; 
-    document.getElementById('content').style.border = ``;
-    document.getElementById('start_collage').remove();
+    setTimeout(function() {
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links'];
+        ids.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (el) el.style.display = '';
+        });
+
+        const content = document.getElementById('content');
+        if (content) {
+            content.style.background = '';
+            content.style.border = '';
+        }
+
+        const collage = document.getElementById('start_collage');
+        if (collage) collage.remove();
+    }, 0);
 !}
 style: start-scene
 
