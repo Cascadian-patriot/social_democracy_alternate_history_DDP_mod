@@ -1,7 +1,7 @@
 title: Oscar Meyer
 is-pinned-card: true
 tags: advisor, nationalliberale
-card-image: img/portraits/MeyerOscar.png
+card-image: img/Meyer_1924.webp
 view-if: meyer_advisor = 1
 new-page: true
 
