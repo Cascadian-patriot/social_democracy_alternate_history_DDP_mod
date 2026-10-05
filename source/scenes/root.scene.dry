@@ -167,6 +167,9 @@ Q.scha_lippe_prussia = 1;
 Q.thuringia = 1;
 Q.thuringia_prussia = 1;
 
+// USPD radicalisation to be used in various events
+Q.uspd_radicalisation = 2;
+
 // Erkelenz stuff
 Q.abstained_socialization = 0;
 Q.yea_socialization_erkelenz = 0;
