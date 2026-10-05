@@ -46,13 +46,14 @@ on-departure: {!
 !}
 style: start-scene
 
-<div style="width: 30.7em;padding:  0 0 0 0;font-family: Georgia, monospace;line-height: 2em;text-shadow: 6px 2px 4px black;">
-    = Social Liberalism: An Alternate History
+    = *<span style="color: var(--ddp-colour);">**Social Liberalism: An Alternate History**</span>*
 </div>
 
-# <div style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width:100%;display: block;height: 20em;border: 3px ridge #4b422b;"></div>
-
-# </div>
+<br>
+<img src="img/ddp_collage.png" style="width:1640;max-height:856;object-fit:cover;border:3px solid #000;">
+<br>
+<br>
+<br>
 
 - @start: Start game
 - @election_simulation: Election simulation
