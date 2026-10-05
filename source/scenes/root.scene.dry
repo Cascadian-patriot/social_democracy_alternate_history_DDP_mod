@@ -9,73 +9,36 @@ go-to: start_menu_2
 
 @start_menu_2
 on-arrival: {!
-(function(){
-  try {
-    var ids = ['topbar','tools_wrapper','game-title','game-author','header-links'];
-    ids.forEach(function(id){
-      var el = document.getElementById(id);
-      if (el) {
-        if (!el.dataset._prevDisplay) el.dataset._prevDisplay = el.style.display || '';
-        el.style.display = 'none';
-      }
-    });
+    setTimeout(function() {
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links', 'content'];
+        ids.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (id === 'topbar' || id === 'tools_wrapper' || id === 'game-title' || id === 'game-author' || id === 'header-links') {
+                el.style.display = 'none';
+            }
+        });
 
-    var content = document.getElementById('content');
-    if (content) {
-      content.style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
-      content.style.border = '0px solid #000';
-    }
-
-    function insertCollage(){
-      if (document.getElementById('start_collage')) return true; // already inserted
-      var holder = document.getElementById('center_panel_holder');
-      if (!holder) return false;
-
-      var collage = `<div id='start_collage' style="background: url('img/start_background.jpg') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-top:2em;"></div>`;
-      var collage_div = document.createElement('div');
-      collage_div.innerHTML = collage;
-      var first = collage_div.firstElementChild || collage_div.firstChild;
-      if (first) holder.prepend(first);
-      return true;
-    }
-
-    if (!insertCollage()) {
-      var attempts = 0;
-      var retry = setInterval(function(){
-        attempts++;
-        if (insertCollage() || attempts >= 6) clearInterval(retry);
-      }, 100);
-    }
-  } catch (err) {
-    console.error('start_menu_2 on-arrival error:', err);
-  }
-})();
+        const content = document.getElementById('content');
+        if (content) {
+            content.style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
+            content.style.border = '0px solid #000';
+        }
+    }, 50);
 !}
-
 on-departure: {!
-(function(){
-  try {
-    var content = document.getElementById('content');
-    if (content) {
-      content.style.background = '';
-      content.style.border = '';
-    }
+    setTimeout(function() {
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links'];
+        ids.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (el) el.style.display = '';
+        });
 
-    var sc = document.getElementById('start_collage');
-    if (sc) sc.remove();
-
-    var ids = ['topbar','tools_wrapper','game-title','game-author','header-links'];
-    ids.forEach(function(id){
-      var el = document.getElementById(id);
-      if (el) {
-        el.style.display = el.dataset._prevDisplay || '';
-        delete el.dataset._prevDisplay;
-      }
-    });
-  } catch (err) {
-    console.error('start_menu_2 on-departure error:', err);
-  }
-})();
+        const content = document.getElementById('content');
+        if (content) {
+            content.style.background = '';
+            content.style.border = '';
+    }, 0);
 !}
 style: start-scene
 
