@@ -129,4 +129,4 @@ The left has managed to apoint Anton Erkelenz to he position of cheif editor.|
 
 @actually_no
 title: Actually, let's delay the creation of our newspaper, now is not the time.
-on-arirval: newspaper_founded = 0; resources += 2; newspaper_invested_in = 0
+on-arrival: newspaper_founded = 0; resources += 2; newspaper_invested_in = 0
