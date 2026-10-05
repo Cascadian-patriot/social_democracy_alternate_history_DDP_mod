@@ -30,13 +30,6 @@ set-bg: img/background.jpg
 new-page: true
 on-arrival: {!
 
-// Reverting start menu graphics
-document.getElementById('topbar').style.display = ''; 
-document.getElementById('tools_wrapper').style.display = ''; 
-document.getElementById('game-title').style.display = ''; 
-document.getElementById('game-author').style.display = ''; 
-document.getElementById('header-links').style.display = ''; 
-
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
