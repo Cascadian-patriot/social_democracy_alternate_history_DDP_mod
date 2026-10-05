@@ -288,7 +288,7 @@ Otto Gessler is now an advisor.
 
 @add_kulz
 title: Wilhelm Kulz
-subtitle: <img src="img/portraits/KulzWilhelm.webp" object-fit:cover; border:5px solid #000000ff;"><span>Wilhelm Kulz hails from a <span style="color: var(--dnvp-colour);">conservative</span> family, he is a experienced statesman, having been  **Reichskommissar of the Colony of German South-West Africa** and having worked towards self-government in the colony from 1907 to 1908. He was also President Of The **Schaumburg-Lippe** Landtag.</span>{!<br><br>!}
+subtitle: <img src="img/portraits/KulzWilhelm.webp" object-fit:cover; border:5px solid #000000ff;"><span>Wilhelm Kulz hails from a <span style="color: var(--dnvp-colour);">conservative</span> family, he is a experienced statesman, having been  **Reichskommissar of the Colony of German South-West Africa** and having worked towards self-government in the colony from 1907 to 1908. He was also President of the **Schaumburg-Lippe** Landtag.</span>{!<br><br>!}
 is-card: true
 card-image: img/portraits/KulzWilhelm.webp
 tags: sammlung_advisor
