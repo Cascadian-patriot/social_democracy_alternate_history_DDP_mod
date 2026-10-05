@@ -234,6 +234,21 @@ blockquote + blockquote.attribution {
   font-weight: normal;
 }
 
+.start-scene .choices li {
+    text-align: center;
+    background-image: radial-gradient(70% 76%, rgba(248, 245, 235, 0.94), rgba(248, 245, 235, 0.6) 50%, rgba(248, 245, 235, 0) 75%);
+    backdrop-filter: none;
+    text-shadow: 0.2px 1px 1px #ccc;
+}
+
+.start-scene .choices a {
+  color: #b9631c;
+}
+
+.start-scene .choices {
+  background: url("img/start_scene.webp") center 2% / cover no-repeat;;
+}
+
 /* news sidebar (right-hand "newspaper" column), thanks to Irridalyst for this. */
 #news {
   text-indent: 0;
