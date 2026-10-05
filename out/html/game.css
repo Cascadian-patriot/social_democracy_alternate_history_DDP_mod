@@ -242,11 +242,11 @@ blockquote + blockquote.attribution {
 }
 
 .start-scene .choices a {
-  color: #b9631c;
+  color: #ccc;
 }
 
 .start-scene .choices {
-  background: url("img/start_scene.webp") center 50% / cover no-repeat;;
+  background: url("img/final_flag.svg") center 50% / cover no-repeat;;
 }
 
 /* news sidebar (right-hand "newspaper" column), thanks to Irridalyst for this. */
