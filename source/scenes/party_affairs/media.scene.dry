@@ -100,6 +100,11 @@ on-arrival: newspaper_founded = 1; resources -= 2; newspaper_invested_in = 0
 
 We have founded our own newspaper, and we must now select its head editor.
 
+- @heuss
+- @quide
+- @erkelenz
+- @actually_no
+
 @heuss
 title: Theodor Heuss, a rising star in the Sammlung with a patriotic attitute.
 choose-if: nationalliberale_strength + sammlung_strength > pazifisten_strength
@@ -120,4 +125,8 @@ choose-if: linksliberale_strength + pazifisten_strength > nationalliberale_stren
 unavailable-subtitle: The left lacks the political capital to elect Erkelenz.
 on-arrival: newspaper_editor = "Anton Erkelenz"; workers_campaign_modifier += 1; pro_republic += 3
 
-The left has managed to apoint Anton Erkelenz to he position of cheif editor.
+The left has managed to apoint Anton Erkelenz to he position of cheif editor.|
+
+@actually_no
+title: Actually, let's delay the creation of our newspaper, now is not the time.
+on-arirval: newspaper_founded = 0; resources += 2; newspaper_invested_in = 0
