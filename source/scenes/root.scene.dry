@@ -9,36 +9,11 @@ go-to: start_menu_2
 
 @start_menu_2
 on-arrival: {!
-const toolsWrapper = document.getElementById('tools_wrapper');
-if (toolsWrapper) {
-  toolsWrapper.style.display = 'none';
-}
-const gameTitle = document.getElementById('game-title');
-if (gameTitle {
-  gameTitle.style.display = 'none';
-}
-const gameAuthor = document.getElementById('game-author');
-if (gameAuthor) {
-  gameAuthor.style.display = 'none';
-}
-const headerLinks = document.getElementById('header-links');
-if (headerLinks) {
-  headerLinks.style.display = 'none';
-}
-const topBar = document.getElementById('topbar');
-if (topBar) {
-  topBar.style.display = 'none';
-!}
-on-departure: {!
-    document.getElementById('content').style.background = ''; 
-    document.getElementById('content').style.border = ``;
-    document.getElementById('start_collage').remove();
-!}
-style: start-scene
-go-to: start_menu_3
-
-@start_menu_3
-on-arrival: {!
+    document.getElementById('topbar').style.display = 'none'; 
+    document.getElementById('tools_wrapper').style.display = 'none'; 
+    document.getElementById('game-title').style.display = 'none'; 
+    document.getElementById('game-author').style.display = 'none'; 
+    document.getElementById('header-links').style.display = 'none'; 
     document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
     document.getElementById('content').style.border = `0px solid #000`;
     var collage = `<div id='start_collage' style="background: url('img/start_background.jpg') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-top:2em;"></div>`
@@ -46,6 +21,12 @@ on-arrival: {!
     collage_div.innerHTML = collage;
     document.getElementById('center_panel_holder').prepend(collage_div.firstChild);
 !}
+on-departure: {!
+    document.getElementById('content').style.background = ''; 
+    document.getElementById('content').style.border = ``;
+    document.getElementById('start_collage').remove();
+!}
+style: start-scene
 
 <div style="width: 30.7em;padding:  0 0 0 0;font-family: Georgia, monospace;line-height: 2em;text-shadow: 6px 2px 4px black;">
     = Social Liberalism: An Alternate History
