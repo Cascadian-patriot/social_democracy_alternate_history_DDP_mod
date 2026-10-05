@@ -265,7 +265,7 @@ view-if: n_advisors < 3
 
 @add_koch_weser
 title: Erich Koch-Wesser
-subtitle: <img src="img/Koch_Weser_1919.webp"><span>The Wheat Pool is a farmer's cooperative that markets grain produced by it's members.</span>{!<br><br>!}
+subtitle: <img src="img/Koch_Weser_1919.webp" class="face-image"><span>The UFC(SS) is a farmer's educational organization and one of the founders of our party.</span>{!<br><br>!}
 card-image: img/Koch_Weser_1919.webp
 tags: sammlung_advisor
 view-if: koch_weser_advisor = 0 and n_advisors < 3
