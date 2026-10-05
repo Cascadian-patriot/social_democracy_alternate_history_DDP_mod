@@ -8,7 +8,7 @@ set-bg: img/start_background.jpg
 go-to: start_menu_2
 
 @start_menu_2
-n-arrival: {!
+on-arrival: {!
     setTimeout(function() {
         const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links', 'content'];
         ids.forEach(function(id) {
