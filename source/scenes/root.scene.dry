@@ -8,6 +8,17 @@ set-bg: img/start_background.jpg
 go-to: start_menu_2
 
 @start_menu_2
+n-arrival: {!
+    setTimeout(function() {
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links', 'content'];
+        ids.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (id === 'topbar' || id === 'tools_wrapper' || id === 'game-title' || id === 'game-author' || id === 'header-links' || id === 'content') {
+                el.style.display = 'none';
+        }
+    }, 50);
+!}
 style: start-scene
 
     = *<span style="color: var(--ddp-colour);">**Social Liberalism: An Alternate History**</span>*
@@ -763,6 +774,14 @@ Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
 Q.abegg_advisor = 0;
+
+// Reverting start menu graphics
+document.getElementById('topbar').style.display = ''; 
+document.getElementById('tools_wrapper').style.display = ''; 
+document.getElementById('game-title').style.display = ''; 
+document.getElementById('game-author').style.display = ''; 
+document.getElementById('header-links').style.display = ''; 
+document.getElementById('content').style.display = ''; 
 
 !}
 
