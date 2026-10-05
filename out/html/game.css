@@ -148,26 +148,80 @@ ul.choices {
   border-radius: 4px;
   clear: left;
 }
+
 ul.choices li {
+  font-size: 1em;
   border-bottom: 1px solid #876;
   padding: 0.5em;
+  background: none;
+  transition: background 0.3s;
+  position: relative;
+  overflow: visible;
 }
+
+ul.choices li .subtitle:has(> img) {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+ul.choices li .subtitle:has(> img) > img {
+    flex-shrink: 0;
+    display: block;
+    margin: 0 !important;
+    width: 100px !important;
+    height: 125px !important;
+    object-fit: cover;
+    border: 1px solid #999;
+}
+
+ul.choices li .subtitle:has(> img) > span {
+  flex: 1;
+  min-width: 0;
+}
+
+ul.choices li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--link-hover-color);
+  z-index: 0;
+}
+
+ul.choices li:hover::before {
+  width: 100%;
+}
+
 ul.choices li div.subtitle {
   margin-left: 2em;
   font-style: italic;
+  position: relative;
+  z-index: 1;
 }
+
 ul.choices li.unavailable {
   color: var(--unavailable-color);
   background-color: var(--unavailable-bg-color) !important;
   cursor: default !important;
 }
+
 ul.choices li:hover {
-  background-color: var(--link-hover-color);
   cursor: pointer;
 }
+
+ul.choices li > * {
+  position: relative;
+  z-index: 1;
+}
+
 ul.choices li:last-child {
   border-bottom: none;
 }
+
 ul.choices a {
   text-decoration: none;
 }
@@ -179,6 +233,29 @@ blockquote.attribution {
 }
 blockquote + blockquote.attribution {
   margin-top: -1em;
+}
+img.inline-img {
+  display: inline !important;
+  height: 1.2em !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  vertical-align: middle !important;
+  margin: 0 0.2em !important;
+  border-radius: 2px;
+}
+img.inline-img.small {
+  height: 0.9em !important;
+}
+img.inline-img.medium {
+  height: 1.5em !important;
+}
+img.inline-img.large {
+  height: 2em !important;
+}
+img.inline-img.icon {
+  height: 1em !important;
+  margin: 0 0.1em !important;
 }
 /* This is mostly copied from undum. */
 #mid_panel {
