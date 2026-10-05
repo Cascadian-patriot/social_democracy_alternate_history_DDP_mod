@@ -16,8 +16,7 @@ on-arrival: {!
             if (!el) return;
             if (id === 'topbar' || id === 'tools_wrapper' || id === 'game-title' || id === 'game-author' || id === 'header-links' || id === 'content') {
                 el.style.display = 'none';
-        }
-    }, 50);
+    }
 !}
 style: start-scene
 
