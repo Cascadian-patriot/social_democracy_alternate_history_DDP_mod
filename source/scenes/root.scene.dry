@@ -4,11 +4,50 @@ go-to: post_event if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
+set-bg: img/start_background.jpg
 go-to: start_menu_2
 
-= Social Liberalism: An Alternate History
-
 @start_menu_2
+on-arrival: {!
+    setTimeout(function() {
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links'];
+        ids.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (id === 'topbar' || id === 'tools_wrapper' || id === 'game-title' || id === 'game-author' || id === 'header-links') {
+                el.style.display = 'none';
+            }
+        });
+    }, 50);
+!}
+on-departure: {!
+    setTimeout(function() {
+        const ids = ['topbar', 'tools_wrapper', 'game-title', 'game-author', 'header-links'];
+        ids.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (el) el.style.display = '';
+        });
+
+        const content = document.getElementById('content');
+        if (content) {
+            content.style.background = '';
+            content.style.border = '';
+        }
+
+        const collage = document.getElementById('start_collage');
+        if (collage) collage.remove();
+    }, 0);
+!}
+style: start-scene
+
+    = *<span style="color: var(--ddp-colour);">**Social Liberalism: An Alternate History**</span>*
+</div>
+
+<br>
+<img src="img/ddp_collage.png" style="width:1640;max-height:856;object-fit:cover;border:3px solid #000;">
+<br>
+<br>
+<br>
 
 - @start: Start game
 - @election_simulation: Election simulation
@@ -20,6 +59,7 @@ go-to: start_menu_2
 set-bg: img/background.jpg
 new-page: true
 on-arrival: {!
+
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
@@ -352,6 +392,7 @@ Q.sapd_formed = 0;
 Q.dap_formed = 1;
 Q.nsdap_formed = 0;
 Q.rdp_formed = 0;
+Q.bvp_spilt = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -474,20 +515,38 @@ Q.economic_records = [];
 // State of the government (1919) for Scheidemann cabinet
 Q.president = "Ebert";
 Q.president_party = 'SPD';
+Q.img_president = "img/EbertFriedrich.webp"
 Q.chancellor = "Scheidemann";
 Q.chancellor_party = 'SPD';
+Q.img_chancellor = "img/ScheidemannPhilipp.png"
+Q.reichstag_president = "Constantin Fehrenbach";
+Q.reichstag_president_party = "Z";
+Q.img_r_president = "img/FehrenbachConstantin.jpeg"
 Q.spd_in_government = 1;
 Q.z_in_government = 1;
+Q.bvp_in_government = 0;
+Q.other_in_government = 0;
 Q.ddp_in_government = 1;
 Q.dvp_in_government = 0;
 Q.dnvp_in_government = 0;
 Q.uspd_in_government = 0;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
+Q.kpd_toleration = 0;
+Q.uspd_toleration = 0;
+Q.sapd_toleration = 0;
+Q.spd_toleration = 0;
+Q.ddp_toleration = 0;
+Q.z_toleration = 0;
+Q.bvp_toleration = 1;
+Q.dvp_toleration = 0;
+Q.other_toleration = 0;
+Q.dnvp_toleration = 0;
+Q.nsdap_toleration = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
-Q.in_weimar_coalition = 0;
+Q.in_weimar_coalition = 1;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
 Q.in_grand_coalition = 0;

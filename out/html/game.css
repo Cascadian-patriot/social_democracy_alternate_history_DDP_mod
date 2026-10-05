@@ -234,6 +234,21 @@ blockquote + blockquote.attribution {
   font-weight: normal;
 }
 
+.start-scene .choices li {
+    text-align: center;
+    background-image: radial-gradient(70% 76%, rgba(248, 245, 235, 0.94), rgba(248, 245, 235, 0.6) 50%, rgba(248, 245, 235, 0) 75%);
+    backdrop-filter: none;
+    text-shadow: 0.2px 1px 1px #ccc;
+}
+
+.start-scene .choices a {
+  color: var (--text-color);
+}
+
+.start-scene .choices {
+  background: url("img/final_flag.svg") center 50% / cover no-repeat;;
+}
+
 /* news sidebar (right-hand "newspaper" column), thanks to Irridalyst for this. */
 #news {
   text-indent: 0;
@@ -699,12 +714,11 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   visibility: hidden;
   position: absolute;
 }
-
 /* Unlike cards, face images can have different sizes. */
 .face-figure {
   /*vertical-align: top;*/
   display: inline-block;
-  border: 5px solid var(--card-border-color);
+  border:5px solid #000000ff
   float: left;
   max-width: 35%;
   /*max-height: 180px;*/
@@ -843,6 +857,26 @@ img {
       margin: 0 auto;
   }
 
+//*code from GTS*//
+.rich-image {
+    max-width: 100%
+}
+
+.rich-image-left {
+    float: left
+}
+
+.rich-image-right {
+    float: right
+}
+
+.rich-image-center {
+    display: block;
+    float: none;
+    margin-right: auto;
+    margin-left: auto
+}
+  
   /* cards are smaller on mobile */
   .card-img {
     height: 125px;
