@@ -198,7 +198,7 @@ Q.newspaper_editor = "Nobody";
 Q.newspaper_invested_in = 0;
 
 // Soldatenwehr
-# if strenghtened during kapp putsch increased
+// if strenghtened during kapp putsch increased
 Q.soldatenwehr_strenghtened_1 = 0;
 Q.soldatenwehr_available = 0;
 
