@@ -27,7 +27,7 @@ This has been met with an armed response by the government, with the Prussian St
 
 @diplomacy_triumph
 title: Perhaps a more diplomatic course can be taken?
-choose-if: spd_relation >= 65 and linksliberale_strength + pazifisten_strength > nationalliberale_strength * 0.5 + sammlung_strenght and coalition_dissent <= 1
+choose-if: spd_relation >= 65 and linksliberale_strength + pazifisten_strength > nationalliberale_strength and coalition_dissent <= 1
 unavailable_subtitle: Noske has too much influence within the Cabinet...
 on-arrival: spd_relation += 10; uspd_relation += 8; kpd_relation += 6; pro-republic += 7; soldatenwehr_available = 1; spd_workers += 8; uspd_radicalisation -= 2; ddp_workers += 8; new_middle_ddp += 4; old_middle_ddp -= 5; dnvp_relation -= 8; dvp_relation -= 5
   
