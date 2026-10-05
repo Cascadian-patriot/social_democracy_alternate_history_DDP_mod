@@ -45,7 +45,7 @@ style: start-scene
 - @start: Start game
 - @election_simulation: Election simulation
 - @credits: Credits
-- @achievements: Achievements
+- @game_over.achievements
 
 @start
 set-bg: img/background.jpg
