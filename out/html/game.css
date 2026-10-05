@@ -173,7 +173,7 @@ ul.choices li .subtitle:has(> img) > img {
     width: 100px !important;
     height: 125px !important;
     object-fit: cover;
-    border: 1px solid #999;
+    border: 3px solid #000;
 }
 
 ul.choices li .subtitle:has(> img) > span {
