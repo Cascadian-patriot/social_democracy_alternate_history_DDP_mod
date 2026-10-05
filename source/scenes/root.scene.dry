@@ -38,6 +38,10 @@ on-departure: {!
         if (content) {
             content.style.background = '';
             content.style.border = '';
+        }
+
+        const collage = document.getElementById('start_collage');
+        if (collage) collage.remove();
     }, 0);
 !}
 style: start-scene
