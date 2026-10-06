@@ -277,47 +277,92 @@ Q.united_front_coalition = Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3;
 Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r;
 // aka everyone except nazi, kpd, dnvp
 Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
+var _newData = [];
+    function _addP(id, legend, seats) {
+        if (seats && seats > 0) _newData.push({ id: id, legend: legend, name: legend, seats: seats });
+    }
+    _addP('kpd', "KPD", Q.kpd_r*5);
+    _addP('uspd', 'USPD', Q.uspd_r*5);
+    _addP('sapd', 'SAPD', Q.sapd_r*5);
+    _addP('spd', 'SPD', Q.spd_r*5);
+    _addP('ddp', 'Q.ddp_name', Q.ddp_r*5);
+    _addP('z', 'Center', (Q.z_r - 3)*5);
+    if (Q.bvp_spilt == 1) _addP('bvp',  'BVP', 3*5);
+    _addP('dvp', 'DVP', Q.dvp_r*5);
+    _addP('other', 'Other', Q.other_r*5);
+    _addP('dnvp', 'DNVP', Q.dnvp_r*5);
+    _addP('dap', 'DAP', Q.dap_r*5);
+    _addP('nsdap', 'NSDAP', Q.nsdap_r*5);
+
+    var _newSig = JSON.stringify(_newData.map(function(p){ return p.id + p.seats; }));
+    var _changed = (_newSig !== window._parliSig);
+    window._parliData = _newData;
+    if (_changed) {
+        window._parliSig = _newSig;
+        window._parliAnimate = true;
+    } else {
+        window._parliAnimate = false;
+    }
 !}
 
 The electoral system is essentially proportional, with the proportion of Reichstag seats roughly equal to the proportion of votes.
  
 **Election results:**
 
-# 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_r +]
+{!<svg id="status_parliament" style="width: 100%; display: block;"></svg>
+<script>
+(function() {
+    if (!d3 || !d3.parliament || !window._parliData || window._parliData.length === 0) return;
+    var el = document.getElementById('status_parliament');
+    if (!el) return;
+    var w = el.parentElement.offsetWidth || 220;
+    el.setAttribute('width', w);
+    el.setAttribute('height', Math.round(w * 0.55));
+    var parl = d3.parliament();
+    parl.width(w).height(Math.round(w * 0.55)).innerRadiusCoef(0.4);
+    var animate = window._parliAnimate;
+    parl.enter.fromCenter(animate).smallToBig(animate);
+    parl.exit.toCenter(animate).bigToSmall(animate);
+    d3.select('#status_parliament').datum(window._parliData).call(parl);
+})();
+</script>!}
 
-# 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]
 
-# 1928: 10, 1930: 13
-KPD: [+ kpd_r +]
+> *"Bad men need nothing more to compass their ends, than that good men should look on and do nothing.*
 
-# 1928: 5, 1930: 4 (as DstP)
-DDP: [+ ddp_r +]
+ - John Stuart Mill (1806-1873)
 
-# 1928: 9, 1930: 5
-DVP: [+ dvp_r +]
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
 
-# 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-# 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [+ str_change_kpd +] {!</td></tr>!}
 
-# 1928: 9, 1930: 10
-Other: [+ other_r +]
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} 3% {!</td><td>!} 0 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#954B00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
+{!</table>!}
 
 **Potential coalitions:**
 
-Weimar Coalition (SPD + Z + DDP): [+ weimar_coalition +]
+Weimar Coalition (SPD + Z + DDP): [+ weimar_coalition +]%
 
-Grand Coalition (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]
+Grand Coalition (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]%
 
-Bourgeois Coalition (Z + BVP + DDP + DVP + Others): [+ bourgeois_coalition +]
+Bourgeois Coalition (Z + BVP + DDP + DVP + Others): [+ bourgeois_coalition +]%
 
-Centre-Right Coalition (Z + BVP + DDP + DVP)
+Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
 
-Liberal Coalition (DDP + DVP)
-
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]
 
