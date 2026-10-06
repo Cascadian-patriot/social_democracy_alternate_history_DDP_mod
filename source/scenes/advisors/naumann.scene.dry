@@ -29,7 +29,7 @@ subtitle: Strenghten the left-liberal wing of our party.
 view-if: difficulty < 1
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; linksliberale_strenght += 8; linksliberale_dissent -= 8
+on-arrival: advisor_action_timer = 6; linksliberale_strength += 8; linksliberale_dissent -= 8
 
 Naumann has strenghtened left-liberal ideas in the party.
   
