@@ -21,14 +21,14 @@ In our media and campaign materials, who should we consider as our main opponent
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "Anti-Democratic parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_dnvp -= 7; workers_kpd -= 5; new_middle_dap -= 7 if nsdap_formed == 0; new_middle_nsdap -= 7 if nsdap_formed == 1; ddp_new_middle += 6; kpd_relation -= 8; dnvp_relation -= 8 sammlung_dissent -= 5; linksliberale_dissent -= 5; pazifisten_dissent -= 5; nationalliberale_dissent -= 4
+on-arrival: enemies = "Anti-Democratic parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_dnvp -= 7; workers_kpd -= 5; new_middle_dap -= 7 if nsdap_formed == 0; new_middle_nsdap -= 7 if nsdap_formed == 1; ddp_new_middle += 6; kpd_relation -= 8; dnvp_relation -= 8; sammlung_dissent -= 5; linksliberale_dissent -= 5; pazifisten_dissent -= 5; nationalliberale_dissent -= 4
 
 Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span> is popular among all of our party except some members of the Nationalliberale, who would prefer we keep our options open with the DNVP.
 
 @far_right
 unavailable-subtitle: The Nationalliberale wing pressures us to pursue a more anti-<span style="color: var(--kpd-colour);">extre</span>[? if dap_formed:<span style="color: var(--dap-colour);">mist</span>?][? if nsdap_formed:<span style="color: var(--nsdap-colour);">mist</span>?] attitude, avoiding the issue of the DNVP.
 choose-if: linksliberale_strength + pazifisten_strength < nationalliberale_strength
-on-arrival: enemies = "far-right"; linksliberale_strength += 5; linksliberale_dissent -= 5; sammlung_dissent -= 4; pazifisten_dissent -= 5; nationaliberale_dissent += 5; new_middle_dap -= 7 if nsdap_formed == 0; new_middle_nsdap -= 7 if nsdap_formed == 1; new_middle_dnvp -= 7; ddp_new_middle += 7
+on-arrival: enemies = "Far-Right"; linksliberale_strength += 5; linksliberale_dissent -= 5; sammlung_dissent -= 4; pazifisten_dissent -= 5; nationaliberale_dissent += 5; new_middle_dap -= 7 if nsdap_formed == 0; new_middle_nsdap -= 7 if nsdap_formed == 1; new_middle_dnvp -= 7; ddp_new_middle += 7
 
 Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> is popular among all the party, except the nationaliberale, who prefer we focus on the communists instead. Tensions with the DNVP have increased due to this.
 
