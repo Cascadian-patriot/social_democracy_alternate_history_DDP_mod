@@ -42,7 +42,7 @@ on-arrival: resources -= 1; new_middle_ddp += 6; rural_ddp += 4; catholics_ddp +
 
 Funding Die Hilfe certainly benefits us, as the editors are our most loyal members.
 
-[? if yea_socialization_erkelenz == 1 and linksliberale_strenght >= 25 :  We see more of our grassroot members being attracted to the left-wing of our party, and our empowerment of them in the party has caused them to also take defacto control of the newspaper. ?] [? if yea_socialization_erkelenz == 0 and nationalliberale_strenght >= 25 : We see more of our grassroot members being aligned with the right wing of our party, as the empowerment of the more right-wing elements in the party has lead to Theodore Heuss taking de facto control of the newspaper. ?]
+[? if yea_socialization_erkelenz == 1 and linksliberale_strength >= 25 :  We see more of our grassroot members being attracted to the left-wing of our party, and our empowerment of them in the party has caused them to also take defacto control of the newspaper. ?] [? if yea_socialization_erkelenz == 0 and nationalliberale_strenght >= 25 : We see more of our grassroot members being aligned with the right wing of our party, as the empowerment of the more right-wing elements in the party has lead to Theodore Heuss taking de facto control of the newspaper. ?]
 
 @echoderjungedemokratie
 title: Fund the Echo der Junge Demokratie.
