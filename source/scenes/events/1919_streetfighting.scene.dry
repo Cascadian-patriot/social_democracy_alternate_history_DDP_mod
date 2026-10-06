@@ -6,19 +6,20 @@ view-if: year == 1919 and month == 3 and weeks == 2
 on-arrival: month_actions += 1
 max-visits: 1
 
-= Noske Moves on the revolutonary militias.
+= Noske makes his move.
 
-<br> The recent November Revolution has seen many organised militias, commanded by impromptu soldier’s soviets, rise up against the Kaiser in the wake of the Kiel Mutiny.
+<img src="img/spartakus.jpg" style="float:left; border-radius: 13px; margin-right:1em;  margin-bottom:0.5em; object-fit:cover; object-position:top; border:5px solid #000000ff;"> The recent November Revolution has seen many organised militias, commanded by impromptu soldier’s soviets, rise up against the Kaiser in the wake of the Kiel Mutiny. This included the Volksmarinedivision (People’s Marine Division) made up of left-wing naval marines, Republikanischer Soldatenwehr organised by Otto Wels and the KPD-aligned Red Militias. However, despite their pivotal role in conducting the revolution, tensions quickly flared between the Militias (And thus Soldier Soviets) and the Republican Provisional Government, namely the 1918 Christmas crisis (Weihnachtskämpfe) where Otto Wels was kidnapped by the Volksmarinedivision after a dispute about pay. This had significantly weakened the ties between the Council of People's Deputies and Provisional Government, leading to the Spartacist Uprising in January, with many of the Red Militias suppressed by the Freikorps, which was given near total control over the security situation by the Minister of the Reichswehr, Gustav Noske and interim Chairman Freidrich Ebert. 
 
-This included the Volksmarinedivision (People’s Marine Division) made up of left-wing naval marines, Republikanischer Soldatenwehr organised by Otto Wels and the KPD-aligned Red Militias. However, despite their pivotal role in conducting the revolution, tensions quickly flared between the Militias (And thus Soldier Soviets) and the Republican Provisional Government, namely the 1918 Christmas crisis (Weihnachtskämpfe) where Otto Wels was kidnapped by the Volksmarinedivision after a dispute about pay. This had significantly weakened the ties between the Council of People's Deputies and Provisional Government, leading to the Spartacist Uprising in January, with many of the Red Militias suppressed by the Freikorps, which was given near total control over the security situation by the Minister of the Reichswehr, Gustav Noske and interim Chairman Freidrich Ebert. 
-
-However, with the suppression of the Spartacist Uprising and the dissolution of the Council of People's Deputies last month, Noske and Ebert now consider the militias as obsolete and arms of the KPD, and are pushing for their immediate disbandment.
-
-many of the militias and the German Workers' and Soldiers' Soviet that was formed during the Revolution feel betrayed due to this, as they feel the Provisional Government has failed to fulfill their promises made to the Soviet during the Revolution.
+However, with the suppression of the Spartacist Uprising and the dissolution of the Council of People's Deputies last month, Noske and Ebert now consider the militias as obsolete and arms of the KPD, and are pushing for their immediate disbandment. Many of the militias and the German Workers' and Soldiers' Soviet that was formed during the Revolution feel betrayed due to this, as they feel the Provisional Government has failed to fulfill their promises made to the Soviet during the Revolution.
 
 This has only worsened in the wake of the Spartacist Uprising, and the empowerment of the Freikorps during the brief crisis. This has led to minor street fighting throughout February as the various militias and Freikorps clash in the streets across Germany, and now the Soviet has grown impatient with the Provisional Government’s backsliding on their promises.
 
-On the 3rd of March, the Greater Berlin Council Workers’ and Soldiers Soviets voted to launch an immediate general strike to pressure the government into accepting their demands. These include the immediate restructuring of the Reichswehr to be aligned with the democratic government, an immediate dissolving of the Freikorps, reform of the administration and purges of Imperial-Era officials and reactionary cadres, and the immediate fulfilment of the various promises of socialisation promised to them in the aftermath of the Revolution.
+- @oh_no_blutmai_is_coming: The Greater Berlin Council Workers’ and Soldiers Soviets votes to launch an immediate general strike to pressure the government into accepting their demands!
+
+@oh_no_blutmai_is_coming
+subtitle: We must do something..
+
+<img src="img/gewagwae.jpg" style="float:right; margin-left:1em;  margin-bottom:0.5em; object-fit:cover; object-position:top; border:3px solid #000000ff;"> On the 3rd of March, the Greater Berlin Council Workers’ and Soldiers Soviets voted to launch an immediate general strike to pressure the government into accepting their demands. These include the immediate restructuring of the Reichswehr to be aligned with the democratic government, an immediate dissolving of the Freikorps, reform of the administration and purges of Imperial-Era officials and reactionary cadres, and the immediate fulfilment of the various promises of socialisation promised to them in the aftermath of the Revolution.
 
 This has been met with an armed response by the government, with the Prussian State Ministry declaring a state of emergency (Ausnahmezustand) over Berlin, with Noske appointed as "Commander In Chief of the Marches" to supposedly deal with the "Communist Insurgency". Already government troops have trashed the offices of "Die Rote Fahrne", and fighting is only expected to increase in the coming days as the militias and Freikorps face off in the streets. A cabinet meeting has been scheduled to discuss the Cabinet’s response to the General Strike and devise a response...
 
@@ -27,6 +28,7 @@ This has been met with an armed response by the government, with the Prussian St
 
 @diplomacy_triumph
 title: Perhaps a more diplomatic course can be taken?
+subtitle: Scheidemann is wary of Noske anyways..
 choose-if: spd_relation >= 65 and linksliberale_strength + pazifisten_strength > nationalliberale_strength and coalition_dissent <= 1
 unavailable_subtitle: Noske has too much influence within the Cabinet...
 on-arrival: spd_relation += 10; uspd_relation += 8; kpd_relation += 6; pro-republic += 7; soldatenwehr_available = 1; spd_workers += 8; uspd_radicalisation -= 2; ddp_workers += 8; new_middle_ddp += 4; old_middle_ddp -= 5; dnvp_relation -= 8; dvp_relation -= 5
@@ -39,9 +41,13 @@ The General Strike has been called off as talks continue between the Government 
 
 @the_ends_justify_the_means
 title: Unfortunately, we must restore order with whatever means necessary…
+subtitle: *The ends justify the means.*
 on-arrival: pro-republic -= 7; nationalism += 5; spd_relation -= 5; uspd_radicalisation += 2; uspd_relation -= 10; kpd_relation -= 10; spd_workers -= 10; uspd_workers += 7; kpd_workers += 3; ddp_workers -= 8;
 
-<img src="img/noske_triumph.png" style="float:right; margin-left:1em; margin-bottom:0.5em; object-fit:cover; object-position:top; border:5px solid #000000ff;"> With no major objections at the Cabinet , Noske has fully deployed the Reichswehr into Berlin to put down the supposed “Uprising” by the militias. The first confrontation has led to an immediate clash between the Volksmarinendivision and Guard’s Cavalry Rifle Divison, with heavy streetfighting between the Volksmarinendivision, Red Militias and Republikanischer Soldatenwehr against Freikorps has left parts of Berlin destroyed, and hundreds dead. By the 8th, the General Strike was ended by MSPD-aligned members in the Soviets, however streetfighting continued until the 13th. Meanwhile, the Weimar National Assembly has also voted to adopt the "Law on the Provisonal Reichswehr", making the Freikorps a defacto police force in suppressing the radical left.
+<img src="img/noske_triumph.png" style="float:right; margin-left:1em; margin-bottom:0.5em; object-fit:cover; object-position:top; border:5px solid #000000ff;"> 
+<hr>
+
+With no major objections at the Cabinet , Noske has fully deployed the Reichswehr into Berlin to put down the supposed “Uprising” by the militias. The first confrontation has led to an immediate clash between the Volksmarinendivision and Guard’s Cavalry Rifle Divison, with heavy streetfighting between the Volksmarinendivision, Red Militias and Republikanischer Soldatenwehr against Freikorps has left parts of Berlin destroyed, and hundreds dead. By the 8th, the General Strike was ended by MSPD-aligned members in the Soviets, however streetfighting continued until the 13th. Meanwhile, the Weimar National Assembly has also voted to adopt the "Law on the Provisonal Reichswehr", making the Freikorps a defacto police force in suppressing the radical left.
 
 Controversially, following reports on the 8th about members of the the Volksmarinendivision storming the Lichtenberg police headquarters, a false rumor about the supposed summary executions of 60 officials led to the issuing of an illegal summary execution order by Noske to government forces, ordering the execution of any person carrying a firearm by government troops.
   
