@@ -332,25 +332,25 @@ The electoral system is essentially proportional, with the proportion of Reichst
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--spd-colour);'> </div> !} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:var(--sapd-colour);'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--kpd-colour);'> </div> !} KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--ddp-colour); outline: 2px; outline-style: solid;'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--z-colour);'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} 3% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--bvp-colour);'> </div> !} BVP: {!</td><td>!} 3% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--dvp-colour);'> </div> !} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--i-colour);'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--dnvp-colour);'> </div> !} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:var(--nsdap-colour);'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
 {!</table>!}
 
 > *"Bad men need nothing more to compass their ends, than that good men should look on and do nothing.*
