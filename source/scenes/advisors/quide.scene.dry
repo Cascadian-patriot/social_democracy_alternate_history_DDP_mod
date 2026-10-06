@@ -21,7 +21,7 @@ subtitle: Quide can publish articles in our party's youth organization's magazin
 view-if: edjd_integrated < 3
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-on-arrival: advisor_action_timer = 6; pazifisten_strenght += 7; pazifisten_dissent -= 5; new_middle_ddp += 3; young_democrats += 1; old_middle_ddp += 3; workers_ddp += 3; rural_ddp += 3; catholics_ddp += 3; nationalism -= 4
+on-arrival: advisor_action_timer = 6; pazifisten_strength += 7; pazifisten_dissent -= 5; new_middle_ddp += 3; young_democrats += 1; old_middle_ddp += 3; workers_ddp += 3; rural_ddp += 3; catholics_ddp += 3; nationalism -= 4
 
 Quidde has written several articles and published them in the 'Echo of the Young Democrats' Magazine, increasing Pazifisten strength in the party and bringing in new, young voters to the party.
 
@@ -31,7 +31,7 @@ subtitle: Quide can publish articles in our party's newspaper, strenghtening the
 view-if: newspaper_founded == 1
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; pazifisten_strenght += 7; pazifisten_dissent -= 5; new_middle_ddp += 4; old_middle_ddp += 4; workers_ddp += 4; rural_ddp += 4; catholics_ddp += 4; nationalism -= 4
+on-arrival: advisor_action_timer = 6; pazifisten_strength += 7; pazifisten_dissent -= 5; new_middle_ddp += 4; old_middle_ddp += 4; workers_ddp += 4; rural_ddp += 4; catholics_ddp += 4; nationalism -= 4
 
 Quidde has written several articles and published them in the party's new newspaper, increasing Pazifisten strength in the party and bringing in new voters.
 
@@ -40,7 +40,7 @@ title: Rally for Pacifism
 subtitle: Quide can promote pacifists ideals in the party and in the nation.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6;  pacifism += 1; nationalism -= 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; pazifisten_strength += 4; pazifisten_dissent -= 5; dvp_relation -= 2;
+on-arrival: advisor_action_timer = 6; pacifism += 1; nationalism -= 2*(1 - dissent); new_middle_ddp += 3*(1 - dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; pazifisten_strength += 4; pazifisten_dissent -= 5; dvp_relation -= 2;
 
 Quidde has held a rally to convince as many germans as possible of renouncing nationalism and embracing pacifist values, which has worked to some extent.
 
