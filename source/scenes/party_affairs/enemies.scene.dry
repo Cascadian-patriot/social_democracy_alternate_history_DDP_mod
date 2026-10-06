@@ -13,38 +13,33 @@ In our media and campaign materials, who should we consider as our main opponent
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @anti_dem: The <span style="color: var(--dap-colour);">anti</span>-<span style="color: var(--ddp-colour);">democratic</span> parties of the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span>, the KPD, DNVP, and [? if dap_formed: DAP ?][? if nsdap_formed: NSDAP ?].
+
+- @anti_dem:The Undemocratic Parties off the <span style="color: var(--kpd-colour);">Left</span> and the [? if nsdap_formed = 0: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed = 1: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> - The KPD, DNVP and  [? if dap_formed: <span style="color: var(--dap-colour);">Volkisch movement</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">Volkisch movement</span>?]!
 - @far_right: The [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span>, the DNVP, and [? if dap_formed: DAP ?][? if nsdap_formed: NSDAP ?].
-- @dnvp: The DNVP alone.
-- @kpd: The KPD.
-- @socialist: The Socialist parties of the SPD, KPD and the USPD.
+- @far_left: The <span style="color: var(--kpd-colour);">Far</span>-<span style="color: var(--uspd-colour);">Left</span> parties of the USPD and KPD.
+- @socialist: The <span style="color: var(--spd-colour);">Left</span><span style="color: var(--uspd-colour);">-t</span><span style="color: var(--kpd-colour);">Wing</span> parties of the SPD, USPD and the KPD.
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_kpd -= 2; new_middle_nsdap -= 2; new_middle_dnvp -= 2; kpd_relation -= 10; dnvp_relation -= 10
+on-arrival: enemies = "Anti-Democratic parties"; sammlung_strength += 5; linksliberale_strength += 5; new_middle_dnvp -= 7; workers_kpd -= 5; new_middle_dap -= 7 if nsdap_formed == 0; new_middle_nsdap -= 7 if nsdap_formed == 1; ddp_new_middle += 6; kpd_relation -= 8; dnvp_relation -= 8 sammlung_dissent -= 5; linksliberale_dissent -= 5; pazifisten_dissent -= 5; nationalliberale_dissent -= 4
 
-Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span> is popular among all of our party except some members of the Nstionalliberale, who would prefer we keep our options open with the DNVP.
+Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> and <span style="color: var(--kpd-colour);">left</span> is popular among all of our party except some members of the Nationalliberale, who would prefer we keep our options open with the DNVP.
 
 @far_right
 unavailable-subtitle: The Nationalliberale wing pressures us to pursue a more anti-<span style="color: var(--kpd-colour);">extre</span>[? if dap_formed:<span style="color: var(--dap-colour);">mist</span>?][? if nsdap_formed:<span style="color: var(--nsdap-colour);">mist</span>?] attitude, avoiding the issue of the DNVP.
-choose-if: linksliberale_strength and pazifisten_strength < nationalliberale_strength
-on-arrival: enemies = "far-right"; linksliberale_strength += 5; linksliberale_dissent -= 5; new_middle_nsdap -= 3; new_middle_dnvp -= 3
+choose-if: linksliberale_strength + pazifisten_strength < nationalliberale_strength
+on-arrival: enemies = "far-right"; linksliberale_strength += 5; linksliberale_dissent -= 5; sammlung_dissent -= 4; pazifisten_dissent -= 5; nationaliberale_dissent += 5; new_middle_dap -= 7 if nsdap_formed == 0; new_middle_nsdap -= 7 if nsdap_formed == 1; new_middle_dnvp -= 7; ddp_new_middle += 7
 
-Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> is popular among all the party, however the Nationalliberale would also prefer we attack the KPD and keep our options open with the DNVP.
+Attacking the [? if dap_formed: <span style="color: var(--dap-colour);">far</span>?][? if nsdap_formed: <span style="color: var(--nsdap-colour);">far</span>?]-<span style="color: var(--dnvp-colour);">right</span> is popular among all the party, except the nationaliberale, who prefer we focus on the communists instead. Tensions with the DNVP have increased due to this.
 
-@dnvp
-on-arrival: enemies = "DNVP"; linksliberale_dissent -= 6; dnvp_relations -= 8; new_middle_dnvp -= 7; nationalliberale_dissent += 4
+@far_left
+on-arrival: enemies = "Far-Left"; nationalliberale_strength += 5; kpd_relation -= 8; uspd_relations -= 8; dvp_relation += 5; dnvp_relations +=5; z_relation += 5; new_middle_kpd -= 5; new_middle_uspd -= 5
 
-Atacking the DNVP is popular amongst the left of our party, as it is an anti-democratic party, but some members of the nationalliberale would prefer we keep our options open with them, while other members would rather we focus on more parties than solely the DNVP.
-
-@kpd
-on-arrival: enemies = "KPD"; nationalliberale_strength += 5; kpd_relation -= 10; dvp_relation += 5; z_relation += 5; new_middle_kpd -= 4
-
-Attacking the KPD is supported by all but the most left-wing socialists, and wins us approval amongst the right. However, some in our party are skeptic of only focusing on the KPD
+Attacking the KPD and USPD is popular amongst the Nationalliberale, the Linksliberale and Pazifisten, however, would rather atack the far-right instead. This is, however, popular amongst our middle class base.
 
 @socialist
 on-arrival: enemies = "Socialists"; nationalliberale_strength += 5; linksliberale_strength -= 5; spd_relations -= 5; dnvp_relations += 5; uspd_relations -= 5; kpd_relations -= 5; new_middle_spd -= 4; new_middle_kpd -= 4; new_middle_uspd -= 4; dnvp_relations += 5; dvp_relations += 8
-choose-if: linksliberale_strength >= 10
-unavailable-subtitle: The left in our party would never allow this. 
+choose-if: linksliberale_strength + pazifisten_strength > nationalliberale_strength
+unavailable-subtitle: The left-wing elements of our party will never allow this.
 
-Atacking the socialists is supported by the right, especialy the far-right, but alienates us from the SPD who are otherwise one of the most democratic parties. 
+Attacking the KPD, USPD and SPD is unpopular amongst everyone except the National-Liberals. Our support amongst the middle class has increased. Tensions with the left has increased.
