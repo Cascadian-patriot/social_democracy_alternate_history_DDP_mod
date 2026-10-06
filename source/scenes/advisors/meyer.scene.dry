@@ -29,7 +29,7 @@ subtitle: Oscar Meyer can strenghten the Nationalliberale wing of the party.
 view-if: difficulty < 1
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; nationalliberale_strenght += 7; nationalliberale_dissent -= 6
+on-arrival: advisor_action_timer = 6; nationalliberale_strength += 7; nationalliberale_dissent -= 6
 
 We have strenghtened the Nationalliberale faction.
   
