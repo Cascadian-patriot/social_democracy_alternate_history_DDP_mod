@@ -148,28 +148,15 @@ ul.choices {
   border-radius: 4px;
   clear: left;
 }
+
 ul.choices li {
+  font-size: 1em;
   border-bottom: 1px solid #876;
   padding: 0.5em;
-}
-ul.choices li div.subtitle {
-  margin-left: 2em;
-  font-style: italic;
-}
-ul.choices li.unavailable {
-  color: var(--unavailable-color);
-  background-color: var(--unavailable-bg-color) !important;
-  cursor: default !important;
-}
-ul.choices li:hover {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
-}
-ul.choices li:last-child {
-  border-bottom: none;
-}
-ul.choices a {
-  text-decoration: none;
+  background: none;
+  transition: background 0.3s;
+  position: relative;
+  overflow: visible;
 }
 
 ul.choices li .subtitle:has(> img) {
@@ -207,6 +194,36 @@ ul.choices li::before {
 
 ul.choices li:hover::before {
   width: 100%;
+}
+
+ul.choices li div.subtitle {
+  margin-left: 2em;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+ul.choices li.unavailable {
+  color: var(--unavailable-color);
+  background-color: var(--unavailable-bg-color) !important;
+  cursor: default !important;
+}
+
+ul.choices li:hover {
+  cursor: pointer;
+}
+
+ul.choices li > * {
+  position: relative;
+  z-index: 1;
+}
+
+ul.choices li:last-child {
+  border-bottom: none;
+}
+
+ul.choices a {
+  text-decoration: none;
 }
 blockquote {
   margin: 1em 2em;
@@ -502,160 +519,6 @@ body.dark-mode .mytooltip .mytooltiptext {
  * Card stuff for dendrynexus
  * 
  */
-/* ============================================================
-   Executive card: locked to row 2, column 3 of the hand grid
-   ============================================================ */
-ul.hand.has-executive {
-    display: grid;
-    grid-template-columns: repeat(3, 140px);
-    /* Fixed row height: 170px card (150 img + 2x10 border) + ~50px caption
-       budget (fits up to two lines). Prevents row 2 from shifting when row 1
-       cards have long, wrapping captions. */
-    grid-auto-rows: 220px;
-    column-gap: 1em;
-    row-gap: 0.5em;
-    justify-content: start;
-    justify-items: center;
-    align-items: start;
-    padding-left: 0;
-    list-style: none;
-}
-ul.hand.has-executive > li,
-ul.hand.has-executive > div.blank-card {
-    margin-right: 0 !important;
-    max-width: none;
-}
-ul.hand.has-executive > li.executive-fixed {
-    grid-column: 3;
-    grid-row: 2;
-}
-ul.hand.has-executive > li.executive-fixed a.card {
-    border-color: #b0b0b0 !important;
-}
-ul.hand.has-executive > li.executive-fixed .card-caption {
-    display: block;
-    text-align: center;
-    font-size: 1em;
-}
-
-/* ============================================================
-   Executive Affairs page (execute scene)
-   ============================================================ */
-#exec_overview {
-    max-width: 700px;
-    margin: 1em auto;
-    color: #000;
-}
-#exec_overview,
-#exec_overview * {
-    font-weight: normal;
-}
-.exec-portraits-row {
-    display: flex;
-    gap: 2em;
-    justify-content: center;
-    margin-bottom: 2em;
-}
-.exec-portrait-card {
-    text-align: center;
-    width: 200px;
-}
-.exec-portrait-frame {
-    width: 180px;
-    height: 220px;
-    margin: 0 auto;
-    border: 6px solid #000;
-    background: #f3f3f3;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.exec-portrait-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.exec-portrait-empty {
-    font-size: 2em;
-}
-.exec-portrait-role {
-    font-style: italic;
-    margin-top: 0.5em;
-    font-size: 0.95em;
-}
-.exec-portrait-name {
-    margin-top: 0.1em;
-    font-size: 1.1em;
-}
-.exec-portrait-party {
-    font-size: 0.9em;
-    margin-top: 0.1em;
-}
-.exec-reichsbank {
-    border: 3px solid #000;
-    padding: 1em 1.5em;
-    margin: 1em auto;
-    background: rgba(255,255,255,0.6);
-    max-width: 480px;
-}
-.exec-reichsbank-title {
-    font-size: 1.3em;
-    text-align: center;
-    margin-bottom: 0.6em;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-.exec-reichsbank-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-.exec-reichsbank-table td {
-    padding: 0.25em 0.4em;
-    border-bottom: 1px dotted #000;
-    font-size: 0.95em;
-}
-.exec-reichsbank-table td:first-child {
-    width: 50%;
-}
-.exec-reichsbank-table td:last-child {
-    text-align: right;
-}
-.exec-priorities-text {
-    margin: 1.5em auto 0.5em auto;
-    text-align: center;
-    line-height: 1.6;
-    font-size: 1em;
-}
-.exec-meters {
-    max-width: 480px;
-    margin: 0.5em auto 1em auto;
-}
-.exec-meter-row {
-    display: grid;
-    grid-template-columns: 9em 1fr;
-    align-items: center;
-    gap: 0.8em;
-    padding: 0.45em 0;
-    font-size: 0.95em;
-}
-.exec-meter-row.exec-meter-divider {
-    border-bottom: 1px solid #000;
-}
-.exec-meter-label {
-    text-align: left;
-}
-.exec-meter-track {
-    height: 14px;
-    border: 2px solid #000;
-    background: transparent;
-    overflow: hidden;
-}
-.exec-meter-fill {
-    height: 100%;
-    transition: width 0.4s ease, background 0.4s ease;
-}
 
 ul.decks, ul.hand, ul.pinned-cards {
   list-style: none;
@@ -846,41 +709,36 @@ ul.decks, ul.hand, ul.pinned-cards {
     display: inline-block;
     text-align: center;
 }
-}
-
-.pinned-cards {
-
-}
-
-.deck {
-
-}
 
 a.card {
   display: inline-block;
   width: 120px;
   height: 150px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  border: 10px solid var(--card-border-color);
+  border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
   position: relative;
+  transition: transform 1s, filter 1s
 }
+
 a.card:hover {
    z-index: 999;
   filter: brightness(105%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   transform: translate(-6px,-6px) rotate(-2deg);
 }
+
 div.blank-card {
   display: inline-block;
   width: 120px;
   height: 150px;
   background-color: var(--card-bg-color);
-  border: 10px solid var(--card-border-color);
+  border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
 }
 
 .card-in-hand, .pinned-card, .deck {
+  padding: 0.3em;
   display: inline-block;
   position: relative;
   max-width: 150px;
@@ -898,22 +756,31 @@ div.blank-card {
 .card-caption {
   text-align: center;
   display: block;
-  font-size: 1em;
+  font-size: 0.95em;
+  -webkit-text-stroke: 0.15px #685a3f;
+  color: #685a3f;
 }
 
+.dark-mode .card-caption {
+  color: #ffffff;
+  -webkit-text-stroke: 0.15px #ffffff;
+}
+/* 
 .card-tooltip {
   position: absolute;
   visibility: hidden;
   width: 150px;
   max-width: 200px;
   font-size: 0.9em;
+  border-radius: 8px;
   z-index: 2;
   padding: 0.2em;
   border: 1px solid var(--border-color);
   background-color: var(--content-bg-color);
   left: 105%;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
-
+*/
 .card-img {
   height: 150px;
   width: 120px;
@@ -921,7 +788,7 @@ div.blank-card {
 }
 
 a.card:focus .card-tooltip, a.card:hover .card-tooltip {
-  visibility: visible;
+  visibility: hidden;
   position: absolute;
 }
 /* Unlike cards, face images can have different sizes. */
@@ -1270,16 +1137,4 @@ body.dark-mode .wide_tooltip-tip::before {
 .wide_tooltip-wrap.drop-down .wide_tooltip-tip {
   bottom: auto;
   top: calc(100% + 10px);
-}
-
-/* Executive Affairs: labels, portrait roles/names, the (I) badge and the priorities
-   text all inherit a dark colour on the dark panel. Lighten the lot (inline party
-   colours like the blue DNVP keep theirs). Bar borders lightened too. */
-body.dark-mode .exec-meter-label,
-body.dark-mode .exec-portrait-role,
-body.dark-mode .exec-portrait-name,
-body.dark-mode .exec-portrait-party,
-body.dark-mode .exec-priorities-text { color: #e6e6e6 !important; }
-body.dark-mode .exec-meter-track,
-body.dark-mode .exec-meter-row.exec-meter-divider { border-color: #888 !important; }
 }
