@@ -617,7 +617,7 @@ function ensureExecutiveCard() {
 
     var img = document.createElement('img');
     img.className = 'card-img';
-    img.src = 'img/executive1.png';
+    img.src = 'img/1920s_Reichstag.webp;
     img.style.filter = 'grayscale(100%)';
     a.appendChild(img);
 
