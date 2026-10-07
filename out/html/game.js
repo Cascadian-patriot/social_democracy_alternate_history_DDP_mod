@@ -512,48 +512,55 @@
        window.updateNewsSidebar();
    };
 
-   function ensureExecutiveCard() {
-       var handUl = document.querySelector('ul.hand');
-       if (!handUl) return;
+  var executiveCardInstalled = false;
 
-       if (handUl.querySelector('li.executive-fixed')) {
-           handUl.classList.add('has-executive');
-           return;
-       }
+function ensureExecutiveCard() {
+    var handUl = document.querySelector('ul.hand');
+    if (!handUl) return;
 
-       var li = document.createElement('li');
-       li.className = 'card-in-hand executive-fixed';
+    if (handUl.querySelector('li.executive-fixed')) {
+        executiveCardInstalled = true;
+        return;
+    }
 
-       var a = document.createElement('a');
-       a.className = 'card';
-       a.setAttribute('href', '#');
-       a.setAttribute('card-id', 'executive');
-       a.setAttribute('title', 'Executive');
+    // only add once
+    if (executiveCardInstalled) return;
 
-       var img = document.createElement('img');
-       img.className = 'card-img';
-       img.src = 'img/1920s_Reichstag.webp';
-       img.style.filter = 'grayscale(100%)';
-       a.appendChild(img);
+    var li = document.createElement('li');
+    li.className = 'card-in-hand executive-fixed';
 
-       var caption = document.createElement('span');
-       caption.className = 'card-caption';
-       caption.textContent = 'Executive';
+    var a = document.createElement('a');
+    a.className = 'card';
+    a.setAttribute('href', '#');
+    a.setAttribute('card-id', 'executive');
+    a.setAttribute('title', 'Executive');
 
-       li.appendChild(a);
-       li.appendChild(caption);
-       handUl.appendChild(li);
-       handUl.classList.add('has-executive');
+    var img = document.createElement('img');
+    img.className = 'card-img';
+    img.src = 'img/1920s_Reichstag.webp';
+    img.style.filter = 'grayscale(100%)';
+    a.appendChild(img);
 
-       a.addEventListener('click', function(e) {
-           e.preventDefault();
-           e.stopPropagation();
-           if (window.dendryUI && window.dendryUI.dendryEngine) {
-               window.dendryUI.dendryEngine.goToScene('execute');
-           }
-       });
-   }
+    var caption = document.createElement('span');
+    caption.className = 'card-caption';
+    caption.textContent = 'Executive';
 
+    li.appendChild(a);
+    li.appendChild(caption);
+    handUl.appendChild(li);
+    handUl.classList.add('has-executive');
+
+    executiveCardInstalled = true;
+
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (window.dendryUI && window.dendryUI.dendryEngine) {
+            window.dendryUI.dendryEngine.goToScene('execute');
+        }
+    });
+}
+   
    var executiveObserverTimeout = null;
    var handUlObserverActive = false;
 
