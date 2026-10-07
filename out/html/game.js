@@ -560,6 +560,15 @@
         window.dendryUI.saveSettings();
   }
 
+  window.decreaseFontSize = function() {
+        window.dendryUI.font_size -= 0.1;
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+        document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
+        window.dendryUI.saveSettings();
+  }
 window._injectExecutiveCard = function() {
     var handUl = document.querySelector('ul.hand');
     if (!handUl) return;
@@ -621,17 +630,6 @@ if (switcherCard && !switcherCard.dataset.clickAttached) {
         window.dendryUI.dendryEngine.goToScene('advisor_switcher');
     });
 }
-
-  window.decreaseFontSize = function() {
-        window.dendryUI.font_size -= 0.1;
-        var fs = window.dendryUI.font_size;
-        var sidebar_fs = fs - 0.1;
-        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
-        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
-        document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
-        window.dendryUI.saveSettings();
-  }
-
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
