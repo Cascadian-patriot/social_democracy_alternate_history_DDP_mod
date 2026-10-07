@@ -169,7 +169,7 @@
       window.dendryUI.dark_mode = true;
       document.body.classList.add('dark-mode');
       window.dendryUI.saveSettings();
- }
+  }
    // * TOOLTIP IS MADE BY COMMUNIST 45 AND DYNAMIC DEV; DONT TAKE THIS, THIS IS NOT MINE. * //
    window.displayText = function (text) {
         return applyWholesome(text);
@@ -368,7 +368,7 @@
             return baseTooltip.explanationText; 
         }
       
-    return baseTooltip.explanationText;
+     return baseTooltip.explanationText;
 
     }
 
@@ -512,47 +512,119 @@
       window.updateNewsSidebar();
   };
 
+  function ensureExecutiveCard() {
+      var handUl = document.querySelector('ul.hand');
+      if (!handUl) return;
+
+      if (handUl.querySelector('li.executive-fixed')) {
+          handUl.classList.add('has-executive');
+          return;
+      }
+
+      var li = document.createElement('li');
+      li.className = 'card-in-hand executive-fixed';
+
+      var a = document.createElement('a');
+      a.className = 'card';
+      a.setAttribute('href', '#');
+      a.setAttribute('card-id', 'executive');
+      a.setAttribute('title', 'Executive');
+
+      var img = document.createElement('img');
+      img.className = 'card-img';
+      img.src = 'img/1920s_Reichstag.webp';
+      img.style.filter = 'grayscale(100%)';
+      a.appendChild(img);
+
+      var caption = document.createElement('span');
+      caption.className = 'card-caption';
+      caption.textContent = 'Executive';
+
+      li.appendChild(a);
+      li.appendChild(caption);
+      handUl.appendChild(li);
+      handUl.classList.add('has-executive');
+
+      a.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.dendryUI && window.dendryUI.dendryEngine) {
+              window.dendryUI.dendryEngine.goToScene('execute');
+          }
+      });
+  }
+
+  function watchHandForExecutiveCard() {
+      var handUl = document.querySelector('ul.hand');
+      if (!handUl || handUl.dataset.executiveObserverAttached === 'true') return;
+
+      handUl.dataset.executiveObserverAttached = 'true';
+
+      var observer = new MutationObserver(function() {
+          if (!document.querySelector('ul.hand li.executive-fixed')) {
+              setTimeout(ensureExecutiveCard, 0);
+          }
+      });
+
+      observer.observe(handUl, {
+          childList: true,
+          subtree: true
+      });
+  }
+
+  window.ensureExecutiveCard = ensureExecutiveCard;
+  window.watchHandForExecutiveCard = watchHandForExecutiveCard;
+
+  // Consolidated onDisplayContent function
   window.onDisplayContent = function() {
       window.updateSidebar();
       window.updateNewsSidebar();
-      // Re-inject the executive card every time content is displayed (card drawn)
+      // Re-inject the executive card and bind advisor switcher
       setTimeout(function() {
-          window._injectExecutiveCard();
+          ensureExecutiveCard();
+          watchHandForExecutiveCard();
           window.bindAdvisorSwitcherCard();
       }, 50);
   };
 
-  /*
-   * This function copied from the code for Infinite Space Battle Simulator
-   *
-   * quality - a number between max and min
-   * qualityName - the name of the quality
-   * max and min - numbers
-   * colors - if true/1, will use some color scheme - green to yellow to red for high to low
-   * */
-  window.generateBar = function(quality, qualityName, max, min, colors) {
-      var bar = document.createElement('div');
-      bar.className = 'bar';
-      var value = document.createElement('div');
-      value.className = 'barValue';
-      var width = (quality - min)/(max - min);
-      if (width > 1) {
-          width = 1;
-      } else if (width < 0) {
-          width = 0;
+  // Consolidated onload function
+  window.onload = function() {
+      window.dendryUI.loadSettings({show_portraits: false});
+      if (window.dendryUI.dark_mode) {
+          document.body.classList.add('dark-mode');
       }
-      value.style.width = Math.round(width*100) + '%';
-      if (colors) {
-          value.style.backgroundColor = window.probToColor(width*100);
+      if (window.dendryUI.font_size != 1.1) {
+          var fs = window.dendryUI.font_size;
+          var sidebar_fs = fs - 0.1;
+          document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+          document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
       }
-      bar.textContent = qualityName + ': ' + quality;
-      if (colors) {
-          bar.textContent += '/' + max;
-      }
-      bar.appendChild(value);
-      return bar;
+      document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
+      window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+      
+      setTimeout(function() {
+          ensureExecutiveCard();
+          watchHandForExecutiveCard();
+          window.bindAdvisorSwitcherCard();
+      }, 500);
   };
 
+  function bindAdvisorSwitcherCard() {
+      var switcherCard = document.querySelector('a.card[card-id="advisor_switcher"]');
+      if (!switcherCard || switcherCard.dataset.clickAttached === 'true') {
+          return;
+      }
+      switcherCard.dataset.clickAttached = 'true';
+      switcherCard.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.dendryUI && window.dendryUI.dendryEngine) {
+              window.dendryUI.dendryEngine.goToScene('advisor_switcher');
+          }
+      });
+  }
+
+  window.bindAdvisorSwitcherCard = bindAdvisorSwitcherCard;
 
   window.justLoaded = true;
   window.statusTab = "status";
@@ -580,128 +652,33 @@
         window.dendryUI.saveSettings();
   };
 
-  function bindAdvisorSwitcherCard() {
-      var switcherCard = document.querySelector('a.card[card-id="advisor_switcher"]');
-      if (!switcherCard || switcherCard.dataset.clickAttached === 'true') {
-          return;
+  window.generateBar = function(quality, qualityName, max, min, colors) {
+      var bar = document.createElement('div');
+      bar.className = 'bar';
+      var value = document.createElement('div');
+      value.className = 'barValue';
+      var width = (quality - min)/(max - min);
+      if (width > 1) {
+          width = 1;
+      } else if (width < 0) {
+          width = 0;
       }
-      switcherCard.dataset.clickAttached = 'true';
-      switcherCard.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (window.dendryUI && window.dendryUI.dendryEngine) {
-              window.dendryUI.dendryEngine.goToScene('advisor_switcher');
-          }
-      });
-  }
-
-  window.bindAdvisorSwitcherCard = bindAdvisorSwitcherCard;
-
-function ensureExecutiveCard() {
-    var handUl = document.querySelector('ul.hand');
-    if (!handUl) return;
-
-    if (handUl.querySelector('li.executive-fixed')) {
-        handUl.classList.add('has-executive');
-        return;
-    }
-
-    var li = document.createElement('li');
-    li.className = 'card-in-hand executive-fixed';
-
-    var a = document.createElement('a');
-    a.className = 'card';
-    a.setAttribute('href', '#');
-    a.setAttribute('card-id', 'executive');
-    a.setAttribute('title', 'Executive');
-
-    var img = document.createElement('img');
-    img.className = 'card-img';
-    img.src = 'img/1920s_Reichstag.webp';
-    img.style.filter = 'grayscale(100%)';
-    a.appendChild(img);
-
-    var caption = document.createElement('span');
-    caption.className = 'card-caption';
-    caption.textContent = 'Executive';
-
-    li.appendChild(a);
-    li.appendChild(caption);
-    handUl.appendChild(li);
-    handUl.classList.add('has-executive');
-
-    a.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (window.dendryUI && window.dendryUI.dendryEngine) {
-            window.dendryUI.dendryEngine.goToScene('execute');
-        }
-    });
-}
-
-function watchHandForExecutiveCard() {
-    var handUl = document.querySelector('ul.hand');
-    if (!handUl || handUl.dataset.executiveObserverAttached === 'true') return;
-
-    handUl.dataset.executiveObserverAttached = 'true';
-
-    var observer = new MutationObserver(function() {
-        if (!document.querySelector('ul.hand li.executive-fixed')) {
-            setTimeout(ensureExecutiveCard, 0);
-        }
-    });
-
-    observer.observe(handUl, {
-        childList: true,
-        subtree: true
-    });
-}
-
-window.ensureExecutiveCard = ensureExecutiveCard;
-window.watchHandForExecutiveCard = watchHandForExecutiveCard;
-
-window.onDisplayContent = function() {
-    window.updateSidebar();
-    window.updateNewsSidebar();
-    setTimeout(function() {
-        ensureExecutiveCard();
-        watchHandForExecutiveCard();
-    }, 0);
-};
-
-window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: false});
-
-    setTimeout(function() {
-        ensureExecutiveCard();
-        watchHandForExecutiveCard();
-    }, 0);
-};
-
-  window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: false});
-    if (window.dendryUI.dark_mode) {
-        document.body.classList.add('dark-mode');
-    }
-    if (window.dendryUI.font_size != 1.1) {
-        var fs = window.dendryUI.font_size;
-        var sidebar_fs = fs - 0.1;
-        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
-        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
-    }
-    document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
-    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-    // gewageagewwgag
-    setTimeout(function() {
-        window._injectExecutiveCard();
-        window.bindAdvisorSwitcherCard();
-    }, 500);
+      value.style.width = Math.round(width*100) + '%';
+      if (colors) {
+          value.style.backgroundColor = window.probToColor(width*100);
+      }
+      bar.textContent = qualityName + ': ' + quality;
+      if (colors) {
+          bar.textContent += '/' + max;
+      }
+      bar.appendChild(value);
+      return bar;
   };
 
   document.addEventListener('mousemove', function(e) {
-    document.querySelectorAll('.mytooltiptext').forEach(function(el) {
-        el.style.setProperty('--mouse-x', e.clientX + 'px');
-        el.style.setProperty('--mouse-y', e.clientY + 'px');
-    });
+      document.querySelectorAll('.mytooltiptext').forEach(function(el) {
+          el.style.setProperty('--mouse-x', e.clientX + 'px');
+          el.style.setProperty('--mouse-y', e.clientY + 'px');
+      });
   });
 }());
