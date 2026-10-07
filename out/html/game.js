@@ -597,6 +597,8 @@
   window._injectExecutiveCard = function() {
       var handUl = document.querySelector('ul.hand');
       if (!handUl) {
+          // ul.hand doesn't exist yet; schedule a retry
+          setTimeout(window._injectExecutiveCard, 100);
           return;
       }
       if (handUl.querySelector('li.executive-fixed')) {
@@ -651,6 +653,7 @@
               window.dendryUI.dendryEngine.goToScene('execute');
           }
       });
+      console.log('Executive card injected successfully');
   };
 
   window.onload = function() {
@@ -666,8 +669,11 @@
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-    window._injectExecutiveCard();
-    window.bindAdvisorSwitcherCard();
+    // Defer injection to give Dendry time to render
+    setTimeout(function() {
+        window._injectExecutiveCard();
+        window.bindAdvisorSwitcherCard();
+    }, 500);
   };
 
   document.addEventListener('mousemove', function(e) {
