@@ -515,8 +515,11 @@
   window.onDisplayContent = function() {
       window.updateSidebar();
       window.updateNewsSidebar();
-      window._injectExecutiveCard();
-      window.bindAdvisorSwitcherCard();
+      // Re-inject the executive card every time content is displayed (card drawn)
+      setTimeout(function() {
+          window._injectExecutiveCard();
+          window.bindAdvisorSwitcherCard();
+      }, 50);
   };
 
   /*
@@ -601,7 +604,11 @@
           setTimeout(window._injectExecutiveCard, 100);
           return;
       }
-      if (handUl.querySelector('li.executive-fixed')) {
+      
+      // Check if executive card already exists
+      var existingCard = handUl.querySelector('li.executive-fixed');
+      if (existingCard) {
+          // Card already exists, just make sure hand has the class
           handUl.classList.add('has-executive');
           return;
       }
@@ -619,6 +626,7 @@
           }, true);
       }
 
+      // Remove any stale executive cards from pinned-cards
       var pinnedCards = document.querySelectorAll('ul.pinned-cards li.pinned-card');
       for (var i = 0; i < pinnedCards.length; i++) {
           if (pinnedCards[i].querySelector('a.card[card-id="executive"]')) {
@@ -653,7 +661,6 @@
               window.dendryUI.dendryEngine.goToScene('execute');
           }
       });
-      console.log('Executive card injected successfully');
   };
 
   window.onload = function() {
