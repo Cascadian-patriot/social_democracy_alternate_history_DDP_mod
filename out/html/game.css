@@ -140,7 +140,6 @@ p.game-over {
   border-radius: 4px;
   color: #999;
 }
-
 ul.choices {
   border: 2px solid #876;
   padding: 0;
@@ -149,20 +148,28 @@ ul.choices {
   border-radius: 4px;
   clear: left;
 }
-
-  ul.hand.has-executive {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 0.5em;
-  }
-
 ul.choices li {
-  font-size: 1em;
   border-bottom: 1px solid #876;
   padding: 0.5em;
-  background: none;
-  transition: background 0.3s;
-  position: relative;
-  overflow: visible;
+}
+ul.choices li div.subtitle {
+  margin-left: 2em;
+  font-style: italic;
+}
+ul.choices li.unavailable {
+  color: var(--unavailable-color);
+  background-color: var(--unavailable-bg-color) !important;
+  cursor: default !important;
+}
+ul.choices li:hover {
+  background-color: var(--link-hover-color);
+  cursor: pointer;
+}
+ul.choices li:last-child {
+  border-bottom: none;
+}
+ul.choices a {
+  text-decoration: none;
 }
 
 ul.choices li .subtitle:has(> img) {
@@ -200,36 +207,6 @@ ul.choices li::before {
 
 ul.choices li:hover::before {
   width: 100%;
-}
-
-ul.choices li div.subtitle {
-  margin-left: 2em;
-  font-style: italic;
-  position: relative;
-  z-index: 1;
-}
-
-ul.choices li.unavailable {
-  color: var(--unavailable-color);
-  background-color: var(--unavailable-bg-color) !important;
-  cursor: default !important;
-}
-
-ul.choices li:hover {
-  cursor: pointer;
-}
-
-ul.choices li > * {
-  position: relative;
-  z-index: 1;
-}
-
-ul.choices li:last-child {
-  border-bottom: none;
-}
-
-ul.choices a {
-  text-decoration: none;
 }
 blockquote {
   margin: 1em 2em;
@@ -889,9 +866,10 @@ a.card {
   position: relative;
 }
 a.card:hover {
+   z-index: 999;
+  filter: brightness(105%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  left: -5px;
-  top: -5px;
+  transform: translate(-6px,-6px) rotate(-2deg);
 }
 div.blank-card {
   display: inline-block;
