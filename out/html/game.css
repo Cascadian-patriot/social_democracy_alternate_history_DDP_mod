@@ -795,7 +795,7 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
 .face-figure {
   /*vertical-align: top;*/
   display: inline-block;
-  border:5px solid #000000ff
+  border:5px solid #000000ff;
   float: left;
   max-width: 35%;
   /*max-height: 180px;*/
@@ -1293,8 +1293,3 @@ ul.hand.has-executive > li.executive-fixed .card-caption {
     height: 100%;
     transition: width 0.4s ease, background 0.4s ease;
 }
-
-  ul.hand.has-executive {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 0.5em;
-  }
