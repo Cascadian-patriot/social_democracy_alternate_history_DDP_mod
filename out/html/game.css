@@ -869,36 +869,40 @@ ul.decks, ul.hand, ul.pinned-cards {
     display: inline-block;
     text-align: center;
 }
+}
+
+.pinned-cards {
+
+}
+
+.deck {
+
+}
 
 a.card {
   display: inline-block;
   width: 120px;
   height: 150px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  border: 8px solid var(--card-border-color);
+  border: 10px solid var(--card-border-color);
   margin-bottom: 0.5em;
   position: relative;
-  transition: transform 1s, filter 1s
 }
-
 a.card:hover {
-   z-index: 999;
-  filter: brightness(105%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  transform: translate(-6px,-6px) rotate(-2deg);
+  left: -5px;
+  top: -5px;
 }
-
 div.blank-card {
   display: inline-block;
   width: 120px;
   height: 150px;
   background-color: var(--card-bg-color);
-  border: 8px solid var(--card-border-color);
+  border: 10px solid var(--card-border-color);
   margin-bottom: 0.5em;
 }
 
 .card-in-hand, .pinned-card, .deck {
-  padding: 0.3em;
   display: inline-block;
   position: relative;
   max-width: 150px;
@@ -916,31 +920,22 @@ div.blank-card {
 .card-caption {
   text-align: center;
   display: block;
-  font-size: 0.95em;
-  -webkit-text-stroke: 0.15px #685a3f;
-  color: #685a3f;
+  font-size: 1em;
 }
 
-.dark-mode .card-caption {
-  color: #ffffff;
-  -webkit-text-stroke: 0.15px #ffffff;
-}
-/* 
 .card-tooltip {
   position: absolute;
   visibility: hidden;
   width: 150px;
   max-width: 200px;
   font-size: 0.9em;
-  border-radius: 8px;
   z-index: 2;
   padding: 0.2em;
   border: 1px solid var(--border-color);
   background-color: var(--content-bg-color);
   left: 105%;
-  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
-*/
+
 .card-img {
   height: 150px;
   width: 120px;
@@ -948,7 +943,7 @@ div.blank-card {
 }
 
 a.card:focus .card-tooltip, a.card:hover .card-tooltip {
-  visibility: hidden;
+  visibility: visible;
   position: absolute;
 }
 /* Unlike cards, face images can have different sizes. */
