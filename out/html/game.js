@@ -597,71 +597,86 @@
 
   window.bindAdvisorSwitcherCard = bindAdvisorSwitcherCard;
 
-  window._injectExecutiveCard = function() {
-      var handUl = document.querySelector('ul.hand');
-      if (!handUl) {
-          // ul.hand doesn't exist yet; schedule a retry
-          setTimeout(window._injectExecutiveCard, 100);
-          return;
-      }
-      
-      // Check if executive card already exists
-      var existingCard = handUl.querySelector('li.executive-fixed');
-      if (existingCard) {
-          // Card already exists, just make sure hand has the class
-          handUl.classList.add('has-executive');
-          return;
-      }
+function ensureExecutiveCard() {
+    var handUl = document.querySelector('ul.hand');
+    if (!handUl) return;
 
-      var cabDeck = document.querySelector('ul.decks a.card[card-id="main.cabinet"]') ||
-                    document.querySelector('ul.decks a.card[card-id="cabinet"]');
-      if (cabDeck && !cabDeck._cabDirectBound) {
-          cabDeck._cabDirectBound = true;
-          cabDeck.addEventListener('click', function(e) {
-              e.preventDefault();
-              e.stopImmediatePropagation();
-              if (window.dendryUI && window.dendryUI.dendryEngine) {
-                  window.dendryUI.dendryEngine.goToScene('cabinet_decisions');
-              }
-          }, true);
-      }
+    if (handUl.querySelector('li.executive-fixed')) {
+        handUl.classList.add('has-executive');
+        return;
+    }
 
-      // Remove any stale executive cards from pinned-cards
-      var pinnedCards = document.querySelectorAll('ul.pinned-cards li.pinned-card');
-      for (var i = 0; i < pinnedCards.length; i++) {
-          if (pinnedCards[i].querySelector('a.card[card-id="executive"]')) {
-              pinnedCards[i].remove();
-              break;
-          }
-      }
+    var li = document.createElement('li');
+    li.className = 'card-in-hand executive-fixed';
 
-      var li = document.createElement('li');
-      li.className = 'card-in-hand executive-fixed';
-      var a = document.createElement('a');
-      a.className = 'card';
-      a.setAttribute('href', '#');
-      a.setAttribute('card-id', 'executive');
-      a.setAttribute('title', 'Executive');
-      var img = document.createElement('img');
-      img.className = 'card-img';
-      img.src = 'img/executive1.png';
-      img.style.filter = 'grayscale(100%)';
-      a.appendChild(img);
-      var caption = document.createElement('span');
-      caption.className = 'card-caption';
-      caption.textContent = 'Executive';
-      li.appendChild(a);
-      li.appendChild(caption);
-      handUl.appendChild(li);
-      handUl.classList.add('has-executive');
-      a.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (window.dendryUI && window.dendryUI.dendryEngine) {
-              window.dendryUI.dendryEngine.goToScene('execute');
-          }
-      });
-  };
+    var a = document.createElement('a');
+    a.className = 'card';
+    a.setAttribute('href', '#');
+    a.setAttribute('card-id', 'executive');
+    a.setAttribute('title', 'Executive');
+
+    var img = document.createElement('img');
+    img.className = 'card-img';
+    img.src = 'img/executive1.png';
+    img.style.filter = 'grayscale(100%)';
+    a.appendChild(img);
+
+    var caption = document.createElement('span');
+    caption.className = 'card-caption';
+    caption.textContent = 'Executive';
+
+    li.appendChild(a);
+    li.appendChild(caption);
+    handUl.appendChild(li);
+    handUl.classList.add('has-executive');
+
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (window.dendryUI && window.dendryUI.dendryEngine) {
+            window.dendryUI.dendryEngine.goToScene('execute');
+        }
+    });
+}
+
+function watchHandForExecutiveCard() {
+    var handUl = document.querySelector('ul.hand');
+    if (!handUl || handUl.dataset.executiveObserverAttached === 'true') return;
+
+    handUl.dataset.executiveObserverAttached = 'true';
+
+    var observer = new MutationObserver(function() {
+        if (!document.querySelector('ul.hand li.executive-fixed')) {
+            setTimeout(ensureExecutiveCard, 0);
+        }
+    });
+
+    observer.observe(handUl, {
+        childList: true,
+        subtree: true
+    });
+}
+
+window.ensureExecutiveCard = ensureExecutiveCard;
+window.watchHandForExecutiveCard = watchHandForExecutiveCard;
+
+window.onDisplayContent = function() {
+    window.updateSidebar();
+    window.updateNewsSidebar();
+    setTimeout(function() {
+        ensureExecutiveCard();
+        watchHandForExecutiveCard();
+    }, 0);
+};
+
+window.onload = function() {
+    window.dendryUI.loadSettings({show_portraits: false});
+
+    setTimeout(function() {
+        ensureExecutiveCard();
+        watchHandForExecutiveCard();
+    }, 0);
+};
 
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: false});
@@ -676,7 +691,7 @@
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-    // Defer injection to give Dendry time to render
+    // gewageagewwgag
     setTimeout(function() {
         window._injectExecutiveCard();
         window.bindAdvisorSwitcherCard();
