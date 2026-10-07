@@ -368,7 +368,7 @@
             return baseTooltip.explanationText; 
         }
       
-     return baseTooltip.explanationText;
+      return baseTooltip.explanationText;
 
     }
 
@@ -560,10 +560,15 @@
 
       handUl.dataset.executiveObserverAttached = 'true';
 
+      var debounceTimeout = null;
       var observer = new MutationObserver(function() {
-          if (!document.querySelector('ul.hand li.executive-fixed')) {
-              setTimeout(ensureExecutiveCard, 0);
-          }
+          // Debounce: clear existing timeout and set a new one
+          if (debounceTimeout) clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(function() {
+              if (!document.querySelector('ul.hand li.executive-fixed')) {
+                  ensureExecutiveCard();
+              }
+          }, 100);
       });
 
       observer.observe(handUl, {
