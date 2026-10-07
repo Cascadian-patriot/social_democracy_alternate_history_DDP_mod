@@ -140,17 +140,6 @@ p.game-over {
   border-radius: 4px;
   color: #999;
 }
-/* Executive Affairs: labels, portrait roles/names, the (I) badge and the priorities
-   text all inherit a dark colour on the dark panel. Lighten the lot (inline party
-   colours like the blue DNVP keep theirs). Bar borders lightened too. */
-body.dark-mode .exec-meter-label,
-body.dark-mode .exec-portrait-role,
-body.dark-mode .exec-portrait-name,
-body.dark-mode .exec-portrait-party,
-body.dark-mode .exec-priorities-text { color: #e6e6e6 !important; }
-body.dark-mode .exec-meter-track,
-body.dark-mode .exec-meter-row.exec-meter-divider { border-color: #888 !important; }
-}
 
 ul.choices {
   border: 2px solid #876;
@@ -1308,4 +1297,16 @@ body.dark-mode .wide_tooltip-tip::before {
 .wide_tooltip-wrap.drop-down .wide_tooltip-tip {
   bottom: auto;
   top: calc(100% + 10px);
+}
+
+/* Executive Affairs: labels, portrait roles/names, the (I) badge and the priorities
+   text all inherit a dark colour on the dark panel. Lighten the lot (inline party
+   colours like the blue DNVP keep theirs). Bar borders lightened too. */
+body.dark-mode .exec-meter-label,
+body.dark-mode .exec-portrait-role,
+body.dark-mode .exec-portrait-name,
+body.dark-mode .exec-portrait-party,
+body.dark-mode .exec-priorities-text { color: #e6e6e6 !important; }
+body.dark-mode .exec-meter-track,
+body.dark-mode .exec-meter-row.exec-meter-divider { border-color: #888 !important; }
 }
