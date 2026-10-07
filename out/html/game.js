@@ -246,32 +246,32 @@
         if (!Q) return baseTooltip.explanationText;
 
        if (searchString === 'KPD' && Q.kpd_relation !== undefined) {
-            var relationText = getRelationshipText(Q.kpd_relation) 
+            var relationText = getRelationshipText(Q.kpd_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
       
        if (searchString === 'SPD' && Q.spd_relation !== undefined) {
-            var relationText = getRelationshipText(Q.spd_relation) 
+            var relationText = getRelationshipText(Q.spd_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
     
        if (searchString === 'USPD' && Q.uspd_relation !== undefined) {
-            var relationText = getRelationshipText(Q.uspd_relation) 
+            var relationText = getRelationshipText(Q.uspd_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
       
        if (searchString === 'DAP' && Q.dap_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dap_relation) 
+            var relationText = getRelationshipText(Q.dap_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
      
        if (searchString === 'DHP' && Q.dhp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dhp_relation) 
+            var relationText = getRelationshipText(Q.dhp_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
             
        if (searchString === 'WP' && Q.wp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.wp_relation) 
+            var relationText = getRelationshipText(Q.wp_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
       
@@ -306,7 +306,7 @@
         }
                     
        if (searchString === 'DDP'){
-            return baseTooltip.explanationText 
+            return baseTooltip.explanationText;
         }
           
        if (searchString === 'Sammlung'){
@@ -340,32 +340,32 @@
         }
       
        if (searchString === 'DVP' && Q.dvp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dvp_relation) 
+            var relationText = getRelationshipText(Q.dvp_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
           
        if (searchString === 'Z' && Q.z_relation !== undefined) {
-            var relationText = getRelationshipText(Q.z_relation) 
+            var relationText = getRelationshipText(Q.z_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
             
        if (searchString === 'BVP' && Q.z_relation !== undefined) {
-            var relationText = getRelationshipText(Q.z_relation) 
+            var relationText = getRelationshipText(Q.z_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
               
        if (searchString === 'DNVP' && Q.dnvp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dnvp_relation) 
+            var relationText = getRelationshipText(Q.dnvp_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
                 
        if (searchString === 'NSDAP' && Q.nsdap_relation !== undefined) {
-            var relationText = getRelationshipText(Q.nsdap_relation) 
+            var relationText = getRelationshipText(Q.nsdap_relation); 
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
                   
        if (searchString === 'Others'){
-            return baseTooltip.explanationText 
+            return baseTooltip.explanationText; 
         }
       
     return baseTooltip.explanationText;
@@ -468,7 +468,12 @@
   window.updateSidebar = function() {
       $('#qualities').empty();
       var scene = dendryUI.game.scenes[window.statusTab];
-      dendryUI.dendryEngine._runActions(scene.onArrival);
+      if (!scene) {
+          return;
+      }
+      if (scene.onArrival) {
+          dendryUI.dendryEngine._runActions(scene.onArrival);
+      }
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
@@ -498,7 +503,7 @@
       }
       var tabButton = document.getElementById(tabId);
       var tabButtons = document.getElementsByClassName('tab_button');
-      for (i = 0; i < tabButtons.length; i++) {
+      for (var i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }
       tabButton.className += ' active';
@@ -510,6 +515,8 @@
   window.onDisplayContent = function() {
       window.updateSidebar();
       window.updateNewsSidebar();
+      window._injectExecutiveCard();
+      window.bindAdvisorSwitcherCard();
   };
 
   /*
@@ -558,7 +565,7 @@
         document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
         document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
         window.dendryUI.saveSettings();
-  }
+  };
 
   window.decreaseFontSize = function() {
         window.dendryUI.font_size -= 0.1;
@@ -568,68 +575,84 @@
         document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
         document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
         window.dendryUI.saveSettings();
-  }
-window._injectExecutiveCard = function() {
-    var handUl = document.querySelector('ul.hand');
-    if (!handUl) return;
-    if (handUl.querySelector('li.executive-fixed')) {
-        handUl.classList.add('has-executive');
-        return;
-    }
-   }
-    if (window._injectExecutiveCard) window._injectExecutiveCard();
-    var cabDeck = document.querySelector('ul.decks a.card[card-id="main.cabinet"]')
-               || document.querySelector('ul.decks a.card[card-id="cabinet"]');
-    if (cabDeck && !cabDeck._cabDirectBound) {
-        cabDeck._cabDirectBound = true;
-        cabDeck.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            if (window.dendryUI && window.dendryUI.dendryEngine) {
-                window.dendryUI.dendryEngine.goToScene('cabinet_decisions');
-            }
-        }, true);
-    }
-    var stale = document.querySelector('ul.pinned-cards li.pinned-card:has(a.card[card-id="executive"])');
-    if (stale) stale.remove();
-    var li = document.createElement('li');
-    li.className = 'card-in-hand executive-fixed';
-    var a = document.createElement('a');
-    a.className = 'card';
-    a.setAttribute('href', '#');
-    a.setAttribute('card-id', 'executive');
-    a.setAttribute('title', 'Executive');
-    var img = document.createElement('img');
-    img.className = 'card-img';
-    img.src = 'img/executive1.png';
-    img.style.filter = 'grayscale(100%)';
-    a.appendChild(img);
-    var caption = document.createElement('span');
-    caption.className = 'card-caption';
-    caption.textContent = 'Executive';
-    li.appendChild(a);
-    li.appendChild(caption);
-    handUl.appendChild(li);
-    handUl.classList.add('has-executive');
-    a.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (window.dendryUI && window.dendryUI.dendryEngine) {
-            window.dendryUI.dendryEngine.goToScene('execute');
-        }
-    });
-};
-window._injectExecutiveCard();
+  };
 
-var switcherCard = document.querySelector('a.card[card-id="advisor_switcher"]');
-if (switcherCard && !switcherCard.dataset.clickAttached) {
-    switcherCard.dataset.clickAttached = 'true';
-    switcherCard.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.dendryUI.dendryEngine.goToScene('advisor_switcher');
-    });
-}
+  function bindAdvisorSwitcherCard() {
+      var switcherCard = document.querySelector('a.card[card-id="advisor_switcher"]');
+      if (!switcherCard || switcherCard.dataset.clickAttached === 'true') {
+          return;
+      }
+      switcherCard.dataset.clickAttached = 'true';
+      switcherCard.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.dendryUI && window.dendryUI.dendryEngine) {
+              window.dendryUI.dendryEngine.goToScene('advisor_switcher');
+          }
+      });
+  }
+
+  window.bindAdvisorSwitcherCard = bindAdvisorSwitcherCard;
+
+  window._injectExecutiveCard = function() {
+      var handUl = document.querySelector('ul.hand');
+      if (!handUl) {
+          return;
+      }
+      if (handUl.querySelector('li.executive-fixed')) {
+          handUl.classList.add('has-executive');
+          return;
+      }
+
+      var cabDeck = document.querySelector('ul.decks a.card[card-id="main.cabinet"]') ||
+                    document.querySelector('ul.decks a.card[card-id="cabinet"]');
+      if (cabDeck && !cabDeck._cabDirectBound) {
+          cabDeck._cabDirectBound = true;
+          cabDeck.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              if (window.dendryUI && window.dendryUI.dendryEngine) {
+                  window.dendryUI.dendryEngine.goToScene('cabinet_decisions');
+              }
+          }, true);
+      }
+
+      var pinnedCards = document.querySelectorAll('ul.pinned-cards li.pinned-card');
+      for (var i = 0; i < pinnedCards.length; i++) {
+          if (pinnedCards[i].querySelector('a.card[card-id="executive"]')) {
+              pinnedCards[i].remove();
+              break;
+          }
+      }
+
+      var li = document.createElement('li');
+      li.className = 'card-in-hand executive-fixed';
+      var a = document.createElement('a');
+      a.className = 'card';
+      a.setAttribute('href', '#');
+      a.setAttribute('card-id', 'executive');
+      a.setAttribute('title', 'Executive');
+      var img = document.createElement('img');
+      img.className = 'card-img';
+      img.src = 'img/executive1.png';
+      img.style.filter = 'grayscale(100%)';
+      a.appendChild(img);
+      var caption = document.createElement('span');
+      caption.className = 'card-caption';
+      caption.textContent = 'Executive';
+      li.appendChild(a);
+      li.appendChild(caption);
+      handUl.appendChild(li);
+      handUl.classList.add('has-executive');
+      a.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.dendryUI && window.dendryUI.dendryEngine) {
+              window.dendryUI.dendryEngine.goToScene('execute');
+          }
+      });
+  };
+
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
@@ -643,11 +666,14 @@ if (switcherCard && !switcherCard.dataset.clickAttached) {
     }
     document.getElementById('font_size_value').textContent = window.dendryUI.font_size.toFixed(1) + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    window._injectExecutiveCard();
+    window.bindAdvisorSwitcherCard();
   };
-document.addEventListener('mousemove', e => {
-    document.querySelectorAll('.mytooltiptext').forEach(el => {
+
+  document.addEventListener('mousemove', function(e) {
+    document.querySelectorAll('.mytooltiptext').forEach(function(el) {
         el.style.setProperty('--mouse-x', e.clientX + 'px');
         el.style.setProperty('--mouse-y', e.clientY + 'px');
     });
-});  
+  });
 }());
