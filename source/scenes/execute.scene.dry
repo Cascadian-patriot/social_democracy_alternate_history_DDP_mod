@@ -1,5 +1,8 @@
-title: test
+title: Executive Affairs
+new-page: true
 
-= test
+= Executive Affairs
 
-muahahahahah
+<div id="exec_overview"><div class="exec-portraits-row"><div class="exec-portrait-card"><div class="exec-portrait-frame"><img src="/img/optimized/hindenburg1.6b7a9f693b9a6ac5.thumb.webp" alt="Hindenburg" decoding="async" loading="eager" fetchpriority="high"></div><div class="exec-portrait-role">Reichspräsident</div><div class="exec-portrait-name">Hindenburg</div><div class="exec-portrait-party">(<span data-rich-color-role="text-muted" style="font-weight: bold;">I</span>)</div></div><div class="exec-portrait-card"><div class="exec-portrait-frame"><img src="/img/optimized/luther1.30a0f26308c55c9d.thumb.webp" alt="Luther" decoding="async" loading="eager" fetchpriority="high"></div><div class="exec-portrait-role">Reichskanzler</div><div class="exec-portrait-name">Luther</div><div class="exec-portrait-party">(<span data-rich-color-role="text-muted" style="font-weight: bold;">I</span>)</div></div></div>
+
+<div class="exec-priorities-text"><div>The DDP is [? if ddp_in_government: in government. ?][? if ddp_in_government == 0: not currently in government. ?]</div></div>
