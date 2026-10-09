@@ -13,10 +13,6 @@ font-family: "Minion Pro", Georgia, serif;
   --tab-hover-color: #ececec;
   --card-border-color: #ccc; 
   --card-bg-color: #ddd; 
-  --surface-cabinet-paper: #faecc4
-  --text-on-paper: #431
-  --border-interactive: #876655
-  --shadow-colour: rgb(0 0 0 / 20%)
   background-color: var(--bg-color);
   padding: 0;
   line-height: 155%;
@@ -34,10 +30,6 @@ body.dark-mode {
   --tab-hover-color: #242424;
   --card-border-color: #4c4c4c;
   --card-bg-color: #3f3f3f;
-  --surface-cabinet-paper: #352f23
-  --text-on-paper: #eee8dc
-  --border-interactive: #eee8dc
-  --shadow-colour: rgb(0 0 0 / 55%)
 }
 body.dark-mode #content {
   border-style: double;
