@@ -519,6 +519,7 @@ Q.img_president = "img/EbertFriedrich.webp"
 Q.chancellor = "Scheidemann";
 Q.chancellor_party = 'SPD';
 Q.img_chancellor = "img/ScheidemannPhilipp.png"
+Q.chancellor_position_name = "Reichsministerpräsident";
 Q.reichstag_president = "Constantin Fehrenbach";
 Q.reichstag_president_party = "Z";
 Q.img_r_president = "img/FehrenbachConstantin.jpeg"
