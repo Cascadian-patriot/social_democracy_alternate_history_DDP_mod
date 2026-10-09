@@ -9,13 +9,13 @@ body {
   --unavailable-color: #999;
   --tab-bg-color: #dedede;
   --tab-color: #ddd;
+  --tab-hover-color: #ececec;
+  --card-border-color: #ccc; 
+  --card-bg-color: #ddd; 
   --surface-cabinet-paper: #faecc4
   --text-on-paper: #431
   --border-interactive: #876655
   --shadow-colour: rgb(0 0 0 / 20%)
-  --tab-hover-color: #ececec;
-  --card-border-color: #ccc; 
-  --card-bg-color: #ddd; 
   font-family: "Minion Pro", Georgia, serif;
   background-color: var(--bg-color);
   padding: 0;
@@ -29,15 +29,15 @@ body.dark-mode {
   --text-color: #efefef;
   --link-color: #ff8080;
   --link-hover-color: rgba(255, 255, 255, 0.06);
-  --surface-cabinet-paper: #352f23
-  --text-on-paper: #eee8dc
-  --border-interactive: #eee8dc
-  --shadow-colour: rgb(0 0 0 / 55%)
   --tab-bg-color: #555555;
   --tab-color: #505050;
   --tab-hover-color: #242424;
   --card-border-color: #4c4c4c;
   --card-bg-color: #3f3f3f;
+  --surface-cabinet-paper: #352f23
+  --text-on-paper: #eee8dc
+  --border-interactive: #eee8dc
+  --shadow-colour: rgb(0 0 0 / 55%)
 }
 body.dark-mode #content {
   border-style: double;
