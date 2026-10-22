@@ -23,3 +23,7 @@ choose-if: soldatenwehr_strengthened_1 <= 2
 As always with the <span style="color: var(--uspd-colour);">Left</span>, the revolution faces challenge from within. The <span style="color: var(--kpd-colour);">Communists</span> under Eugen Leviné have refused to back the <span style="color: var(--kpd-colour);">Soviet</span>, declaring this a "pseudo-<span style="color: var(--kpd-colour);">soviet</span> of <span style="color: var(--uspd-colour);">coffeehouse communists</span>" neither arming the workers in earnest nor breaking the old order at its roots. Beyond the city, the Hoffmann Government has begun gathering loyalists to attempt to retake Munich, and it is expected Reichswehr Minister Gustav Noske will authorize the Freikorps to supplement Hoffmann's forces.
 
 - @root: Pointless bloodshed.
+
+
+@hoffmann_stay
+subtitle: Surprising.
