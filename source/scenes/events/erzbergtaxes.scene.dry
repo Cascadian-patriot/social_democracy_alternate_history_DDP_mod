@@ -5,27 +5,27 @@ view-if: year = 1919 and month = 7 and weeks = 3
 max-visits: 1
 tags: event
 
-= Erzberger's Tax and Finance Reforms
+= Tax and Finance Reforms
   
-Ever since the war started, the German State has seen an enormous and catstrophic increase in spenditure, and as a result, debt, with the former rising from 2.4 billion Marks in 1913 to 17.5 billion in 1919, and the latter from 2 billion Marks to 45 Billion, not even counting that the nation's economy has been destroyed by years of conflict, and also whichever amount we will have to pay for reparations in the future.
+<img src="img/erzberger_machine.jpeg" style="float:left; margin-right:1em; margin-bottom:0.5em; width:220px; object-fit:cover; object-position:top; border-radius:9px; border:3px solid #000000ff;"> Ever since the war started, the <span style="color: var(--z-colour);">Deuts</span><span style="color: var(--spd-colour);">ches R</span><span style="color: var(--ddp-colour);">eich</span> has seen an enormous and catastrophic increase in expenditure, and as a result, debt, with the former rising from 2.4 billion Marks in 1913 to 17.5 billion in 1919, and the latter from 2 billion Marks to 45 Billion, not even counting that the nation's economy has been destroyed by years of conflict, and also whatever amount of Marks we will have to pay for reparations in the future.
 
-To tackle these problems, our Finance Ministers Schiffer and Dernburg have prepared new taxes that will be presented by their succesor, Matthias Erzberger. Among these, are heavy taxes aimed to upper class citizens who profited from the war, wealth that increased during it, a new property tax, and a one-time emergency tax on wealth and capital, expecting to raise 14 billion Marks in total.
+To tackle these problems, Dernburg and Schiffer, both members of our party, have prepared new taxes that will be presented by their successor, Matthias Erzberger. Among these, are heavy taxes aimed agaisnt upper class citizens who profited from the war, wealth that increased during it, a new property tax, and a one-time emergency tax on wealth and capital, expecting to raise 14 billion Marks in total.
 
-The business and aristocratic classes are obviously very displeased about it, and will likely exacerbate the current capital flight affecting our economy, and there is an amount of pressure from our business wing to oppose it. In any case, there is enough support from the SPD and Zentrum to pass it, rendering our vote irrelevant, but we should still decide on voting.
+The business and aristocratic classes are obviously very displeased about it, and will likely exacerbate the current capital flight affecting our economy, there is also a lot of pressure from the Nationalliberale to vote agaisnt it. In any case, there is enough support from the SPD and the <span style="color: var(--z-colour);">Center Party</span> to pass it, rendering our vote irrelevant, however we should still vote.
   
 - @erzbergertaxation
 - @notaxationwithouthrepresentation
 
 @erzbergertaxation
-title: Vote in favour of erzberger's taxes.
-subtitle: These measures are desperately needed.
+title: Whip our Reichstag members in favour of these reforms.
+subtitle: These measures are desperately needed, even if the Nationalliberale disagree.
 on-arrival: upper_tax_rates += 1; old_middle_ddp -= 8; new_middle_ddp -= 6; spd_relations += 5; z_relations += 5; constitutional_leverage += 2; nationalliberale_dissent += 6
 
-We vote in favor of Erzberger's new taxes, and they are passed. Businesses and a part of our Middle Class voters are displeased by this, but we hope this will stabilize the Republic's finances.
+We vote in favour, and the reforms are passed. Many sections of the middle class base of our party are further angered by this, and some businesses have left us too, along with the Nationalliberale generally being unhappy with this decision. Several deputies of our party have decided to vote abstain or no anyways.
 
 @notaxationwithouthrepresentation
-title: Vote against erzberger's taxes.
+title: Whip our Reichstag members agaisnt these reforms.
 subtitle: It is likely they will pass anyway.
 on-arrival: upper_tax_rates += 1; new_middle_spd -= 4; old_middle_spd -= 4; new_middle_z -= 2; old_middle_z -= 4; old_middle_ddp += 5; new_middle_ddp += 4; spd_relations -= 5; z_relations -= 4; nationalliberale_dissent -= 6
 
-We vote against Erzberger's new taxes, but the SPD and Zentrum ensure their approval either way. Businesses and the Alte Mittelstand are satisfied by our support, while our relations with the SPD and Zentrum have decreased slightly. 
+We vote agaisnt these <span style="color: var(--spd-colour);">Marxist</span> taxes, however they pass anyway with the support of the USPD, SPD, and Z. The businesses and industrial backers of our party are satisfied, but our relations with the <span style="color: var(--z-colour);">Center</span> and SPD have decreased.
