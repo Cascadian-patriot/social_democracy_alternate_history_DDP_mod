@@ -1,0 +1,8 @@
+title: **The Munich Rising!**
+subtitle: The <span style="color: var(--kpd-colour);">Communists</span> have risen up... again.
+new-page: true
+max-visits: 1
+view-if: year == 1919 and weeks = 2 and month = 4
+
+
+Ever since the assassination of Kurt Eisner in February, the Bava<span style="color: #0098D4;">ian</span> capital has been a city without a centre, its Landtag paralysed, its SPD Minister-President Johannes Hoffmann clinging to an authority no one obeys, and its streets given over to a ferment of soldiers' councils, striking workers, and <span style="color: var(--uspd-colour);">revolutionary clubs</span>. Word of the <span style="color: var(--kpd-colour);">Soviet Republic</span> proclaimed in Budapest has electrified the <span style="color: var(--uspd-colour);">radicals</span>, who now insist that Bava<span style="color: #0098D4;">ria</span> too can leap straight to council rule. Against a government that cannot command its own soldiers, the pressure for a <span style="color: var(--uspd-colour);">Räterepublik</span> has become irresistible...
