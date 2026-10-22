@@ -6,7 +6,7 @@ on-arrival: {!
 Q.naumann_advisor = 0;
 Q.name_leader = "Carl Wilhelm Petersen";
 Q.img_leader = "img/portraits/PetersenCarlWilhelm.jpg";
-document.documentElement.style.setProperty('--ddp-colour', '#24e6ed')
+document.documentElement.style.setProperty('--ddp-colour', '#e6ce2c')
 !}
 tags: event
 new-page: true
