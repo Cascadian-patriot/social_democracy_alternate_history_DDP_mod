@@ -1,9 +1,8 @@
-title: Erzberger's Tax and Finance Reforms
+title: Tax and Finance Reforms?
 new-page: true
-subtitle: The National Assembly votes on erzberger's new proposals.
+subtitle: Erzberger is proposing multiple reforms to the National Assembly.
 view-if: year = 1919 and month = 7 and weeks = 3
 max-visits: 1
-face-image: img/schutzbund.png
 tags: event
 
 = Erzberger's Tax and Finance Reforms
