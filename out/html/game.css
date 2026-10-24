@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 body {
-  font-family: "Neuton", "Minion Pro", Georgia, serif;
+  font-family: "Gelasio", "Minion Pro", Georgia, serif;
   --bg-color: #f3f3e3;
   --border-color: #000;
   --content-bg-color: #f3f3f3;
