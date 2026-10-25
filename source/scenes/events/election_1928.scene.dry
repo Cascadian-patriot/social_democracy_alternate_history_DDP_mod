@@ -1223,6 +1223,15 @@ if (Q.kpd_r) {
     });
 }
 
+if (Q.uspd_r) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r * Q.reichstag_size),
+    });
+}
+
 if (Q.sapd_r && Q.sapd_formed) {
     data.push({
         "id": "sapd",
@@ -1294,7 +1303,7 @@ if (Q.z_minus_bvp_r) {
     });
 }
 
-if (Q.bvp_r) {
+if (Q.bvp_r && Q.bvp_spilt) {
     data.push({
         "id": "bvp",
         "legend": "BVP",
@@ -1454,16 +1463,16 @@ if (Q.dsu_exist && Q.dsu_r) {
     });
 }
 
-if (Q.nsdap_split && Q.nsdap_hitler_r) {
+if (Q.dap_formed && Q.dap_r) {
     data.push({
-        "id": "nsdap",
-        "legend": "NSDAP",
-        "name": "NSDAP",
-        "seats": Math.round(Q.nsdap_hitler_r * Q.reichstag_size),
+        "id": "dap",
+        "legend": "DAP",
+        "name": "DAP",
+        "seats": Math.round(Q.dap_r * Q.reichstag_size),
     });
 }
 
-if (!Q.nsdap_split && Q.nsdap_r) {
+if (Q.nsdap_formed && Q.nsdap_r) {
     data.push({
         "id": "nsdap",
         "legend": "NSDAP",
