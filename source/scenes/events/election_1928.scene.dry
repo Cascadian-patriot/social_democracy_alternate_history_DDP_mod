@@ -6,9 +6,6 @@ view-if: (year = next_election_year and month >= next_election_month and (next_e
 on-arrival: election_boycott = 0
 on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48
 set-jump: post_election_1928
-set-bg: img/map_2.jpg
-#face-image: img/Rothe_Wahlen_1903.jpg
-
 
 = Elections, [+ month : month +] [+ year +]
 
