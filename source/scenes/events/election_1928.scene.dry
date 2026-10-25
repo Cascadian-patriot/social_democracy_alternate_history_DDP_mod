@@ -12,7 +12,7 @@ set-bg: img/map_2.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-<img class="rich-image rich-image-left" decoding="async" loading="lazy" fetchpriority="auto" src="img/munich_soviet.jpeg" alt="" style="float:left; max-width:42%; margin: 0.2em 0 12px 1.25em; border-radius: 6px; border: 4px solid rgb(0, 0, 0);"> The Reichstag elections are to be held now. 
+<img class="rich-image rich-image-left" decoding="async" loading="lazy" fetchpriority="auto" src="img/reichstag_3.jpg" alt="" style="float:left; max-width:42%; margin: 0.2em 0 12px 1.25em; border-radius: 6px; border: 4px solid rgb(0, 0, 0);"> The Reichstag elections are to be held now. 
 
 - @election_algorithm: May we do our best...
 
