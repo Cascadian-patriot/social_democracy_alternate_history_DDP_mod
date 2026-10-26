@@ -212,6 +212,7 @@ Q.thuringia_prussia = 1;
 // Important variables for missions
 Q.republic_secured = 0;
 Q.constitution_written = false;
+Q.constitution_stalled = false;
 Q.reactionary_threat = 3;
 Q.situation_on_the_street = 5;
 
