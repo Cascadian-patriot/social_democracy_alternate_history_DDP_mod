@@ -221,7 +221,7 @@ Law and Order:<br>
 [? if situation_on_the_street >= 5 : <span style="color:#8b0000;">Chaotic</span> ?][? if situation_on_the_street >= 3 and situation_on_the_street <= 4 : <span style="color:#d2691e;">Turbulent</span> ?][? if situation_on_the_street >= 1 and situation_on_the_street <= 2 : <span style="color:#b8860b;">Restless</span> ?][? if situation_on_the_street == 0 : <span style="color:#2e7d32;">Calm</span> ?]<br>
 
 The Constitutional Settlement:<br>
-[? if constitution_stalled === true : <span style="color:#8b0000;">Stalled</span> ?][? if constitution_written === false : <span style="color:#d2691e;">In Progress</span> ?][? if constitution_written === true: <span style="color:#2e7d32;">Settled</span> ?]<br>
+[? if constitution_stalled == 1 : <span style="color:#8b0000;">Stalled</span> ?][? if constitution_written == 0 : <span style="color:#d2691e;">In Progress</span> ?][? if constitution_written == 1 : <span style="color:#2e7d32;">Settled</span> ?]<br>
 
 Support for the Republic:<br>
 [? if pro-republic <= 25 : <span style="color:#8b0000;">Hostile</span> ?][? if republic_support < 45 : <span style="color:#d2691e;">Wavering</span> ?][? if republic_support <= 65 : <span style="color:#b8860b;">Supportive</span> ?][? if republic_support >= 80 : <span style="color:#2e7d32;">Devoted</span> ?]<br>
