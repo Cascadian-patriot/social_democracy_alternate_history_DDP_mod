@@ -233,7 +233,7 @@ The Constitutional Settlement:<br>
 [? if constitution_written == 1 : <span style="color:#2e7d32;">Settled</span> ?][? if constitution_written == 0 and constitution_stalled == 1 : <span style="color:#8b0000;">Stalled</span> ?][? if constitution_written == 0 and not constitution_stalled : <span style="color:#d2691e;">In Progress</span> ?]<br>
 Support for the Republic:<br>
 [? if pro_republic <= 25 : <span style="color:#8b0000;">Hostile</span> ?][? if pro_republic > 25 and pro_republic < 45 : <span style="color:#d2691e;">Wavering</span> ?][? if pro_republic >= 45 and pro_republic < 80 : <span style="color:#b8860b;">Supportive</span> ?][? if pro_republic >= 80 : <span style="color:#2e7d32;">Devoted</span> ?]<br>
-Loyalty of the Security Forces:<br>
+Loyalty of the Reichswehr:<br>
 [? if reichswehr_loyalty >= 0 : <span style="color:#8b0000;">Nonexistent</span> ?][? if reichswehr_loyalty >= 0.5 : <span style="color:#d2691e;">Minimal</span> ?][? if reichswehr_loyalty >= 1.5 : <span style="color:#b8860b;">Moderate</span> ?][? if reichswehr_loyalty >= 2.5 : <span style="color:#2e7d32;">Strong</span> ?]<br>
 The Reactionary Threat:<br>
 [? if reactionary_threat == 0 : <span style="color:#2e7d32;">Dormant</span> ?][? if reactionary_threat == 1 : <span style="color:#b8860b;">Contained</span> ?][? if reactionary_threat == 2 : <span style="color:#d2691e;">Growing</span> ?][? if reactionary_threat >= 3 : <span style="color:#8b0000;">Imminent</span> ?]
