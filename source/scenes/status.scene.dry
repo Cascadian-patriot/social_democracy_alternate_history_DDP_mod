@@ -244,6 +244,7 @@ The Reactionary Threat:<br>
 [? if reactionary_threat == 0 : <span style="color:#2e7d32;">Dormant</span> ?][? if reactionary_threat == 1 : <span style="color:#b8860b;">Contained</span> ?][? if reactionary_threat == 2 : <span style="color:#d2691e;">Growing</span> ?][? if reactionary_threat >= 3 : <span style="color:#8b0000;">Imminent</span> ?]
 
 </div>
+</div>
 
 @government
 on-arrival: {!
