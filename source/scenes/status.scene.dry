@@ -198,9 +198,20 @@ Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, 
 
 Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, USPD: [+ catholics_uspd_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, [? if dap_formed: DAP: [+ catholics_dap_display +]%, ?][? if nsdap_formed: NSDAP: [+ catholics_nsdap_display +]%, ?] Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
-@missions
-title: Missions
 
+
+
+
+@map
+
+<h1>Karte des Deutschen Reiches</h1>
+<hr>
+
+<div> 
+<div style="text-align: center;">
+<h1><a href="#" onclick="window.dendryUI.dendryEngine.goToScene('maps'); return false;" style="display: inline-block; padding: 4px 10px; border: 1px solid #431; color: #431; font-size: 1em; cursor: pointer; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 0.05em;">Maps</a></h1> 
+
+@missions
 <div style="text-align:center; border-bottom:3px solid #000; margin-bottom:10px;">
 <div style="font-size:1.2em; font-weight:bold; letter-spacing:1px; color:#3b2a14; border-top:3px solid #000; padding:4px 0 2px; margin-top:6px;">PRIMARY MISSION</div>
 </div>
@@ -233,17 +244,6 @@ The Reactionary Threat:<br>
 [? if reactionary_threat == 0 : <span style="color:#2e7d32;">Dormant</span> ?][? if reactionary_threat == 1 : <span style="color:#b8860b;">Contained</span> ?][? if reactionary_threat == 2 : <span style="color:#d2691e;">Growing</span> ?][? if reactionary_threat >= 3 : <span style="color:#8b0000;">Imminent</span> ?]
 
 </div>
-
-
-
-@map
-
-<h1>Karte des Deutschen Reiches</h1>
-<hr>
-
-<div> 
-<div style="text-align: center;">
-<h1><a href="#" onclick="window.dendryUI.dendryEngine.goToScene('maps'); return false;" style="display: inline-block; padding: 4px 10px; border: 1px solid #431; color: #431; font-size: 1em; cursor: pointer; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 0.05em;">Maps</a></h1> 
 
 @government
 on-arrival: {!
