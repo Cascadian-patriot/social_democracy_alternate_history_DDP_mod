@@ -198,6 +198,43 @@ Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, 
 
 Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, USPD: [+ catholics_uspd_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, [? if dap_formed: DAP: [+ catholics_dap_display +]%, ?][? if nsdap_formed: NSDAP: [+ catholics_nsdap_display +]%, ?] Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
+@missions
+title: Missions
+
+<div style="text-align:center; border-bottom:3px solid #000; margin-bottom:10px;">
+<div style="font-size:1.2em; font-weight:bold; letter-spacing:1px; color:#3b2a14; border-top:3px solid #000; padding:4px 0 2px; margin-top:6px;">PRIMARY MISSION</div>
+</div>
+
+[? if republic_secured == 0 :
+<div style="text-align:center; border-top:3px solid #000; border-bottom:3px solid #000; margin:8px 0; padding:8px 0; font-family:serif; font-weight:bold; color:#0a0a3c;">
+<div style="font-size:1.3em; letter-spacing:2px;">SECURING</div>
+<div style="font-size:0.7em; letter-spacing:5px; color:#3b2a14;">OUR</div>
+<div style="font-size:1.3em; letter-spacing:2px;">REPUBLIC</div>
+</div>
+?]
+
+<img src="img/securing_republic.jpg" style="width:100%; border:2px solid #0a0a3c; box-sizing:border-box; margin-bottom:10px;">
+
+<div style="font-weight:bold; color:#3b2a14; line-height:1.45;">
+
+Law and Order:<br>
+[? if situation_on_the_street >= 5 : <span style="color:#8b0000;">Chaotic</span> ?][? if situation_on_the_street >= 3 and situation_on_the_street <= 4 : <span style="color:#d2691e;">Turbulent</span> ?][? if situation_on_the_street >= 1 and situation_on_the_street <= 2 : <span style="color:#b8860b;">Restless</span> ?][? if situation_on_the_street == 0 : <span style="color:#2e7d32;">Calm</span> ?]<br>
+
+The Constitutional Settlement:<br>
+[? if constitution_stalled == true : <span style="color:#8b0000;">Stalled</span> ?][? if constitution_written == 0 : <span style="color:#d2691e;">In Progress</span> ?][? if constitution_written == true: <span style="color:#2e7d32;">Settled</span> ?]<br>
+
+Support for the Republic:<br>
+[? if pro-republic <= 25 : <span style="color:#8b0000;">Hostile</span> ?][? if republic_support < 45 : <span style="color:#d2691e;">Wavering</span> ?][? if republic_support <= 65 : <span style="color:#b8860b;">Supportive</span> ?][? if republic_support >= 80 : <span style="color:#2e7d32;">Devoted</span> ?]<br>
+
+Loyalty of the Security Forces:<br>
+[? if security_loyalty == 0 : <span style="color:#8b0000;">Nonexistent</span> ?][? if security_loyalty == 1 : <span style="color:#d2691e;">Minimal</span> ?][? if security_loyalty == 2 : <span style="color:#b8860b;">Moderate</span> ?][? if security_loyalty >= 3 : <span style="color:#2e7d32;">Strong</span> ?]<br>
+
+The Reactionary Threat:<br>
+[? if reactionary_threat == 0 : <span style="color:#2e7d32;">Dormant</span> ?][? if reactionary_threat == 1 : <span style="color:#b8860b;">Contained</span> ?][? if reactionary_threat == 2 : <span style="color:#d2691e;">Growing</span> ?][? if reactionary_threat >= 3 : <span style="color:#8b0000;">Imminent</span> ?]
+
+</div>
+
+
 
 @map
 
