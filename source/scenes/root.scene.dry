@@ -213,7 +213,7 @@ Q.thuringia_prussia = 1;
 Q.republic_secured = 0;
 Q.constitution_written = false;
 Q.constitution_stalled = false;
-Q.reactionary_threat = 3;
+Q.reactionary_threat = 2;
 Q.situation_on_the_street = 5;
 
 // USPD radicalisation to be used in various events
