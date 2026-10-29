@@ -1,0 +1,78 @@
+.ideology-tooltip-anchor.has-ideology-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px
+}
+
+.ideology-tooltip-card {
+    position: absolute;
+    bottom: calc(100% + 9px);
+    left: 50%;
+    z-index: 10000;
+    box-sizing: border-box;
+    width: 220px;
+    max-width: calc(100vw - 24px);
+    padding: 12px;
+    transform: translate(-50%);
+    border: 2px solid var(--border-subtle, #999);
+    background: var(--content-bg-color, #fff);
+    color: var(--text-color, #000);
+    box-shadow: 2px 2px 6px #00000040;
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+    white-space: normal;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .1s ease
+}
+
+.ideology-tooltip-card:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    border: 7px solid transparent;
+    border-top-color: var(--border-subtle, #999)
+}
+
+.ideology-tooltip-anchor:hover>.ideology-tooltip-card,.ideology-tooltip-anchor:focus>.ideology-tooltip-card,.ideology-tooltip-anchor:focus-visible>.ideology-tooltip-card {
+    visibility: visible;
+    opacity: 1
+}
+
+.ideology-tooltip-image {
+    display: block;
+    width: 86px;
+    height: 73px;
+    margin: 0 auto 8px;
+    object-fit: contain
+}
+
+.ideology-tooltip-title {
+    display: block;
+    margin-bottom: 7px;
+    text-align: center
+}
+
+.ideology-tooltip-description {
+    display: block;
+    text-align: center
+}
+
+:root[data-theme=dark] .ideology-tooltip-card {
+    border-color: var(--border-subtle, #666);
+    background: var(--surface-tooltip, #2a2a2a);
+    color: var(--text-primary, #f0f0f0)
+}
+
+:root[data-theme=dark] .ideology-tooltip-card:after {
+    border-top-color: var(--border-subtle, #666)
+}
