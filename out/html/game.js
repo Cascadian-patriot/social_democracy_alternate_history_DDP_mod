@@ -370,7 +370,11 @@
     image: "img/revisionistsoc.webp",
     imageAlt: "Emblem of revisionist socialism",
     description: "Rooted in the split within the SPD, Revisionist Socialism is a combination of social democratic ideals and left-wing nationalism. Although it supports most of the socialist principles, it focuses more on nationalist rhetoric as a means of attracting working-class voters disillusioned with mainstream compromises and communist radicalism."
+        });
+      }
+    });
   };
+})();
   var L0 = 0;
   function a0(W0) {
     return W0["getAttribute"]("data-ideology-name") || W0["textContent"]["trim"]();
