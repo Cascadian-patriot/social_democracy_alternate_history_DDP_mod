@@ -81,6 +81,12 @@ DNVP: [+ dnvp_relation : relationships +]
 [? if nsdap_formed: NSDAP: [+ nsdap_relation : relationships +] ?]
 [? if dap_formed: DAP: [+ dap_relation : relationships +] ?]
 
+= Party Leadership
+
+<hr>
+
+KPD: Reformist Socialism ([+ kpd_leader +])
+
 = Internal Factions of the DDP
 
 <hr>
