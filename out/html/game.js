@@ -370,82 +370,8 @@
     image: "img/revisionistsoc.webp",
     imageAlt: "Emblem of revisionist socialism",
     description: "Rooted in the split within the SPD, Revisionist Socialism is a combination of social democratic ideals and left-wing nationalism. Although it supports most of the socialist principles, it focuses more on nationalist rhetoric as a means of attracting working-class voters disillusioned with mainstream compromises and communist radicalism."
-  function a0(W0) {
-    return W0["getAttribute"]("data-ideology-name") || W0["textContent"]["trim"]();
-  }
-  function _0(W0) {
-    var xx = W0["querySelector"](".ideology-tooltip-card");
-    if (xx) {
-      xx["remove"]();
-    }
-    W0["classList"]["remove"]("has-ideology-tooltip");
-    W0["removeAttribute"]("tabindex");
-    W0["removeAttribute"]("aria-describedby");
-    W0["removeAttribute"]("data-ideology-decorated");
-  }
-  window["decorateIdeologyTooltips"] = function (W0) {
-    (W0 || document)["querySelectorAll"](".ideology-tooltip-anchor")["forEach"](function (xx) {
-      var O0 = a0(xx);
-      var K0 = d0[O0];
-      if (!K0) {
-        _0(xx);
-        return;
-      }
-      if (xx["getAttribute"]("data-ideology-decorated") !== O0) {
-        _0(xx);
-        xx["setAttribute"]("data-ideology-decorated", O0);
-        xx["classList"]["add"]("has-ideology-tooltip");
-        xx["setAttribute"]("tabindex", "0");
-        var Hx = document["createElement"]("span");
-        Hx["className"] = "ideology-tooltip-card";
-        Hx.id = "ideology-tooltip-" + ++L0;
-        Hx["setAttribute"]("role", "tooltip");
-        xx["setAttribute"]("aria-describedby", Hx.id);
-        var Cx = document["createElement"]("strong");
-        Cx["className"] = "ideology-tooltip-title";
-        Cx["textContent"] = K0["title"] || O0;
-        Hx["appendChild"](Cx);
-        if (K0["image"]) {
-          var jx = document["createElement"]("img");
-          jx["className"] = "ideology-tooltip-image";
-          jx["src"] = K0["image"];
-          jx["alt"] = K0["imageAlt"] || "";
-          if (K0["imageWidth"]) {
-            jx["style"]["width"] = K0["imageWidth"] + "px";
-          }
-          if (K0["imageHeight"]) {
-            jx["style"]["height"] = K0["imageHeight"] + "px";
-          }
-          Hx["appendChild"](jx);
-        }
-        var e1 = document["createElement"]("span");
-        e1["className"] = "ideology-tooltip-description";
-        var X = e1;
-        K0["description"]["split"](/(<\/?i>)/i)["forEach"](function (v) {
-          if (v) {
-            if (/^<i>$/i["test"](v)) {
-              var h = document["createElement"]("i");
-              e1["appendChild"](h);
-              X = h;
-            } else {
-              if (/^<\/i>$/i["test"](v)) {
-                X = e1;
-              } else {
-                X["appendChild"](document["createTextNode"](v));
-              }
-            }
-          }
-        });
-        Hx["appendChild"](e1);
-        xx["appendChild"](Hx);
-        window["bindViewportTooltip"]?.(xx, Hx, {
-          placement: "above"
-          });
-      }
-    });
   };
-})();
-
+  
   window.disableImages = function() {
       window.dendryUI.show_portraits = false;
       window.dendryUI.saveSettings();
