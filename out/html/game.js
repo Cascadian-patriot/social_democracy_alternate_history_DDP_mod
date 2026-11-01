@@ -464,11 +464,8 @@
     }
   };
 
-   // TODO: have some code for tabbed sidebar browsing.
+ // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
-      if (!dendryUI || !dendryUI.game || !dendryUI.game.scenes) {
-          return;
-      }
       $('#qualities').empty();
       var scene = dendryUI.game.scenes[window.statusTab];
       if (!scene) {
@@ -481,10 +478,11 @@
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
 
+  // Populates the right-hand "news"/leadership sidebar.
+  // Expects a scene with id "news" in your .dry source whose content
+  // holds whatever flavor text/leader info you want shown there.
+  // Update that scene's content via @set actions as the game state changes.
   window.updateNewsSidebar = function() {
-      if (!dendryUI || !dendryUI.game || !dendryUI.game.scenes) {
-          return;
-      }
       $('#news').empty();
       var scene = dendryUI.game.scenes[window.newsTab || 'news'];
       if (!scene) {
