@@ -20,7 +20,7 @@ Week [+ weeks +], [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]
 
-DDP position: [? if ddp_toleration : toleration ?][? if ddp_in_government : in government - ?][? if ddp_toleration == 0 and ddp_in_government == 0 and ddp_caretaker == 0 : opposition ?][? if ddp_caretaker : caretaker government ?][? if in_weimar_coalition and ddp_in_government: Weimar Coalition ?][? if in_grand_coalition and ddp_in_government: Grand Coalition ?][? if in_ddp_majority and ddp_in_government: DDP majority ?][? if in_minority_government and ddp_in_government: minority government ?][? if in_emergency_government and ddp_in_government: emergency government ?]
+DDP position: [? if ddp_toleration : toleration ?][? if ddp_in_government : in government - ?][? if ddp_toleration == 0 and ddp_in_government == 0 and ddp_caretaker == 0 : opposition ?][? if ddp_caretaker : caretaker government ?][? if in_weimar_coalition and ddp_in_government: Weimar Coalition ?][? if in_grand_coalition and ddp_in_government: Grand Coalition ?][? if in_ddp_majority and ddp_in_government: DDP majority ?][? if in_minority_government and ddp_in_government: minority government ?][? if in_emergency_government and ddp_in_government: emergency government ?][? if in_burgerblock and ddp_in_government: Bürgerblock ?]
 
 [? if ddp_in_government and not in_ddp_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
