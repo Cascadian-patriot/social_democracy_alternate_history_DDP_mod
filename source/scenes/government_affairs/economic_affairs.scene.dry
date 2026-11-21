@@ -1,0 +1,59 @@
+title: Economic Affairs
+is-card: true
+new-page: true
+on-arrival: economic_affairs_timer += 6; month_actions += 1
+view-if: (economic_minister_party == "DDP" or economic_minister_party == "LVP") and economic_affairs_timer <= 0
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: govt_affairs, cabinet
+
+= Economic Affairs
+
+We can utilize the economy ministry to execute various actions that will shape the nation according to our party programme.
+
+- @deregulate_small_buisnesses: Deregulate and protect small independent buisnesses.
+- @curb_break_up: Curb the influence and break up monopolic private cooperations.
+- @subsidies_small_buisnesses: Provide subsidies to small buisnesses.
+- @privatize_nationalised: Privatize excessively nationalised industries.
+- @easy_discard
+
+@deregulate_small_buisnesses
+choose-if: deregulation_count < 3 and not labor_progressive_programme
+unavailable-subtitle: [? if deregulation_count >= 3: We have simplified all processes and loosened all regulations that is still tolerable to the common worker.?] [? if labor_progressive_programme : We will never do such a thing to endanger the safety and live of the German worker. ?]
+on-arrival: deregulation_count += 1; old_middle_ddp += 3; workers_ddp -= 1; nationalliberale_dissent -= 3; dvp_relation += 2; coalition_dissent += 1 if spd_in_government; economic_growth += 0.2;
+on-departure: deregulation_effect_until = time + 4
+
+We will be simplifying processes to obtain liscences, giving tax breaks and reduce general burdon upon the independent craftsmen and buisnesses.
+
+@curb_break_up
+subtitle: -1 budget
+choose-if: budget >= 1 and not right_wing_lvp
+unavailable-subtitle: [? if budget < 1: We need at least 1 budget to break up private monopolies.?] [? if right_wing_lvp: Our party's pro-business leadership opposes breaking up private monopolies. ?]
+on-arrival: budget -= 1; old_middle_ddp += 1; new_middle_ddp += 1; workers_ddp += 1; dvp_relation -= 2; unemployed += 0.3; inflation -= 0.2; economic_growth += 0.2
+
+Monopoly-like power in the hands of a few or smaller groups must not be tolerated for the economic wellbeing and democratic life of the German people.
+
+@subsidies_small_buisnesses
+subtitle: -1 budget
+choose-if: budget >= 1
+unavailable-subtitle: We need at least 1 budget to fund the subsidies.
+on-arrival: budget -= 1; old_middle_ddp += 3; workers_ddp += 1; dvp_relation += 2; nationalliberale_dissent -= 3; unemployed -= 1; inflation += 0.3; economic_growth += 0.2
+
+In order for the employers to compete vibrantly with other entrepreneurs, to take better care for its employees, we will directly provide them with financial capital and guidlines on how to provide better worker's welfare within buisnesses.
+
+@privatize_nationalised
+subtitle: +1 budget
+choose-if: privatization_count < 2 and (middle_class_programme == 1 or historical_programme == 1)
+unavailable-subtitle: [? if privatization_count >= 2: There is no industries deemed necessory for privatization by the party.?] [? if labor_progressive_programme: Why would we do this? ?]
+on-arrival: budget += 1; privatization_count += 1; old_middle_ddp += 3; new_middle_ddp += 2; workers_ddp -= 1; dvp_relation += 4; coalition_dissent += 1 if spd_in_government; unemployed += 0.3; inflation += 0.2; economic_growth += 0.2
+
+The socialization of the means of production in the sense of general mass nationalization would be a deadly bureaucratization of the economy and a disastrous reduction in its yield.
+
+# deregulation_count: counts how many times deregulation has been enacted, up to three.
+# labor_progressive_programme: blocks deregulation and privatization under the labour-progressive programme.
+# nationalliberale_dissent: tracks discontent among the National Liberals. Deregulation and small-business subsidies reduce it.
+# deregulation_effect_until: stores the last turn on which deregulation lowers inflation and unemployment.
+# right_wing_lvp: blocks the breakup of private monopolies when the LVP takes its right-wing path.
+# privatization_count: counts how many times industries have been privatized, up to twice.
+# middle_class_programme: allows deregulation and privatization under the middle-class programme.
+# historical_programme: allows deregulation and privatization under the DDP’s historical programme.
+# spd_in_government: indicates whether the SPD is in government. If it is, deregulation and privatization increase coalition dissent.
