@@ -2,44 +2,82 @@ title: Labor Affairs
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-on-arrival: labor_affairs_timer = 6; month_actions += 1; labor_affairs_seen = 1
-view-if: spd_in_government = 1 and labor_minister_party = "SPD" and labor_affairs_timer = 0 and strike_term_seen = 0
-card-image: img/portraits/WissellRudolf.jpg
-#subtitle: Addressing labor unrest and strikes.
+on-arrival: labor_affairs_timer = 6; month_actions += 1;
+view-if: ddp_in_government = 1 and labor_minister_party = "DDP" and labor_affairs_timer <= 0
+card-image: img/portraits/ErkelenzAnton.png
+
 
 = Labor Affairs
 
-The industrial Ruhr region is aflame with labor unrest. The employers have started a major lockout to force the workers to take more cuts to wages and benefits.  There is a need for the Labor Ministry to arbitrate in conflicts between employers and workers.
+With our control of the Labor ministry, Anton Erkelenz can finally use his position to advance our agenda of fusing liberalism and organized labor.
 
-- @support_labor: Support labor in their demands.
-- @support_employers: Support the employers in their demands.
-- @balance: Try to strike a compromise between the sides.
+- @liberal_unions: Promote the liberal unions.
+- @cultivation_consensus: Begin the cultivation of a common consensus between employers and trade unions.
+- @increase_welfare: Strengthen social welfare.
+- @fund_cooperative_welfare: Strengthen social welfare.
+- @decrease_welfare: Cut Welfare.
+- @welfare_reforms: Social welfare reforms.
+- @continue_reforms: Continue welfare reform.
 - @easy_discard
-#- @cancel_advisor_action
 
-@support_labor
-subtitle: Popular among the workers, this will alienate the bourgeoisie.
-on-arrival: labor_strength += 5; labor_dissent -= 5; left_dissent -= 5; workers_spd += 6*(1-dissent); coalition_dissent += 1; dvp_relation -= 4; capital_strike_progress += 1 if dvp_relation <= 30; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; labor_goal_completed += 1; inflation += 0.1; pro_labor += 1; strike_term_seen += 1; economic_growth -= 0.1;
+@liberal_unions
+on-arrival: workers_ddp += 1; linksliberale_strength += 2; worker_campaign_modifier += 1 if not liberal_unions_promoted; liberal_unions_promoted = 1
 
-Supporting labor is always popular in the SPD, although many of our coalition partners represent employers, and they are less enthused.
+Erkelenz has as expectedly led the ministry to become increasingly more friendly with the GdAAB unions by elavating them into the preferred partners in labor-capital negotiations, at the expense of the Free unions and Christian unions and by promote white-collar unionism.
 
-@support_employers
-subtitle: Popular among the bourgeoisie, much less so among the workers.
-on-arrival: labor_dissent += 8; workers_spd -= 3; coalition_dissent -= 1 if coalition_dissent > 0; dvp_relation += 5; z_relation += 5; workers_kpd += 3; kpd_coalition_dissent += 1; kpd_relation -= 8; capital_strike_progress -= 1 if capital_strike_progress > 1; capital_strike_progress -= 1 if capital_strike_progress > 8; pro_labor -= 1; strike_term_seen += 1
+@cultivation_consensus
+on-arrival: workers_ddp += 0.5; old_middle_ddp += 0.5; new_middle_ddp += 0.5; capital_strike_progress -= 0.5 if capital_strike_progress > 5; general_strike_progress -= 0.5 if general_strike_progress > 5; labor_consensus_count += 1;
 
-The more radical workers despise our suppression of their strikes, recalling the days of Friedrich Ebert.
+Erkelenz has started to bring buisness leaders and leading unionists together on the synthesis of more comprehensive agreements on labor relations, social policies and others.
 
-@balance
-subtitle: Both sides need to share the pain in the current crisis.
-on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5; strike_term_seen += 1
+@increase_welfare
+view-if: labor_welfare_reform_step < 4
+choose-if: budget >= 1
+subtitle: -1 Budget
+unavailable-subtitle: We need 1 budget to expand welfare benefits.
+on-arrival: budget -= 1; welfare += 1; workers_ddp += 2
 
-Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces.
+Erkelenz has started to work with other ministries to expands the duration and coverage of welfare benefits for the lower class.
 
+@fund_cooperative_welfare
+view-if: labor_welfare_reform_step = 4
+choose-if: budget >= 1 and labor_coop_funding < 3
+subtitle: -1 Budget
+unavailable-subtitle: [? if labor_coop_funding >= 3: It requires no more additional funding to function properly. ?] [? if labor_coop_funding < 3 and budget < 1: We need 1 budget to fund the cooperatives. ?]
+on-arrival: budget -= 1; labor_coop_funding += 1; workers_ddp += 2 if labor_coop_funding < 3; workers_ddp += 5 if labor_coop_funding = 3; labor_coop_cap_bonus = 5 if labor_coop_funding = 3
 
+[? if labor_coop_funding < 3: We have allocated more resources to our new coorperative welfare system, and our worker's voters are pleased. ?]
 
-# options: support the workers in their demands, pushing back against the employers.
-# this is the approach favored by the unions. While they do not get everything they desire, an agreement favorable to the workers is reached. The employer associations and their bourgeois allies accuse us of overstepping our bounds.
-# try to make some compromise between the sides. Both sides need to share the pain in the current crisis.
-# whatever it takes, end the strikes and unrest as soon as possible.
-# this is not our business to intervene.
-# We are the party of labor, and it is not our business to intervene? There is incredulity in the ranks. The workers are less likely to trust us in the future.
+[? if labor_coop_funding = 3: The self-administrated coorperatives is now completely self-sufficient, a great achievement for our party and people of Germany. ?]
+
+@decrease_welfare
+subtitle: Whether it is for fiscal discipline or due to urgent need for funding, we have no choice but to cut social welfare. +1 budget
+choose-if: welfare >= -5
+unavailable-subtitle: There is no more welfare spending to cut.
+on-arrival: budget += 1; welfare -= 1; workers_ddp -= 2; unemployed_ddp -= 1; old_middle_ddp += 0.5; new_middle_ddp += 0.5; dvp_relation += 2; spd_relation -= 3; coalition_dissent += 1 if spd_in_government; inflation -= 0.1; economic_growth -= 0.05; unemployed += 0.05; labor_welfare_cut_cap_bonus = 1
+
+Our middle class voters are pleased to see we are cutting 'excess spending', whilst our lower class voters are outraged, have we really chose the correct choice?
+
+@welfare_reforms
+view-if: labor_welfare_reform_step = 0 and (labor_progressive_programme = 1 or historical_programme = 1)
+subtitle: The current welfare system is a mere contiuation of the Bismarckian system, which should be dismentled and replaced by local cooperatives under the principle of self-help.
+choose-if: (economic_minister_party = "DDP" or finance_minister_party = "DDP") and labor_consensus_count >= 3
+unavailable-subtitle: [? if economic_minister_party != "DDP" and finance_minister_party != "DDP": We must control either the Ministry of Economics or the Ministry of Finance. ?] [? if labor_consensus_count < 3: There isn't a strong censensus between employers and employees for the social welfare to be distributed while being self-administrated. ?]
+on-arrival: workers_ddp += 1; labor_welfare_reform_step = 1;
+
+We have started to create local coorperatives in the hopes of allowing them to distribute social welfare while being self-administrated with the federal government offering technical oversight and limited financial support.
+
+@continue_reforms
+subtitle: We have continued to aid local coorperatives and started to allow them to distribute social welfare while being self-administrated with the federal government offering technical oversight and limited financial support.
+view-if: labor_welfare_reform_step >= 1 and labor_welfare_reform_step < 4
+on-arrival: labor_welfare_reform_step += 1; workers_ddp += 1 if labor_welfare_reform_step < 4; workers_ddp += 2 if labor_welfare_reform_step = 4
+
+[? if labor_welfare_reform_step < 4: We have continued to aid local cooperatives. Their members have begun administering welfare benefits themselves, with the federal government providing technical oversight and limited financial support. ?]
+
+[? if labor_welfare_reform_step = 4: Our long-time effort has born fruit: our new welfare system has replaced the inherently authortarian and statist Bismarckian model.<br>Now we shall continue its funding until it has reached the capacity to be self-sufficient. ?]
+
+# labor_consensus_count : How many consensus action clicked
+# labor_welfare_reform_step : Total reform actions, including the initial reform (0 to 4)
+# labor_coop_funding : How many clicked increase_welfare button after reform was finished
+# labor_welfare_cut_cap_bonus : If welfare cut, worker's vote cap increase
+# labor_coop_cap_bonus : If welfare reform is finally done, vote cap greatly increase
