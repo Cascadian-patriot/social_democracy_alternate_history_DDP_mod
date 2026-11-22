@@ -214,6 +214,14 @@ go-to: rm_main
 
 Abegg has been removed as an advisor.
 
+@remove_schacht
+title: Remove Schacht
+view-if: schacht_advisor = 1
+tags: remove_advisor
+on-arrival: schacht_advisor = 0; n_advisors -= 1
+go-to: rm_main
+
+Hjalmar Schacht has been removed as an advisor.
 
 ####################### adding advisors
 
@@ -498,3 +506,14 @@ go-to: advisor_menu
 
 Wilhelm Abegg is now an advisor.
 
+@add_schacht
+title: Hjalmar Schacht
+subtitle: Schacht is an economist and a founding member of the DDP.
+is-card: true
+card-image: img/portraits/SchachtHjalmar.jpg
+tags: nonfactional_advisor
+view-if: schacht_advisor = 0 and n_advisors < 3
+on-arrival: schacht_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Hjalmar Schacht is now an advisor.
