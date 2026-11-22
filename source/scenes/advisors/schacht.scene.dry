@@ -1,0 +1,61 @@
+title: Hjalmar Schacht
+is-pinned-card: true
+tags: advisor, nonfactional
+card-image: img/portraits/SchachtHjalmar.jpg
+view-if: schacht_advisor = 1
+new-page: true
+
+= Hjalmar Schacht
+
+One of the founders of the Deutsche Demokratische Partei, Schacht represents its nationalist and explicitly capitalist wing. As one of our party’s most prominent economists, he advocates strict fiscal conservatism, opposing Naumannite social liberalism. But in times of crisis, he may prove more pragmatic than he seems…
+
+[? if schacht_plan_stage > 0 and schacht_plan_stage < 3 : Plan development: [+ schacht_plan_stage +]/3. ?]
+[? if schacht_plan_stage == 3 : Schacht's new plan is ready for adoption. ?]
+[? if schacht_plan_stage == 4 : The party has adopted Schacht's new plan. ?]
+
+- @building_right_schacht : Building the Right
+- @improving_reichsbank : Improving Relations with the Reichsbank
+- @develop_new_plan : Develop Schacht's New Plan
+- @adopt_new_plan : Adopt Schacht's New Plan
+- @root: Return to main
+  
+@building_right_schacht
+subtitle: Strengthen the right wing of the DDP.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; nationalliberale_strength += 5; nationalliberale_dissent -= 3; linksliberale_dissent += 2; dvp_relation += 3; dnvp_relation += 2
+
+Hjalmar Schacht has used his influence within the DDP to successfully rally its right wing against the Naumannites. Our relations with the DVP and DNVP have also improved slightly.
+  
+@improving_reichsbank
+subtitle: Improve relations with the Reichsbank.
+choose-if: advisor_action_timer <= 0 and reichsbank_relation < 5 and schacht_reichsbank_president == 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if reichsbank_relation >= 5 : Our relations with the Reichsbank are already at their maximum. ?] [? if not schacht_reichsbank_president : Schacht is not currently President of the Reichsbank. ?]
+on-arrival: advisor_action_timer = 6; reichsbank_relation += 1
+
+We will use our connection to Hjalmar Schacht, who became President of the Reichsbank in Deecember 1923, to improve relations with the bank. We hope he will return the favor when we need his help.
+  
+@develop_new_plan
+subtitle: Schacht develops a plan to rearm the Fatherland!
+view-if: schacht_plan_stage < 3
+choose-if: advisor_action_timer <= 0 and stabilized_economy == 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if stabilized_economy == 0 : The economy has not yet stabilized. ?]
+on-arrival: advisor_action_timer = 6; schacht_plan_stage += 1
+
+[? if schacht_plan_stage <= 2 : Hjalmar Schacht is developing a way to secretly rearm the German Republic while remaining, legally speaking, within the terms of the Treaty of Versailles. ?]
+
+[? if schacht_plan_stage == 3 : Hjalmar Schacht has presented his plan to the party! He proposes establishing a dummy corporation and paying companies with bills of exchange drawn on it instead of cash, with a promise to redeem those bills at a later date. ?]
+
+@adopt_new_plan
+subtitle: Can we convince the party to adopt the plan?
+view-if: schacht_plan_stage == 3
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; schacht_plan_stage = 4
+
+Hjalmar Schacht has convinced the party to adopt his plan! With it, we will be able to restore the honor of the Fatherland!
+
+# reichsbank_relation : relation with reichsbank
+# schacht_reichsbank_president : 0 = not currently president, 1 = currently president
+# schacht_plan_stage : Showing Schacht's new plan stage (0: not started, 1–2: developing, 3: completed, 4: adopted)
+# stabilized_economy : 0 = economic stabilization not achieved, 1 = achieved
