@@ -1,0 +1,56 @@
+title: Erich Ernst Lüth
+is-pinned-card: true
+tags: advisor, pazifisten
+card-image: img/portraits/Luth_Ersnt.jpeg
+view-if: luth_advisor = 1
+new-page: true
+
+= Erich Ernst Lüth
+
+Erich Ernst Lüth is a young rising star in the Hamburg branch of our party. Going from intern to becoming one of the editors of the associated Hamburger Anzeiger he rose in prominence in our party. Belonging to the left of our pacifist wing of our party, he advocates for pro-labour policies and stands against anti-semitic policies of right and far-right.
+
+- @fight_anti_semitism : Fight against Anti-Semitism
+- @fund_hamburger : Fund the Hamburger Anzeiger
+- @integrate_hamburger : Integrate Hamburger Anzeiger
+- @promote_luth_left : Promote cooperation with the Left
+- @root: Return to main
+  
+@fight_anti_semitism
+subtitle: Campaign for the German-Jewish friendship.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; nationalism -= 3; pro_republic += 3; new_middle_ddp += 3; old_middle_ddp += 2
+
+DDP is known for being the party for Jews, so we need to protect one of our main electorates against attacks from the right. We are actively fighting anti-semitism across the nation through cooperation with the CdSjG(Centralverein deutscher Staatsbürger jüdischen Glaubens) helping with filling legal cases, halping victims, also launching counter campaigns to anti-semitic ones from the right. This action pleases of our Jewish voters, increasing our popularity among them.
+  
+@fund_hamburger
+subtitle: -1 resource
+choose-if: advisor_action_timer <= 0 and resources >= 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if resources < 1 : We don't have any resources. ?]
+on-arrival: advisor_action_timer = 6; resources -= 1; hamburger_funding_afterluth += 1; new_middle_ddp += 5; old_middle_ddp += 3; workers_ddp += 3; pazifisten_strength += 3; linksliberale_strength += 2
+
+By investing into Hamburger Anzeiger, we sway more people to the liberal cause our party and bind these newspapers to our party.
+  
+@integrate_hamburger
+subtitle: -1 resource
+choose-if: advisor_action_timer <= 0 and resources >= 1 and hamburger_funding_afterluth >= 3 and hamburger_integrated = 0
+unavailable-subtitle: [? if hamburger_integrated = 1 : Already completed. ?][? if hamburger_integrated = 0 and advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if hamburger_integrated = 0 and resources < 1 : We don't have any resources. ?][? if hamburger_integrated = 0 and hamburger_funding_afterluth < 3 : We have not funded Hamburger Anzeiger enough times to integrate it. ?]
+on-arrival: advisor_action_timer = 6; resources -= 1; hamburger_integrated = 1; new_middle_ddp += 6; old_middle_ddp += 4; workers_ddp += 4; pazifisten_strength += 5; pazifisten_dissent -= 4; linksliberale_dissent -= 3; sammlung_dissent -= 3
+
+Thanks to Erich Ernst Lüth, the rising editor of Hamburger Anzeiger, we amange to negotiate with them, officialy integrating them into our party. This event makes Erich Ernst Lüth popular in the party, as a unifying figure in the Hamburg politics.
+
+@promote_luth_left
+subtitle: We'll use our media, for improvement of relations with the Left
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; spd_relation += 6; linksliberale_strength += 3; pazifisten_strength += 2; nationalliberale_dissent += 2 if not nationalliberale_defect; uspd_relation += 3 if nationalliberale_defect; kpd_relation += 2 if nationalliberale_defect
+
+Erich Ernst Lüth uses our media networks to strengthen the DDP left-wing and improve our relations with the political left, posting friendly articles to the political left.
+
+[? if not nationalliberale_defect : The SPD welcomes these articles, improving relations between our parties. However, the National Liberals are displeased with our overtures to the left. ?]
+
+[? if nationalliberale_defect : The SPD welcomes these articles. With the National Liberals no longer in our party, our outreach also receives a modest positive response from the USPD and KPD. ?]
+
+# hamburger_funding_beforeluth : Before unlocking Luth, how many player funded Hamburger Anzeiger? (0 to 3)
+# hamburger_funding_afterluth : After unlocking Luth, how many player funded Hamburger Anzeiger?
+# hamburger_integrated : Is Hamburger Anzeiger integrated? 0 means 'no', 1 means 'yes'
