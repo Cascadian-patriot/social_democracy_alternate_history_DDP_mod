@@ -262,6 +262,11 @@ Q.dh_integrated = 0;
 Q.newspaper_editor = "Nobody";
 Q.newspaper_invested_in = 0;
 
+// Erich Ernst Luth and Hamburger Anzeiger
+Q.hamburger_funding_beforeluth = 0;
+Q.hamburger_funding_afterluth = 0;
+Q.hamburger_integrated = 0;
+
 // Soldatenwehr
 // if strenghtened during kapp putsch increased
 Q.soldatenwehr_strenghtened_1 = 0;
