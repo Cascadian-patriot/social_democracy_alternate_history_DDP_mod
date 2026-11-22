@@ -836,7 +836,13 @@ Q.luth_advisor = 0;
 
 // Nonfactional/technocratic advisors
 Q.abegg_advisor = 0;
+Q.schacht_advisor = 0;
 
+// Schacht's variables
+Q.reichsbank_relation = 0;
+Q.schacht_reichsbank_president = 0;
+Q.schacht_plan_stage = 0;
+Q.stabilized_economy = 0;
 !}
 
 
